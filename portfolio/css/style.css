@@ -1161,6 +1161,312 @@ body::after {
 }
 
 /* ============================================
+   PERSONAL PROJECTS
+   ============================================ */
+.projects {
+  background: var(--bg-secondary);
+}
+
+/* Featured cards grid */
+.projects__featured {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Featured project card */
+.fcard {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  transition:
+    border-color 0.4s var(--ease-out-expo),
+    box-shadow 0.4s var(--ease-out-expo),
+    transform 0.4s var(--ease-out-expo);
+}
+
+.fcard:hover {
+  border-color: rgba(78, 143, 224, 0.2);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3), var(--shadow-blue);
+  transform: translateY(-3px);
+}
+
+/* Visual area */
+.fcard__visual {
+  position: relative;
+  min-height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+}
+
+.fcard__vname {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.01em;
+}
+
+/* Knowledge AIO visual */
+.fcard__visual--knowledge {
+  background: #080A0E;
+}
+
+.fcard__matrix {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 5px,
+      rgba(48, 192, 96, 0.04) 5px,
+      rgba(48, 192, 96, 0.04) 6px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 12px,
+      rgba(48, 192, 96, 0.02) 12px,
+      rgba(48, 192, 96, 0.02) 13px
+    );
+}
+
+.fcard__glow--green {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 120px;
+  background: radial-gradient(ellipse, rgba(48, 192, 96, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Mini Cozy Room visual */
+.fcard__visual--cozy {
+  background: #221A2A;
+}
+
+.fcard__pixels {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,180,100,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,180,100,0.06) 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+.fcard__glow--warm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(255, 180, 100, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Body area */
+.fcard__body {
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.fcard__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fcard__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.fcard__badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2em 0.6em;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.fcard__badge--live {
+  background: rgba(48, 192, 96, 0.12);
+  color: #30C060;
+  border: 1px solid rgba(48, 192, 96, 0.25);
+}
+
+.fcard__badge--collab {
+  background: var(--accent-gold-dim);
+  color: var(--accent-gold);
+  border: 1px solid rgba(232, 160, 64, 0.25);
+}
+
+.fcard__desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.fcard__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.fcard__tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2em 0.6em;
+  border-radius: 3px;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.fcard__tag--blue {
+  background: var(--accent-blue-dim);
+  color: var(--accent-blue);
+  border-color: rgba(78, 143, 224, 0.2);
+}
+
+.fcard__tag--gold {
+  background: var(--accent-gold-dim);
+  color: var(--accent-gold);
+  border-color: rgba(232, 160, 64, 0.2);
+}
+
+.fcard__actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Button small variant */
+.btn--small {
+  padding: 0.45rem 1rem;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn--ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  background: var(--accent-blue-dim);
+}
+
+/* ---- Private project cards ---- */
+.projects__private {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.pvt-card {
+  padding: 1.5rem;
+  background: var(--bg-panel);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.pvt-card:hover {
+  border-color: rgba(78, 143, 224, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.pvt-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pvt-card__lock {
+  fill: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.pvt-card__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.pvt-card__desc {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.pvt-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.pvt-card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  background: var(--accent-gold-dim);
+  color: var(--accent-gold);
+  border: 1px solid rgba(232, 160, 64, 0.2);
+}
+
+.pvt-card__badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-left: auto;
+}
+
+/* ============================================
    RESPONSIVE — TABLET (1024px)
    ============================================ */
 @media (max-width: 1024px) {
@@ -1177,6 +1483,10 @@ body::after {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 3rem 2.5rem;
+  }
+
+  .fcard {
+    grid-template-columns: 240px 1fr;
   }
 }
 
@@ -1236,6 +1546,23 @@ body::after {
     padding: 2rem 1.5rem;
   }
 
+  .fcard {
+    grid-template-columns: 1fr;
+  }
+
+  .fcard__visual {
+    min-height: 160px;
+  }
+
+  .fcard__body {
+    padding: 1.5rem;
+  }
+
+  .projects__private {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.75rem;
+  }
+
   .nav__links.open {
     background: var(--bg-panel);
     border-left: 1px solid var(--accent-blue);
@@ -1269,6 +1596,14 @@ body::after {
 
   .offer-card {
     padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .projects__private {
+    grid-template-columns: 1fr;
+  }
+
+  .pvt-card {
+    padding: 1.25rem;
   }
 
   .about__title {
