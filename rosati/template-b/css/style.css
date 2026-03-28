@@ -43,7 +43,7 @@ h1, h2, h3 {
 .section-header__label {
   color: var(--accent-olive);
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.3em;
 }
@@ -75,7 +75,7 @@ h1, h2, h3 {
 
 .nav__links a {
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   letter-spacing: 0.04em;
   font-weight: 400;
   transition: color var(--transition-fast);
@@ -98,7 +98,7 @@ h1, h2, h3 {
   background: var(--accent-olive);
   color: #fff;
   padding: 0.55rem 1.4rem;
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -168,7 +168,7 @@ h1, h2, h3 {
 }
 
 .hero__label {
-  font-size: 0.6rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--accent-olive);
   letter-spacing: 0.4em;
@@ -196,7 +196,7 @@ h1, h2, h3 {
 }
 
 .hero__location {
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   color: var(--accent-terracotta);
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -385,7 +385,7 @@ h1, h2, h3 {
 }
 
 .welcome-quote cite {
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   font-style: normal;
   font-family: 'Nunito Sans', sans-serif;
@@ -435,7 +435,7 @@ h1, h2, h3 {
 }
 
 .menu-category__title {
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--accent-olive);
   text-transform: uppercase;
@@ -491,7 +491,7 @@ h1, h2, h3 {
 .menu-note {
   margin-top: 2.5rem;
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   letter-spacing: 0.03em;
 }
 
@@ -564,7 +564,7 @@ h1, h2, h3 {
   background: var(--accent-olive-light);
   border: 1px solid rgba(92, 110, 63, 0.15);
   border-radius: 100px;
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--accent-olive);
   letter-spacing: 0.03em;
@@ -616,7 +616,7 @@ h1, h2, h3 {
 }
 
 .info-col p {
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
   line-height: 1.9;
   font-weight: 300;
@@ -637,7 +637,7 @@ h1, h2, h3 {
   margin-top: 0.75rem;
   color: var(--accent-olive);
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   letter-spacing: 0.02em;
   transition: color var(--transition-fast);
 }
@@ -657,7 +657,7 @@ h1, h2, h3 {
 
 .facebook-link {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.88rem;
 }
 
 @media (max-width: 767px) {
@@ -688,13 +688,13 @@ h1, h2, h3 {
 .footer__tagline {
   font-family: 'Libre Baskerville', serif;
   font-style: italic;
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   margin-bottom: 1.25rem;
 }
 
 .footer__copy {
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   letter-spacing: 0.02em;
 }

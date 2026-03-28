@@ -44,7 +44,7 @@ h1, h2, h3 {
 .section-header__label {
   color: var(--text-secondary);
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.92rem;
   font-weight: 500;
   letter-spacing: 0.3em;
 }
@@ -78,7 +78,7 @@ h1, h2, h3 {
 
 .nav__links a {
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   font-weight: 400;
   letter-spacing: 0.04em;
   transition: color var(--transition-fast);
@@ -92,7 +92,7 @@ h1, h2, h3 {
   background: var(--accent-emergency);
   color: #fff;
   padding: 0.55rem 1.2rem;
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   box-shadow: 0 2px 12px rgba(224, 56, 56, 0.25);
@@ -159,7 +159,7 @@ h1, h2, h3 {
 }
 
 .hero__label {
-  font-size: 0.6rem;
+  font-size: 0.92rem;
   font-weight: 500;
   color: var(--text-secondary);
   letter-spacing: 0.35em;
@@ -188,7 +188,7 @@ h1, h2, h3 {
 }
 
 .hero__location {
-  font-size: 0.6rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -244,14 +244,14 @@ h1, h2, h3 {
 
 .emergency-banner__label {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--accent-emergency);
   margin-right: 0.75rem;
 }
 
 .emergency-banner__desc {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   font-weight: 300;
 }
@@ -260,7 +260,7 @@ h1, h2, h3 {
   background: var(--accent-emergency);
   color: #fff;
   padding: 0.6rem 1.5rem;
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -309,7 +309,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -371,7 +371,7 @@ h1, h2, h3 {
 }
 
 .servizio-item p {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.7;
   font-weight: 300;
@@ -405,7 +405,7 @@ h1, h2, h3 {
 }
 
 .servizio-bottom-card p {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.7;
   font-weight: 300;
@@ -423,7 +423,7 @@ h1, h2, h3 {
 .servizio-cta {
   display: inline-block;
   margin-top: 0.75rem;
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--accent-emergency);
   font-family: 'Space Grotesk', sans-serif;
@@ -495,7 +495,7 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.05em;
@@ -512,7 +512,7 @@ h1, h2, h3 {
 
 .partner-badge__role {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -542,7 +542,7 @@ h1, h2, h3 {
 
 .contatti__label {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.92rem;
   font-weight: 500;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -551,7 +551,7 @@ h1, h2, h3 {
 }
 
 .contatti__block p {
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
   line-height: 1.8;
   font-weight: 300;
@@ -578,7 +578,7 @@ h1, h2, h3 {
 .contatti__link {
   display: inline-block;
   margin-top: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: var(--accent-cool);
   font-weight: 500;
   transition: color var(--transition-fast);
@@ -595,7 +595,7 @@ h1, h2, h3 {
 .hours__row {
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   font-weight: 300;
   padding: 0.3rem 0;
@@ -608,7 +608,7 @@ h1, h2, h3 {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 500;
   color: var(--text-primary);
-  font-size: 0.8rem;
+  font-size: 0.88rem;
 }
 
 .hours__row--closed {
@@ -634,7 +634,7 @@ h1, h2, h3 {
 
 .footer__text {
   color: var(--text-muted);
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   letter-spacing: 0.02em;
 }
 

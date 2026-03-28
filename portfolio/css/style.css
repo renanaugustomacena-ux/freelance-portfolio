@@ -99,7 +99,7 @@ body::after {
 
 .nav__links a {
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -255,7 +255,7 @@ body::after {
   align-items: center;
   gap: 0.6rem;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
   letter-spacing: 0.08em;
   margin-bottom: 2rem;
@@ -315,7 +315,7 @@ body::after {
   align-items: center;
   gap: 0.25rem;
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   color: var(--accent-blue);
   margin-bottom: 2.5rem;
 }
@@ -458,7 +458,7 @@ body::after {
   align-items: center;
   gap: 0.4rem;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   letter-spacing: 0.04em;
   margin-top: 1.5rem;
@@ -476,7 +476,7 @@ body::after {
 
 .skills-block__title {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -492,7 +492,7 @@ body::after {
 
 .skill-tag {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.92rem;
   font-weight: 500;
   padding: 0.3em 0.75em;
   border-radius: 4px;
@@ -557,7 +557,7 @@ body::after {
 }
 
 .about__music-desc {
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   margin-bottom: 0.75rem;
   line-height: 1.6;
@@ -571,7 +571,7 @@ body::after {
 
 .about__music-links a {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -625,7 +625,7 @@ body::after {
 
 .code-snippet__file {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   margin-left: 0.4rem;
 }
@@ -637,7 +637,7 @@ body::after {
 
 .code-snippet__body code {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.92rem;
   line-height: 1.8;
   white-space: pre;
   background: none;
@@ -683,7 +683,7 @@ body::after {
 
 .project-group__category {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -716,7 +716,7 @@ body::after {
 
 .project-group__tags span {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -876,7 +876,7 @@ body::after {
   background: #F5B731;
   color: #1A1A2E;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
@@ -937,7 +937,7 @@ body::after {
 
 .pcard__variant {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -945,7 +945,7 @@ body::after {
 }
 
 .pcard__style {
-  font-size: 0.72rem;
+  font-size: 0.92rem;
   font-weight: 500;
   padding: 0.15em 0.5em;
   border-radius: 3px;
@@ -1043,7 +1043,7 @@ body::after {
 }
 
 .offer-card__desc {
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   line-height: 1.7;
   color: var(--text-secondary);
 }
@@ -1151,7 +1151,7 @@ body::after {
 
 .contact-cta__email code {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   background: none;
   padding: 0;
@@ -1183,7 +1183,7 @@ body::after {
 }
 
 .footer__copy {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
 }
 
@@ -1280,7 +1280,7 @@ body::after {
   position: relative;
   z-index: 2;
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: rgba(255,255,255,0.7);
   letter-spacing: 0.01em;
@@ -1372,7 +1372,7 @@ body::after {
 
 .fcard__badge {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.92rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1407,7 +1407,7 @@ body::after {
 
 .fcard__tag {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1439,7 +1439,7 @@ body::after {
 /* Button small variant */
 .btn--small {
   padding: 0.45rem 1rem;
-  font-size: 0.78rem;
+  font-size: 0.92rem;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -1503,7 +1503,7 @@ body::after {
 }
 
 .pvt-card__desc {
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   line-height: 1.65;
   color: var(--text-secondary);
 }
@@ -1518,7 +1518,7 @@ body::after {
 
 .pvt-card__tag {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.92rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1531,7 +1531,7 @@ body::after {
 
 .pvt-card__badge {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   letter-spacing: 0.04em;
   margin-left: auto;
@@ -1650,7 +1650,7 @@ body::after {
   }
 
   .hero__eyebrow {
-    font-size: 0.65rem;
+    font-size: 0.88rem;
   }
 
   .project-group__cards {
@@ -1686,6 +1686,6 @@ body::after {
   }
 
   .code-snippet__body code {
-    font-size: 0.7rem;
+    font-size: 0.92rem;
   }
 }
