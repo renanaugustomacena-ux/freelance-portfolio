@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Renan Augusto Macena — Web developer freelance a Mozzecane, Verona. Siti web artigianali, zero framework, zero template.">
+  <title>Renan Augusto Macena — Web Developer Freelance</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../shared/css/reset.css">
+  <link rel="stylesheet" href="../shared/css/utilities.css">
+  <link rel="stylesheet" href="../shared/css/components.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" aria-label="Navigazione principale">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo" aria-label="Renan Augusto Macena — Home">
+        <span class="nav__logo-code">RAM</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#about">Chi Sono</a></li>
+        <li><a href="#lavoro">Lavoro</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#contatti" class="nav__cta">Parliamo</a></li>
+      </ul>
+      <button class="nav__hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero" aria-label="Presentazione">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__glow hero__glow--gold" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow">
+        <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+        Web Developer Freelance &middot; Mozzecane, Verona
+      </p>
+      <h1 class="hero__title">
+        Renan<br>
+        <span class="hero__title-gradient">Augusto</span><br>
+        Macena
+      </h1>
+      <p class="hero__tagline">
+        Designed and built by hand.<br>
+        <em>No templates. No frameworks.</em>
+      </p>
+      <div class="hero__stack" role="list" aria-label="Tecnologie">
+        <code role="listitem">HTML</code><span aria-hidden="true">&nbsp;&middot;&nbsp;</span>
+        <code role="listitem">CSS</code><span aria-hidden="true">&nbsp;&middot;&nbsp;</span>
+        <code role="listitem">JavaScript</code>
+      </div>
+      <div class="hero__actions">
+        <a href="#lavoro" class="btn btn--blue btn--large">Vedi il Lavoro</a>
+        <a href="#contatti" class="btn btn--gold-outline btn--large">Parliamo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="container about__grid">
+
+      <div class="about__left reveal">
+        <span class="section-header__label">Chi Sono</span>
+        <h2 class="about__title">
+          Un artigiano digitale<br>
+          al servizio delle<br>
+          imprese locali.
+        </h2>
+        <p class="about__body">
+          Sono Renan — web developer autodidatta, dal Brasile, a Mozzecane. In 6 mesi ho trasformato una passione visiva in una competenza tecnica: ogni sito costruito a mano, pixel per pixel, senza dipendenze esterne.
+        </p>
+        <p class="about__body">
+          La mia specialità è portare le piccole imprese locali su internet con un design che fa davvero la differenza rispetto alle agenzie generiche.
+        </p>
+        <div class="about__location">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Mozzecane, 37060 Verona, Italia
+        </div>
+      </div>
+
+      <div class="about__right reveal reveal-delay-1">
+        <div class="skills-block">
+          <h3 class="skills-block__title">Stack</h3>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag--blue">HTML5</span>
+            <span class="skill-tag skill-tag--blue">CSS3</span>
+            <span class="skill-tag skill-tag--blue">JavaScript ES6+</span>
+            <span class="skill-tag">CSS Custom Properties</span>
+            <span class="skill-tag">IntersectionObserver API</span>
+            <span class="skill-tag">CSS Animations</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">GitHub Pages</span>
+            <span class="skill-tag">Python</span>
+          </div>
+        </div>
+        <div class="skills-block">
+          <h3 class="skills-block__title">Principi</h3>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag--gold">Zero Dipendenze</span>
+            <span class="skill-tag skill-tag--gold">Mobile-First</span>
+            <span class="skill-tag skill-tag--gold">Accessibilità</span>
+            <span class="skill-tag skill-tag--gold">Performance</span>
+          </div>
+        </div>
+        <div class="code-snippet">
+          <div class="code-snippet__header">
+            <span class="code-snippet__dot code-snippet__dot--r" aria-hidden="true"></span>
+            <span class="code-snippet__dot code-snippet__dot--y" aria-hidden="true"></span>
+            <span class="code-snippet__dot code-snippet__dot--g" aria-hidden="true"></span>
+            <span class="code-snippet__file">style.css</span>
+          </div>
+          <pre class="code-snippet__body"><code><span class="cs-c">/* Diagonal hero — pure CSS */</span>
+<span class="cs-s">.hero::before</span> {
+  <span class="cs-p">content</span>: <span class="cs-v">''</span>;
+  <span class="cs-p">position</span>: <span class="cs-v">absolute</span>;
+  <span class="cs-p">inset</span>: <span class="cs-v">0</span>;
+  <span class="cs-p">background</span>: <span class="cs-v">var(--accent)</span>;
+  <span class="cs-p">clip-path</span>: <span class="cs-v">polygon(
+    55% 0, 100% 0,
+    100% 100%, 45% 100%
+  )</span>;
+}</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== WORK ===== -->
+  <section class="section work" id="lavoro">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__label">Lavoro</span>
+        <h2 class="section-header__title">Demo per Clienti Locali</h2>
+        <p class="section-header__subtitle">Tre aziende di Mozzecane senza sito web. Due proposte di design per ognuna, costruite senza template.</p>
+      </div>
+
+      <!-- ROSATI -->
+      <article class="project-group reveal">
+        <div class="project-group__meta">
+          <span class="project-group__category">Ristorazione</span>
+          <h3 class="project-group__name">Pizzeria Trattoria Rosati</h3>
+          <p class="project-group__desc">Trattoria familiare con pizzeria a legna e giardino estivo. Presente solo su Facebook e aggregatori — zero sito, zero controllo della propria immagine online.</p>
+          <div class="project-group__tags">
+            <span>Menu digitale</span>
+            <span>Prenotazioni</span>
+            <span>SEO locale</span>
+          </div>
+        </div>
+        <div class="project-group__cards">
+          <a href="../rosati/template-a/" target="_blank" rel="noopener" class="pcard" aria-label="Rosati — Template A: Fuoco e Farina, apri in nuova scheda">
+            <div class="pcard__visual pcard__visual--rosati-a">
+              <div class="pcard__ember" aria-hidden="true"></div>
+              <span class="pcard__vname">Fuoco &amp; Farina</span>
+            </div>
+            <div class="pcard__meta">
+              <span class="pcard__variant">Template A</span>
+              <span class="pcard__style pcard__style--dark">Dark · Warm</span>
+              <span class="pcard__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a href="../rosati/template-b/" target="_blank" rel="noopener" class="pcard" aria-label="Rosati — Template B: Giardino Segreto, apri in nuova scheda">
+            <div class="pcard__visual pcard__visual--rosati-b">
+              <div class="pcard__botanical" aria-hidden="true"></div>
+              <span class="pcard__vname pcard__vname--dark">Giardino Segreto</span>
+            </div>
+            <div class="pcard__meta">
+              <span class="pcard__variant">Template B</span>
+              <span class="pcard__style pcard__style--light">Light · Botanical</span>
+              <span class="pcard__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
+      </article>
+
+      <!-- CLIMA WORLD -->
+      <article class="project-group reveal">
+        <div class="project-group__meta">
+          <span class="project-group__category">HVAC &amp; Idraulica</span>
+          <h3 class="project-group__name">Clima World Snc</h3>
+          <p class="project-group__desc">Riscaldamento, climatizzazione e idraulica a Mozzecane. Zero presenza web — niente Google, niente pronto intervento online, niente fiducia digitale.</p>
+          <div class="project-group__tags">
+            <span>Pronto Intervento</span>
+            <span>Trust Building</span>
+            <span>Click-to-Call</span>
+          </div>
+        </div>
+        <div class="project-group__cards">
+          <a href="../climaworld/template-a/" target="_blank" rel="noopener" class="pcard" aria-label="Clima World — Template A: Aria Pura, apri in nuova scheda">
+            <div class="pcard__visual pcard__visual--clima-a">
+              <div class="pcard__crosshatch" aria-hidden="true"></div>
+              <span class="pcard__vname pcard__vname--dark">Aria Pura</span>
+            </div>
+            <div class="pcard__meta">
+              <span class="pcard__variant">Template A</span>
+              <span class="pcard__style pcard__style--light">Light · Professional</span>
+              <span class="pcard__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a href="../climaworld/template-b/" target="_blank" rel="noopener" class="pcard" aria-label="Clima World — Template B: Termostato, apri in nuova scheda">
+            <div class="pcard__visual pcard__visual--clima-b">
+              <div class="pcard__thermobar" aria-hidden="true"></div>
+              <span class="pcard__vname">Termostato</span>
+            </div>
+            <div class="pcard__meta">
+              <span class="pcard__variant">Template B</span>
+              <span class="pcard__style pcard__style--dark">Dark · Premium</span>
+              <span class="pcard__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
+      </article>
+
+      <!-- SAMBENINI -->
+      <article class="project-group reveal">
+        <div class="project-group__meta">
+          <span class="project-group__category">Officina Meccanica</span>
+          <h3 class="project-group__name">Sambenini Auto</h3>
+          <p class="project-group__desc">Officina multimarca fondata nel 1987. Il dominio esiste ma non funziona. 38 anni di reputazione che meritano una presenza digitale all'altezza.</p>
+          <div class="project-group__tags">
+            <span>Dal 1987</span>
+            <span>Auto Usate</span>
+            <span>Diagnostica</span>
+          </div>
+        </div>
+        <div class="project-group__cards">
+          <a href="../sambenini/template-a/" target="_blank" rel="noopener" class="pcard" aria-label="Sambenini — Template A: Officina Moderna, apri in nuova scheda">
+            <div class="pcard__visual pcard__visual--sam-a">
+              <div class="pcard__badge1987" aria-hidden="true">DAL<br>1987</div>
+              <span class="pcard__vname pcard__vname--dark">Officina Moderna</span>
+            </div>
+            <div class="pcard__meta">
+              <span class="pcard__variant">Template A</span>
+              <span class="pcard__style pcard__style--light">Light · Swiss</span>
+              <span class="pcard__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+          <a href="../sambenini/template-b/" target="_blank" rel="noopener" class="pcard" aria-label="Sambenini — Template B: Strada Sicura, apri in nuova scheda">
+            <div class="pcard__visual pcard__visual--sam-b">
+              <div class="pcard__road" aria-hidden="true"></div>
+              <span class="pcard__vname">Strada Sicura</span>
+            </div>
+            <div class="pcard__meta">
+              <span class="pcard__variant">Template B</span>
+              <span class="pcard__style pcard__style--dark">Dark · Night Road</span>
+              <span class="pcard__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section services-offer" id="servizi">
+    <div class="container">
+      <div class="section-header section-header--centered reveal">
+        <span class="section-header__label">Cosa Offro</span>
+        <h2 class="section-header__title">Servizi</h2>
+      </div>
+      <div class="offer-grid">
+        <div class="offer-card reveal reveal-delay-1">
+          <span class="offer-card__num" aria-hidden="true">01</span>
+          <h3 class="offer-card__title">Sito Vetrina</h3>
+          <p class="offer-card__desc">Design su misura, mobile-first, ottimizzato per Google. Nessun template, nessun aspetto generico.</p>
+        </div>
+        <div class="offer-card reveal reveal-delay-2">
+          <span class="offer-card__num" aria-hidden="true">02</span>
+          <h3 class="offer-card__title">Presenza Locale</h3>
+          <p class="offer-card__desc">SEO locale, click-to-call, orari e mappa. Tutto ciò che serve per comparire nelle ricerche locali.</p>
+        </div>
+        <div class="offer-card reveal reveal-delay-3">
+          <span class="offer-card__num" aria-hidden="true">03</span>
+          <h3 class="offer-card__title">Manutenzione</h3>
+          <p class="offer-card__desc">Aggiornamenti contenuti, modifiche e assistenza continuativa. Il tuo sito rimane fresco e funzionante.</p>
+        </div>
+        <div class="offer-card reveal reveal-delay-1">
+          <span class="offer-card__num" aria-hidden="true">04</span>
+          <h3 class="offer-card__title">Script Python</h3>
+          <p class="offer-card__desc">Automazioni per processi ripetitivi. Piccoli script che risparmiano ore di lavoro ogni settimana.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact-cta" id="contatti">
+    <div class="container">
+      <div class="contact-cta__panel reveal">
+        <div class="contact-cta__left">
+          <span class="section-header__label">Contatti</span>
+          <h2 class="contact-cta__title">
+            Hai un'attività<br>
+            <span class="contact-cta__title-accent">senza sito web?</span>
+          </h2>
+          <p class="contact-cta__body">
+            Parliamone. Ti preparo una demo gratuita su misura — senza impegno. Voglio solo mostrarti com'è possibile stare online con uno stile che ti rappresenta davvero.
+          </p>
+        </div>
+        <div class="contact-cta__right">
+          <a href="mailto:renanaugustomacena@gmail.com" class="btn btn--blue btn--large contact-cta__btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Scrivimi
+          </a>
+          <p class="contact-cta__email">
+            <code>renanaugustomacena@gmail.com</code>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">Renan Augusto Macena</p>
+      <p class="footer__copy">&copy; 2026 &mdash; <em>Designed and built by hand. No templates, no frameworks.</em></p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Torna su">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <script src="../shared/js/mobile-nav.js"></script>
+  <script src="../shared/js/smooth-scroll.js"></script>
+  <script src="../shared/js/reveal-on-scroll.js"></script>
+
+</body>
+</html>

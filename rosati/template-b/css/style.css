@@ -1,0 +1,885 @@
+/* ============================================
+   GIARDINO SEGRETO — Pizzeria Trattoria Rosati
+   Template B: Light / Botanical / Editorial
+   Handcrafted. No templates. No frameworks.
+   ============================================ */
+
+:root {
+  --bg-primary: #FDFBF7;
+  --bg-secondary: #F5F0E8;
+  --bg-tertiary: #ECE5DA;
+  --bg-warm: #F8F4ED;
+  --accent-olive: #5C6E3F;
+  --accent-olive-light: rgba(92, 110, 63, 0.08);
+  --accent-terracotta: #B8694A;
+  --accent-terracotta-light: rgba(184, 105, 74, 0.08);
+  --text-primary: #2C2418;
+  --text-secondary: #6E6458;
+  --text-muted: #9E9488;
+  --border: #D8CFBF;
+  --border-light: #E8E0D4;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 250ms var(--ease-out-expo);
+  --transition-normal: 450ms var(--ease-out-expo);
+  --transition-slow: 700ms var(--ease-out-expo);
+
+  --accent-primary: var(--accent-olive);
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* ---- Typography System ---- */
+h1, h2, h3 {
+  font-family: 'Libre Baskerville', serif;
+}
+
+.section-header__label {
+  color: var(--accent-olive);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+}
+
+.section-header__title {
+  color: var(--text-primary);
+}
+
+/* ---- Navigation ---- */
+.nav {
+  background: rgba(253, 251, 247, 0.85);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  padding: 1.25rem 0;
+}
+
+.nav.scrolled {
+  background: rgba(253, 251, 247, 0.95);
+  box-shadow: 0 1px 0 var(--border-light);
+}
+
+.nav__logo {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.06em;
+}
+
+.nav__links a {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  transition: color var(--transition-fast);
+}
+
+.nav__links a:hover {
+  color: var(--accent-olive);
+}
+
+.nav__links a::after {
+  background: var(--accent-olive);
+  height: 1px;
+}
+
+.nav__hamburger span {
+  background: var(--text-primary);
+}
+
+.nav .btn--primary {
+  background: var(--accent-olive);
+  color: #fff;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .nav__links {
+    background: var(--bg-primary);
+    border-left: 1px solid var(--border-light);
+  }
+}
+
+/* ============================================
+   HERO — Split Layout
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+  position: relative;
+}
+
+/* Soft diagonal panel */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background: var(--bg-secondary);
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 0;
+}
+
+/* Accent line on clip edge */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 37%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 5%,
+    rgba(92, 110, 63, 0.15) 30%,
+    rgba(92, 110, 63, 0.2) 50%,
+    rgba(92, 110, 63, 0.15) 70%,
+    transparent 95%
+  );
+  transform: skewX(-5deg);
+  z-index: 0;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__text {
+  padding: 2rem 0;
+}
+
+.hero__label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--accent-olive);
+  letter-spacing: 0.4em;
+  margin-bottom: 2rem;
+}
+
+.hero__title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 0.95;
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.02em;
+}
+
+.hero__subtitle {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.hero__location {
+  font-size: 0.65rem;
+  color: var(--accent-terracotta);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero__location::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--accent-terracotta);
+  opacity: 0.5;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  transition: all var(--transition-normal);
+  letter-spacing: 0.04em;
+}
+
+.btn--primary {
+  background: var(--accent-olive);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(92, 110, 63, 0.2);
+}
+
+.btn--primary:hover {
+  box-shadow: 0 4px 20px rgba(92, 110, 63, 0.3);
+  transform: translateY(-3px);
+}
+
+.btn--outline {
+  border-color: rgba(184, 105, 74, 0.35);
+  color: var(--accent-terracotta);
+  border-width: 1px;
+}
+
+.btn--outline:hover {
+  background: var(--accent-terracotta-light);
+  border-color: var(--accent-terracotta);
+  transform: translateY(-3px);
+}
+
+/* ---- Botanical Decoration ---- */
+.hero__decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.botanical {
+  position: relative;
+  width: 180px;
+  height: 360px;
+}
+
+.botanical__stem {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  width: 1.5px;
+  height: 84%;
+  background: linear-gradient(180deg, var(--accent-olive) 0%, rgba(92, 110, 63, 0.2) 100%);
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+
+.botanical__leaf {
+  position: absolute;
+  background: var(--accent-olive);
+  border-radius: 50% 0 50% 0;
+  opacity: 0.15;
+  transition: opacity var(--transition-slow);
+}
+
+.botanical:hover .botanical__leaf {
+  opacity: 0.25;
+}
+
+.botanical__leaf--1 { top: 12%; left: 50%; width: 44px; height: 20px; transform: rotate(-25deg); }
+.botanical__leaf--2 { top: 22%; right: 50%; width: 40px; height: 18px; transform: rotate(205deg); }
+.botanical__leaf--3 { top: 36%; left: 50%; width: 55px; height: 24px; transform: rotate(-18deg); }
+.botanical__leaf--4 { top: 48%; right: 50%; width: 50px; height: 22px; transform: rotate(198deg); }
+.botanical__leaf--5 { top: 62%; left: 50%; width: 38px; height: 17px; transform: rotate(-32deg); }
+.botanical__leaf--6 { top: 74%; right: 50%; width: 34px; height: 15px; transform: rotate(212deg); }
+
+.botanical__berry {
+  position: absolute;
+  background: var(--accent-terracotta);
+  border-radius: 50%;
+  opacity: 0.3;
+  transition: opacity var(--transition-slow);
+}
+
+.botanical:hover .botanical__berry {
+  opacity: 0.5;
+}
+
+.botanical__berry--1 { top: 5%; left: 46%; width: 8px; height: 8px; }
+.botanical__berry--2 { top: 2%; left: 53%; width: 7px; height: 7px; }
+.botanical__berry--3 { top: 8%; left: 51%; width: 6px; height: 6px; }
+
+@media (max-width: 767px) {
+  .hero::before, .hero::after { display: none; }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero__location {
+    justify-content: center;
+  }
+
+  .hero__location::before { display: none; }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__decoration {
+    display: none;
+  }
+}
+
+/* ============================================
+   DIVIDER
+   ============================================ */
+.divider__dot {
+  background: var(--accent-olive);
+  opacity: 0.4;
+  width: 4px;
+  height: 4px;
+}
+
+.divider__line {
+  background: var(--border);
+  width: 50px;
+  opacity: 0.5;
+}
+
+/* ============================================
+   BENVENUTI (Welcome)
+   ============================================ */
+.benvenuti {
+  background: var(--bg-primary);
+}
+
+.welcome-quote {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+/* Decorative quotation mark */
+.welcome-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Libre Baskerville', serif;
+  font-size: 4rem;
+  color: var(--accent-olive);
+  opacity: 0.1;
+  line-height: 1;
+}
+
+.welcome-quote p {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.welcome-quote cite {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: normal;
+  font-family: 'Nunito Sans', sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.welcome-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* ============================================
+   MENU — Editorial Style
+   ============================================ */
+.menu-section {
+  background: var(--bg-warm);
+  padding-bottom: 4rem;
+  position: relative;
+}
+
+/* Subtle side accent */
+.menu-section::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 3px;
+  height: 80%;
+  background: linear-gradient(180deg, transparent 0%, rgba(92, 110, 63, 0.15) 20%, rgba(92, 110, 63, 0.15) 80%, transparent 100%);
+}
+
+.menu-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-bottom: 3.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.menu-category {
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.menu-category__title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-olive);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-family: 'Nunito Sans', sans-serif;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--accent-olive);
+  display: inline-block;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.menu-list__item {
+  display: flex;
+  align-items: baseline;
+  padding: 0.7rem 0;
+  font-size: 0.95rem;
+  transition: color var(--transition-fast);
+}
+
+.menu-list__item:hover .menu-list__name {
+  color: var(--accent-olive);
+}
+
+.menu-list__name {
+  font-family: 'Libre Baskerville', serif;
+  color: var(--text-primary);
+  white-space: nowrap;
+  font-size: 0.95rem;
+  transition: color var(--transition-fast);
+}
+
+.menu-list__dots {
+  flex: 1;
+  margin: 0 0.75rem;
+  border-bottom: 1px dotted var(--border);
+  min-width: 30px;
+  position: relative;
+  top: -3px;
+}
+
+.menu-list__price {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.menu-note {
+  margin-top: 2.5rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================
+   GIARDINO (Garden)
+   ============================================ */
+.giardino {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.giardino__frame {
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  padding: 3.5rem 3rem;
+}
+
+/* Double frame — outer */
+.giardino__frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(92, 110, 63, 0.2);
+}
+
+/* Double frame — inner */
+.giardino__frame::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(92, 110, 63, 0.1);
+}
+
+/* Corner ornaments via extra elements would need JS/pseudo on inner divs,
+   but the double-line frame already communicates elegance */
+
+.giardino__inner {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.giardino__inner h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+
+.giardino__inner p {
+  color: var(--text-secondary);
+  line-height: 1.9;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.giardino__badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1rem;
+  background: var(--accent-olive-light);
+  border: 1px solid rgba(92, 110, 63, 0.15);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-olive);
+  letter-spacing: 0.03em;
+  transition: all var(--transition-normal);
+}
+
+.badge:hover {
+  background: rgba(92, 110, 63, 0.15);
+  border-color: rgba(92, 110, 63, 0.3);
+}
+
+.badge svg {
+  fill: var(--accent-olive);
+  opacity: 0.7;
+}
+
+/* ============================================
+   INFO SECTION
+   ============================================ */
+.info-section {
+  background: var(--bg-secondary);
+}
+
+.info-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  text-align: center;
+}
+
+.info-col__icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 1.25rem;
+}
+
+.info-col__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--accent-olive);
+  opacity: 0.6;
+}
+
+.info-col h3 {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.info-col p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.info-col__closed {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--accent-terracotta) !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.05em;
+}
+
+.info-col a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.75rem;
+  color: var(--accent-olive);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-fast);
+}
+
+.info-col a:hover {
+  color: var(--accent-terracotta);
+}
+
+.phone-link-garden {
+  display: block;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.15rem;
+  color: var(--accent-terracotta) !important;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.facebook-link {
+  display: block;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 767px) {
+  .info-columns {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-light);
+  padding: 3rem 0;
+}
+
+.footer__brand {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.04em;
+}
+
+.footer__tagline {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.footer__copy {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   BACK TO TOP
+   ============================================ */
+.back-to-top {
+  background: var(--accent-olive);
+  box-shadow: 0 2px 10px rgba(92, 110, 63, 0.2);
+}
+
+.back-to-top:hover {
+  background: var(--accent-terracotta);
+  box-shadow: 0 4px 15px rgba(184, 105, 74, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 2.6rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .giardino__frame {
+    padding: 2rem 1.5rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .menu-section::before {
+    display: none;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+/* ============================================
+   THE 1% — Texture + Ambient Life
+   ============================================ */
+
+/* Parchment grain texture */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Botanical gentle sway */
+.botanical {
+  animation: botanical-sway 8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes botanical-sway {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  75% { transform: rotate(-1deg); }
+}
+
+/* Menu items — olive dot appears on hover */
+.menu-list__item {
+  position: relative;
+  padding-left: 0;
+  transition: padding-left var(--transition-fast);
+}
+
+.menu-list__item::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent-olive);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.menu-list__item:hover {
+  padding-left: 6px;
+}
+
+.menu-list__item:hover::before {
+  opacity: 0.6;
+}
+
+/* Giardino frame — subtle shadow depth pulse */
+.giardino__frame {
+  transition: box-shadow var(--transition-slow);
+}
+
+.giardino__frame:hover {
+  box-shadow: 0 8px 40px rgba(92, 110, 63, 0.06);
+}
+
+/* Buttons — active press */
+.btn:active {
+  transform: translateY(0) scale(0.98);
+  transition: all 80ms ease;
+}
+
+/* Links — grow underline */
+.info-col a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width var(--transition-normal);
+}
+
+.info-col a {
+  position: relative;
+}
+
+.info-col a:hover::after {
+  width: 100%;
+}
+
+/* Section fade transitions */
+.menu-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(180deg, transparent, var(--bg-primary));
+  pointer-events: none;
+}
+
+.menu-section {
+  position: relative;
+}
+
+/* CTA button shimmer */
+.btn--primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  transform: rotate(25deg);
+  transition: left 0.6s var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.btn--primary:hover::after {
+  left: 120%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .botanical { animation: none; }
+  body::after { display: none; }
+}

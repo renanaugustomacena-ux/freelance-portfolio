@@ -1,0 +1,995 @@
+/* ============================================
+   SAMBENINI AUTO — "Strada Sicura"
+   Dark/Atmospheric Automotive Template
+   ============================================ */
+
+/* ---- Custom Properties ---- */
+:root {
+  --bg-primary: #0D0D12;
+  --bg-secondary: #16161E;
+  --bg-panel: #1E1E28;
+  --accent-headlight: #F0E060;
+  --accent-red: #E03040;
+  --accent-green: #30C060;
+  --accent-primary: #F0E060;
+  --text-primary: #E0E4EA;
+  --text-secondary: #6A7080;
+  --text-muted: #3A3E4A;
+  --border: #252530;
+  --glass-bg: rgba(30, 30, 40, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.04);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---- Base ---- */
+body {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+}
+
+::selection {
+  background: var(--accent-headlight);
+  color: var(--bg-primary);
+}
+
+/* ---- Film Grain Overlay ---- */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+/* ---- Navigation Overrides ---- */
+.nav {
+  background: transparent;
+}
+
+.nav.scrolled {
+  background: rgba(13, 13, 18, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.nav__logo {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.nav__logo span {
+  color: var(--accent-headlight);
+}
+
+.nav__links a {
+  color: var(--text-secondary);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  transition: color 0.3s var(--ease-out-expo);
+}
+
+.nav__links a:hover {
+  color: var(--text-primary);
+}
+
+.nav__links a::after {
+  background: var(--accent-headlight);
+}
+
+.nav__hamburger span {
+  background: var(--text-primary);
+}
+
+.nav__cta {
+  background: var(--accent-red);
+  color: #fff;
+  padding: 0.55rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.nav__cta:hover {
+  background: #c42838;
+  box-shadow: 0 0 20px rgba(224, 48, 64, 0.3);
+  transform: translateY(-1px);
+}
+
+.nav__cta::after {
+  display: none;
+}
+
+/* Mobile Nav Overrides */
+@media (max-width: 767px) {
+  .nav__links {
+    background: var(--bg-primary);
+    border-left: 1px solid var(--border);
+  }
+}
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* Road perspective vanishing point */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -30%) perspective(500px) rotateX(60deg);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 48px,
+      rgba(37, 37, 48, 0.5) 48px,
+      rgba(37, 37, 48, 0.5) 49px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 48px,
+      rgba(37, 37, 48, 0.3) 48px,
+      rgba(37, 37, 48, 0.3) 49px
+    );
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Center road dashes */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 200%;
+  transform: translate(-50%, -30%) perspective(500px) rotateX(60deg);
+  background: repeating-linear-gradient(
+    0deg,
+    var(--accent-headlight),
+    var(--accent-headlight) 30px,
+    transparent 30px,
+    transparent 60px
+  );
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Ambient glow at vanishing point */
+.hero__glow {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(240, 224, 96, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.hero__badge {
+  display: inline-block;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-headlight);
+  border: 1px solid rgba(240, 224, 96, 0.25);
+  padding: 0.4rem 1.2rem;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  background: rgba(240, 224, 96, 0.04);
+}
+
+.hero__title {
+  font-family: 'Teko', sans-serif;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: var(--text-primary);
+  text-shadow:
+    0 0 40px rgba(240, 224, 96, 0.15),
+    0 0 80px rgba(240, 224, 96, 0.08),
+    0 0 120px rgba(240, 224, 96, 0.04);
+  margin-bottom: 1.5rem;
+}
+
+.hero__tagline {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 300;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.02em;
+}
+
+.hero__actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ---- Buttons ---- */
+.btn--headlight {
+  background: var(--accent-headlight);
+  color: var(--bg-primary);
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--headlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s var(--ease-out-expo);
+}
+
+.btn--headlight:hover::before {
+  left: 120%;
+}
+
+.btn--headlight:hover {
+  background: #f5e870;
+  box-shadow: 0 0 30px rgba(240, 224, 96, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn--headlight:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 0 10px rgba(240, 224, 96, 0.15);
+}
+
+.btn--danger-outline {
+  background: transparent;
+  border: 2px solid var(--accent-red);
+  color: var(--accent-red);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--danger-outline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-red);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s var(--ease-out-expo);
+  z-index: -1;
+}
+
+.btn--danger-outline:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn--danger-outline:hover {
+  color: #fff;
+  border-color: var(--accent-red);
+  box-shadow: 0 0 20px rgba(224, 48, 64, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn--danger-outline:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ---- Section Styling ---- */
+.section--dark {
+  background: var(--bg-primary);
+}
+
+.section--darker {
+  background: var(--bg-secondary);
+}
+
+.section-header__label {
+  color: var(--accent-headlight);
+}
+
+.section-header__title {
+  color: var(--text-primary);
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.section-header__subtitle {
+  color: var(--text-secondary);
+}
+
+/* ---- Service Cards ---- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  background: var(--bg-panel);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  transition:
+    border-color 0.4s var(--ease-out-expo),
+    box-shadow 0.4s var(--ease-out-expo),
+    transform 0.3s var(--ease-out-expo);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: var(--accent-green);
+  border-radius: 0 2px 2px 0;
+  transition: height 0.4s var(--ease-out-expo);
+}
+
+.service-card:hover {
+  border-color: rgba(48, 192, 96, 0.2);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(48, 192, 96, 0.06);
+  transform: translateY(-3px);
+}
+
+.service-card:hover::before {
+  height: 60%;
+}
+
+.service-card__indicator {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  margin-top: 0.5rem;
+  box-shadow: 0 0 8px rgba(48, 192, 96, 0.4);
+  position: relative;
+}
+
+.service-card__indicator::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid rgba(48, 192, 96, 0.2);
+}
+
+.service-card__content {
+  flex: 1;
+}
+
+.service-card__title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.service-card__desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.service-card__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(240, 224, 96, 0.06);
+  border: 1px solid rgba(240, 224, 96, 0.1);
+  color: var(--accent-headlight);
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.service-card:hover .service-card__icon {
+  background: rgba(240, 224, 96, 0.1);
+  border-color: rgba(240, 224, 96, 0.2);
+  box-shadow: 0 0 15px rgba(240, 224, 96, 0.1);
+}
+
+.service-card__icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* ---- Timeline ---- */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--border) 5%,
+    var(--border) 95%,
+    transparent
+  );
+}
+
+.timeline__item {
+  position: relative;
+  padding-left: 60px;
+  padding-bottom: 3rem;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+/* Circle marker */
+.timeline__marker {
+  position: absolute;
+  left: 12px;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid var(--accent-headlight);
+  z-index: 1;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.timeline__marker::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--accent-headlight);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-out-expo);
+}
+
+.timeline__item:hover .timeline__marker::after {
+  opacity: 1;
+}
+
+.timeline__item:hover .timeline__marker {
+  box-shadow: 0 0 12px rgba(240, 224, 96, 0.3);
+}
+
+.timeline__year {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent-headlight);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+}
+
+.timeline__title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.timeline__text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+/* ---- Used Cars ---- */
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.car-card {
+  position: relative;
+  background: var(--bg-panel);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition:
+    border-color 0.5s var(--ease-out-expo),
+    box-shadow 0.5s var(--ease-out-expo),
+    transform 0.4s var(--ease-out-expo);
+}
+
+.car-card:hover {
+  border-color: rgba(240, 224, 96, 0.15);
+  box-shadow:
+    0 0 0 1px rgba(240, 224, 96, 0.06),
+    0 12px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+.car-card__image {
+  width: 100%;
+  height: 200px;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.car-card__image svg {
+  width: 48px;
+  height: 48px;
+  fill: var(--text-muted);
+  opacity: 0.5;
+}
+
+.car-card__body {
+  padding: 1.5rem;
+}
+
+.car-card__title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.car-card__specs {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.car-card__price {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent-headlight);
+  letter-spacing: 0.02em;
+}
+
+.car-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-card__btn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-headlight);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--ease-out-expo);
+}
+
+.car-card__btn:hover {
+  border-color: var(--accent-headlight);
+}
+
+/* ---- Contact Section ---- */
+.contact {
+  position: relative;
+}
+
+.contact__wrapper {
+  position: relative;
+  background: var(--bg-panel);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 3rem;
+  overflow: hidden;
+}
+
+/* Glowing border animation */
+.contact__wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 11px;
+  padding: 1px;
+  background: linear-gradient(
+    var(--glow-angle, 0deg),
+    transparent 30%,
+    rgba(240, 224, 96, 0.15) 50%,
+    transparent 70%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-glow 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes border-glow {
+  0%   { --glow-angle: 0deg; }
+  100% { --glow-angle: 360deg; }
+}
+
+@property --glow-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+}
+
+.contact__block-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.contact__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.contact__item a {
+  color: var(--text-primary);
+  transition: color 0.3s var(--ease-out-expo);
+}
+
+.contact__item a:hover {
+  color: var(--accent-headlight);
+}
+
+.contact__item svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  fill: var(--accent-headlight);
+  margin-top: 2px;
+}
+
+/* Hours with status dots */
+.hours-list {
+  list-style: none;
+}
+
+.hours-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.hours-list__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hours-list__dot--open {
+  background: var(--accent-green);
+  box-shadow: 0 0 6px rgba(48, 192, 96, 0.4);
+}
+
+.hours-list__dot--closed {
+  background: var(--accent-red);
+  box-shadow: 0 0 6px rgba(224, 48, 64, 0.3);
+}
+
+.hours-list__day {
+  min-width: 80px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ---- Footer Overrides ---- */
+.footer {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border);
+}
+
+.footer__text {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.footer__text a {
+  color: var(--text-secondary);
+  transition: color 0.3s var(--ease-out-expo);
+}
+
+.footer__text a:hover {
+  color: var(--accent-headlight);
+}
+
+/* ---- Back To Top Override ---- */
+.back-to-top {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--accent-headlight);
+}
+
+.back-to-top:hover {
+  background: var(--accent-headlight);
+  color: var(--bg-primary);
+  border-color: var(--accent-headlight);
+  box-shadow: 0 0 20px rgba(240, 224, 96, 0.2);
+}
+
+/* ---- Reveal Override for dark theme ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Focus Visible Override ---- */
+:focus-visible {
+  outline: 2px solid var(--accent-headlight);
+  outline-offset: 2px;
+}
+
+/* ---- Form Styles (Contact Form) ---- */
+.contact-form__group {
+  margin-bottom: 1.25rem;
+}
+
+.contact-form__group label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.contact-form__group input,
+.contact-form__group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  transition: border-color 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo);
+}
+
+.contact-form__group input:focus,
+.contact-form__group textarea:focus {
+  border-color: rgba(240, 224, 96, 0.3);
+  box-shadow: 0 0 0 3px rgba(240, 224, 96, 0.06);
+  outline: none;
+}
+
+.contact-form__group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form__group input.input--error,
+.contact-form__group textarea.input--error {
+  border-color: var(--accent-red);
+}
+
+.form-error {
+  display: block;
+  color: var(--accent-red);
+  font-size: 0.78rem;
+  margin-top: 0.3rem;
+}
+
+/* ---- Emergency Banner ---- */
+.emergency-strip {
+  background: var(--accent-red);
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.emergency-strip a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .hero__title {
+    font-size: clamp(2.8rem, 12vw, 4.5rem);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__wrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .timeline::before {
+    left: 14px;
+  }
+
+  .timeline__item {
+    padding-left: 48px;
+  }
+
+  .timeline__marker {
+    left: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__badge {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .service-card {
+    padding: 1.25rem;
+  }
+
+  .contact__wrapper {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero::before,
+  .hero::after {
+    animation: none;
+  }
+
+  .contact__wrapper::before {
+    animation: none;
+    background: linear-gradient(135deg, transparent 40%, rgba(240, 224, 96, 0.1) 50%, transparent 60%);
+  }
+
+  .btn--headlight::before,
+  .btn--danger-outline::before {
+    transition: none;
+  }
+}
