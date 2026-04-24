@@ -1,0 +1,125 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import TemplateGroup from '../components/templates/TemplateGroup.astro';
+import { templates } from '../data/templates';
+import { pageNav } from '../data/navigation';
+import { site } from '../data/site';
+---
+
+<PageLayout
+  title={`Templates — ${site.name}`}
+  description="Demo di siti web per attivita locali di Mozzecane, Verona. 13 aziende, fino a tre proposte di design ciascuna — costruite a mano."
+  navLinks={pageNav}
+>
+  <main class="section templates-page" style="padding-top: calc(var(--nav-height) + 3rem);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__label">Templates</span>
+        <h1 class="section-header__title">Demo per Clienti Locali</h1>
+        <p class="section-header__subtitle">13 attivita di Mozzecane senza sito web. Fino a tre proposte di design per ognuna, costruite a mano senza template o framework.</p>
+      </div>
+
+      {templates.map((template) => (
+        <TemplateGroup template={template} />
+      ))}
+
+      <div class="templates-cta reveal">
+        <h2 class="templates-cta__title">Vuoi qualcosa di simile?</h2>
+        <p class="templates-cta__body">Ti preparo una demo gratuita su misura per la tua attività — senza impegno.</p>
+        <a href="/freelance-portfolio/#contatti" class="btn btn--blue btn--large">Parliamo</a>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .templates-page {
+    background: var(--bg-primary);
+    min-height: 100vh;
+  }
+
+  .section-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-header__label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-header__subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  .templates-cta {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    background: var(--bg-panel);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  .templates-cta__title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .templates-cta__body {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .btn--large {
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+  }
+
+  .btn--blue {
+    background: var(--accent-blue);
+    color: var(--bg-primary);
+  }
+
+  .btn--blue:hover {
+    background: #6AA5E8;
+    box-shadow: var(--shadow-blue);
+    transform: translateY(-2px);
+  }
+</style>

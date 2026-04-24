@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RB Design di Roberto Bertolaso — Studio di interior design e arredamento contemporaneo a Mozzecane (VR). Progettazione d'interni, mobili su misura e ristrutturazioni.">
+  <meta name="theme-color" content="#0A0A0A">
+  <title>RB Design — Interior Design Contemporaneo | Mozzecane (VR)</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/utilities.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Vai al contenuto</a>
+
+  <!-- ======================== NAVIGATION ======================== -->
+  <nav class="nav" aria-label="Navigazione principale">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo" aria-label="RB Design — Torna alla home">
+        RB<span class="nav__logo-dot">.</span>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="#portfolio">Progetti</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#materiali">Materiali</a></li>
+        <li><a href="#showroom">Showroom</a></li>
+        <li><a href="#preventivo" class="nav__cta">Preventivo</a></li>
+      </ul>
+
+      <button class="nav__hamburger" aria-label="Apri menu di navigazione" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero" id="main-content">
+    <div class="hero__grid">
+      <div class="hero__content">
+        <span class="hero__label">Interior Design Studio</span>
+
+        <h1 class="hero__title">
+          Design<br>
+          <span class="hero__title-outline">senza</span><br>
+          compromessi.
+        </h1>
+
+        <p class="hero__text">
+          Progettiamo ambienti contemporanei che uniscono estetica e funzionalita. Dal concept alla consegna, ogni dettaglio conta.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#preventivo" class="btn btn--accent btn--large">Inizia il Progetto</a>
+          <a href="#portfolio" class="btn btn--ghost btn--large">Vedi i Lavori</a>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__shape hero__shape--1"></div>
+        <div class="hero__shape hero__shape--2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PORTFOLIO / PROGETTI ======================== -->
+  <section class="section section--black" id="portfolio">
+    <div class="container">
+      <header class="section-header section-header--centered reveal">
+        <span class="section-header__label">Portfolio</span>
+        <h2 class="section-header__title">Progetti Recenti</h2>
+        <p class="section-header__subtitle">
+          Spazi trasformati, identita progettate. Una selezione dei nostri interventi piu recenti.
+        </p>
+      </header>
+
+      <div class="portfolio__filters reveal" role="tablist" aria-label="Filtra progetti per ambiente">
+        <button class="portfolio__filter portfolio__filter--active" role="tab" aria-selected="true">Tutti</button>
+        <button class="portfolio__filter" role="tab" aria-selected="false">Soggiorno</button>
+        <button class="portfolio__filter" role="tab" aria-selected="false">Cucina</button>
+        <button class="portfolio__filter" role="tab" aria-selected="false">Camera</button>
+        <button class="portfolio__filter" role="tab" aria-selected="false">Bagno</button>
+        <button class="portfolio__filter" role="tab" aria-selected="false">Ufficio</button>
+      </div>
+
+      <div class="portfolio__grid">
+        <article class="portfolio__card portfolio__card--wide reveal reveal-delay-1">
+          <div class="portfolio__image" aria-label="Progetto soggiorno contemporaneo">
+            <span class="portfolio__tag">Soggiorno</span>
+          </div>
+          <div class="portfolio__card-body">
+            <h3 class="portfolio__card-title">Villa Residenziale Villafranca</h3>
+            <p class="portfolio__card-text">Living open space con parete attrezzata a tutta altezza e illuminazione architetturale integrata</p>
+          </div>
+        </article>
+
+        <article class="portfolio__card reveal reveal-delay-2">
+          <div class="portfolio__image" aria-label="Progetto cucina design">
+            <span class="portfolio__tag">Cucina</span>
+          </div>
+          <div class="portfolio__card-body">
+            <h3 class="portfolio__card-title">Attico Centro Storico Verona</h3>
+            <p class="portfolio__card-text">Cucina monoblocco con isola in Fenix e sistema a scomparsa</p>
+          </div>
+        </article>
+
+        <article class="portfolio__card reveal reveal-delay-3">
+          <div class="portfolio__image" aria-label="Progetto camera minimal">
+            <span class="portfolio__tag">Camera</span>
+          </div>
+          <div class="portfolio__card-body">
+            <h3 class="portfolio__card-title">Suite Padronale Lago di Garda</h3>
+            <p class="portfolio__card-text">Camera con boiserie retroilluminata e walk-in closet su misura</p>
+          </div>
+        </article>
+
+        <article class="portfolio__card portfolio__card--wide reveal reveal-delay-4">
+          <div class="portfolio__image" aria-label="Progetto bagno spa">
+            <span class="portfolio__tag">Bagno</span>
+          </div>
+          <div class="portfolio__card-body">
+            <h3 class="portfolio__card-title">Bagno Wellness Privato</h3>
+            <p class="portfolio__card-text">Ambiente wellness con doccia passante, vasca freestanding e rivestimento in gres effetto pietra</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SERVIZI ======================== -->
+  <section class="section section--dark" id="servizi">
+    <div class="container">
+      <header class="section-header section-header--centered reveal">
+        <span class="section-header__label">Servizi</span>
+        <h2 class="section-header__title">Il Metodo RB</h2>
+        <p class="section-header__subtitle">
+          Un approccio progettuale completo, dall'analisi dello spazio alla consegna chiavi in mano.
+        </p>
+      </header>
+
+      <div class="services-grid">
+        <article class="service-card reveal reveal-delay-1">
+          <span class="service-card__number" aria-hidden="true">01</span>
+          <h3 class="service-card__title">Progettazione d'Interni</h3>
+          <p class="service-card__desc">Render fotorealistici, planimetrie e moodboard. Visualizzi il progetto prima che diventi realta.</p>
+        </article>
+
+        <article class="service-card reveal reveal-delay-2">
+          <span class="service-card__number" aria-hidden="true">02</span>
+          <h3 class="service-card__title">Arredamento su Misura</h3>
+          <p class="service-card__desc">Pezzi unici realizzati da artigiani selezionati. Ogni mobile progettato sulle dimensioni esatte dei tuoi spazi.</p>
+        </article>
+
+        <article class="service-card reveal reveal-delay-3">
+          <span class="service-card__number" aria-hidden="true">03</span>
+          <h3 class="service-card__title">Consulenza Colore e Materiali</h3>
+          <p class="service-card__desc">Palette cromatiche personalizzate e abbinamento materiali per creare atmosfere coerenti e uniche.</p>
+        </article>
+
+        <article class="service-card reveal reveal-delay-1">
+          <span class="service-card__number" aria-hidden="true">04</span>
+          <h3 class="service-card__title">Ristrutturazione Chiavi in Mano</h3>
+          <p class="service-card__desc">Un solo interlocutore per impiantistica, finiture, arredi e styling. Dalla demolizione al trasloco.</p>
+        </article>
+
+        <article class="service-card reveal reveal-delay-2">
+          <span class="service-card__number" aria-hidden="true">05</span>
+          <h3 class="service-card__title">Cucine e Bagni</h3>
+          <p class="service-card__desc">Ambienti tecnici trasformati in spazi di design. Funzionalita estrema, estetica senza compromessi.</p>
+        </article>
+
+        <article class="service-card reveal reveal-delay-3">
+          <span class="service-card__number" aria-hidden="true">06</span>
+          <h3 class="service-card__title">Illuminazione d'Interni</h3>
+          <p class="service-card__desc">Lighting design architetturale: luce funzionale, d'accento e scenografica per ogni ambiente.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== MATERIALI ======================== -->
+  <section class="section section--black" id="materiali">
+    <div class="container">
+      <header class="section-header section-header--centered reveal">
+        <span class="section-header__label">Materiali</span>
+        <h2 class="section-header__title">Materia Prima</h2>
+        <p class="section-header__subtitle">
+          Selezioniamo solo materiali di primissima qualita. Ogni superficie racconta una storia.
+        </p>
+      </header>
+
+      <div class="materials-grid">
+        <div class="material-card reveal reveal-delay-1">
+          <div class="material-card__swatch material-card__swatch--wood" aria-hidden="true"></div>
+          <div class="material-card__body">
+            <h3 class="material-card__title">Legno Massello</h3>
+            <p class="material-card__text">Rovere, noce e frassino certificato FSC</p>
+          </div>
+        </div>
+
+        <div class="material-card reveal reveal-delay-2">
+          <div class="material-card__swatch material-card__swatch--marble" aria-hidden="true"></div>
+          <div class="material-card__body">
+            <h3 class="material-card__title">Marmo e Pietra</h3>
+            <p class="material-card__text">Calacatta, Marquina e pietre naturali selezionate</p>
+          </div>
+        </div>
+
+        <div class="material-card reveal reveal-delay-3">
+          <div class="material-card__swatch material-card__swatch--leather" aria-hidden="true"></div>
+          <div class="material-card__body">
+            <h3 class="material-card__title">Pelle e Tessuti</h3>
+            <p class="material-card__text">Pelle pieno fiore, velluti e lini di manifattura italiana</p>
+          </div>
+        </div>
+
+        <div class="material-card reveal reveal-delay-1">
+          <div class="material-card__swatch material-card__swatch--metal" aria-hidden="true"></div>
+          <div class="material-card__body">
+            <h3 class="material-card__title">Metalli e Ottone</h3>
+            <p class="material-card__text">Acciaio brunito, ottone satinato e ferro ossidato</p>
+          </div>
+        </div>
+
+        <div class="material-card reveal reveal-delay-2">
+          <div class="material-card__swatch material-card__swatch--ceramic" aria-hidden="true"></div>
+          <div class="material-card__body">
+            <h3 class="material-card__title">Gres Porcellanato</h3>
+            <p class="material-card__text">Grandi formati, superfici ultra-slim e finiture strutturate</p>
+          </div>
+        </div>
+
+        <div class="material-card reveal reveal-delay-3">
+          <div class="material-card__swatch material-card__swatch--glass" aria-hidden="true"></div>
+          <div class="material-card__body">
+            <h3 class="material-card__title">Vetro e Resina</h3>
+            <p class="material-card__text">Vetro fumé, resina cementizia e superfici continue</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== LO SHOWROOM ======================== -->
+  <section class="section section--dark" id="showroom">
+    <div class="container">
+      <header class="section-header reveal">
+        <span class="section-header__label">Lo Showroom</span>
+        <h2 class="section-header__title">Tocca con Mano</h2>
+        <p class="section-header__subtitle">
+          Oltre 400 mq di esposizione immersiva a Mozzecane. Ambienti completi, materiali da esplorare.
+        </p>
+      </header>
+
+      <div class="showroom__content reveal">
+        <div class="showroom__image" aria-label="Interno dello showroom RB Design"></div>
+        <div class="showroom__stats">
+          <div class="showroom__stat">
+            <span class="showroom__stat-number">400+</span>
+            <span class="showroom__stat-label">mq espositivi</span>
+          </div>
+          <div class="showroom__stat">
+            <span class="showroom__stat-number">6</span>
+            <span class="showroom__stat-label">Ambientazioni</span>
+          </div>
+          <div class="showroom__stat">
+            <span class="showroom__stat-number">200+</span>
+            <span class="showroom__stat-label">Campioni materiali</span>
+          </div>
+        </div>
+        <div class="showroom__info">
+          <p>Lo showroom e un laboratorio di idee dove tocchi i materiali, esplori gli abbinamenti e vivi gli ambienti. Lasciati guidare dal nostro team di progettisti.</p>
+          <p><strong>Consulenza gratuita</strong> su appuntamento.</p>
+          <p><strong>Orari:</strong> Mar - Sab 9:00 - 12:30 / 15:00 - 19:00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PREVENTIVO ======================== -->
+  <section class="section section--black" id="preventivo">
+    <div class="container">
+      <header class="section-header section-header--centered reveal">
+        <span class="section-header__label">Preventivo</span>
+        <h2 class="section-header__title">Parliamo del Tuo Progetto</h2>
+        <p class="section-header__subtitle">
+          Compila il form, ti ricontatteremo entro 24 ore con una proposta su misura.
+        </p>
+      </header>
+
+      <div class="quote-wrapper reveal">
+        <form class="quote-form" novalidate>
+          <div class="quote-form__row">
+            <div class="quote-form__group">
+              <label for="quote-name">Nome e Cognome</label>
+              <input type="text" id="quote-name" name="name" required autocomplete="name" placeholder="Il tuo nome">
+            </div>
+            <div class="quote-form__group">
+              <label for="quote-email">Email</label>
+              <input type="email" id="quote-email" name="email" required autocomplete="email" placeholder="la-tua@email.it">
+            </div>
+          </div>
+          <div class="quote-form__row">
+            <div class="quote-form__group">
+              <label for="quote-phone">Telefono</label>
+              <input type="tel" id="quote-phone" name="phone" autocomplete="tel" placeholder="+39 ...">
+            </div>
+            <div class="quote-form__group">
+              <label for="quote-type">Tipo di Progetto</label>
+              <select id="quote-type" name="type">
+                <option value="">Seleziona...</option>
+                <option value="interni">Progettazione d'interni</option>
+                <option value="arredamento">Arredamento su misura</option>
+                <option value="cucina">Cucina</option>
+                <option value="bagno">Bagno</option>
+                <option value="ristrutturazione">Ristrutturazione completa</option>
+                <option value="altro">Altro</option>
+              </select>
+            </div>
+          </div>
+          <div class="quote-form__group">
+            <label for="quote-message">Descrizione del Progetto</label>
+            <textarea id="quote-message" name="message" required rows="5" placeholder="Descrivi il tuo progetto: dimensioni, stile desiderato, budget indicativo..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--accent btn--large">Invia Richiesta</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CONTATTI ======================== -->
+  <section class="section section--dark contact" id="contatti">
+    <div class="container">
+      <header class="section-header section-header--centered reveal">
+        <span class="section-header__label">Contatti</span>
+        <h2 class="section-header__title">Dove Trovarci</h2>
+      </header>
+
+      <div class="info-grid reveal">
+        <div class="contact-block">
+          <h3 class="contact-block__title">Indirizzo</h3>
+          <address style="font-style:normal">
+            <p>Via C. Montanari 33</p>
+            <p>37060 Mozzecane (VR)</p>
+          </address>
+        </div>
+
+        <div class="contact-block">
+          <h3 class="contact-block__title">Telefono</h3>
+          <p><a href="tel:+390456340804" aria-label="Chiama: 045 634 0804">045 634 0804</a></p>
+        </div>
+
+        <div class="contact-block">
+          <h3 class="contact-block__title">Orari</h3>
+          <p><strong>Mar - Sab:</strong> 9:00 - 12:30 / 15:00 - 19:00</p>
+          <p><strong>Lun e Dom:</strong> Chiuso</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__brand">RB<span class="footer__brand-dot">.</span></p>
+        <p class="footer__text">&copy; 2026 RB Design di Roberto Bertolaso &mdash; P.IVA 02709430231</p>
+        <p class="footer__text">Via C. Montanari 33, 37060 Mozzecane (VR)</p>
+      </div>
+      <nav class="footer__links" aria-label="Link del footer">
+        <a href="#portfolio">Progetti</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#showroom">Showroom</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ======================== BACK TO TOP ======================== -->
+  <button class="back-to-top" aria-label="Torna in cima alla pagina">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <!-- Shared JS -->
+  <script src="../../shared/js/mobile-nav.js"></script>
+  <script src="../../shared/js/smooth-scroll.js"></script>
+  <script src="../../shared/js/reveal-on-scroll.js"></script>
+
+</body>
+</html>

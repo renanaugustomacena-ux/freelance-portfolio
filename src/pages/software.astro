@@ -1,0 +1,168 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { pageNav } from '../data/navigation';
+import { site } from '../data/site';
+---
+
+<PageLayout
+  title={`Software — ${site.name}`}
+  description="Software e strumenti in arrivo."
+  navLinks={pageNav}
+>
+  <main class="section software-page" style="padding-top: calc(var(--nav-height) + 3rem);">
+    <div class="container container--narrow">
+
+      <div class="software__header reveal">
+        <span class="section-header__label">Software</span>
+        <h1 class="software__title">In Arrivo</h1>
+        <p class="software__body">
+          Questa sezione è in costruzione. Presto troverai qui strumenti, utility e software che sviluppo per risolvere problemi reali.
+        </p>
+      </div>
+
+      <div class="software__snippet reveal reveal-delay-1">
+        <div class="code-snippet">
+          <div class="code-snippet__header">
+            <span class="code-snippet__dot code-snippet__dot--r" aria-hidden="true"></span>
+            <span class="code-snippet__dot code-snippet__dot--y" aria-hidden="true"></span>
+            <span class="code-snippet__dot code-snippet__dot--g" aria-hidden="true"></span>
+            <span class="code-snippet__file">coming_soon.py</span>
+          </div>
+          <pre class="code-snippet__body"><code><span class="cs-c"># Work in progress...</span>
+<span class="cs-s">class</span> <span class="cs-p">Software</span>:
+    <span class="cs-s">def</span> <span class="cs-p">__init__</span>(self):
+        self.status = <span class="cs-v">"building"</span>
+        self.eta = <span class="cs-v">"presto"</span>
+
+    <span class="cs-s">def</span> <span class="cs-p">launch</span>(self):
+        <span class="cs-s">return</span> <span class="cs-v">"Stay tuned."</span></code></pre>
+        </div>
+      </div>
+
+      <div class="software__back reveal reveal-delay-2">
+        <a href="/freelance-portfolio/" class="back-link">&larr; Torna alla Home</a>
+      </div>
+
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .software-page {
+    background: var(--bg-primary);
+    min-height: 100vh;
+  }
+
+  .software__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-header__label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .software__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .software__body {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .software__snippet {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .code-snippet {
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color 0.4s var(--ease-out-expo);
+  }
+
+  .code-snippet:hover {
+    border-color: rgba(78, 143, 224, 0.2);
+  }
+
+  .code-snippet__header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1rem;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .code-snippet__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .code-snippet__dot--r { background: #FF5F57; }
+  .code-snippet__dot--y { background: #FFBD2E; }
+  .code-snippet__dot--g { background: #28CA41; }
+
+  .code-snippet__file {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-left: 0.4rem;
+  }
+
+  .code-snippet__body {
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+  }
+
+  .code-snippet__body code {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    line-height: 1.8;
+    white-space: pre;
+    background: none;
+    padding: 0;
+    color: var(--text-secondary);
+  }
+
+  .cs-c { color: var(--text-muted); font-style: italic; }
+  .cs-s { color: var(--accent-blue); }
+  .cs-p { color: #A0B8D8; }
+  .cs-v { color: var(--accent-gold); }
+
+  .software__back {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .back-link {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.3s var(--ease-out-expo);
+  }
+
+  .back-link:hover {
+    color: var(--accent-gold);
+  }
+</style>

@@ -1,0 +1,157 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import FeaturedProject from '../components/projects/FeaturedProject.astro';
+import PrivateProject from '../components/projects/PrivateProject.astro';
+import ProjectCard from '../components/projects/ProjectCard.astro';
+import { featuredProjects, privateProjects } from '../data/projects';
+import { fetchGitHubRepos } from '../utils/github';
+import { pageNav } from '../data/navigation';
+import { site } from '../data/site';
+
+const repos = await fetchGitHubRepos();
+---
+
+<PageLayout
+  title={`Progetti — ${site.name}`}
+  description="Progetti personali e repository GitHub di Renan Augusto Macena."
+  navLinks={pageNav}
+>
+  <main class="section projects-page" style="padding-top: calc(var(--nav-height) + 3rem);">
+    <div class="container">
+
+      <!-- Featured -->
+      <div class="section-header reveal">
+        <span class="section-header__label">Progetti</span>
+        <h1 class="section-header__title">Dal codice che scrivo per me</h1>
+        <p class="section-header__subtitle">Applicazioni, giochi e strumenti che costruisco nel tempo libero.</p>
+      </div>
+
+      <div class="projects__featured">
+        {featuredProjects.map((project, i) => (
+          <FeaturedProject project={project} class:list={['reveal', i > 0 && `reveal-delay-${i}`]} />
+        ))}
+      </div>
+
+      <!-- Private -->
+      <div class="projects__section reveal">
+        <h2 class="projects__section-title">Progetti Privati</h2>
+        <div class="projects__private">
+          {privateProjects.map((project) => (
+            <PrivateProject project={project} />
+          ))}
+        </div>
+      </div>
+
+      <!-- GitHub Repos -->
+      {repos.length > 0 && (
+        <div class="projects__section reveal">
+          <h2 class="projects__section-title">GitHub</h2>
+          <div class="projects__repos">
+            {repos.map((repo) => (
+              <ProjectCard repo={repo} />
+            ))}
+          </div>
+        </div>
+      )}
+
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .projects-page {
+    background: var(--bg-primary);
+    min-height: 100vh;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-header__label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-header__subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  .projects__featured {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .projects__section {
+    margin-bottom: 3rem;
+  }
+
+  .projects__section-title {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .projects__private {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .projects__repos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    .projects__repos {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .projects__private {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .projects__repos {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .projects__private {
+      grid-template-columns: 1fr;
+    }
+
+    .projects__repos {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

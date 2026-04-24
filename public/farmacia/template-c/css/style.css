@@ -1,0 +1,946 @@
+/* ============================================
+   PUNTO SALUTE — Farmacia Giovannini
+   Template C: Dark · Premium · Navy/Gold
+   Elegant serif headings, luxury pharmacy feel
+   ============================================ */
+
+/* ---- Custom Properties ---- */
+:root {
+  --bg-primary: #0C1220;
+  --bg-secondary: #131B2E;
+  --bg-panel: #1A2438;
+  --accent-primary: #C9A84C;
+  --accent-light: #D4B85C;
+  --accent-pale: rgba(201, 168, 76, 0.08);
+  --accent-glow: rgba(201, 168, 76, 0.15);
+  --text-primary: #E8E2D4;
+  --text-secondary: #A0A8B8;
+  --text-muted: #6B7589;
+  --border: #2A3448;
+  --border-light: rgba(201, 168, 76, 0.12);
+
+  --glass-bg: rgba(26, 36, 56, 0.65);
+  --glass-border: rgba(201, 168, 76, 0.08);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.4);
+  --shadow-gold: 0 4px 20px rgba(201, 168, 76, 0.15);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 250ms var(--ease-out-expo);
+  --transition-normal: 400ms var(--ease-out-expo);
+  --transition-slow: 600ms var(--ease-out-expo);
+}
+
+/* ---- Base ---- */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-weight: 700;
+}
+
+::selection {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+/* ---- Film Grain Overlay ---- */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+/* ---- Skip Link ---- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border-radius: 0 0 4px 4px;
+  z-index: 10000;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ---- Focus Visible ---- */
+*:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav {
+  background: transparent;
+}
+
+.nav.scrolled {
+  background: rgba(12, 18, 32, 0.92);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav__logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.nav__logo-icon {
+  color: var(--accent-primary);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.nav__links a {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: color var(--transition-fast);
+}
+
+.nav__links a:hover {
+  color: var(--accent-primary);
+}
+
+.nav__links a::after {
+  background: var(--accent-primary);
+}
+
+.nav__hamburger span {
+  background: var(--text-primary);
+}
+
+.nav .btn--primary {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  font-weight: 600;
+}
+
+.nav .btn--primary:hover {
+  background: var(--accent-light);
+  box-shadow: var(--shadow-gold);
+}
+
+.nav .btn--primary::after {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .nav__links {
+    background: var(--bg-primary);
+    border-left: 1px solid var(--border);
+  }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-primary);
+  padding: 8rem 0 5rem;
+  overflow: hidden;
+}
+
+.hero__gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 70% 30%, rgba(201, 168, 76, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 20% 80%, rgba(42, 52, 72, 0.4) 0%, transparent 60%),
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  pointer-events: none;
+  animation: heroShift 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroShift {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+
+.hero__glow {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  animation: glowPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  background: var(--accent-pale);
+  color: var(--accent-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: 1px solid var(--border-light);
+  margin-bottom: 2rem;
+}
+
+.hero__title {
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  text-shadow: 0 0 60px rgba(201, 168, 76, 0.08);
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 560px;
+  font-weight: 300;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  transition: all var(--transition-normal);
+}
+
+.btn--primary {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(201, 168, 76, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s var(--ease-out-expo);
+}
+
+.btn--primary:hover::before {
+  left: 120%;
+}
+
+.btn--primary:hover {
+  background: var(--accent-light);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.btn--outline:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--accent-pale);
+}
+
+/* ============================================
+   SECTION HEADER OVERRIDES
+   ============================================ */
+.section-header__label {
+  color: var(--accent-primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.section-header__title {
+  color: var(--text-primary);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.section-header__subtitle {
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   SERVIZI
+   ============================================ */
+.servizi {
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.servizi__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.servizi__card {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gold gradient border on hover */
+.servizi__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.servizi__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-light);
+  background: rgba(26, 36, 56, 0.8);
+}
+
+.servizi__card:hover::before {
+  opacity: 1;
+}
+
+.servizi__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--accent-pale);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--accent-primary);
+  transition: all var(--transition-fast);
+}
+
+.servizi__card:hover .servizi__icon {
+  background: rgba(201, 168, 76, 0.12);
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.1);
+}
+
+.servizi__card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.servizi__card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  .servizi__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .servizi__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   ORARI & TURNI DI GUARDIA
+   ============================================ */
+.orari {
+  background: var(--bg-primary);
+}
+
+.orari__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.orari__table {
+  margin-top: 2rem;
+}
+
+.orari__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.orari__day {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.orari__time {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.orari__row--closed .orari__time {
+  color: #E05555;
+  font-weight: 600;
+}
+
+/* Turni di Guardia Panel — Glassmorphism */
+.orari__guardia-panel {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gold gradient border top */
+.orari__guardia-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-light), var(--accent-primary));
+}
+
+.orari__guardia-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  color: var(--accent-primary);
+}
+
+.orari__guardia-header h3 {
+  font-size: 1.2rem;
+  color: var(--accent-primary);
+}
+
+.orari__guardia-panel > p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.orari__guardia-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.orari__guardia-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.orari__guardia-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  opacity: 0.6;
+}
+
+.orari__guardia-panel .btn--outline {
+  border-color: var(--border-light);
+  color: var(--accent-primary);
+}
+
+.orari__guardia-panel .btn--outline:hover {
+  background: var(--accent-pale);
+  border-color: var(--accent-primary);
+}
+
+@media (max-width: 767px) {
+  .orari__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ============================================
+   REPARTI — Browsable Grid
+   ============================================ */
+.reparti {
+  background: var(--bg-secondary);
+}
+
+.reparti__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.reparti__item {
+  text-align: left;
+  padding: 2rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all var(--transition-normal);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Gold gradient bottom border on hover */
+.reparti__item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.reparti__item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-light);
+}
+
+.reparti__item:hover::after {
+  opacity: 1;
+}
+
+.reparti__num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  opacity: 0.12;
+  display: block;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+  transition: opacity var(--transition-fast);
+}
+
+.reparti__item:hover .reparti__num {
+  opacity: 0.25;
+}
+
+.reparti__item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.reparti__item p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  .reparti__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .reparti__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   TEAM
+   ============================================ */
+.team {
+  background: var(--bg-primary);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.team__card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top gold line */
+.team__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+  opacity: 0.4;
+}
+
+.team__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-light);
+}
+
+.team__avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--accent-pale);
+  color: var(--accent-primary);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  border: 2px solid var(--border-light);
+  transition: all var(--transition-fast);
+}
+
+.team__card:hover .team__avatar {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
+}
+
+.team__card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.team__role {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.team__card p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .team__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq {
+  background: var(--bg-secondary);
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq__item {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.faq__item[open] {
+  border-color: var(--border-light);
+}
+
+.faq__question {
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question::after {
+  content: '+';
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--accent-primary);
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq__item[open] .faq__question::after {
+  transform: rotate(45deg);
+}
+
+.faq__item[open] .faq__question {
+  color: var(--accent-primary);
+}
+
+.faq__answer {
+  padding: 0 1.5rem 1.25rem;
+}
+
+.faq__answer p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   CONTATTI
+   ============================================ */
+.contatti {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* Subtle top glow */
+.contatti::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 200px;
+  background: radial-gradient(ellipse, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.info-grid__icon {
+  fill: var(--accent-primary);
+}
+
+.info-grid__title {
+  color: var(--text-primary);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+}
+
+.info-grid__text {
+  color: var(--text-secondary);
+}
+
+.info-grid__text a {
+  color: var(--accent-primary);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.info-grid__text a:hover {
+  color: var(--accent-light);
+}
+
+.contatti__cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+}
+
+.footer__text {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   BACK TO TOP
+   ============================================ */
+.back-to-top {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  box-shadow: 0 2px 12px rgba(201, 168, 76, 0.25);
+}
+
+.back-to-top:hover {
+  background: var(--accent-light);
+  box-shadow: var(--shadow-gold);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 7rem 0 4rem;
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .contatti__cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contatti__cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero__gradient,
+  .hero__glow {
+    animation: none;
+  }
+
+  .btn--primary::before {
+    display: none;
+  }
+
+  .servizi__card,
+  .reparti__item,
+  .team__card {
+    transition: none;
+  }
+}

@@ -1,0 +1,52 @@
+---
+interface Props {
+  variant: 'live' | 'collab' | 'wip' | 'private';
+}
+
+const { variant } = Astro.props;
+---
+
+<span class:list={['badge', `badge--${variant}`]}>
+  <slot />
+</span>
+
+<style>
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2em 0.6em;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .badge--live {
+    background: rgba(48, 192, 96, 0.12);
+    color: #30C060;
+    border: 1px solid rgba(48, 192, 96, 0.25);
+  }
+
+  .badge--collab {
+    background: var(--accent-gold-dim);
+    color: var(--accent-gold);
+    border: 1px solid rgba(232, 160, 64, 0.25);
+  }
+
+  .badge--wip {
+    background: var(--accent-blue-dim);
+    color: var(--accent-blue);
+    border: 1px solid rgba(78, 143, 224, 0.25);
+  }
+
+  .badge--private {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+</style>

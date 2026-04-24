@@ -1,0 +1,724 @@
+/* ============================================
+   FARMACIA MODERNA — Farmacia Giovannini
+   Template A: Light · Clean · Swiss Typography
+   ============================================ */
+
+:root {
+  --bg-primary: #FAFCFA;
+  --bg-secondary: #F0F5F0;
+  --bg-tertiary: #E8EFE8;
+  --bg-panel: #FFFFFF;
+  --accent-green: #2D8C4E;
+  --accent-green-light: #3BA566;
+  --accent-green-pale: rgba(45, 140, 78, 0.08);
+  --accent-mint: #E8F5EC;
+  --text-primary: #1A2E1A;
+  --text-secondary: #4A6B4A;
+  --text-muted: #7A9A7A;
+  --border: #D0E0D0;
+  --border-light: #E0EDE0;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 250ms var(--ease-out-expo);
+  --transition-normal: 400ms var(--ease-out-expo);
+
+  --accent-primary: var(--accent-green);
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+/* ---- Skip Link ---- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent-green);
+  color: #fff;
+  border-radius: 0 0 4px 4px;
+  z-index: 10000;
+  font-size: 0.88rem;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ---- Navigation ---- */
+.nav {
+  background: rgba(250, 252, 250, 0.9);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.nav.scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.nav__logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav__logo-cross {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: var(--accent-green);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.nav__links a {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.nav__links a:hover {
+  color: var(--accent-green);
+}
+
+.nav__links a::after {
+  background: var(--accent-green);
+}
+
+.nav__hamburger span {
+  background: var(--text-primary);
+}
+
+@media (max-width: 767px) {
+  .nav__links {
+    background: var(--bg-primary);
+    border-left: 1px solid var(--border);
+  }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-primary);
+  padding: 8rem 0 5rem;
+  overflow: hidden;
+}
+
+.hero__pattern {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, var(--accent-green-pale) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(45, 140, 78, 0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.hero__pattern::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.hero__pattern::after {
+  content: '';
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  width: 300px;
+  height: 300px;
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  background: var(--accent-mint);
+  color: var(--accent-green);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: 100px;
+  border: 1px solid rgba(45, 140, 78, 0.15);
+  margin-bottom: 2rem;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+  font-weight: 400;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  transition: all var(--transition-normal);
+}
+
+.btn--primary {
+  background: var(--accent-green);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(45, 140, 78, 0.25);
+}
+
+.btn--primary:hover {
+  background: var(--accent-green-light);
+  box-shadow: 0 4px 20px rgba(45, 140, 78, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.btn--outline:hover {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+  background: var(--accent-green-pale);
+}
+
+/* ============================================
+   SERVIZI
+   ============================================ */
+.servizi {
+  background: var(--bg-secondary);
+}
+
+.section-header__label {
+  color: var(--accent-green);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.section-header__title {
+  color: var(--text-primary);
+}
+
+.section-header__subtitle {
+  color: var(--text-secondary);
+}
+
+.servizi__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.servizi__card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.servizi__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(45, 140, 78, 0.2);
+}
+
+.servizi__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-green);
+  border-radius: 8px 8px 0 0;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.servizi__card:hover::before {
+  opacity: 1;
+}
+
+.servizi__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--accent-mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--accent-green);
+}
+
+.servizi__card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.servizi__card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  .servizi__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .servizi__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   ORARI
+   ============================================ */
+.orari {
+  background: var(--bg-primary);
+}
+
+.orari__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.orari__table {
+  margin-top: 2rem;
+}
+
+.orari__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.orari__day {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.orari__time {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.orari__row--closed .orari__time {
+  color: #C0392B;
+  font-weight: 600;
+}
+
+.orari__turni {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  background: var(--accent-mint);
+  border-radius: 8px;
+  border: 1px solid rgba(45, 140, 78, 0.12);
+}
+
+.orari__turni-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--accent-green);
+  margin-bottom: 0.5rem;
+}
+
+.orari__turni p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.orari__map-placeholder {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  min-height: 280px;
+  justify-content: center;
+}
+
+.orari__map-placeholder svg {
+  fill: var(--accent-green);
+  opacity: 0.3;
+}
+
+.orari__map-placeholder strong {
+  font-size: 1rem;
+}
+
+.orari__map-placeholder span {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 767px) {
+  .orari__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ============================================
+   REPARTI
+   ============================================ */
+.reparti {
+  background: var(--bg-secondary);
+}
+
+.reparti__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.reparti__item {
+  padding: 2rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.reparti__item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.reparti__num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  opacity: 0.15;
+  display: block;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.reparti__item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.reparti__item p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  .reparti__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .reparti__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   TEAM
+   ============================================ */
+.team {
+  background: var(--bg-primary);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.team__card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  transition: all var(--transition-normal);
+}
+
+.team__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.team__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent-mint);
+  color: var(--accent-green);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  border: 2px solid rgba(45, 140, 78, 0.15);
+}
+
+.team__card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.team__role {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--accent-green);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.team__card p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .team__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq {
+  background: var(--bg-secondary);
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq__item {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.faq__item[open] {
+  border-color: rgba(45, 140, 78, 0.3);
+}
+
+.faq__question {
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  transition: color var(--transition-fast);
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question::after {
+  content: '+';
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--accent-green);
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq__item[open] .faq__question::after {
+  transform: rotate(45deg);
+}
+
+.faq__item[open] .faq__question {
+  color: var(--accent-green);
+}
+
+.faq__answer {
+  padding: 0 1.5rem 1.25rem;
+}
+
+.faq__answer p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   CTA
+   ============================================ */
+.cta-section {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.cta__cross {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  opacity: 0.12;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.cta__title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.cta__text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+}
+
+.footer__text {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   BACK TO TOP
+   ============================================ */
+.back-to-top {
+  background: var(--accent-green);
+  box-shadow: 0 2px 12px rgba(45, 140, 78, 0.3);
+}
+
+.back-to-top:hover {
+  background: var(--accent-green-light);
+  box-shadow: 0 4px 20px rgba(45, 140, 78, 0.4);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 7rem 0 4rem;
+  }
+
+  .hero__title {
+    font-size: 2.2rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}

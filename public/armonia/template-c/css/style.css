@@ -1,0 +1,878 @@
+/* ============================================
+   BELLEZZA NATURALE — Centro Benessere Armonia
+   Template C: Warm · Organic · Botanical Green
+   ============================================ */
+
+:root {
+  --bg-primary: #FAF5EF;
+  --bg-secondary: #F3EBE1;
+  --bg-tertiary: #EDE3D6;
+  --bg-panel: #FFFFFF;
+  --accent-botanical: #6B8F5E;
+  --accent-botanical-light: #82A874;
+  --accent-botanical-pale: rgba(107, 143, 94, 0.08);
+  --accent-botanical-warm: rgba(107, 143, 94, 0.12);
+  --accent-warm: #C4956A;
+  --accent-cream: #F3EBE1;
+  --text-primary: #3A3228;
+  --text-secondary: #6B5E52;
+  --text-muted: #9A8D82;
+  --border: #E2D8CC;
+  --border-light: #EDE3D6;
+
+  --shadow-sm: 0 1px 4px rgba(58, 50, 40, 0.06);
+  --shadow-md: 0 4px 20px rgba(58, 50, 40, 0.08);
+  --shadow-lg: 0 8px 40px rgba(58, 50, 40, 0.1);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 250ms var(--ease-out-expo);
+  --transition-normal: 400ms var(--ease-out-expo);
+
+  --accent-primary: var(--accent-botanical);
+}
+
+body {
+  font-family: 'Nunito', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Nunito', -apple-system, sans-serif;
+  font-weight: 700;
+}
+
+/* ---- Script accent font ---- */
+.hero__accent,
+.prenota__accent {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  color: var(--accent-botanical);
+}
+
+/* ---- Skip Link ---- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent-botanical);
+  color: #fff;
+  border-radius: 0 0 6px 6px;
+  z-index: 10000;
+  font-size: 0.88rem;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav {
+  background: rgba(250, 245, 239, 0.92);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.nav.scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.nav__logo {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Leaf icon mark */
+.nav__logo-leaf {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.nav__logo-leaf::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-botanical);
+  border-radius: 50% 0 50% 0;
+  transform: rotate(-15deg);
+  opacity: 0.85;
+}
+
+.nav__logo-leaf::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  width: 12px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  transform: rotate(-15deg);
+}
+
+.nav__links a {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-fast);
+}
+
+.nav__links a:hover {
+  color: var(--accent-botanical);
+}
+
+.nav__links a::after {
+  background: var(--accent-botanical);
+}
+
+.nav__hamburger span {
+  background: var(--text-primary);
+}
+
+@media (max-width: 767px) {
+  .nav__links {
+    background: var(--bg-primary);
+    border-left: 1px solid var(--border);
+  }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-primary);
+  padding: 8rem 0 5rem;
+  overflow: hidden;
+}
+
+/* Botanical decorative background */
+.hero__botanical {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(107, 143, 94, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 85%, rgba(196, 149, 106, 0.06) 0%, transparent 45%);
+}
+
+/* Leaf-shaped CSS pattern */
+.hero__botanical::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  right: 6%;
+  width: 180px;
+  height: 180px;
+  border-radius: 50% 0 50% 0;
+  border: 1px solid rgba(107, 143, 94, 0.12);
+  transform: rotate(-30deg);
+  opacity: 0.6;
+}
+
+.hero__botanical::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 18%;
+  width: 120px;
+  height: 120px;
+  border-radius: 0 50% 0 50%;
+  border: 1px solid rgba(107, 143, 94, 0.1);
+  transform: rotate(-15deg);
+  opacity: 0.4;
+}
+
+/* Petal accent */
+.hero__petal {
+  position: absolute;
+  top: 30%;
+  right: 12%;
+  width: 60px;
+  height: 80px;
+  border-radius: 50% 50% 50% 0;
+  background: rgba(196, 149, 106, 0.06);
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+
+.hero__petal::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 60px;
+  width: 45px;
+  height: 60px;
+  border-radius: 50% 50% 0 50%;
+  background: rgba(107, 143, 94, 0.05);
+  transform: rotate(-10deg);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.hero__label {
+  display: inline-block;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-botanical);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.18;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.hero__subtitle {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+  font-weight: 400;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  border-radius: 100px;
+  transition: all var(--transition-normal);
+}
+
+.btn--primary {
+  background: var(--accent-botanical);
+  color: #fff;
+  box-shadow: 0 2px 16px rgba(107, 143, 94, 0.25);
+}
+
+.btn--primary:hover {
+  background: var(--accent-botanical-light);
+  box-shadow: 0 4px 24px rgba(107, 143, 94, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  border-color: var(--border);
+  color: var(--text-primary);
+  border-radius: 100px;
+}
+
+.btn--outline:hover {
+  border-color: var(--accent-botanical);
+  color: var(--accent-botanical);
+  background: var(--accent-botanical-pale);
+}
+
+/* ============================================
+   TRATTAMENTI
+   ============================================ */
+.trattamenti {
+  background: var(--bg-secondary);
+}
+
+.section-header__label {
+  color: var(--accent-botanical);
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.section-header__title {
+  color: var(--text-primary);
+}
+
+.section-header__subtitle {
+  color: var(--text-secondary);
+}
+
+.trattamenti__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.trattamenti__card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all var(--transition-normal);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle botanical corner motif */
+.trattamenti__card::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% 0 50% 0;
+  background: rgba(107, 143, 94, 0.04);
+  transform: rotate(-20deg);
+  transition: all var(--transition-normal);
+}
+
+.trattamenti__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(107, 143, 94, 0.2);
+}
+
+.trattamenti__card:hover::after {
+  background: rgba(107, 143, 94, 0.08);
+  width: 50px;
+  height: 50px;
+}
+
+.trattamenti__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-botanical-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: var(--accent-botanical);
+  border: 1px solid rgba(107, 143, 94, 0.12);
+  transition: all var(--transition-normal);
+}
+
+.trattamenti__card:hover .trattamenti__icon {
+  background: rgba(107, 143, 94, 0.12);
+  transform: scale(1.05);
+}
+
+.trattamenti__card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.trattamenti__card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  .trattamenti__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .trattamenti__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   LISTINO PREZZI
+   ============================================ */
+.listino {
+  background: var(--bg-primary);
+}
+
+.listino__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.listino__card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listino__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(107, 143, 94, 0.25);
+}
+
+.listino__header {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.listino__duration {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.9rem;
+  background: var(--accent-botanical-pale);
+  color: var(--accent-botanical);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(107, 143, 94, 0.1);
+}
+
+.listino__card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.listino__card p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.listino__price {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-botanical);
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .listino__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .listino__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .listino__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   CHI SIAMO
+   ============================================ */
+.chi-siamo {
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Botanical pattern in background */
+.chi-siamo::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -3%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50% 0 50% 0;
+  border: 1px solid rgba(107, 143, 94, 0.08);
+  transform: rotate(-25deg);
+  pointer-events: none;
+}
+
+.chi-siamo__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.chi-siamo__text p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.chi-siamo__text .btn {
+  margin-top: 1rem;
+}
+
+.chi-siamo__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.chi-siamo__stat {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  transition: all var(--transition-normal);
+}
+
+.chi-siamo__stat:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.chi-siamo__stat-num {
+  display: block;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--accent-botanical);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.chi-siamo__stat-label {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .chi-siamo__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .chi-siamo__stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .chi-siamo__stat {
+    flex: 1;
+    min-width: 140px;
+  }
+}
+
+/* ============================================
+   GALLERY
+   ============================================ */
+.gallery {
+  background: var(--bg-primary);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  gap: 1rem;
+}
+
+.gallery__item--tall {
+  grid-row: span 2;
+}
+
+.gallery__item--wide {
+  grid-column: span 2;
+}
+
+.gallery__placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent-cream) 0%, var(--bg-tertiary) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  transition: all var(--transition-normal);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Botanical dot pattern overlay */
+.gallery__placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(107, 143, 94, 0.06) 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.gallery__placeholder:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(107, 143, 94, 0.2);
+}
+
+.gallery__placeholder:hover::before {
+  opacity: 1;
+}
+
+.gallery__placeholder span {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+}
+
+.gallery__placeholder small {
+  font-family: 'Dancing Script', cursive;
+  font-size: 0.9rem;
+  color: var(--accent-botanical);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .gallery__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 180px;
+  }
+
+  .gallery__item--tall {
+    grid-row: span 1;
+  }
+
+  .gallery__item--wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery__grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+
+  .gallery__item--wide {
+    grid-column: span 1;
+  }
+}
+
+/* ============================================
+   PRENOTA (CTA)
+   ============================================ */
+.prenota {
+  background: var(--bg-secondary);
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+/* Botanical decorative background */
+.prenota__botanical {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 140px;
+  height: 140px;
+  border-radius: 50% 0 50% 0;
+  border: 1px solid rgba(107, 143, 94, 0.1);
+  transform: translate(0, -50%) rotate(-20deg);
+  pointer-events: none;
+}
+
+.prenota__botanical::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -40px;
+  width: 90px;
+  height: 90px;
+  border-radius: 0 50% 0 50%;
+  border: 1px solid rgba(107, 143, 94, 0.08);
+  transform: rotate(10deg);
+}
+
+.prenota__botanical::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50% 0 50% 0;
+  background: rgba(107, 143, 94, 0.04);
+  transform: rotate(-10deg);
+}
+
+.prenota__title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.prenota__text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.prenota__phone {
+  margin-top: 1.5rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.prenota__phone a {
+  color: var(--accent-botanical);
+  font-weight: 700;
+  transition: opacity 0.3s;
+}
+
+.prenota__phone a:hover {
+  opacity: 0.7;
+}
+
+/* ============================================
+   CONTATTI
+   ============================================ */
+.contatti {
+  background: var(--bg-primary);
+}
+
+.info-grid__icon {
+  fill: var(--accent-botanical);
+}
+
+.info-grid__title {
+  color: var(--text-primary);
+}
+
+.info-grid__text {
+  color: var(--text-secondary);
+}
+
+.info-grid__text a {
+  color: var(--accent-botanical);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+}
+
+.footer__text {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   BACK TO TOP
+   ============================================ */
+.back-to-top {
+  background: var(--accent-botanical);
+  box-shadow: 0 2px 12px rgba(107, 143, 94, 0.3);
+  border-radius: 50%;
+}
+
+.back-to-top:hover {
+  background: var(--accent-botanical-light);
+  box-shadow: 0 4px 20px rgba(107, 143, 94, 0.4);
+}
+
+/* ============================================
+   SECTION SPACING
+   ============================================ */
+.section {
+  padding: 5rem 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 7rem 0 4rem;
+  }
+
+  .hero__title {
+    font-size: 2.2rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

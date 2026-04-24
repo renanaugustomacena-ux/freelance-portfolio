@@ -1,0 +1,83 @@
+---
+const props = [
+  {
+    icon: '&#9997;',
+    title: 'Artigianale',
+    desc: 'Ogni sito è costruito a mano, riga per riga. Niente template, niente copia-incolla. Design unico che rispecchia la tua attività.',
+  },
+  {
+    icon: '&#9889;',
+    title: 'Veloce & Sicuro',
+    desc: 'Zero framework, zero dipendenze pesanti. Pagine veloci, leggere e sicure — il tuo sito si carica in un lampo.',
+  },
+  {
+    icon: '&#128270;',
+    title: 'Ottimizzato per Google',
+    desc: 'SEO locale, markup semantico, performance al top. I tuoi clienti ti trovano quando cercano su Google.',
+  },
+];
+---
+
+<section class="section value-prop">
+  <div class="container">
+    <div class="value-prop__grid">
+      {props.map((prop, i) => (
+        <div class:list={['value-prop__item', 'reveal', i > 0 && `reveal-delay-${i}`]}>
+          <span class="value-prop__icon" aria-hidden="true" set:html={prop.icon} />
+          <h3 class="value-prop__title">{prop.title}</h3>
+          <p class="value-prop__desc">{prop.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .value-prop {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .value-prop__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .value-prop__item {
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .value-prop__icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .value-prop__title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .value-prop__desc {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 767px) {
+    .value-prop__grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .value-prop__item {
+      padding: 1.5rem 1rem;
+    }
+  }
+</style>

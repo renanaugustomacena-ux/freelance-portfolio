@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La Bottega della Pizza di Tria Davide — Pizza d'asporto artigianale a Mozzecane. Impasto a lunga lievitazione, ingredienti selezionati, consegna a domicilio.">
+  <title>La Bottega della Pizza — Mozzecane | Pizza d'Asporto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../shared/css/reset.css">
+  <link rel="stylesheet" href="../../shared/css/utilities.css">
+  <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Vai al contenuto</a>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" aria-label="Navigazione principale">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-icon" aria-hidden="true">&#127829;</span>
+        La Bottega della Pizza
+      </a>
+      <ul class="nav__links">
+        <li><a href="#menu">Il Menu</a></li>
+        <li><a href="#impasto">L'Impasto</a></li>
+        <li><a href="#ingredienti">Ingredienti</a></li>
+        <li><a href="#ordina">Ordina</a></li>
+        <li><a href="#recensioni">Recensioni</a></li>
+        <li><a href="tel:+390457930327" class="btn btn--primary btn--small">Ordina Ora</a></li>
+      </ul>
+      <div class="nav__hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="main-content">
+    <div class="hero__texture" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <div class="hero__badge">Pizza d'Asporto Artigianale</div>
+      <h1 class="hero__title">L'arte della pizza,<br>dal forno a casa tua</h1>
+      <p class="hero__subtitle">La Bottega della Pizza di Tria Davide &mdash; impasto a lunga lievitazione, ingredienti selezionati e la passione di chi fa pizza ogni giorno a Mozzecane.</p>
+      <div class="hero__actions">
+        <a href="tel:+390457930327" class="btn btn--primary btn--large" aria-label="Chiama per ordinare">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.58.56 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.56 3.58 1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+          Ordina: 045 7930327
+        </a>
+        <a href="#menu" class="btn btn--outline btn--large">Vedi il Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== IL MENU ===== -->
+  <section class="section menu" id="menu">
+    <div class="container">
+      <div class="section-header section-header--centered reveal">
+        <span class="section-header__label">Il Nostro Menu</span>
+        <h2 class="section-header__title">Le nostre pizze</h2>
+        <p class="section-header__subtitle">Ogni pizza e preparata al momento con impasto a lunga lievitazione e ingredienti di prima qualita.</p>
+      </div>
+      <div class="menu__grid">
+        <div class="menu__card reveal">
+          <div class="menu__info">
+            <h3 class="menu__name">Margherita</h3>
+            <p class="menu__desc">Pomodoro San Marzano, mozzarella fior di latte, basilico fresco</p>
+          </div>
+          <span class="menu__price">&euro;6</span>
+        </div>
+        <div class="menu__card reveal reveal-delay-1">
+          <div class="menu__info">
+            <h3 class="menu__name">Diavola</h3>
+            <p class="menu__desc">Pomodoro, mozzarella, salame piccante calabrese</p>
+          </div>
+          <span class="menu__price">&euro;7</span>
+        </div>
+        <div class="menu__card reveal reveal-delay-2">
+          <div class="menu__info">
+            <h3 class="menu__name">Quattro Formaggi</h3>
+            <p class="menu__desc">Mozzarella, gorgonzola DOP, fontina, parmigiano reggiano</p>
+          </div>
+          <span class="menu__price">&euro;8</span>
+        </div>
+        <div class="menu__card reveal reveal-delay-3">
+          <div class="menu__info">
+            <h3 class="menu__name">Capricciosa</h3>
+            <p class="menu__desc">Pomodoro, mozzarella, prosciutto cotto, funghi, carciofi, olive</p>
+          </div>
+          <span class="menu__price">&euro;7,50</span>
+        </div>
+        <div class="menu__card reveal">
+          <div class="menu__info">
+            <h3 class="menu__name">Prosciutto e Funghi</h3>
+            <p class="menu__desc">Pomodoro, mozzarella, prosciutto cotto, funghi champignon</p>
+          </div>
+          <span class="menu__price">&euro;7</span>
+        </div>
+        <div class="menu__card reveal reveal-delay-1">
+          <div class="menu__info">
+            <h3 class="menu__name">Vegetariana</h3>
+            <p class="menu__desc">Pomodoro, mozzarella, verdure grigliate di stagione</p>
+          </div>
+          <span class="menu__price">&euro;7</span>
+        </div>
+        <div class="menu__card reveal reveal-delay-2">
+          <div class="menu__info">
+            <h3 class="menu__name">Calzone Ripieno</h3>
+            <p class="menu__desc">Prosciutto cotto, mozzarella, ricotta, pomodoro</p>
+          </div>
+          <span class="menu__price">&euro;8</span>
+        </div>
+        <div class="menu__card menu__card--special reveal reveal-delay-3">
+          <div class="menu__star" aria-hidden="true">&#9733;</div>
+          <div class="menu__info">
+            <h3 class="menu__name">Pizza Bottega</h3>
+            <p class="menu__desc">La speciale della casa &mdash; impasto integrale, burrata pugliese, pomodorini gialli, crudo di Parma, rucola</p>
+          </div>
+          <span class="menu__price">&euro;9</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IL NOSTRO IMPASTO ===== -->
+  <section class="section impasto" id="impasto">
+    <div class="container">
+      <div class="impasto__grid">
+        <div class="reveal">
+          <span class="section-header__label">Il Nostro Impasto</span>
+          <h2 class="section-header__title">72 ore di lievitazione</h2>
+          <p class="impasto__text">Il nostro impasto e il cuore di ogni pizza. Utilizziamo farine selezionate di tipo 1 e una lievitazione naturale di almeno 72 ore che rende la pizza leggera, digeribile e dal sapore autentico.</p>
+          <ul class="impasto__list">
+            <li>Farina di tipo 1 macinata a pietra</li>
+            <li>Lievito madre naturale</li>
+            <li>Lievitazione minima 72 ore</li>
+            <li>Idratazione elevata per massima digeribilita</li>
+          </ul>
+        </div>
+        <div class="impasto__visual reveal reveal-delay-2">
+          <div class="impasto__circle">
+            <span class="impasto__number">72h</span>
+            <span class="impasto__label">Lievitazione</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INGREDIENTI ===== -->
+  <section class="section ingredienti" id="ingredienti">
+    <div class="container">
+      <div class="section-header section-header--centered reveal">
+        <span class="section-header__label">I Nostri Ingredienti</span>
+        <h2 class="section-header__title">Solo il meglio d'Italia</h2>
+        <p class="section-header__subtitle">Selezioniamo personalmente ogni ingrediente dai migliori produttori italiani.</p>
+      </div>
+      <div class="ingredienti__grid">
+        <div class="ingredienti__card reveal">
+          <span class="ingredienti__badge">DOP</span>
+          <h3>Mozzarella di Bufala</h3>
+          <p>Campania &mdash; cremosa e filante, dalla tradizione casearia campana.</p>
+        </div>
+        <div class="ingredienti__card reveal reveal-delay-1">
+          <span class="ingredienti__badge">DOP</span>
+          <h3>Pomodoro San Marzano</h3>
+          <p>Campania &mdash; il pomodoro piu pregiato per il sugo delle nostre pizze.</p>
+        </div>
+        <div class="ingredienti__card reveal reveal-delay-2">
+          <span class="ingredienti__badge">IGP</span>
+          <h3>Prosciutto di Parma</h3>
+          <p>Emilia-Romagna &mdash; stagionato minimo 18 mesi, dolce e raffinato.</p>
+        </div>
+        <div class="ingredienti__card reveal reveal-delay-3">
+          <span class="ingredienti__badge">Locale</span>
+          <h3>Olio EVO del Garda</h3>
+          <p>Veneto &mdash; olio extravergine d'oliva dal lago di Garda, fruttato e delicato.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ORDINA & CONSEGNA ===== -->
+  <section class="section ordina" id="ordina">
+    <div class="container">
+      <div class="ordina__grid">
+        <div class="reveal">
+          <span class="section-header__label">Ordina &amp; Consegna</span>
+          <h2 class="section-header__title">Dalla teglia a casa tua</h2>
+          <p class="ordina__text">Ordina telefonicamente e ritira la tua pizza calda e fragrante. Consegna disponibile a Mozzecane e nelle zone limitrofe.</p>
+          <div class="ordina__steps">
+            <div class="ordina__step">
+              <span class="ordina__step-num">01</span>
+              <div>
+                <h3>Chiama e ordina</h3>
+                <p>Telefona al <strong>045 7930327</strong> e scegli le tue pizze dal menu.</p>
+              </div>
+            </div>
+            <div class="ordina__step">
+              <span class="ordina__step-num">02</span>
+              <div>
+                <h3>Prepariamo al momento</h3>
+                <p>Ogni pizza viene impastata, farcita e cotta nel forno al momento dell'ordine.</p>
+              </div>
+            </div>
+            <div class="ordina__step">
+              <span class="ordina__step-num">03</span>
+              <div>
+                <h3>Ritira o ricevi a casa</h3>
+                <p>Passa a ritirare in Via Roma 9 oppure ricevi la consegna a domicilio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ordina__info reveal reveal-delay-2">
+          <div class="ordina__info-panel">
+            <h3>Zona di Consegna</h3>
+            <ul class="ordina__zone-list">
+              <li>Mozzecane (centro e frazioni)</li>
+              <li>Villafranca di Verona</li>
+              <li>Roverbella</li>
+              <li>Nogarole Rocca</li>
+            </ul>
+            <p class="ordina__note">Consegna gratuita per ordini superiori a &euro;20</p>
+            <a href="tel:+390457930327" class="btn btn--primary btn--large">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.58.56 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.56 3.58 1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+              Chiama: 045 7930327
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECENSIONI ===== -->
+  <section class="section recensioni" id="recensioni">
+    <div class="container">
+      <div class="section-header section-header--centered reveal">
+        <span class="section-header__label">Recensioni</span>
+        <h2 class="section-header__title">Cosa dicono i nostri clienti</h2>
+      </div>
+      <div class="recensioni__grid">
+        <div class="recensioni__card reveal">
+          <div class="recensioni__stars" aria-label="5 stelle">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="recensioni__text">&laquo;La migliore pizza d'asporto della zona! L'impasto e incredibilmente leggero e gli ingredienti sono sempre freschissimi. La Pizza Bottega e da provare assolutamente.&raquo;</p>
+          <span class="recensioni__author">&mdash; Marco R.</span>
+        </div>
+        <div class="recensioni__card reveal reveal-delay-1">
+          <div class="recensioni__stars" aria-label="5 stelle">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="recensioni__text">&laquo;Ordiniamo ogni venerdi sera. Le pizze arrivano sempre calde e fragranti. Il rapporto qualita-prezzo e imbattibile. Davide e un vero artigiano.&raquo;</p>
+          <span class="recensioni__author">&mdash; Giulia S.</span>
+        </div>
+        <div class="recensioni__card reveal reveal-delay-2">
+          <div class="recensioni__stars" aria-label="5 stelle">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="recensioni__text">&laquo;Finalmente una pizza con impasto a lunga lievitazione anche a Mozzecane! Leggera, gustosa e preparata con ingredienti di qualita. Consigliatissima!&raquo;</p>
+          <span class="recensioni__author">&mdash; Andrea P.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTATTI ===== -->
+  <section class="section contatti" id="contatti">
+    <div class="container">
+      <div class="section-header section-header--centered reveal">
+        <span class="section-header__label">Contatti</span>
+        <h2 class="section-header__title">Dove trovarci</h2>
+      </div>
+      <div class="info-grid reveal">
+        <div class="info-grid__item">
+          <svg class="info-grid__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+          <h3 class="info-grid__title">Indirizzo</h3>
+          <p class="info-grid__text">Via Roma 9<br>37060 Mozzecane (VR)</p>
+        </div>
+        <div class="info-grid__item">
+          <svg class="info-grid__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.58.56 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.56 3.58 1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+          <h3 class="info-grid__title">Telefono</h3>
+          <p class="info-grid__text"><a href="tel:+390457930327">045 7930327</a></p>
+        </div>
+        <div class="info-grid__item">
+          <svg class="info-grid__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14" stroke="#151210" stroke-width="2" fill="none"/></svg>
+          <h3 class="info-grid__title">Titolare</h3>
+          <p class="info-grid__text">Tria Davide<br>P.IVA 03308140239</p>
+        </div>
+      </div>
+      <div class="contatti__cta reveal">
+        <a href="tel:+390457930327" class="btn btn--primary btn--large" aria-label="Chiama per ordinare">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.58.56 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.56 3.58 1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+          Ordina Ora: 045 7930327
+        </a>
+        <a href="https://maps.google.com/?q=Via+Roma+9+Mozzecane+VR" target="_blank" rel="noopener" class="btn btn--outline btn--large">Apri in Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__text">&copy; 2026 Pizzeria da Asporto La Bottega della Pizza di Tria Davide &mdash; P.IVA 03308140239 &mdash; Via Roma 9, 37060 Mozzecane (VR)</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Torna su">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <script src="../../shared/js/mobile-nav.js"></script>
+  <script src="../../shared/js/smooth-scroll.js"></script>
+  <script src="../../shared/js/reveal-on-scroll.js"></script>
+</body>
+</html>

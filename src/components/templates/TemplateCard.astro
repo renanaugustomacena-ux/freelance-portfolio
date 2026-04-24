@@ -1,0 +1,852 @@
+---
+import type { TemplateDemoVariant } from '../../types';
+
+interface Props {
+  variant: TemplateDemoVariant;
+}
+
+const { variant } = Astro.props;
+---
+
+<a href={variant.href} target="_blank" rel="noopener" class="pcard" aria-label={`${variant.name}, apri in nuova scheda`}>
+  <div class:list={['pcard__visual', variant.visualClass]}>
+    {variant.decoration && (
+      <div class={`pcard__deco pcard__deco--${variant.decoration}`} aria-hidden="true">
+        {variant.decorationText && <Fragment set:html={variant.decorationText} />}
+      </div>
+    )}
+    <span class:list={['pcard__vname', { 'pcard__vname--dark': variant.styleTheme === 'light' }]}>{variant.name}</span>
+  </div>
+  <div class="pcard__meta">
+    <span class="pcard__variant">{variant.label}</span>
+    <span class:list={['pcard__style', variant.styleTheme === 'dark' ? 'pcard__style--dark' : 'pcard__style--light']}>{variant.style}</span>
+    <span class="pcard__arrow" aria-hidden="true">&rarr;</span>
+  </div>
+</a>
+
+<style>
+  .pcard {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition:
+      border-color 0.4s var(--ease-out-expo),
+      transform 0.4s var(--ease-out-expo),
+      box-shadow 0.4s var(--ease-out-expo);
+  }
+
+  .pcard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(78, 143, 224, 0.25);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), var(--shadow-blue);
+  }
+
+  .pcard__visual {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+  }
+
+  .pcard__vname {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.01em;
+  }
+
+  .pcard__vname--dark {
+    color: rgba(44, 36, 24, 0.85);
+  }
+
+  /* Rosati A */
+  .pcard__visual--rosati-a {
+    background: #1C1410;
+    border-bottom: 2px solid rgba(212, 114, 60, 0.3);
+  }
+
+  .pcard__deco {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .pcard__deco--ember {
+    background:
+      radial-gradient(ellipse 80% 50% at 30% 110%, rgba(212, 114, 60, 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 30% at 70% 100%, rgba(200, 169, 110, 0.2) 0%, transparent 50%);
+  }
+
+  /* Rosati B */
+  .pcard__visual--rosati-b {
+    background: #FDFBF7;
+    border-bottom: 2px solid rgba(107, 127, 78, 0.3);
+    padding: 0.75rem 1rem 1rem;
+  }
+
+  .pcard__deco--botanical {
+    inset: auto;
+    top: 16px;
+    right: 20px;
+    width: 3px;
+    height: 55px;
+    background: #5C6E3F;
+    border-radius: 2px;
+  }
+
+  .pcard__deco--botanical::before,
+  .pcard__deco--botanical::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 14px;
+    background: #6B7F4E;
+    border-radius: 50% 0 50% 0;
+  }
+
+  .pcard__deco--botanical::before {
+    top: 8px;
+    left: -18px;
+    transform: rotate(-10deg);
+  }
+
+  .pcard__deco--botanical::after {
+    top: 22px;
+    left: 3px;
+    transform: rotate(10deg) scaleX(-1);
+  }
+
+  /* Clima A */
+  .pcard__visual--clima-a {
+    background: #F7F9FC;
+    border-bottom: 2px solid rgba(30, 107, 165, 0.2);
+  }
+
+  .pcard__deco--crosshatch {
+    background:
+      repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(30, 107, 165, 0.04) 12px, rgba(30, 107, 165, 0.04) 13px),
+      repeating-linear-gradient(-45deg, transparent, transparent 12px, rgba(30, 107, 165, 0.04) 12px, rgba(30, 107, 165, 0.04) 13px);
+  }
+
+  /* Clima B */
+  .pcard__visual--clima-b {
+    background: #0F1419;
+    border-bottom: none;
+  }
+
+  .pcard__deco--thermobar {
+    inset: auto 0 0 0;
+    height: 3px;
+    background: linear-gradient(to right, #E87A3C 0%, #3CB8E8 100%);
+  }
+
+  /* Sambenini A */
+  .pcard__visual--sam-a {
+    background: #FFFFFF;
+    border-bottom: 2px solid #E2E4E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .pcard__deco--badge1987 {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    background: #F5B731;
+    color: #1A1A2E;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    padding: 0.4em 1em;
+    border-radius: 100px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  .pcard__visual--sam-a .pcard__vname {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  /* Sambenini B */
+  .pcard__visual--sam-b {
+    background: #0D0D12;
+    border-bottom: 2px solid rgba(240, 224, 96, 0.12);
+    overflow: hidden;
+  }
+
+  .pcard__deco--road {
+    inset: auto 0 0 0;
+    height: 70%;
+    background:
+      radial-gradient(ellipse 30% 60% at 50% 100%, rgba(240, 224, 96, 0.08) 0%, transparent 60%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 14px,
+        rgba(240, 224, 96, 0.06) 14px,
+        rgba(240, 224, 96, 0.06) 15px
+      );
+  }
+
+  .pcard__deco--road::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, rgba(240, 224, 96, 0.25), transparent);
+  }
+
+  /* ========== FARMACIA ========== */
+  .pcard__visual--farmacia-a {
+    background: #F0F5F0;
+    border-bottom: 2px solid rgba(45, 140, 78, 0.2);
+  }
+
+  .pcard__deco--greencross {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: 28px;
+    height: 28px;
+    background: #2D8C4E;
+    border-radius: 4px;
+  }
+
+  .pcard__deco--greencross::before,
+  .pcard__deco--greencross::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    border-radius: 1px;
+  }
+
+  .pcard__deco--greencross::before {
+    width: 14px;
+    height: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pcard__deco--greencross::after {
+    width: 3px;
+    height: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pcard__visual--farmacia-a .pcard__vname {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .pcard__visual--farmacia-b {
+    background: #EEF2FA;
+    border-bottom: 2px solid rgba(74, 144, 217, 0.2);
+  }
+
+  .pcard__deco--pulse {
+    inset: auto;
+    top: 30px;
+    right: 24px;
+    width: 40px;
+    height: 20px;
+    border: none;
+    background: none;
+  }
+
+  .pcard__deco--pulse::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    background: linear-gradient(90deg, transparent, #4A90D9 30%, #4A90D9 33%, transparent 33%, transparent 45%, #4A90D9 45%, #4A90D9 50%, transparent 50%, transparent 55%, #4A90D9 55%, #4A90D9 60%, transparent 60%, transparent 70%, #4A90D9 70%);
+    opacity: 0.4;
+  }
+
+  .pcard__visual--farmacia-c {
+    background: #0C1220;
+    border-bottom: 2px solid rgba(201, 168, 76, 0.2);
+  }
+
+  .pcard__deco--goldcross {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 4px;
+  }
+
+  .pcard__deco--goldcross::before,
+  .pcard__deco--goldcross::after {
+    content: '';
+    position: absolute;
+    background: #C9A84C;
+    border-radius: 1px;
+  }
+
+  .pcard__deco--goldcross::before {
+    width: 14px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pcard__deco--goldcross::after {
+    width: 2px;
+    height: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pcard__visual--farmacia-c .pcard__vname {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  /* ========== GIRASOLE ========== */
+  .pcard__visual--girasole-a {
+    background: #1A2E1A;
+    border-bottom: 2px solid rgba(201, 168, 76, 0.2);
+  }
+
+  .pcard__deco--leaf {
+    inset: auto;
+    top: 20px;
+    right: 24px;
+    width: 20px;
+    height: 30px;
+    background: rgba(107, 142, 78, 0.4);
+    border-radius: 50% 0 50% 0;
+    transform: rotate(-15deg);
+  }
+
+  .pcard__deco--leaf::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    left: 50%;
+    background: rgba(201, 168, 76, 0.3);
+  }
+
+  .pcard__visual--girasole-b {
+    background: #FDFAF5;
+    border-bottom: 2px solid rgba(122, 158, 126, 0.3);
+  }
+
+  .pcard__deco--sunflower {
+    inset: auto;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    background: #D4A853;
+    border-radius: 50%;
+    opacity: 0.4;
+  }
+
+  .pcard__deco--sunflower::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 2px dashed rgba(196, 112, 74, 0.2);
+    border-radius: 50%;
+  }
+
+  .pcard__visual--girasole-c {
+    background: #F5EDE0;
+    border-bottom: 2px solid rgba(139, 105, 20, 0.2);
+  }
+
+  .pcard__deco--mortar {
+    inset: auto;
+    top: 28px;
+    right: 24px;
+    width: 20px;
+    height: 16px;
+    border: 2px solid rgba(62, 44, 32, 0.25);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .pcard__deco--mortar::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-30deg);
+    width: 2px;
+    height: 14px;
+    background: rgba(62, 44, 32, 0.2);
+    border-radius: 2px;
+  }
+
+  /* ========== ARMONIA ========== */
+  .pcard__visual--armonia-a {
+    background: #F5E6E0;
+    border-bottom: 2px solid rgba(184, 128, 108, 0.3);
+  }
+
+  .pcard__deco--silk {
+    background: linear-gradient(135deg, rgba(184, 128, 108, 0.08) 0%, rgba(184, 128, 108, 0.02) 50%, rgba(184, 128, 108, 0.06) 100%);
+  }
+
+  .pcard__visual--armonia-b {
+    background: #1A1E1A;
+    border-bottom: 2px solid rgba(92, 138, 106, 0.3);
+  }
+
+  .pcard__deco--bamboo {
+    inset: auto;
+    top: 16px;
+    right: 22px;
+    width: 3px;
+    height: 50px;
+    background: rgba(92, 138, 106, 0.4);
+    border-radius: 2px;
+  }
+
+  .pcard__deco--bamboo::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -1px;
+    right: -1px;
+    height: 1px;
+    background: rgba(92, 138, 106, 0.6);
+  }
+
+  .pcard__visual--armonia-c {
+    background: #FAF5EF;
+    border-bottom: 2px solid rgba(107, 143, 94, 0.2);
+  }
+
+  .pcard__deco--petals {
+    inset: auto;
+    top: 22px;
+    right: 22px;
+    width: 12px;
+    height: 12px;
+    background: rgba(184, 128, 108, 0.25);
+    border-radius: 50%;
+  }
+
+  .pcard__deco--petals::before,
+  .pcard__deco--petals::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(107, 143, 94, 0.2);
+    border-radius: 50%;
+  }
+
+  .pcard__deco--petals::before {
+    top: -8px;
+    left: 4px;
+  }
+
+  .pcard__deco--petals::after {
+    top: 4px;
+    left: -8px;
+  }
+
+  /* ========== EFFEBI ========== */
+  .pcard__visual--effebi-a {
+    background: #2E1118;
+    border-bottom: 2px solid rgba(139, 105, 20, 0.25);
+  }
+
+  .pcard__deco--butcher {
+    background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(139, 105, 20, 0.12) 0%, transparent 70%);
+  }
+
+  .pcard__visual--effebi-b {
+    background: #FAFAFA;
+    border-bottom: 2px solid rgba(192, 57, 43, 0.15);
+  }
+
+  .pcard__deco--marble {
+    background:
+      repeating-linear-gradient(120deg, transparent, transparent 40px, rgba(200, 200, 200, 0.05) 40px, rgba(200, 200, 200, 0.05) 41px);
+  }
+
+  .pcard__visual--effebi-c {
+    background: #F5EBD8;
+    border-bottom: 2px solid rgba(139, 105, 20, 0.2);
+  }
+
+  .pcard__deco--vintage-label {
+    inset: 20px;
+    border: 1px solid rgba(139, 105, 20, 0.15);
+    border-radius: 2px;
+    background: none;
+  }
+
+  /* ========== RB DESIGN ========== */
+  .pcard__visual--rbdesign-a {
+    background: #FFFFFF;
+    border-bottom: 2px solid #E0E0E0;
+  }
+
+  .pcard__deco--grid-lines {
+    background:
+      repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(0, 0, 0, 0.03) 30px, rgba(0, 0, 0, 0.03) 31px),
+      repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(0, 0, 0, 0.03) 30px, rgba(0, 0, 0, 0.03) 31px);
+  }
+
+  .pcard__visual--rbdesign-b {
+    background: #1A1410;
+    border-bottom: 2px solid rgba(201, 147, 90, 0.25);
+  }
+
+  .pcard__deco--woodgrain {
+    background:
+      repeating-linear-gradient(87deg, transparent, transparent 20px, rgba(201, 147, 90, 0.03) 20px, rgba(201, 147, 90, 0.03) 21px);
+  }
+
+  .pcard__visual--rbdesign-c {
+    background: #0A0A0A;
+    border-bottom: none;
+  }
+
+  .pcard__deco--geo-block {
+    inset: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2563EB 0%, #2563EB 33%, transparent 33%, transparent 66%, #2563EB 66%);
+  }
+
+  /* ========== BALZAN ========== */
+  .pcard__visual--balzan-a {
+    background: #F7F9FC;
+    border-bottom: 2px solid rgba(30, 107, 165, 0.2);
+  }
+
+  .pcard__deco--droplet {
+    inset: auto;
+    top: 26px;
+    right: 26px;
+    width: 14px;
+    height: 18px;
+    background: rgba(30, 107, 165, 0.2);
+    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+  }
+
+  .pcard__visual--balzan-b {
+    background: #141414;
+    border-bottom: 2px solid rgba(200, 117, 51, 0.25);
+  }
+
+  .pcard__deco--copper-pipe {
+    inset: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #C87533 0%, #D4923C 50%, #C87533 100%);
+    opacity: 0.6;
+  }
+
+  .pcard__visual--balzan-c {
+    background: #FAF7F2;
+    border-bottom: 2px solid rgba(45, 140, 78, 0.15);
+  }
+
+  .pcard__deco--home-shield {
+    inset: auto;
+    top: 26px;
+    right: 24px;
+    width: 18px;
+    height: 20px;
+    border: 2px solid rgba(45, 140, 78, 0.25);
+    border-radius: 2px 2px 50% 50%;
+  }
+
+  /* ========== BOTTEGA ========== */
+  .pcard__visual--bottega-a {
+    background: #151210;
+    border-bottom: 2px solid rgba(212, 168, 83, 0.2);
+  }
+
+  .pcard__deco--gold-dough {
+    background: radial-gradient(circle at 50% 80%, rgba(212, 168, 83, 0.1) 0%, transparent 60%);
+  }
+
+  .pcard__visual--bottega-b {
+    background: #FFF8F0;
+    border-bottom: 2px solid rgba(214, 48, 49, 0.15);
+  }
+
+  .pcard__deco--tomato-slice {
+    inset: auto;
+    top: 26px;
+    right: 26px;
+    width: 18px;
+    height: 18px;
+    background: rgba(214, 48, 49, 0.2);
+    border-radius: 50%;
+  }
+
+  .pcard__visual--bottega-c {
+    background: #FAFAFA;
+    border-bottom: none;
+  }
+
+  .pcard__deco--tricolore {
+    inset: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #27AE60 0%, #27AE60 33%, #FAFAFA 33%, #FAFAFA 66%, #E74C3C 66%);
+  }
+
+  /* ========== SFIZIO ========== */
+  .pcard__visual--sfizio-a {
+    background: #121212;
+    border-bottom: 2px solid rgba(212, 168, 83, 0.2);
+  }
+
+  .pcard__deco--gold-foil {
+    background: radial-gradient(circle at 70% 30%, rgba(212, 168, 83, 0.08) 0%, transparent 50%);
+  }
+
+  .pcard__visual--sfizio-b {
+    background: #FFFDF5;
+    border-bottom: 2px solid rgba(255, 193, 7, 0.3);
+  }
+
+  .pcard__deco--pizza-slice {
+    inset: auto;
+    top: 22px;
+    right: 22px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 18px solid rgba(255, 193, 7, 0.25);
+    background: none;
+  }
+
+  .pcard__visual--sfizio-c {
+    background: #F5EDE0;
+    border-bottom: 2px solid rgba(196, 112, 74, 0.2);
+  }
+
+  .pcard__deco--brick {
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(196, 112, 74, 0.04) 10px, rgba(196, 112, 74, 0.04) 11px);
+  }
+
+  /* ========== MARACAIBO ========== */
+  .pcard__visual--maracaibo-a {
+    background: #1A1210;
+    border-bottom: 2px solid rgba(212, 146, 60, 0.2);
+  }
+
+  .pcard__deco--coffee-steam {
+    inset: auto;
+    top: 20px;
+    right: 28px;
+    width: 2px;
+    height: 20px;
+    background: none;
+  }
+
+  .pcard__deco--coffee-steam::before,
+  .pcard__deco--coffee-steam::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    background: rgba(212, 146, 60, 0.25);
+    border-radius: 2px;
+  }
+
+  .pcard__deco--coffee-steam::before {
+    top: 0;
+    left: 0;
+    transform: rotate(8deg);
+  }
+
+  .pcard__deco--coffee-steam::after {
+    top: 2px;
+    left: 6px;
+    height: 10px;
+    transform: rotate(-8deg);
+  }
+
+  .pcard__visual--maracaibo-b {
+    background: #FDFAF5;
+    border-bottom: 2px solid rgba(196, 112, 74, 0.2);
+  }
+
+  .pcard__deco--sun-arch {
+    inset: auto;
+    top: 22px;
+    right: 22px;
+    width: 24px;
+    height: 12px;
+    border: 2px solid rgba(196, 112, 74, 0.2);
+    border-bottom: none;
+    border-radius: 24px 24px 0 0;
+    background: none;
+  }
+
+  .pcard__visual--maracaibo-c {
+    background: #1A0E2E;
+    border-bottom: none;
+  }
+
+  .pcard__deco--neon-glow {
+    inset: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #FF6B9D 0%, #00D4FF 100%);
+    box-shadow: 0 0 8px rgba(255, 107, 157, 0.3), 0 0 8px rgba(0, 212, 255, 0.3);
+  }
+
+  /* ========== 3D SERVICE ========== */
+  .pcard__visual--3dservice-a {
+    background: #141820;
+    border-bottom: 2px solid rgba(45, 140, 78, 0.2);
+  }
+
+  .pcard__deco--shield-check {
+    inset: auto;
+    top: 26px;
+    right: 24px;
+    width: 18px;
+    height: 20px;
+    border: 2px solid rgba(45, 140, 78, 0.35);
+    border-radius: 2px 2px 50% 50%;
+  }
+
+  .pcard__deco--shield-check::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 5px;
+    height: 8px;
+    border-bottom: 2px solid rgba(45, 140, 78, 0.5);
+    border-right: 2px solid rgba(45, 140, 78, 0.5);
+    transform: rotate(40deg);
+  }
+
+  .pcard__visual--3dservice-b {
+    background: #F8F9FA;
+    border-bottom: 2px solid rgba(230, 126, 34, 0.2);
+  }
+
+  .pcard__deco--hex-grid {
+    background:
+      radial-gradient(circle at 30% 40%, rgba(230, 126, 34, 0.06) 0%, transparent 30%),
+      radial-gradient(circle at 70% 60%, rgba(230, 126, 34, 0.04) 0%, transparent 30%);
+  }
+
+  .pcard__visual--3dservice-c {
+    background: #FFF5F5;
+    border-bottom: none;
+  }
+
+  .pcard__deco--alert-stripe {
+    inset: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: repeating-linear-gradient(90deg, #C0392B 0px, #C0392B 8px, transparent 8px, transparent 12px);
+  }
+
+  /* Meta */
+  .pcard__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--bg-card);
+  }
+
+  .pcard__variant {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .pcard__style {
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 0.15em 0.5em;
+    border-radius: 3px;
+  }
+
+  .pcard__style--dark {
+    background: rgba(255,255,255,0.05);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+  }
+
+  .pcard__style--light {
+    background: rgba(255,255,255,0.08);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .pcard__arrow {
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: all 0.3s var(--ease-out-expo);
+  }
+
+  .pcard:hover .pcard__arrow {
+    color: var(--accent-blue);
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 480px) {
+    .pcard__visual {
+      height: 140px;
+    }
+  }
+</style>

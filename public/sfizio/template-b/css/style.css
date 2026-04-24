@@ -1,0 +1,823 @@
+/* ============================================
+   SLICE & GO — Pizzeria Lo Sfizio
+   Template B: Light · Fun · Street Food Energy
+   ============================================ */
+
+:root {
+  --bg-primary: #FFFDF7;
+  --bg-secondary: #FFF8E8;
+  --bg-tertiary: #FFF3D6;
+  --bg-panel: #FFFFFF;
+  --accent-yellow: #FFC107;
+  --accent-yellow-light: #FFD54F;
+  --accent-yellow-pale: rgba(255, 193, 7, 0.1);
+  --accent-red: #E74C3C;
+  --accent-red-light: #EF5350;
+  --text-primary: #2D2014;
+  --text-secondary: #6B5B4D;
+  --text-muted: #9A8A7A;
+  --border: #E8DCC8;
+  --border-light: #F0E6D4;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-fun: 4px 4px 0 var(--accent-red);
+
+  --radius-fun: 16px;
+  --radius-pill: 100px;
+
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fast: 250ms var(--ease-bounce);
+  --transition-normal: 400ms var(--ease-bounce);
+
+  --accent-primary: var(--accent-red);
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+}
+
+/* ---- Skip Link ---- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent-red);
+  color: #fff;
+  border-radius: 0 0 8px 8px;
+  z-index: 10000;
+  font-size: 0.88rem;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ---- Navigation ---- */
+.nav {
+  background: rgba(255, 253, 247, 0.92);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-bottom: 2px solid var(--accent-yellow);
+}
+
+.nav.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.nav__logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--accent-red);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav__logo-slice {
+  font-size: 1.4rem;
+}
+
+.nav__links a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.nav__links a:hover {
+  color: var(--accent-red);
+}
+
+.nav__links a::after {
+  background: var(--accent-red);
+  border-radius: 2px;
+  height: 3px;
+}
+
+.nav__hamburger span {
+  background: var(--text-primary);
+  border-radius: 2px;
+  height: 3px;
+}
+
+@media (max-width: 767px) {
+  .nav__links {
+    background: var(--bg-primary);
+    border-left: 3px solid var(--accent-yellow);
+  }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  padding: 8rem 0 5rem;
+  overflow: hidden;
+}
+
+.hero__shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero__circle--1 {
+  width: 400px;
+  height: 400px;
+  top: -10%;
+  right: -5%;
+  background: var(--accent-yellow);
+  opacity: 0.15;
+}
+
+.hero__circle--2 {
+  width: 250px;
+  height: 250px;
+  bottom: 5%;
+  left: -3%;
+  background: var(--accent-red);
+  opacity: 0.08;
+}
+
+.hero__circle--3 {
+  width: 150px;
+  height: 150px;
+  top: 30%;
+  right: 15%;
+  background: var(--accent-yellow);
+  opacity: 0.2;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.2rem;
+  background: var(--accent-yellow);
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.5rem;
+  box-shadow: 3px 3px 0 var(--accent-red);
+}
+
+.hero__title {
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero__highlight {
+  color: var(--accent-red);
+  position: relative;
+}
+
+.hero__highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--accent-yellow);
+  border-radius: 3px;
+  z-index: -1;
+}
+
+.hero__subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-fun);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+}
+
+.btn--primary {
+  background: var(--accent-red);
+  color: #fff;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn--primary:hover {
+  background: var(--accent-red-light);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.15);
+  transform: translate(-2px, -2px);
+}
+
+.btn--outline {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  border-width: 2px;
+}
+
+.btn--outline:hover {
+  border-color: var(--accent-red);
+  color: #fff;
+  background: var(--accent-red);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+  transform: translate(-2px, -2px);
+}
+
+/* ============================================
+   PIZZA DEL GIORNO
+   ============================================ */
+.pizza-day {
+  background: var(--accent-yellow);
+  padding: 0;
+}
+
+.pizza-day .section {
+  padding: 0;
+}
+
+.pizza-day__banner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.pizza-day__icon {
+  font-size: 3.5rem;
+  flex-shrink: 0;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.pizza-day__text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.pizza-day__label {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-red);
+  margin-bottom: 0.25rem;
+}
+
+.pizza-day__title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.pizza-day__text p {
+  font-size: 0.92rem;
+  color: rgba(45, 32, 20, 0.75);
+}
+
+/* ============================================
+   MENU
+   ============================================ */
+.menu {
+  background: var(--bg-primary);
+}
+
+.section-header__label {
+  color: var(--accent-red);
+  font-family: 'Outfit', sans-serif;
+}
+
+.section-header__title {
+  color: var(--text-primary);
+}
+
+.section-header__subtitle {
+  color: var(--text-secondary);
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu__card {
+  background: var(--bg-panel);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-fun);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.menu__card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-fun);
+  border-color: var(--accent-red);
+}
+
+.menu__card-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--accent-red);
+  margin-bottom: 0.75rem;
+}
+
+.menu__card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu__card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.menu__card--special {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-yellow);
+}
+
+.menu__card--special:hover {
+  border-color: var(--accent-red);
+}
+
+.menu__card-badge {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: var(--accent-red);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   TRANCI & ASPORTO
+   ============================================ */
+.tranci {
+  background: var(--bg-secondary);
+}
+
+.tranci__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.tranci__card {
+  background: var(--bg-panel);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-fun);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.tranci__card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-fun);
+  border-color: var(--accent-yellow);
+}
+
+.tranci__emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.tranci__card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tranci__price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent-red);
+}
+
+.tranci__cta {
+  text-align: center;
+}
+
+.tranci__cta-box {
+  background: var(--accent-red);
+  color: #fff;
+  border-radius: var(--radius-fun);
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tranci__cta-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.tranci__cta-box p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.tranci__cta-box .btn--primary {
+  background: var(--accent-yellow);
+  color: var(--text-primary);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tranci__cta-box .btn--primary:hover {
+  background: var(--accent-yellow-light);
+}
+
+@media (max-width: 767px) {
+  .tranci__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   INGREDIENTI
+   ============================================ */
+.ingredienti {
+  background: var(--bg-primary);
+}
+
+.ingredienti__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.ingredienti__item {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--bg-panel);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-fun);
+  transition: all var(--transition-fast);
+}
+
+.ingredienti__item:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-fun);
+  border-color: var(--accent-yellow);
+}
+
+.ingredienti__icon {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.ingredienti__item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.ingredienti__item p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .ingredienti__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .ingredienti__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   ORARI
+   ============================================ */
+.orari {
+  background: var(--bg-secondary);
+}
+
+.orari__box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: var(--bg-panel);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-fun);
+  padding: 3rem;
+}
+
+.orari__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #E8FFE8;
+  color: #2D7D2D;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  margin: 1.5rem 0;
+}
+
+.orari__badge-dot {
+  width: 10px;
+  height: 10px;
+  background: #4CAF50;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.orari__tip {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.orari__address-card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-fun);
+  padding: 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.orari__address-card svg {
+  fill: var(--accent-red);
+  opacity: 0.5;
+  margin-bottom: 0.5rem;
+}
+
+.orari__address-card strong {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+}
+
+.orari__address-card span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .orari__box {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+/* ============================================
+   RECENSIONI
+   ============================================ */
+.recensioni {
+  background: var(--bg-primary);
+}
+
+.recensioni__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.recensioni__card {
+  background: var(--bg-panel);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-fun);
+  padding: 2rem;
+  transition: all var(--transition-fast);
+}
+
+.recensioni__card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-fun);
+  border-color: var(--accent-yellow);
+}
+
+.recensioni__stars {
+  color: var(--accent-yellow);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.recensioni__card p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.recensioni__card cite {
+  font-style: normal;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent-red);
+}
+
+.recensioni__google {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-fun);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.recensioni__google p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  .recensioni__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   CONTATTI
+   ============================================ */
+.contatti {
+  background: var(--bg-secondary);
+}
+
+.info-grid__icon {
+  fill: var(--accent-red);
+}
+
+.info-grid__title {
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+}
+
+.info-grid__text {
+  color: var(--text-secondary);
+}
+
+.info-grid__text a {
+  color: var(--accent-red);
+  font-weight: 600;
+}
+
+.contatti__cta {
+  text-align: center;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--text-primary);
+  border-top: 4px solid var(--accent-yellow);
+}
+
+.footer__text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   BACK TO TOP
+   ============================================ */
+.back-to-top {
+  background: var(--accent-red);
+  border-radius: var(--radius-fun);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top:hover {
+  background: var(--accent-red-light);
+  transform: translate(-2px, -5px);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 7rem 0 4rem;
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .pizza-day__banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pizza-day__banner .btn {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .pizza-day__icon { animation: none; }
+  .orari__badge-dot { animation: none; }
+  .menu__card { transition: none; }
+  .tranci__card { transition: none; }
+  .ingredienti__item { transition: none; }
+  .recensioni__card { transition: none; }
+}

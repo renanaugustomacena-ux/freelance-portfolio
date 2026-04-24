@@ -1,0 +1,842 @@
+/* ============================================
+   CAFFE NERO — Bar Maracaibo Da Li
+   Template A: Dark · Moody · Jazz-bar Aesthetic
+   ============================================ */
+
+:root {
+  --bg-primary: #1A1210;
+  --bg-secondary: #221A16;
+  --bg-tertiary: #2A201A;
+  --bg-panel: rgba(42, 32, 26, 0.6);
+  --bg-glass: rgba(42, 32, 26, 0.45);
+  --accent: #D4923C;
+  --accent-light: #E0A654;
+  --accent-pale: rgba(212, 146, 60, 0.1);
+  --accent-glow: rgba(212, 146, 60, 0.2);
+  --text-primary: #F5EDE4;
+  --text-secondary: #C4B5A4;
+  --text-muted: #8A7968;
+  --border: #3D2E24;
+  --border-light: #4A3A2E;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 40px rgba(212, 146, 60, 0.15);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 250ms var(--ease-out-expo);
+  --transition-normal: 400ms var(--ease-out-expo);
+
+  --accent-primary: var(--accent);
+}
+
+body {
+  font-family: 'Source Sans 3', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* ---- Skip Link ---- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-radius: 0 0 4px 4px;
+  z-index: 10000;
+  font-size: 0.88rem;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ---- Navigation ---- */
+.nav {
+  background: rgba(26, 18, 16, 0.85);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav.scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.nav__logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav__logo-icon {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.nav__links a {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.nav__links a:hover {
+  color: var(--accent);
+}
+
+.nav__links a::after {
+  background: var(--accent);
+}
+
+.nav__hamburger span {
+  background: var(--text-primary);
+}
+
+@media (max-width: 767px) {
+  .nav__links {
+    background: var(--bg-primary);
+    border-left: 1px solid var(--border);
+  }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-primary);
+  padding: 8rem 0 5rem;
+  overflow: hidden;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(212, 146, 60, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(212, 146, 60, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero__glow {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(212, 146, 60, 0.08), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: glowPulse 6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1.2rem;
+  background: var(--accent-pale);
+  color: var(--accent);
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: 1px solid var(--accent-glow);
+  margin-bottom: 2rem;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  transition: all var(--transition-normal);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--bg-primary);
+  box-shadow: 0 2px 16px rgba(212, 146, 60, 0.3);
+}
+
+.btn--primary:hover {
+  background: var(--accent-light);
+  box-shadow: 0 4px 24px rgba(212, 146, 60, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+.btn--outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-pale);
+}
+
+/* ============================================
+   HAPPY HOUR BANNER
+   ============================================ */
+.happy-hour {
+  background: linear-gradient(135deg, var(--accent) 0%, #C07830 100%);
+  padding: 0.9rem 0;
+}
+
+.happy-hour__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.happy-hour__icon {
+  font-size: 1.3rem;
+}
+
+.happy-hour__text {
+  color: var(--bg-primary);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.happy-hour__text strong {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================
+   MENU & BEVANDE
+   ============================================ */
+.menu {
+  background: var(--bg-secondary);
+}
+
+.section-header__label {
+  color: var(--accent);
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.section-header__title {
+  color: var(--text-primary);
+}
+
+.section-header__subtitle {
+  color: var(--text-secondary);
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.menu__panel {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.menu__panel:hover {
+  border-color: var(--accent-glow);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-3px);
+}
+
+.menu__panel-title {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  border-bottom: 1px dotted var(--border);
+}
+
+.menu__item:last-child {
+  border-bottom: none;
+}
+
+.menu__price {
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 767px) {
+  .menu__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   L'ATMOSFERA
+   ============================================ */
+.atmosfera {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.atmosfera__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.atmosfera__text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-top: 1.5rem;
+}
+
+.atmosfera__visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.atmosfera__card {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all var(--transition-normal);
+}
+
+.atmosfera__card:hover {
+  border-color: var(--accent-glow);
+  box-shadow: var(--shadow-glow);
+}
+
+.atmosfera__stat {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.atmosfera__label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  .atmosfera__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ============================================
+   COLAZIONI
+   ============================================ */
+.colazioni {
+  background: var(--bg-secondary);
+}
+
+.colazioni__features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.colazioni__item {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all var(--transition-normal);
+}
+
+.colazioni__item:hover {
+  border-color: var(--accent-glow);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.colazioni__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.colazioni__item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.colazioni__item p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  .colazioni__features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   APERITIVI
+   ============================================ */
+.aperitivi {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.aperitivi__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.aperitivi__card {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.aperitivi__card:hover {
+  border-color: var(--accent-glow);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.aperitivi__card--featured {
+  border-color: var(--accent-glow);
+  background: linear-gradient(180deg, rgba(212, 146, 60, 0.08) 0%, var(--bg-glass) 100%);
+}
+
+.aperitivi__card--featured::before {
+  content: 'Consigliato';
+  position: absolute;
+  top: -0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.8rem;
+  border-radius: 100px;
+}
+
+.aperitivi__emoji {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.aperitivi__card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.aperitivi__card p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.aperitivi__price {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+@media (max-width: 767px) {
+  .aperitivi__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   EVENTI
+   ============================================ */
+.eventi {
+  background: var(--bg-secondary);
+}
+
+.eventi__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.eventi__card {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all var(--transition-normal);
+}
+
+.eventi__card:hover {
+  border-color: var(--accent-glow);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-3px);
+}
+
+.eventi__date {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background: var(--accent-pale);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+
+.eventi__card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.eventi__card p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.eventi__instagram {
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+}
+
+.eventi__instagram h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.eventi__instagram p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.eventi__feed {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.eventi__feed-item {
+  aspect-ratio: 1;
+  background: var(--bg-tertiary);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+  .eventi__grid {
+    grid-template-columns: 1fr;
+  }
+  .eventi__feed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   ORARI
+   ============================================ */
+.orari {
+  background: var(--bg-primary);
+}
+
+.orari__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.orari__table {
+  margin-top: 2rem;
+}
+
+.orari__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.orari__day {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.orari__time {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.orari__map-placeholder {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  min-height: 280px;
+  justify-content: center;
+}
+
+.orari__map-placeholder svg {
+  fill: var(--accent);
+  opacity: 0.3;
+}
+
+.orari__map-placeholder strong {
+  font-size: 1rem;
+}
+
+.orari__map-placeholder span {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 767px) {
+  .orari__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ============================================
+   CONTATTI
+   ============================================ */
+.contatti {
+  background: var(--bg-secondary);
+}
+
+.info-grid__item {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+}
+
+.info-grid__icon {
+  color: var(--accent);
+}
+
+.info-grid__title {
+  color: var(--text-primary);
+}
+
+.info-grid__text {
+  color: var(--text-secondary);
+}
+
+.info-grid__text a {
+  color: var(--accent);
+  transition: color var(--transition-fast);
+}
+
+.info-grid__text a:hover {
+  color: var(--accent-light);
+}
+
+.contatti__cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+}
+
+.footer__text {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   BACK TO TOP
+   ============================================ */
+.back-to-top {
+  background: var(--accent);
+  box-shadow: 0 2px 12px rgba(212, 146, 60, 0.35);
+}
+
+.back-to-top:hover {
+  background: var(--accent-light);
+  box-shadow: 0 4px 20px rgba(212, 146, 60, 0.5);
+}
+
+.back-to-top svg {
+  fill: var(--bg-primary);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 7rem 0 4rem;
+  }
+
+  .hero__title {
+    font-size: 2.2rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menu__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .colazioni__features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .aperitivi__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .eventi__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero__glow { animation: none; }
+  .menu__panel,
+  .atmosfera__card,
+  .colazioni__item,
+  .aperitivi__card,
+  .eventi__card {
+    transition: none;
+  }
+}

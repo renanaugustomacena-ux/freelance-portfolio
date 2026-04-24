@@ -1,0 +1,48 @@
+---
+interface Props {
+  variant?: 'blue' | 'gold' | 'green' | 'default';
+}
+
+const { variant = 'default' } = Astro.props;
+---
+
+<span class:list={['skill-tag', variant !== 'default' && `skill-tag--${variant}`]}>
+  <slot />
+</span>
+
+<style>
+  .skill-tag {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 0.3em 0.75em;
+    border-radius: 4px;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    transition: all 0.3s var(--ease-out-expo);
+  }
+
+  .skill-tag:hover {
+    border-color: var(--border-soft);
+    color: var(--text-primary);
+  }
+
+  .skill-tag--blue {
+    background: var(--accent-blue-dim);
+    color: var(--accent-blue);
+    border-color: rgba(78, 143, 224, 0.2);
+  }
+
+  .skill-tag--gold {
+    background: var(--accent-gold-dim);
+    color: var(--accent-gold);
+    border-color: rgba(232, 160, 64, 0.2);
+  }
+
+  .skill-tag--green {
+    background: rgba(48, 192, 96, 0.1);
+    color: #30C060;
+    border-color: rgba(48, 192, 96, 0.2);
+  }
+</style>

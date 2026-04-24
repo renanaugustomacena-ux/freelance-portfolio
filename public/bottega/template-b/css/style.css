@@ -1,0 +1,766 @@
+/* ============================================
+   FORNO APERTO — La Bottega della Pizza
+   Template B: Light · Casual · Family-Friendly
+   ============================================ */
+
+:root {
+  --bg-primary: #FFF8F0;
+  --bg-secondary: #FFF1E3;
+  --bg-tertiary: #FFE8D0;
+  --bg-panel: #FFFFFF;
+  --accent-red: #D63031;
+  --accent-red-light: #E84142;
+  --accent-red-pale: rgba(214, 48, 49, 0.06);
+  --accent-warm: #FF8C42;
+  --text-primary: #2D1B0E;
+  --text-secondary: #6B4F3A;
+  --text-muted: #9C8573;
+  --border: #E8D5C4;
+  --border-light: #F0E0D0;
+
+  --shadow-sm: 0 1px 3px rgba(45, 27, 14, 0.06);
+  --shadow-md: 0 4px 16px rgba(45, 27, 14, 0.1);
+  --shadow-lg: 0 8px 32px rgba(45, 27, 14, 0.12);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 250ms var(--ease-out-expo);
+  --transition-normal: 400ms var(--ease-out-expo);
+
+  --accent-primary: var(--accent-red);
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+/* ---- Skip Link ---- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent-red);
+  color: #fff;
+  border-radius: 0 0 8px 8px;
+  z-index: 10000;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ---- Navigation ---- */
+.nav {
+  background: rgba(255, 248, 240, 0.92);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.nav.scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.nav__logo {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent-red);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav__logo-icon {
+  font-size: 1.3rem;
+}
+
+.nav__links a {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.nav__links a:hover {
+  color: var(--accent-red);
+}
+
+.nav__links a::after {
+  background: var(--accent-red);
+}
+
+.nav__hamburger span {
+  background: var(--text-primary);
+}
+
+@media (max-width: 767px) {
+  .nav__links {
+    background: var(--bg-primary);
+    border-left: 1px solid var(--border);
+  }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-primary);
+  padding: 8rem 0 5rem;
+  overflow: hidden;
+}
+
+.hero__shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__shapes::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--accent-red-pale) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero__shapes::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 140, 66, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  background: var(--accent-red-pale);
+  color: var(--accent-red);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 100px;
+  border: 1px solid rgba(214, 48, 49, 0.12);
+  margin-bottom: 2rem;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  transition: all var(--transition-normal);
+  border-radius: 12px;
+}
+
+.btn--primary {
+  background: var(--accent-red);
+  color: #fff;
+  box-shadow: 0 3px 16px rgba(214, 48, 49, 0.25);
+}
+
+.btn--primary:hover {
+  background: var(--accent-red-light);
+  box-shadow: 0 5px 24px rgba(214, 48, 49, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  border-color: var(--border);
+  color: var(--text-primary);
+  border-radius: 12px;
+}
+
+.btn--outline:hover {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+  background: var(--accent-red-pale);
+}
+
+/* ============================================
+   MENU
+   ============================================ */
+.menu {
+  background: var(--bg-secondary);
+}
+
+.section-header__label {
+  color: var(--accent-red);
+  font-family: 'Nunito', sans-serif;
+}
+
+.section-header__title {
+  color: var(--text-primary);
+}
+
+.section-header__subtitle {
+  color: var(--text-secondary);
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.menu__card {
+  padding: 1.5rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.menu__card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(214, 48, 49, 0.15);
+}
+
+.menu__card--special {
+  border-color: rgba(214, 48, 49, 0.25);
+  background: linear-gradient(135deg, #fff 0%, rgba(214, 48, 49, 0.03) 100%);
+}
+
+.menu__special-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--accent-red);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+
+.menu__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.menu__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.menu__price {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent-red);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.menu__desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+@media (max-width: 767px) {
+  .menu__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   IMPASTO
+   ============================================ */
+.impasto {
+  background: var(--bg-primary);
+}
+
+.impasto__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.impasto__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.impasto__circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 3px dashed rgba(214, 48, 49, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-panel);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.impasto__circle::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  border: 2px dotted rgba(255, 140, 66, 0.15);
+}
+
+.impasto__number {
+  font-family: 'Nunito', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent-red);
+  line-height: 1;
+}
+
+.impasto__label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.impasto__text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.impasto__features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.impasto__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.impasto__feature-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 0.2rem;
+}
+
+.impasto__feature h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.15rem;
+}
+
+.impasto__feature p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 767px) {
+  .impasto__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .impasto__circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .impasto__number {
+    font-size: 2.5rem;
+  }
+}
+
+/* ============================================
+   INGREDIENTI
+   ============================================ */
+.ingredienti {
+  background: var(--bg-secondary);
+}
+
+.ingredienti__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.ingredienti__card {
+  padding: 1.75rem 1.25rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  text-align: center;
+  transition: all var(--transition-normal);
+}
+
+.ingredienti__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.ingredienti__badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+
+.ingredienti__badge--dop {
+  background: var(--accent-red);
+  color: #fff;
+}
+
+.ingredienti__badge--igp {
+  background: var(--accent-warm);
+  color: #fff;
+}
+
+.ingredienti__badge--locale {
+  background: #27AE60;
+  color: #fff;
+}
+
+.ingredienti__card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.ingredienti__card p {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1023px) {
+  .ingredienti__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .ingredienti__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   ORDINA & CONSEGNA
+   ============================================ */
+.ordina {
+  background: var(--bg-primary);
+}
+
+.ordina__steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.ordina__step {
+  text-align: center;
+  max-width: 220px;
+}
+
+.ordina__step-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 16px rgba(214, 48, 49, 0.25);
+}
+
+.ordina__step h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.ordina__step p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.ordina__step strong {
+  color: var(--accent-red);
+}
+
+.ordina__step-arrow {
+  font-size: 1.5rem;
+  color: var(--border);
+  margin-top: 1rem;
+  flex-shrink: 0;
+}
+
+.ordina__zone {
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--bg-panel);
+  border-radius: 20px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.ordina__zone h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.ordina__zone-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.ordina__tag {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: var(--accent-red-pale);
+  color: var(--accent-red);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 100px;
+  border: 1px solid rgba(214, 48, 49, 0.12);
+}
+
+.ordina__note {
+  font-size: 0.92rem;
+  color: var(--accent-warm);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .ordina__steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ordina__step-arrow {
+    transform: rotate(90deg);
+    margin-top: 0;
+  }
+}
+
+/* ============================================
+   RECENSIONI
+   ============================================ */
+.recensioni {
+  background: var(--bg-secondary);
+}
+
+.recensioni__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.recensioni__card {
+  padding: 2rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  transition: all var(--transition-normal);
+}
+
+.recensioni__card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.recensioni__stars {
+  color: var(--accent-warm);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.recensioni__text {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.recensioni__author {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  color: var(--accent-red);
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .recensioni__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .recensioni__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   CONTATTI
+   ============================================ */
+.contatti {
+  background: var(--bg-primary);
+}
+
+.info-grid__icon {
+  fill: var(--accent-red);
+}
+
+.info-grid__title {
+  color: var(--text-primary);
+}
+
+.info-grid__text {
+  color: var(--text-secondary);
+}
+
+.info-grid__text a {
+  color: var(--accent-red);
+}
+
+.contatti__cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+}
+
+.footer__text {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   BACK TO TOP
+   ============================================ */
+.back-to-top {
+  background: var(--accent-red);
+  box-shadow: 0 2px 12px rgba(214, 48, 49, 0.3);
+  border-radius: 12px;
+}
+
+.back-to-top:hover {
+  background: var(--accent-red-light);
+  box-shadow: 0 4px 20px rgba(214, 48, 49, 0.4);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 7rem 0 4rem;
+  }
+
+  .hero__title {
+    font-size: 2.2rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}

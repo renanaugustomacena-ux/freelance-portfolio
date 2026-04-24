@@ -1,0 +1,116 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/landing/Hero.astro';
+import ValueProp from '../components/landing/ValueProp.astro';
+import FeaturedWork from '../components/landing/FeaturedWork.astro';
+import Services from '../components/landing/Services.astro';
+import About from '../components/landing/About.astro';
+import ContactCTA from '../components/landing/ContactCTA.astro';
+import { featuredProjects } from '../data/projects';
+import FeaturedProject from '../components/projects/FeaturedProject.astro';
+import { landingNav } from '../data/navigation';
+import { site } from '../data/site';
+---
+
+<PageLayout
+  title={`${site.name} — Web Developer Freelance`}
+  description={site.description}
+  navLinks={landingNav}
+>
+  <Hero />
+  <ValueProp />
+  <About />
+  <FeaturedWork />
+
+  <!-- Personal Projects Preview -->
+  <section class="section projects" id="progetti">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__label">Progetti Personali</span>
+        <h2 class="section-header__title">Dal codice che scrivo per me</h2>
+        <p class="section-header__subtitle">Applicazioni, giochi e strumenti che costruisco nel tempo libero — stessa filosofia, ambizioni diverse.</p>
+      </div>
+
+      <div class="projects__featured">
+        {featuredProjects.map((project, i) => (
+          <FeaturedProject project={project} class:list={['reveal', i > 0 && `reveal-delay-${i}`]} />
+        ))}
+      </div>
+
+      <div class="projects__more reveal">
+        <a href="/freelance-portfolio/projects/" class="projects__more-link">
+          Vedi tutti i progetti &amp; GitHub repos &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Services />
+  <ContactCTA />
+</PageLayout>
+
+<style>
+  .projects {
+    background: var(--bg-secondary);
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-header__label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-header__subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  .projects__featured {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .projects__more {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .projects__more-link {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.3s var(--ease-out-expo);
+  }
+
+  .projects__more-link:hover {
+    color: var(--accent-gold);
+  }
+
+  @media (max-width: 480px) {
+    .projects__featured {
+      gap: 1rem;
+    }
+  }
+</style>

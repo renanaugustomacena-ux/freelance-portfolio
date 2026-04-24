@@ -1,0 +1,113 @@
+---
+import type { TemplateDemo } from '../../types';
+import TemplateCard from './TemplateCard.astro';
+
+interface Props {
+  template: TemplateDemo;
+}
+
+const { template } = Astro.props;
+---
+
+<article class="project-group reveal">
+  <div class="project-group__meta">
+    <span class="project-group__category">{template.category}</span>
+    <h3 class="project-group__name">{template.name}</h3>
+    <p class="project-group__desc">{template.description}</p>
+    <div class="project-group__tags">
+      {template.tags.map((tag) => (
+        <span>{tag}</span>
+      ))}
+    </div>
+  </div>
+  <div class="project-group__cards">
+    {template.variants.map((variant) => (
+      <TemplateCard variant={variant} />
+    ))}
+  </div>
+</article>
+
+<style>
+  .project-group {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 3.5rem;
+    align-items: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-group:first-of-type {
+    padding-top: 0;
+  }
+
+  .project-group:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .project-group__category {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent-blue);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .project-group__name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-group__desc {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .project-group__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .project-group__tags span {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2em 0.6em;
+    border-radius: 3px;
+    background: var(--bg-panel);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+
+  .project-group__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    .project-group {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .project-group__cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

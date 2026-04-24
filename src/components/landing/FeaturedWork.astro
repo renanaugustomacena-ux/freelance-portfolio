@@ -1,0 +1,80 @@
+---
+import { templates } from '../../data/templates';
+import TemplateGroup from '../templates/TemplateGroup.astro';
+
+const previewTemplates = templates.slice(0, 3);
+const totalCount = templates.length;
+---
+
+<section class="section work" id="lavoro">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-header__label">Lavoro</span>
+      <h2 class="section-header__title">Demo per Clienti Locali</h2>
+      <p class="section-header__subtitle">{totalCount} attivita di Mozzecane senza sito web. Fino a tre proposte di design per ognuna, costruite a mano.</p>
+    </div>
+
+    {previewTemplates.map((template) => (
+      <TemplateGroup template={template} />
+    ))}
+
+    <div class="work__more reveal">
+      <a href="/freelance-portfolio/templates/" class="work__more-link">
+        Vedi tutti i {totalCount} template &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .work {
+    background: var(--bg-primary);
+  }
+
+  .work .section-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-header__label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-header__subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  .work__more {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .work__more-link {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.3s var(--ease-out-expo);
+  }
+
+  .work__more-link:hover {
+    color: var(--accent-gold);
+  }
+</style>
