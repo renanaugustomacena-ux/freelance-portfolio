@@ -8,8 +8,12 @@ import About from '../components/landing/About.astro';
 import ContactCTA from '../components/landing/ContactCTA.astro';
 import { featuredProjects } from '../data/projects';
 import FeaturedProject from '../components/projects/FeaturedProject.astro';
+import PublicRepoCard from '../components/projects/PublicRepoCard.astro';
+import { fetchGitHubRepos, LANDING_EXCLUDE } from '../utils/github';
 import { landingNav } from '../data/navigation';
 import { site } from '../data/site';
+
+const publicRepos = await fetchGitHubRepos(LANDING_EXCLUDE);
 ---
 
 <PageLayout
@@ -36,6 +40,20 @@ import { site } from '../data/site';
           <FeaturedProject project={project} class:list={['reveal', i > 0 && `reveal-delay-${i}`]} />
         ))}
       </div>
+
+      {publicRepos.length > 0 && (
+        <div class="projects__public">
+          <div class="projects__subhead reveal">
+            <span class="projects__subhead-label">// anche su GitHub</span>
+            <span class="projects__subhead-rule" aria-hidden="true"></span>
+          </div>
+          <div class="projects__featured">
+            {publicRepos.map((repo, i) => (
+              <PublicRepoCard repo={repo} class:list={['reveal', i > 0 && `reveal-delay-${i}`]} />
+            ))}
+          </div>
+        </div>
+      )}
 
       <div class="projects__more reveal">
         <a href="/freelance-portfolio/projects/" class="projects__more-link">
@@ -88,6 +106,38 @@ import { site } from '../data/site';
     flex-direction: column;
     gap: 1.5rem;
     margin-bottom: 2.5rem;
+  }
+
+  .projects__public {
+    margin-top: -0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .projects__public .projects__featured {
+    margin-bottom: 0;
+  }
+
+  .projects__subhead {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .projects__subhead-label {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .projects__subhead-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
   }
 
   .projects__more {

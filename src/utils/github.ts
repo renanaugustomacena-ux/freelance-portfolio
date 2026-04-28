@@ -2,7 +2,7 @@ import type { GitHubRepo } from '../types';
 
 const GITHUB_USERNAME = import.meta.env.PUBLIC_GITHUB_USERNAME || 'renanaugustomacena-ux';
 
-const FEATURED_ELSEWHERE = new Set([
+export const PROJECTS_PAGE_EXCLUDE = new Set([
   'freelance-portfolio',
   'security-teacher',
   'Projectwork-IFTS-Private',
@@ -19,7 +19,13 @@ const FEATURED_ELSEWHERE = new Set([
   'macena-tracevino',
 ]);
 
-export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
+export const LANDING_EXCLUDE = new Set([
+  'freelance-portfolio',
+  'security-teacher',
+  'Projectwork-IFTS-Private',
+]);
+
+export async function fetchGitHubRepos(exclude: Set<string> = PROJECTS_PAGE_EXCLUDE): Promise<GitHubRepo[]> {
   try {
     const response = await fetch(
       `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100&type=owner`
@@ -33,7 +39,7 @@ export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
     const repos: GitHubRepo[] = await response.json();
 
     return repos
-      .filter((repo) => !repo.fork && !repo.archived && !FEATURED_ELSEWHERE.has(repo.name))
+      .filter((repo) => !repo.fork && !repo.archived && !exclude.has(repo.name))
       .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
   } catch (error) {
     console.error('Failed to fetch GitHub repos:', error);
