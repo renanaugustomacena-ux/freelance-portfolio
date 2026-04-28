@@ -2,7 +2,22 @@ import type { GitHubRepo } from '../types';
 
 const GITHUB_USERNAME = import.meta.env.PUBLIC_GITHUB_USERNAME || 'renanaugustomacena-ux';
 
-const FEATURED_ELSEWHERE = new Set(['security-teacher', 'Projectwork-IFTS-Private']);
+const FEATURED_ELSEWHERE = new Set([
+  'freelance-portfolio',
+  'security-teacher',
+  'Projectwork-IFTS-Private',
+  'invest-smart',
+  'trading-ecosystem',
+  'macena-smart-erp',
+  'macena-logi-track',
+  'macena-greenmetrics',
+  'macena-teamflow',
+  'macena-fatturaflow',
+  'macena-factorymind',
+  'macena-agrivigna',
+  'macena-cyberguard',
+  'macena-tracevino',
+]);
 
 export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
   try {
