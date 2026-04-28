@@ -2,6 +2,8 @@ import type { GitHubRepo } from '../types';
 
 const GITHUB_USERNAME = import.meta.env.PUBLIC_GITHUB_USERNAME || 'renanaugustomacena-ux';
 
+const FEATURED_ELSEWHERE = new Set(['security-teacher', 'Projectwork-IFTS-Private']);
+
 export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
   try {
     const response = await fetch(
@@ -16,7 +18,7 @@ export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
     const repos: GitHubRepo[] = await response.json();
 
     return repos
-      .filter((repo) => !repo.fork && !repo.archived)
+      .filter((repo) => !repo.fork && !repo.archived && !FEATURED_ELSEWHERE.has(repo.name))
       .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
   } catch (error) {
     console.error('Failed to fetch GitHub repos:', error);
