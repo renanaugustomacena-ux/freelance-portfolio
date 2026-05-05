@@ -232,6 +232,21 @@ Per costruire un sito che parli alle persone reali della comunità, va capito *q
 5. **"È notte/festivo, dove trovo una farmacia aperta?"** — intent emergency. Sito: pagina turni di guardia con stato corrente + tabella prossimi 30 giorni.
 6. **"Voglio prenotare un test/visita CUP"** — intent servizio. Se Giovannini è punto CUP `[DA CONFERMARE]`, è un differenziatore importante per anziani che non navigano l'online da soli.
 
+### Tre profili tipici di paziente Giovannini
+
+Dietro le 6 occasioni stanno persone con vincoli diversi. Tre profili tipici della farmacia di paese — costruiti per orientare scelte di copy, gerarchia tipografica, e CTA.
+
+**Profilo 1 — Caterina, 78 anni, pensionata, residente a Mozzecane da sempre.**
+Caterina ha tre patologie croniche (ipertensione, diabete tipo 2, artrosi), prende sei farmaci al giorno, va in farmacia almeno una volta a settimana. Conosce Securani da decenni. Non usa internet ma ha figlia/nipoti che cercano "farmacia mozzecane orari" su Google. **Bisogni operativi**: orari precisi visibili senza scroll su mobile; numero di telefono in font grande; informazione "è di turno stanotte?" pubblica. **Il sito non è per Caterina direttamente**, ma per chi le risolve dubbi. Quindi serve un design che sia stampabile (orari, indirizzo, telefono) e leggibile da chi legge ad alta voce.
+
+**Profilo 2 — Federica, 35 anni, mamma di due bambini piccoli, lavora a Verona.**
+Federica fa la spesa farmaceutica per la famiglia (cosmetica, neonato, integratori, occasionali OTC per influenze stagionali). Confronta i prezzi tra Giovannini e e-commerce/parafarmacie. Sceglie Giovannini quando: 1) ha bisogno di un consiglio rapido (febbre del bambino, dubbio cosmetico per pelle sensibile), 2) ha urgenza (sera, weekend, mancanza di tempo per ordinare online), 3) vuole un prodotto specifico verificato sul banco (es. cosmetico La Roche-Posay con consulenza). **Bisogni operativi**: pagina Reparti che mostri marchi distribuiti; FAQ "avete il farmaco/cosmetico X?" con `tel:` per verifica; informazione su orari serali dopo lavoro. Federica si converte da `tel:` veloce o passaggio in farmacia entro 5 minuti dal pensiero "mi serve X".
+
+**Profilo 3 — Roberto, 52 anni, lavoratore autonomo della zona, occasionale.**
+Roberto va in farmacia 6-8 volte all'anno: ricetta del medico curante, integratori per palestra, qualche OTC stagionale, ortopedia (un episodio di lombalgia). Non ha relazione affettiva con Giovannini come Caterina, sceglie su praticità. **Bisogni operativi**: NRE chiaramente spiegata (Roberto può presentarsi con codice NRE su SMS dello smartphone, vuole sapere che basta); orari estesi; eventuali servizi differenzianti (galenica, prenotazione test). Il sito per Roberto serve a informare e qualificare — Roberto non torna in farmacia "perché ci si trova bene"; torna perché il sito gli ha dato l'informazione che cercava.
+
+**Implicazione di design unificata**: il sito deve servire Caterina (orari grandi, telefono visibile, informazione turni), Federica (reparti con marchi, FAQ, `tel:` rapido), Roberto (NRE spiegata, servizi distintivi). Tre layer che convergono nella Home: hero con orari + tel, banda turni di guardia, grid servizi/reparti, FAQ in evidenza.
+
 ---
 
 ## §7 Architettura informativa proposta
@@ -462,9 +477,22 @@ Domande tipiche:
 | Contatti | `tel:` | form |
 
 ### Pattern
-- **`tel:+390457930015`**
-- **WhatsApp Business** `[DA CONFERMARE]`: per domande non sanitarie e disponibilità farmaco. Disclaimer: "Per consulenze sanitarie venga in farmacia."
-- **Email** `[DA CONFERMARE]`.
+- **`tel:+390457930015`** — primo CTA sempre disponibile (header sticky + hero + footer + Contatti). Su mobile: `tel:` link nativo che apre dialer. Su desktop: numero formattato `045 793 0015` come testo selezionabile + tooltip "Il telefono è il modo più rapido per noi".
+- **WhatsApp Business** `[DA CONFERMARE]` se il numero esiste come business profile: scenari ammessi includono richiesta di disponibilità farmaco specifico (con paziente che fornisce nome commerciale e dosaggio), conferma orari, prenotazione di un servizio tipo galenica o ritiro referto, comunicazione semplice di "vengo nel pomeriggio per X". **Vietato in WhatsApp**: consulenza sanitaria, raccomandazione di OTC, diagnosi anche orientativa, scambio di immagini di sintomi, condivisione di ricette mediche (rischio di trattamento di dati sanitari fuori da basi giuridiche). Pattern messaggio precompilato: `https://wa.me/39XXXXXXXX?text=Buongiorno,%20vorrei%20verificare%20la%20disponibilit%C3%A0%20di%20[nome%20farmaco].%20Grazie`. Disclaimer in pagina Contatti: "WhatsApp è per richieste rapide. Per consulenze sanitarie venga in farmacia o ci chiami al telefono."
+- **Email** `[DA CONFERMARE]` per richieste meno urgenti (es. preventivi ortopedia, richieste ufficiali). Privacy: indirizzo email del titolare, niente form-to-newsletter.
+- **Form contatti**: alternativa per chi non vuole telefonare. Risposta entro un giorno lavorativo (no SLA su urgenze sanitarie). Vedi sotto.
+
+### Microscenari WhatsApp/`tel:` per pagina
+
+| Pagina | Click `tel:` previsto | Click WhatsApp previsto |
+|---|---|---|
+| Home | Caterina, anziano, mamma con urgenza | Federica per disponibilità prodotto |
+| Servizi/NRE | Paziente che chiede se NRE funziona da fuori regione | — |
+| Reparti/Cosmetica | — | Federica per disponibilità marchio |
+| Turni di guardia | Emergenza notturna | — |
+| Contatti | Generico | Generico |
+
+Pattern critico: **mai mettere WhatsApp come CTA primaria sulla pagina Servizi sanitari** (NRE, galenica, test). Sanità → telefono o presenza fisica.
 
 ### Form Contatto
 Campi: Nome, Email, Telefono, Oggetto (select: disponibilità farmaco / informazione su servizio / altro), Messaggio, consenso GDPR esplicito + nota: "Non utilizziamo questo form per richieste sanitarie urgenti — chiamateci o venite in farmacia."
@@ -604,6 +632,35 @@ Oltre all'imprint standard (P.IVA, REA), per farmacia è opportuno includere:
 - Niente nomi commerciali di farmaci nei meta tag.
 - Niente comparazioni ("più efficace di X", "alternativa a Y") tra farmaci.
 - Niente "richiedi consiglio farmacista" come call-to-action implicita di consulenza terapeutica online — la consulenza farmacistica si fa al banco, non via form web.
+
+### Stagionalità del messaggio farmacia: cosa pubblicare e quando
+
+La farmacia ha cicli stagionali che il sito può rispecchiare per essere percepita come pertinente, senza scivolare in pubblicità di farmaci. Pattern da blog o post GBP, già revisionati per compliance:
+
+- **Gennaio-Febbraio (stagione influenzale al picco)**: post "I nostri reparti antinfluenzali, antitussivi, antifebbre — vieni a chiedere consiglio al banco" (servizio, non farmaco). Articolo blog "Come prevenire e gestire l'influenza stagionale: consigli generali" senza nomi commerciali.
+- **Marzo-Aprile (allergie primaverili)**: post servizio reparto allergie. Mai "il miglior antistaminico". Mai elenco farmaci per pollinosi.
+- **Maggio-Giugno (esposizione solare, viaggi)**: solari + repellenti zanzare + farmacia da viaggio (reparto cosmetico, non OTC specifici).
+- **Luglio-Agosto (caldo, anziani)**: idratazione, integratori salini (claim EFSA: "Magnesio contribuisce alla normale funzione muscolare"), consegna a domicilio per anziani.
+- **Settembre-Ottobre (rientro a scuola, stagione fredda iniziale)**: vaccino antinfluenzale (`[DA CONFERMARE]` Giovannini somministra il vaccino in farmacia? — recente normativa lo permette).
+- **Novembre-Dicembre (stagione fredda piena, viaggi)**: gestione raffreddore, tosse, integratori vitamina D, kit primo soccorso.
+
+Calendario editoriale realistico: 1 articolo blog/mese (12/anno) + 1-2 post GBP/quindicina. Il blog è opzionale (cresce SEO long-term ma richiede tempo Securani per revisione compliance).
+
+### Vaccino antinfluenzale in farmacia (`[DA CONFERMARE]` se attivo)
+
+La L. 178/2020 art. 1 c. 471 ha esteso ad alcune farmacie convenzionate la possibilità di somministrare il vaccino antinfluenzale in regime SSN (per maggiorenni, con farmacista formato). Se Giovannini ha aderito all'iniziativa regionale Veneto, è un servizio differenziante notevole. Sito: pagina dedicata `/servizi/vaccini-in-farmacia/` con condizioni, periodo (tipicamente ottobre-dicembre), gratuità per categorie protette, prenotazione richiesta (telefono).
+
+Compliance: la pagina **non promuove un vaccino specifico** (è gratuito, fornito da SSN). Comunica il **servizio**.
+
+### Ortopedia in farmacia (`[DA CONFERMARE]`)
+
+Se Giovannini è punto vendita autorizzato ortopedia/sanitaria (alcuni dispositivi richiedono iscrizione albo specifica per la rimborsabilità SSN tramite ASL):
+
+- Tutori articolari, fasce, calze a compressione, plantari standard.
+- Eventuale noleggio (carrozzine, stampelle, deambulatori) — se attivo, è servizio molto richiesto da anziani.
+- Vendita a fronte di ricetta medica per dispositivi ortopedici rimborsati SSN tramite ASL Verona (se Giovannini ha la convenzione).
+
+Sito: pagina `/reparti/ortopedia/` con prodotti distribuiti, modalità acquisto, eventuale noleggio (con disclaimer "previa disponibilità + cauzione"). Niente "il miglior tutore". Compliance Reg. UE 2017/745 dispositivi medici.
 
 ### Casi specifici di pubblicità e copy
 
@@ -768,6 +825,26 @@ Vietato Hotjar/Clarity/heatmap senza opt-in.
 | Posizionamento "farmacia di turno mozzecane" | Search Console | da misurare | top 3 |
 
 **Strumenti**: GA4 anonimizzato, Search Console, GBP Insights. Mai heatmap senza opt-in.
+
+### Backlog F4 (post-90gg, opzionale)
+
+Iniziative valutabili dopo i 90 giorni se i KPI sono incoraggianti e Securani vuole investire ulteriormente:
+
+1. **Blog stagionale 12 articoli/anno** — long-term SEO, costruzione di autorevolezza tematica. Costo tempo Securani ~2h/articolo per revisione compliance. ROI atteso a 12-18 mesi.
+2. **Newsletter mensile soft opt-in** — base di clientela fidelizzata via email, tipicamente anziani con figli/nipoti che curano gli abbonamenti. Iubenda + double opt-in obbligatori.
+3. **Pagina prenotazione test diagnostici online** — se test sono già attivi e Securani vuole ridurre attese, integrazione di un sistema di booking (Calendly o simile, GDPR-compliant). Decisione cost/benefit dopo aver misurato volume reale di richieste test.
+4. **Configuratore "trova la farmacia di turno"** — generalizzazione della pagina turni a un widget pubblico per il Distretto 3 ASL Verona. Posizione di leadership informativa locale.
+5. **E-commerce parafarmaceutico** — solo cosmetica, integratori, neonato (no farmaci OTC senza certificazione DM 6 luglio 2015). Decisione strategica importante: investimento alto (4-8.000 €), ritorno incerto se mercato locale ha già DDay/Amazon.
+6. **Convenzione consulenze nutrizionali / dietologo** — a partire da reparto integratori, eventuale collaborazione con professionista esterno per consulenze in farmacia. Diversifica offerta + crea ragione di visita ricorrente.
+
+Backlog F4 si discute solo dopo F3 misurato. Mai pianificare F4 prima della baseline.
+
+### Rischi a 90gg e mitigazioni
+
+- **Rischio compliance**: una contestazione (NAS, AGCM) per un claim non autorizzato sul sito espone a sanzioni e danno reputazionale. Mitigazione: ogni revisione testi prima della pubblicazione, screenshot di ogni pagina archiviato con data, log delle modifiche.
+- **Rischio dati turni di guardia errati**: pubblicare un turno sbagliato → cliente si presenta a Giovannini chiusa o non trova farmacia di turno. Mitigazione: aggiornamento JSON ogni 90 giorni, doppia verifica con Federfarma Verona prima del rilascio.
+- **Rischio overload Securani**: progetto si arena perché Securani non ha tempo di revisionare testi compliance. Mitigazione: F1 con sessione concentrata 90 minuti in cui si revisionano TUTTI i testi reparti/servizi insieme; in F2/F3 solo modifiche puntuali.
+- **Rischio foto staff non disponibili**: lancio rinviato. Mitigazione: hero senza foto persone (foto esterno + interno banco senza volti) come fallback per F2 lancio; foto staff aggiunte in F3.
 
 ---
 

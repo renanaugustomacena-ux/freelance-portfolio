@@ -32,6 +32,14 @@ Il template "Seta" (Template A — light, luxe) è coerente con il posizionament
 
 **Stima ore complessive:** 50-65 ore in 7-8 settimane: 10h F1, 32-42h F2, 8-13h F3.
 
+**Vincoli di scope espliciti**: il piano **non** include sistemi di booking automatico (decisione strutturale F4 se WhatsApp non basta), **non** include e-commerce di prodotti cosmetici (Armonia non distribuisce in e-commerce), **non** copre fotografia professionale dei trattamenti come deliverable interno (servizio esterno preventivato 200-400 €), **non** include consulenza su qualifica professionale L. 1/1990 (Raffaella e suo commercialista). Produce: sito canonico con 7 pagine, integrazione WhatsApp prenotazione, schema.org BeautySalon, conformità GDPR/cookie/Reg. UE 1223/2009/L. 1/1990, baseline SEO locale + Instagram embed.
+
+**Decisioni strategiche aperte all'avvio:**
+1. Trucco semipermanente come pagina "ammiraglia" del sito o uno servizio tra altri? (Decide proporzione risorse F2 dedicate.)
+2. Buoni regalo emettibili da subito (dicembre 2026 in tempo per Natale)?
+3. Partnership con parrucchieri/altri centri estetici di Mozzecane per cross-promo?
+4. Budget per servizio fotografico professionale o riuso foto Instagram esistenti come fallback?
+
 ---
 
 ## §2 Dati verificati e da confermare
@@ -91,6 +99,23 @@ Lavoro su Template A perché:
 ### Cosa va ripensato
 1. **WhatsApp prenotazione** come CTA primaria, non secondaria.
 2. **Pagina Listino** con disclaimer "prezzi indicativi, possibili variazioni stagionali".
+3. **Pagina Trucco semipermanente** standalone come sub-asset SEO + commerciale.
+
+### Audit per blocchi specifici del Template A "Seta"
+
+**Hero attuale**: foto generica luxe (probabilmente stock o immagine evocativa). Sostituire con foto reale del centro o di Raffaella al lavoro (cabina, prodotti, dettaglio mani in trattamento). Titolo "Armonia" + sottotitolo descrittivo (vedi §5). CTA "Prenota su WhatsApp" prominente.
+
+**Sezione "Trattamenti"**: 4-6 card. Da rivedere ogni descrizione per compliance Reg. UE 1223/2009 (rimuovere "cura", "rigenera profondamente", "anti-età" come claim assoluto). Aggiungere durata (in minuti), prezzo indicativo, eventuale link a sub-pagina.
+
+**Sezione "Listino"**: probabilmente lista prezzi statica. Da trasformare in tabella accessibile con colonne nome/durata/prezzo + disclaimer in apertura "Prezzi indicativi al [data]. Possibili variazioni in base alla personalizzazione del trattamento."
+
+**Sezione "Chi siamo"**: testo evocativo generico. Da riscrivere come prima persona di Raffaella (anni di attività, formazione, motivazione apertura del centro a San Zeno).
+
+**Gallery**: foto stock o assenti. Da rifare con foto reali del centro (cabina, accoglienza, prodotti utilizzati) + eventuale portfolio trattamenti (con autorizzazione cliente per before/after).
+
+**Footer**: minimale, manca P.IVA, qualifica L. 1/1990, link privacy/cookie/imprint, link Instagram.
+
+**Mobile experience**: tema light "Seta" con dorato chiaro su bianco — testare contrasto WCAG su 375px in luce esterna. Possibile rischio leggibilità.
 
 ---
 
@@ -159,6 +184,53 @@ Lacune:
 ### Trattamento del nome
 **"Armonia"** in tono colloquiale. **"Estetica Centro Benessere Armonia"** completo. **"Raffaella"** come voce.
 
+### Esempi micro-copy estesi prima/dopo
+
+**Hero CTA primaria:**
+- *Prima:* "Scopri l'esperienza"
+- *Dopo:* "Prenota su WhatsApp"
+
+**Hero CTA secondaria:**
+- *Prima:* "Vedi di più"
+- *Dopo:* "Vedi i trattamenti"
+
+**Card trattamento "Manicure":**
+- *Prima:* "Manicure professionale per le tue mani."
+- *Dopo:* "**Manicure** (45 min) — Limatura, ammorbidimento cuticole, applicazione smalto classico o semipermanente. €25-35 in base al tipo."
+
+**Card trattamento "Massaggio":**
+- *Prima:* "Lasciati avvolgere dalle mani esperte di Raffaella."
+- *Dopo:* "**Massaggio rilassante** (60 min) — Tecnica di rilassamento muscolare. Olio aromatico, ambiente raccolto. Non è massaggio terapeutico/medicale."
+
+**Pulsante WhatsApp footer:**
+- *Prima:* "Contattaci"
+- *Dopo:* "Scrivici su WhatsApp"
+
+**Conferma form contatto:**
+- *Prima:* "Grazie per il tuo messaggio."
+- *Dopo:* "Grazie. Le rispondiamo entro un giorno lavorativo via WhatsApp o telefono. Per prenotazione veloce, scrivici su WhatsApp."
+
+**Disclaimer header pagina Listino:**
+- *Prima:* (assente)
+- *Dopo:* "Prezzi indicativi al `[data aggiornamento]`. Il prezzo finale può variare in base alla personalizzazione del trattamento (durata, prodotti, complessità). Conferma in cabina prima dell'esecuzione."
+
+**Disclaimer pagina Trucco semipermanente:**
+- *Prima:* (assente)
+- *Dopo:* "Il trucco semipermanente (dermopigmentazione estetica) è una procedura estetica, non un atto sanitario. Per controindicazioni mediche (cute non integra, allergie note, dermatiti, terapie farmacologiche specifiche, gravidanza), consultare il medico prima del trattamento. Raffaella effettuerà comunque un colloquio preliminare e potrà rifiutare la procedura in caso di sospette controindicazioni."
+
+### Categorie di trattamento e loro tono distinto
+
+Il sito Armonia parlerà a una pluralità di intent. Ogni categoria richiede tono leggermente diverso:
+
+- **Trattamenti viso classici** (pulizia, idratazione, peeling cosmetico): tono curato, dettagliato sulla procedura, focus su personalizzazione per tipo di pelle.
+- **Trattamenti corpo**: tono pragmatico, descrizione effetti cosmetici (rilassamento, drenaggio percepito) senza claim dimagranti aggressivi.
+- **Mani e piedi**: tono leggero, funzionale (manicure veloce settimanale).
+- **Trucco semipermanente**: tono tecnico-rassicurante, dettaglio procedura (consulenza + esecuzione + ritocco), forte presenza disclaimer estetico-vs-sanitario.
+- **Depilazione/ceretta** (`[DA CONFERMARE]` se attivo): tono pratico, no claim di "addio peli per sempre".
+- **Massaggi estetici**: tono accogliente-rilassante, attento a non scivolare in claim terapeutici.
+
+Tutto ruota intorno al principio: "Armonia ti fa stare meglio esteticamente — non sostituisce dermatologo, fisioterapista, dietologo, medico."
+
 ---
 
 ## §6 Posizionamento competitivo locale
@@ -207,6 +279,52 @@ Posizionamento: **"Armonia: il centro estetico di San Zeno di Mozzecane. Trattam
 - **Anna, 35 anni, mamma di 2 bambini**: cerca trattamenti viso mensili, manicure ogni 3 settimane. Tempo limitato, vuole appuntamenti puntuali. Sito serve: WhatsApp prenotazione veloce con messaggio precompilato.
 - **Marina, 52 anni, professionista**: trucco semipermanente sopracciglia, qualche trattamento corpo. Budget medio-alto, cerca qualità + relazione. Sito serve: pagina trucco semipermanente con disclaimer + gallery progetti realizzati.
 - **Sofia, 28 anni, social-aware**: si sceglie via Instagram, valuta foto e recensioni, prenota via DM. Sito è secondario; Instagram è primario. Sito serve come backup informativo + autorità.
+
+### Calendario stagionale dei trattamenti estetica
+
+Il centro estetico ha cicli stagionali marcati. Anticipare gli intent stagionali con copy/post mirati aiuta sia SEO sia conversione:
+
+- **Gennaio**: ripresa post-Natale, "buoni propositi" (perdita peso, cura pelle). Trattamenti corpo (drenaggio percepito), pulizia viso intensa, manicure ritorno-al-lavoro. Promo eventuale "kit nuovo anno" (3 trattamenti viso a sconto).
+- **Febbraio**: San Valentino — buoni regalo + trattamenti coppia (`[DA CONFERMARE]` se Armonia struttura). Trucchi semipermanenti pre-anniversari/matrimoni primaverili.
+- **Marzo-Aprile**: preparazione matrimoni primaverili. Picco trucco semipermanente sopracciglia (timeline 30 giorni di guarigione + ritocco prima dell'evento). Trattamenti viso preparatori.
+- **Maggio**: Festa della Mamma — buoni regalo. Preparazione esposizione solare (trattamenti viso schiarenti dopo macchie, pediluvi).
+- **Giugno**: pre-vacanze, mani-piedi puliti, depilazione. Trattamenti corpo dimagranti percepiti (con disclaimer non sostituiscono dieta + sport).
+- **Luglio-Agosto**: calo (clientela in vacanza). Promozioni mirate per chi resta. Manutenzione manicure-pedicure tra una vacanza e l'altra.
+- **Settembre**: rientro, ripresa cura quotidiana, "rientro routine". Trattamenti viso post-sole (riparatori).
+- **Ottobre-Novembre**: preparazione festività, trucco semipermanente pre-Natale (timeline 30 giorni). Lancio campagna buoni regalo Natale (settembre-ottobre per ricezione novembre).
+- **Dicembre**: picco buoni regalo Natale. Manicure-pedicure feste, trucco eventi Capodanno.
+
+Il sito può supportare con post Instagram allineati + eventuale blog stagionale. Pattern: 1 post Instagram a settimana + 1 articolo blog/mese (in F3+).
+
+### Copy compliant per stagioni problematiche
+
+Alcuni momenti dell'anno tentano i centri estetici con claim aggressivi. Pattern compliant:
+
+**Pre-estate (maggio-giugno) — tentazione "trattamento dimagrante miracoloso":**
+- *Vietato:* "Pronto per la prova costume? Perdi 5 cm con questo trattamento."
+- *Compliant:* "Trattamento corpo (60 min) — Massaggio drenante con prodotti cosmetici. Risultati indicativi: sensazione di leggerezza, eventuale riduzione percepita di gonfiore. Per perdita di peso significativa, consultare medico/dietologo + attività fisica."
+
+**Pre-Natale (novembre) — tentazione "regalo che cambia la vita":**
+- *Vietato:* "Regala un trattamento Armonia: cambia il tuo aspetto e la tua vita."
+- *Compliant:* "Buono regalo Armonia: un trattamento di benessere estetico per chi vuoi tu. Durata 12 mesi, utilizzabile su qualsiasi servizio del listino."
+
+**Post-Natale (gennaio) — tentazione "detox":**
+- *Vietato:* "Detox post-Natale: elimina le tossine accumulate."
+- *Compliant:* "Trattamento ripresa di gennaio: pulizia viso intensa + massaggio rilassante. Per ritrovare freschezza estetica dopo le festività."
+
+### Profilo SEO long-tail
+
+Oltre keyword principali (vedi §9), Armonia può posizionarsi su long-tail meno competitive ma con intent commerciale alto:
+
+- "trucco semipermanente sopracciglia mozzecane prezzo"
+- "centro estetico aperto sabato verona sud"
+- "manicure semipermanente san zeno mozzecane"
+- "trattamento viso 50 minuti mozzecane"
+- "buono regalo estetica verona"
+- "estetista qualificata L. 1/1990 mozzecane"
+- "ceretta viso mozzecane orari"
+
+Queste ricerche hanno volume mensile basso (10-50/mese ognuna) ma alta conversione (chi cerca così è già pronto a prenotare). Il sito le copre tramite contenuti specifici (pagine sub-trattamento, FAQ, listino).
 
 ---
 
@@ -284,6 +402,36 @@ Posizionamento: **"Armonia: il centro estetico di San Zeno di Mozzecane. Trattam
 - WhatsApp prominent + tel + email `[DA CONFERMARE]`.
 - Form contatto generico.
 
+### Sub-pagina "Buoni regalo" (opzionale, attivabile in F2)
+
+Pagina `/buoni-regalo/` — alta stagionalità (novembre-dicembre = 60% del volume annuale), San Valentino e Festa della Mamma picchi minori.
+
+**Blocchi:**
+1. Hero "Regala un trattamento di Armonia — buono valido 12 mesi".
+2. Tipologie buono:
+   - **Buono valore** (€30, €50, €80, €100, €150) — utilizzabile su qualsiasi trattamento.
+   - **Buono trattamento specifico** (es. "Buono Trattamento viso", "Buono Manicure + Pedicure") — pre-pagato per servizio definito.
+   - **Buono pacchetto** (`[DA CONFERMARE]` se Armonia struttura pacchetti regalo) — es. "3 trattamenti viso a 90 €".
+3. Modalità ordine: form + pagamento (paypal/bonifico/contanti in centro) + consegna (digitale via email + cartoncino fisico se ritiro in centro).
+4. Termini: validità 12 mesi dalla data di emissione, non rimborsabile in contanti, utilizzabile in più tranche.
+5. Consenso dati cliente acquirente + cliente destinatario (privacy).
+
+### Sub-pagina "Pacchetti" (opzionale)
+
+Se Armonia propone pacchetti multi-seduta (es. "5 trattamenti corpo a sconto"), pagina dedicata con:
+- Lista pacchetti (`[DA CONFERMARE]` quali strutturati).
+- Prezzo pacchetto vs prezzo singole sedute (sconto trasparente).
+- Termini: validità (es. 6 mesi dalla prima seduta), non trasferibilità, eventuali rinunce.
+- Disclaimer "I risultati estetici possono variare in base a tipo di pelle, costanza dei trattamenti, stile di vita."
+
+### Politica di cancellazione e prenotazione
+
+Sezione in pagina Contatti o pagina dedicata `/prenotazioni/`:
+- Modalità prenotazione: WhatsApp principale, telefono, in centro.
+- Conferma prenotazione: Raffaella conferma data/ora con messaggio diretto.
+- Cancellazione: indicare quanto preavviso (es. 24h tipico per estetica). Ritardo cliente: tolleranza 10-15 minuti, oltre rimodulazione.
+- No-show: politica `[DA CONFERMARE]` — alcuni centri richiedono caparra per primo appuntamento o per trucco semipermanente.
+
 ---
 
 ## §9 SEO locale
@@ -321,6 +469,53 @@ Posizionamento: **"Armonia: il centro estetico di San Zeno di Mozzecane. Trattam
 - PagineBianche (esistente — verificare consistenza).
 - BeautyCheck.it (esistente).
 - Federestetiche (se iscritta `[DA CONFERMARE]`).
+- Treatwell / Fresha (aggregatori beauty — opzionale F4).
+- Aggregatori mozzecanesi (siti turistici locali, eventi).
+
+### Strategia Instagram come canale primario
+
+L'Instagram esistente `@esteticacentrobenesserearmonia` è asset già consolidato. Il sito non sostituisce Instagram — **integra**. Strategia:
+
+1. **Instagram resta il canale principale di pubblicazione visiva**: Raffaella pubblica regolarmente foto trattamenti (con consenso), Reels con micro-tutorial estetica, Stories con disponibilità giornaliera, post promozionali stagionali.
+2. **Sito embedda Instagram** in homepage (sezione gallery) e in pagine specifiche (es. trucco semipermanente con tag #truccosemipermanente filtrato). Lazy-load con consenso cookie.
+3. **Bio Instagram linka al sito**: "🔗 esteticarmonia.it — Prenota su WhatsApp" come bio fissa.
+4. **Reciproco**: footer del sito ha icona Instagram prominente con link diretto. Anche schema.org `sameAs` punta a Instagram.
+5. **Tag location**: ogni post Instagram ha tag location "Mozzecane (VR)" o "San Zeno di Mozzecane" per SEO Instagram locale.
+6. **Hashtag locali**: #estetistamozzecane #mozzecane #sanzenodimozzecane #esteticasanzeno #beautysalonsanzeno + #esteticaverona per coverage zonale.
+7. **Stories prenotazione**: Raffaella usa Stories per disponibilità giornaliera "Oggi disponibile alle 17:30 per manicure" → cliente DM o WhatsApp. Pattern molto efficace per riempire slot non prenotati.
+
+Il sito non duplica Instagram, ma fornisce: profondità informativa (pagina trucco semipermanente con disclaimer completo, listino tabellare, privacy/cookie/imprint), trust signal (qualifica L. 1/1990 visibile, NAP consistency con GBP), ricerca Google (SEO).
+
+### GBP setup espanso
+
+Google Business Profile è il **secondo asset più importante** dopo Instagram. Setup completo:
+
+1. **Categoria primaria**: `Centro estetico` o `Salone di bellezza`. Verificare quale categoria triggera meglio query "estetica mozzecane" — A/B test con backup di NAP.
+2. **Categorie secondarie** (massimo 9): Manicure, Trucco semipermanente, Centro benessere, Salone manicure, ecc.
+3. **Foto** (target 15-20):
+   - Esterno (1-2 con insegna leggibile).
+   - Interno accoglienza (2-3 con luce naturale).
+   - Cabine trattamento (3-4 attrezzate ma vuote, niente clienti riconoscibili senza autorizzazione).
+   - Prodotti utilizzati (3-5 marche distribuite, brand visibili).
+   - Raffaella al lavoro (1-2 con autorizzazione).
+   - Esempi trattamenti (3-4 manicure portfolio, before/after dove autorizzato).
+4. **Descrizione GBP** (750 caratteri): "Estetica Centro Benessere Armonia di Dalla Brea Raffaella — centro estetico a San Zeno di Mozzecane (VR). Trattamenti viso, trucco semipermanente sopracciglia, manicure, pedicure, trattamenti corpo. Su appuntamento via WhatsApp. Aperto Lun 15-20, Mar-Ven 9-20, Sab 9-15. Qualifica L. 1/1990. Tel 045 793 0048."
+5. **Servizi GBP**: lista esplicita con prezzi indicativi (es. "Manicure semipermanente — €25-35", "Trattamento viso — €50-70"). Trasparenza migliora ranking.
+6. **Post GBP** settimanali: novità, promozioni stagionali, eventi, immagini portfolio (con autorizzazione).
+7. **Q&A GBP**: Raffaella prepara FAQ tipiche e risponde proattivamente ("Avete trucco semipermanente?", "Qual è il prezzo della manicure?", "Aperti il sabato?").
+8. **Recensioni**: dopo ogni trattamento (con cliente soddisfatto), Raffaella chiede recensione Google con QR-code in cassa o link via WhatsApp. Target +15-20 recensioni in 90gg.
+
+### Frequenza pubblicazione Instagram + GBP
+
+| Canale | Frequenza | Tipologia |
+|---|---|---|
+| Instagram post | 2-3/settimana | Foto trattamenti, prodotti, dietro-le-quinte |
+| Instagram Stories | 5-7/settimana | Disponibilità giornaliera, micro-update |
+| Instagram Reels | 1/quindicina | Tutorial micro o presentazione tecnica |
+| GBP post | 1/settimana | Novità, promozioni, eventi |
+| Sito blog (in F3+) | 1/mese | Articoli SEO long-tail |
+
+Raffaella tempo investito: ~2-3h/settimana per Instagram + GBP (ammortizzato come marketing operativo, non extra).
 
 ### Title/H1/meta
 - `<title>`: `Estetica Armonia — Mozzecane (VR) | Trattamenti viso, trucco semipermanente, manicure`
@@ -349,6 +544,62 @@ Campi: Nome, Telefono o Email, Trattamento di interesse, Note, consenso GDPR esp
 
 ### Microcopy
 - "Prenota su WhatsApp" → tap apre wa.me con messaggio precompilato in italiano.
+
+### Pattern WhatsApp messaggi precompilati per CTA
+
+Ogni CTA WhatsApp deve aprire una conversazione con messaggio già scritto. Questo:
+1. Riduce friction per il cliente (non deve scrivere "Buongiorno, vorrei...").
+2. Aiuta Raffaella a categorizzare velocemente l'intent.
+3. Crea pattern riconoscibile.
+
+**Pattern da Home (CTA generica):**
+```
+https://wa.me/390457930048?text=Buongiorno%20Raffaella%2C%20vorrei%20prenotare%20un%20appuntamento%20da%20Armonia.%20Grazie.
+```
+*Buongiorno Raffaella, vorrei prenotare un appuntamento da Armonia. Grazie.*
+
+**Pattern da pagina Trattamenti (CTA per trattamento specifico):**
+```
+https://wa.me/390457930048?text=Buongiorno%20Raffaella%2C%20vorrei%20informazioni%20sul%20trattamento%20[NOME%20TRATTAMENTO].%20Grazie.
+```
+Sostituire `[NOME TRATTAMENTO]` con il nome del trattamento specifico (es. "Trattamento viso 50 minuti", "Manicure semipermanente").
+
+**Pattern da pagina Trucco semipermanente:**
+```
+https://wa.me/390457930048?text=Buongiorno%20Raffaella%2C%20vorrei%20una%20consulenza%20preliminare%20per%20il%20trucco%20semipermanente%20sopracciglia.%20Grazie.
+```
+Per il trucco semipermanente è opportuno **non** prenotare la procedura direttamente, ma una **consulenza preliminare** (gratuita o nominale) durante la quale Raffaella valuta cute, esigenze, controindicazioni.
+
+**Pattern da pagina Buoni regalo:**
+```
+https://wa.me/390457930048?text=Buongiorno%20Raffaella%2C%20vorrei%20acquistare%20un%20buono%20regalo%20per%20Armonia.%20Grazie.
+```
+
+**Pattern da pagina Listino (CTA "richiedi preventivo"):**
+```
+https://wa.me/390457930048?text=Buongiorno%20Raffaella%2C%20vorrei%20un%20preventivo%20per%20[trattamento].%20Grazie.
+```
+
+### CTA secondaria: telefono diretto
+
+Per chi non usa WhatsApp (anziane, prefer di voce):
+- Pulsante telefono `tel:+390457930048` con etichetta "Chiama 045 793 0048".
+- Posizionato sotto WhatsApp in mobile, fianco-a-fianco in desktop.
+- Tooltip "Per chi preferisce parlare al telefono".
+
+### Form contatti pagina Contatti
+
+Per chi non vuole WhatsApp né telefono (rara ma legittima):
+- Campi: Nome, Email **o** Telefono (almeno uno richiesto), Trattamento di interesse (select non obbligatoria), Messaggio, Consenso GDPR esplicito (checkbox).
+- Disclaimer su `/privacy/`.
+- Risposta entro 1 giorno lavorativo via email/telefono/WhatsApp (a scelta cliente).
+- Anti-spam honeypot, no captcha invasivo.
+
+### Microcopy gerarchia pulsanti
+
+- **Primario** (WhatsApp): pulsante pieno, colore brand caldo, icona WhatsApp ufficiale, label "Prenota su WhatsApp".
+- **Secondario** (Telefono): pulsante outline, stesso brand color, icona telefono, label "Chiama 045 793 0048".
+- **Terziario** (Form): link testuale "Preferisci scriverci? Usa il form contatti", color brand su sfondo neutro.
 
 ---
 
@@ -442,14 +693,58 @@ WhatsApp Business per prenotazioni richiede:
 
 ### Errori frequenti da evitare nel sito di centro estetico
 
-1. **Foto stock di donne perfette al mare**: cliché. Vietato per sito serio. Foto reali del centro o di Raffaella al lavoro.
+1. **Foto da banche immagini di donne perfette al mare**: cliché. Vietato per sito serio. Foto reali del centro o di Raffaella al lavoro.
 2. **Testimonial "ho perso 10 kg con questo trattamento"**: claim impossibile per estetica non sanitaria. Vietato.
 3. **Foto before/after senza autorizzazione cliente**: violazione GDPR. Mai.
-4. **Filtri Instagram-style sulle foto post-trattamento**: deformanti, ingannevoli. Foto naturali.
+4. **Filtri pesanti sulle foto post-trattamento**: deformanti, ingannevoli. Foto naturali.
 5. **Pacchetti "10 sedute al prezzo di 6"** senza policy chiara su rinunce/scadenza: contestabili. Definire termini.
 6. **"Risultato garantito"**: estetica non garantisce. Tutti i risultati sono "indicativi".
 7. **Recensioni clonate da altri centri**: violazione + facile da scoprire. Solo recensioni autentiche.
 8. **Ricetta "naturale" con ingredienti descritti come terapeutici**: claim cosmetico al limite. Verificare.
+
+### Compliance fotografica: portfolio before/after
+
+Le foto "prima/dopo" sono potenti commercialmente ma rischiose legalmente. Regole:
+
+1. **Consenso scritto cliente** — modulo cartaceo o digitale firmato che autorizza esplicitamente l'uso fotografico. Specificare: piattaforme di pubblicazione (sito web Armonia + Instagram + Facebook), durata (tempo indeterminato + diritto di revoca), eventuali limiti (volto sì/no, identificabilità sì/no).
+2. **Età e condizione** — solo maggiorenni (o consenso genitori per minori). Non fotografare clienti in stato di particolare vulnerabilità.
+3. **Naturalità** — niente filtri pesanti che alterino il risultato. La foto deve mostrare cosa il trattamento può effettivamente ottenere, non un'illusione.
+4. **Contesto omogeneo** — stessa illuminazione, stessa angolazione, stessa distanza tra "prima" e "dopo". Evitare manipolazioni di luce/posa per esagerare l'effetto.
+5. **Disclaimer "risultati indicativi"** sotto ogni coppia di immagini — i risultati variano in base a tipo di pelle, costanza dei trattamenti, stile di vita.
+6. **Diritto di revoca cliente** — se il cliente cambia idea, le foto vengono rimosse entro 7 giorni dalla richiesta. Documentare la procedura.
+7. **Archivio dei consensi** — fascicolo separato (cartaceo o cifrato) con tutti i consensi. Conservazione finché le foto sono pubblicate, +24 mesi dopo rimozione.
+
+In assenza di consenso documentabile, il sito **non** mostra before/after. Vale la pena rinunciare alla foto piuttosto che esporsi a contenzioso GDPR.
+
+### Recensioni clienti sul sito: pattern compliant
+
+Le recensioni reali sul sito (estratte da Google Reviews o Instagram) sono trust signal forte. Pattern consentito:
+
+1. **Citazione testuale + nome + data** — Riprodurre verbatim la recensione, citare nome (come pubblicato dal cliente, es. "Anna M."), data della pubblicazione originale, fonte (Google, Instagram).
+2. **Link alla fonte originale** — Permettere al visitatore di verificare la recensione su Google/Instagram.
+3. **Selezione rappresentativa, non solo positive** — se Armonia ha 4.5/5 stelle Google, il sito mostra recensioni che riflettono la media, non solo le 5 stelle. La selettività eccessiva è ingannevole.
+4. **Aggiornamento periodico** — recensioni di 3+ anni fa possono essere obsolete. Refresh ogni 6-12 mesi.
+5. **Risposta del centro alle recensioni Google** — Raffaella risponde a tutte (anche le critiche, in modo costruttivo). Pattern professionale.
+
+**Vietato:** inventare recensioni, clonare da altri centri, comprarle da servizi (illegale + facilmente scopribile da Google).
+
+### Trucco semipermanente: zona grigia normativa
+
+Il trucco semipermanente è una procedura pigmentaria della cute (anche se superficiale). La normativa italiana è ambigua:
+
+- **L. 1/1990** (estetista): autorizza trattamenti estetici della cute. Il trucco semipermanente è interpretato dalla maggior parte degli operatori come servizio estetico.
+- **L. 4/2013** (professioni non organizzate): riconosce alcune attività come professionali ma non sanitarie.
+- **Lin. Guida Min. Salute 2010** sui tatuaggi e piercing: parlano di "tatuaggi" e "trucchi semipermanenti" e suggeriscono norme igieniche specifiche.
+- **Diversi giudizi regionali** sulla qualifica richiesta: alcune regioni richiedono corsi specifici post-qualifica L. 1/1990, altre considerano sufficiente la qualifica base.
+
+**Per Veneto specificamente** `[DA CONFERMARE]`: verificare con ULSS Verona quali corsi/abilitazioni Raffaella deve avere oltre la L. 1/1990 per offrire trucco semipermanente. Possibili: corso specifico riconosciuto da Regione + autorizzazione sanitaria locale per uso aghi sterilizzati.
+
+**Implicazioni sito**:
+1. Pagina trucco semipermanente menziona qualifica specifica di Raffaella (numero, ente, data).
+2. Disclaimer "procedura estetica, non sanitaria, non sostituisce dermatologo".
+3. Procedura igienica (aghi monouso, sterilizzazione strumentazione) menzionata come trust signal.
+4. Modulo consenso informato pre-trattamento (scaricabile dal sito) con: anamnesi rapida, controindicazioni note, accettazione rischi minimali (arrossamento, lieve gonfiore, rara reazione allergica al pigmento).
+5. **Vietato**: claim "perfetto", "definitivo", "indolore" (è leggermente fastidioso, sì sotto anestesia topica).
 
 ---
 
@@ -507,6 +802,19 @@ Vietato Hotjar/Clarity senza opt-in.
 9. **[REF-estetica-10] — PagineGialle Armonia** ([paginegialle.it](http://www.paginegialle.it/mozzecane-vr/istituiti-di-bellezza/centro-benessere-armonia)) — Verifica NAP. *§2*.
 10. **[REF-estetica-03] — Jo Hansford** ([johansford.com](https://johansford.com)) — Dark scheme alternativo. *§3*.
 
+### Lezioni operative trasferibili dai 10 riferimenti
+
+- **Da Eight Five Zero (REF-01)**: hero minimalista con foto reale del salone (no foto stock di donne). Per Armonia: hero con foto cabina o di Raffaella al lavoro, niente foto-evocativo decontestualizzato.
+- **Da Salon Safari (REF-02)**: one-page con prenotazione integrata in alto. Per Armonia: il pattern WhatsApp-prenotazione resta sticky in mobile, sempre visibile.
+- **Da Muse Salon (REF-04)**: team con foto ambientate, nome + qualifica + breve bio. Per Armonia (one-person business): pagina "Chi siamo" con Raffaella ambientata in cabina, qualifica L. 1/1990 visibile, breve bio.
+- **Da DBK Salon (REF-05)**: booking 24/7 + Instagram embed nella home. Per Armonia: WhatsApp 24/7 (non booking strutturato in F1/F2) + Instagram embed lazy-loaded con consenso cookie.
+- **Da Gloss Salon (REF-06)**: light warm tones coerenti col tema "Seta". Conferma scelta palette light per Armonia.
+- **Da Drybar (REF-07)**: visual style menu — ogni servizio ha foto ambientata + nome + durata + prezzo in card uniforme. Per Armonia: pagina Trattamenti come grid uniforme di card-trattamento.
+- **Da Bottega Veneta Beauty (REF-08)**: tono editoriale curato — testo lungo, immagini grandi, tipografia raffinata. Per Armonia (più pragmatica) prendere il tono ma non lo stile lifestyle.
+- **Da Spa Lab (REF-09)**: template baseline WordPress per centro estetico — riferimento di blocchi standard (Trattamenti, Listino, Team, Gallery, Contatti). Per Armonia conferma struttura.
+- **Da PagineGialle Armonia (REF-10)**: scheda ufficiale Armonia — verifica NAP consistency tra sito, GBP, PagineGialle.
+- **Da Jo Hansford (REF-03)**: dark scheme alternativo — non usato per Armonia (light "Seta" prevale) ma referenza per eventuale evoluzione dark "Zen Garden" come Template B in futuro.
+
 ---
 
 ## §14 Roadmap di implementazione e KPI
@@ -519,6 +827,32 @@ Vietato Hotjar/Clarity senza opt-in.
 4. **Setup GBP**.
 5. **Privacy/cookie**.
 6. **Servizio fotografico** opzionale (centro + Raffaella). 200-400€.
+7. **Modulo consenso fotografico cliente** (per portfolio autorizzazioni durante trattamenti).
+8. **Inventario foto Instagram esistenti**: identificare 15-20 foto già pubblicate riusabili sul sito (con consenso cliente già acquisito o senza identificabilità).
+9. **Verifica qualifica L. 1/1990** di Raffaella: numero, ente, data, eventuali corsi specifici per trucco semipermanente.
+
+### F2 — Build (sett. 3-5, ~32-42h, deliverable dettagliati)
+
+1. **Implementazione 7 pagine principali**:
+   - Home (~700 parole) con hero + 4 trattamenti più richiesti + chi è Raffaella + gallery teaser + recensioni + orari + mappa.
+   - Trattamenti (~400 parole) con grid trattamenti + filtri categoriali (viso/corpo/mani/piedi/trucco).
+   - Trucco semipermanente (~600 parole) con disclaimer completo + procedura + tecniche + costi + cura post.
+   - Listino (~300 parole) tabella accessibile + disclaimer prezzi indicativi.
+   - Chi siamo (~400 parole) con bio Raffaella + qualifica + foto centro.
+   - Gallery (~150 parole) con foto centro + Instagram embed lazy-loaded.
+   - Contatti (~250 parole) con NAP + mappa + form + WhatsApp + tel.
+2. **Schema.org JSON-LD** `BeautySalon + LocalBusiness` con orari verificati.
+3. **Cookie banner** Garante-conforme (Iubenda preferito per gestione semplice + categoria sensibili).
+4. **Form contatti** con consenso GDPR esplicito + anti-spam honeypot + invio email a Raffaella.
+5. **Test responsive** 375/768/1440 su tutte le pagine, particolare attenzione a tema light.
+6. **Test accessibilità** WCAG 2.1 AA con axe DevTools, focus su contrasto tema light + tabella listino + form contatti.
+7. **Test performance** Lighthouse target ≥90 Performance + ≥95 Accessibility.
+8. **SEO on-page** completo: title/description/OG/Twitter Card, alt foto, gerarchia heading, schema.org.
+9. **Setup GA4** con anonimizzazione IP + Ads Personalization Disabled + eventi custom (click WhatsApp, click `tel:`, submission form, visualizzazioni pagina trucco).
+10. **Setup Search Console** con sitemap.xml + robots.txt.
+11. **Lancio in produzione** + verifica DNS + redirect 301 da eventuali URL precedenti.
+
+**Dipendenze cliente**: foto definitive, approvazione testi (specialmente listino + trucco semipermanente), accesso DNS/hosting, consensi fotografici cliente per portfolio.
 
 ### F2 — Build (sett. 3-5, ~32-42h)
 
@@ -538,6 +872,34 @@ Vietato Hotjar/Clarity senza opt-in.
 3. Eventuale primo articolo blog ("Come prepararsi al trucco semipermanente").
 4. Backlog F4.
 
+### F4 — Backlog post-90gg
+
+**Booking online integrato**: se WhatsApp diventa overhead per Raffaella (>50 prenotazioni/settimana), valutare sistema di booking come Treatwell, Fresha (gratuito, monetizza con commissioni), o Acuity Scheduling. Pro: cliente prenota 24/7 vedendo slot disponibili; Raffaella riceve solo notifica conferma. Contro: costo (commissione 0-15%), richiede gestione calendario rigorosa, può sostituire la relazione personale che è valore differenziante.
+
+**Newsletter trimestrale**: novità trattamenti, eventuali nuovi prodotti distribuiti, promozioni stagionali (mai più di 2 promozioni/anno per non svalutare il listino). Iubenda + double opt-in. Tipico open rate 25-35% per newsletter beauty di provincia.
+
+**Blog skincare 6-12 articoli/anno**: temi compliant — "Come riconoscere il proprio tipo di pelle", "Cosa aspettarsi dal trucco semipermanente: domande frequenti", "Routine post-trattamento viso", "Differenza tra peeling cosmetico e peeling medico", "Come prepararsi a un matrimonio: timeline beauty". Tempo Raffaella: 2-3h/articolo per dettatura + revisione. Long-term SEO + trust building.
+
+**Pacchetti regalo Natale strutturati**: confezioni regalo con cartoncino brandizzato + buono valore + foto del centro. Modalità ritiro in centro o ricezione email. Picco vendite novembre-dicembre.
+
+**Partnership con parrucchieri Mozzecane**: cross-promotion (cliente parrucchiere + Armonia, sconto reciproco). Aumenta cross-sell mantenendo identità separate.
+
+**Eventi pop-up**: Raffaella presenta servizi durante mercatini di Mozzecane, fiere benessere veronesi, eventi sponsor di scuole/asili (con genitori target). Tempo investimento puntuale, ROI da brand awareness locale.
+
+**Listino con prezzi bloccati 12 mesi**: comunicare "Listino valido 1° gennaio 2027 - 31 dicembre 2027" come trust signal contro centri che cambiano prezzi senza preavviso. Solo se Raffaella si impegna effettivamente a non variare prezzi.
+
+**Pacchetti "card abbonamento"**: 6 trattamenti viso a quota mensile (es. €40/mese × 6 = €240, vs €270 prezzo singolo). Crea ricorrenza, ammortizza costi marketing acquisizione cliente.
+
+**Eventuale e-commerce di prodotti cosmetici utilizzati**: Armonia rivende a casa cliente i prodotti cosmetici usati in cabina (es. crema viso, detergente, ecc.). Investimento minore (sito + 5-10 prodotti + spedizione). ROI dipende da fedeltà clientela.
+
+### Rischi a 90gg e mitigazioni
+
+- **Rischio claim non conforme Reg. UE 1223/2009**: Raffaella o copywriter usa "anti-rughe garantito", "elimina cellulite". Mitigazione: revisione testi pre-pubblicazione + glossario interno parole vietate.
+- **Rischio foto cliente senza consenso**: pubblicato before/after senza modulo firmato → contestazione GDPR. Mitigazione: workflow strutturato con consenso preliminare obbligatorio prima del trattamento documentato.
+- **Rischio Raffaella overload prenotazioni WhatsApp**: troppe richieste, non riesce a gestire orari + procedura + risposta. Mitigazione: messaggio auto-risposta WhatsApp con "Le rispondiamo entro X ore in orario di apertura"; eventualmente assistente part-time o booking automatico in F4.
+- **Rischio competitive rumour**: Mozzecane è piccolo, voci negative tra centri concorrenti possono diffondersi. Mitigazione: condotta professionale + niente confronti competitivi sul sito + forte presenza positiva (recensioni autentiche, foto vere).
+- **Rischio stagionalità marcata**: estate calo (clientela in vacanza), inverno prepicco Natale-Capodanno-pacchetti. Mitigazione: pianificare promozioni mirate periodi bassi (es. settembre, gennaio dopo Befana).
+
 ### KPI a 90gg
 
 | KPI | Strumento | Baseline | Target |
@@ -546,9 +908,36 @@ Vietato Hotjar/Clarity senza opt-in.
 | Chiamate `tel:` | GA4 | 0 | ≥10/mese |
 | Click "indica indirizzo" GBP | GBP Insights | da catturare | +30% |
 | Visualizzazioni pagina Trucco semipermanente | GA4 | 0 | ≥150/mese |
+| Visualizzazioni pagina Listino | GA4 | 0 | ≥250/mese |
+| Visualizzazioni pagina Buoni regalo (se attiva) | GA4 | 0 | ≥80/mese (con picco novembre-dicembre 300+) |
 | Posizionamento "estetica mozzecane" | Search Console | da misurare | top 3 |
+| Posizionamento "trucco semipermanente verona sud" | Search Console | da misurare | top 10 |
+| Engagement Instagram (link in bio click) | Instagram Insights | da misurare | +50% |
 
-Strumenti: GA4 anonimizzato, Search Console, GBP. Mai heatmap senza opt-in.
+Strumenti: GA4 anonimizzato, Search Console, GBP, Instagram Insights. Mai heatmap senza opt-in.
+
+### Logica dietro i target KPI
+
+I target sono modulati sulla scala di centro estetico di provincia (~4-6 trattamenti/giorno, ~80-120 prenotazioni/mese):
+
+- **Click WhatsApp ≥30/mese**: target che corrisponde a circa il 25-30% delle prenotazioni venire da sito web (vs Instagram, passaparola, Google Maps). Realistico in 90gg con SEO base + Instagram embed.
+- **Chiamate `tel:` ≥10/mese**: clientela anziana o non-WhatsApp che preferisce voce. Numero più piccolo perché segmento minore.
+- **Pagina Trucco semipermanente ≥150 pageview/mese**: forte SEO leverage su query specifica — il trucco semipermanente è cercato attivamente, e Mozzecane non ha specialisti molti. Differenziatore.
+- **Pagina Listino ≥250 pageview/mese**: forte intent commerciale (cliente vuole vedere prezzi prima di prenotare). Se pageview <100, segnale che il listino è nascosto nell'architettura.
+- **Posizionamento "estetica mozzecane" top 3**: realistico in 90gg con SEO base + GBP + 5-8 backlink locali.
+- **Posizionamento "trucco semipermanente verona sud" top 10**: più competitive (Verona ha specialisti urbani), realistico solo se pagina dedicata + 1-2 articoli blog F3.
+
+A 180gg post-lancio, target salgono: WhatsApp 50/mese, Trucco semipermanente top 5, Buoni regalo 200+/mese (con maturazione awareness).
+
+### Metriche operative aggiuntive (qualitative)
+
+Oltre KPI quantitativi, monitorare qualitativamente:
+
+- **Qualità dei messaggi WhatsApp**: i clienti ricevono messaggio precompilato chiaro? Raffaella riesce a rispondere senza ambiguità?
+- **Recensioni Google**: aumento numero (target +15-20 nuove recensioni in 90gg con post-trattamento "lascia recensione").
+- **Engagement post Instagram**: condivisioni post-trattamento da clienti soddisfatti, tag @esteticacentrobenesserearmonia in Stories.
+- **Tasso di no-show**: se monitorato (Raffaella tiene traccia manuale), idealmente <5%.
+- **Conversione consulenza → prenotazione trucco semipermanente**: se >50%, segnale che la pagina dedicata fa il suo lavoro.
 
 ---
 
