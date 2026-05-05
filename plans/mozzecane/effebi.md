@@ -193,6 +193,31 @@ Lacune:
 
 Posizionamento: **"Effebi: salumi artigianali del Veronese dal 1990. Faccioli e Biasetti, stagionatura lunga, filiera trasparente."**
 
+### Le 5 occasioni di scelta del cliente B2C e B2B
+
+**B2C (privati):**
+
+1. **"Voglio un regalo da portare"** — intent regalo gastronomico, fascia 25-65 anni. Confezione regalo (sottovuoto + cartoncino), valore percepito 30-100 €. Differenziatore Effebi vs supermercato gourmet: il salumificio "vero" (non lusso etichettato).
+2. **"Cucino una cena importante e voglio salumi seri"** — intent occasione, fascia 30-70 anni. Tagliere, soppressa di qualità. Differenziatore vs salumi da banco supermercato: stagionatura, sapore, filiera.
+3. **"Ho già provato Effebi e mi è piaciuto"** — intent ricorrente. Cliente abituale che torna. Sito facilita il "torno e prendo": orari vendita diretta, lista prodotti aggiornata.
+
+**B2B (ristoratori, gastronomie, salumerie):**
+
+4. **"Cerco fornitori artigianali per il mio ristorante"** — intent professionale. Ristoratore che vuole differenziarsi con prodotti locali raccontabili al cliente finale. Sito deve servire: pagina Ristoratori dedicata, listino B2B su richiesta, possibilità campioni.
+5. **"Ho una salumeria/gastronomia e cerco fornitori veneti"** — intent rivendita. Listino quantità, condizioni di pagamento, packaging professionale, eventuale logistica.
+
+### Tre prodotti signature da raccontare
+
+Indipendentemente da `[DA CONFERMARE]` lista completa, ogni salumificio veneto tipico ha 3-5 prodotti signature. Per Effebi probabili:
+
+1. **Soppressa veneta** — il prodotto-ammiraglia. Pasta media, stagionatura `[DA CONFERMARE]` mesi (tipico 60-90 giorni). Storytelling: la ricetta veneta tradizionale, l'aglio o la sua assenza, la stagionatura.
+2. **Salame all'aglio** — variante distintiva veneta. Pasta più fine, aglio fresco aggiunto a impasto.
+3. **Pancetta** — possibile PAT veneto. Stagionatura, eventuale arrotolatura, affumicatura naturale.
+4. **Cotechino** — prodotto stagionale (autunno-inverno). Da cuocere. Cotechino di Modena IGP è altrove, Effebi può avere "cotechino veneto" generico.
+5. **Eventuali altri** `[DA CONFERMARE]`: bondiola, salame al tartufo, lardo, lonzino, ecc.
+
+Per ognuno il sito può avere una scheda con: foto packaging, ingredienti, allergeni, peso medio, tempo stagionatura, modalità conservazione, abbinamenti consigliati (con vini veneti come Bardolino, Valpolicella, Soave per coerenza territoriale).
+
 ---
 
 ## §7 Architettura informativa proposta
@@ -413,9 +438,38 @@ Possibili applicazioni a Effebi:
 
 **Vietato**: rivendicare DOP/IGP che Effebi non ha. Solo se rientra nel disciplinare di consorzio + è iscritto al registro produttori protetti.
 
+### PAT veneti potenzialmente applicabili a Effebi (verifica MASAF)
+
+Il Veneto ha numerosi PAT (Prodotti Agroalimentari Tradizionali) registrati. Per salumi:
+
+- **Pancetta veneta**: PAT regionale. Disciplinare meno restrittivo di DOP/IGP, ma riconoscimento della tradizione regionale.
+- **Soppressa nostrana veneta**: PAT, distinta dalla Soppressa Vicentina IGP (zona limitata Vicenza).
+- **Salame veneto**: PAT generico.
+- **Sopressa all'aglio**: PAT veneto specifico.
+- **Bondiola di Adria**: PAT, zona limitata Polesine.
+- **Coteghino di Verona**: PAT veronese specifico.
+- **Pearà**: salsa, non salume — fuori scope.
+
+`[DA CONFERMARE]` con MASAF (registro PAT Veneto) quali Effebi può rivendicare. La citazione PAT con indicazione "PAT Regione Veneto" è ammessa se il prodotto rispetta il disciplinare PAT.
+
 ### Diciture obbligatorie etichette (sintesi)
 
-Per insaccati stagionati: ingredienti, allergeni evidenziati, dichiarazione nutrizionale, peso netto, lotto, scadenza, conservazione, ragione sociale e indirizzo del produttore (Effebi - Mozzecane), origine carne, eventuali claim DOP/IGP/PAT (solo se applicabili).
+Per insaccati stagionati, etichetta come da Reg. UE 1169/2011:
+
+- Denominazione di vendita (es. "Soppressa veneta").
+- Lista ingredienti (in ordine decrescente di peso).
+- Allergeni evidenziati (grassetto, maiuscolo o equivalente).
+- Dichiarazione nutrizionale per 100g.
+- QUID (Quantitative Ingredient Declaration) — % di carne suina caratterizzante.
+- Peso netto.
+- Termine minimo di conservazione (TMC) o data di scadenza per prodotti deperibili.
+- Modalità di conservazione (es. "Conservare in luogo fresco e asciutto, refrigerare dopo apertura").
+- Ragione sociale e indirizzo del produttore: "Salumificio Effebi di Faccioli P. e Biasetti E. SNC, Via Regina Margherita 9, Mozzecane (VR)".
+- Lotto (per tracciabilità).
+- Origine carne (paese di nascita, allevamento, macellazione del suino).
+- Eventuali claim DOP/IGP/PAT (solo se applicabili).
+- Marchio CE bollo sanitario stabilimento (`[DA CONFERMARE]` numero stabilimento Effebi).
+- Eventuale logo Bio-EU se prodotti certificati biologici.
 
 ### Compliance pratiche
 
@@ -490,13 +544,35 @@ Vietato Hotjar/Clarity senza opt-in.
 
 ### F1 — Fondamenta (sett. 1-2, ~12h)
 
-1. **Onboarding 90 minuti** — chiarire `[DA CONFERMARE]`: P.IVA verificata, REA, email, PEC, telefoni attivi (risolvere conflitto), email, sede Dolcè ancora attiva?, lista prodotti completa, tempi stagionatura per prodotto, certificazioni HACCP/BRC/IFS, filiera carne fornitori, eventuali DOP/IGP/PAT applicabili (verificare MASAF), modalità vendita (B2C in azienda? rivenditori? B2B), foto autorizzate, GBP attiva.
-2. **Visura camerale** Verona.
-3. **Verifica MASAF** disciplinari DOP/IGP/PAT applicabili a Effebi.
-4. **Bozza testi** 7 pagine + 4-6 schede prodotto pilota con etichettatura completa.
-5. **Setup GBP**.
-6. **Privacy/cookie**.
-7. **Servizio fotografico** (laboratorio, cantina stagionatura, soci, prodotti). Preventivo 400-700€.
+**Deliverable dettagliati:**
+
+1. **Onboarding 90 minuti col cliente** per chiarire i `[DA CONFERMARE]` di §2 e §11-bis:
+   - P.IVA verificata 02213990233 + REA + PEC.
+   - Telefoni attivi (risolvere conflitto 045 634 0278 vs 045 686 3055).
+   - Email aziendale per sito e form B2B.
+   - Sede Dolcè (Via Boscarola 464): ancora operativa o dismessa?
+   - Lista prodotti completa (denominazione di vendita, ingredienti, peso medio, formato, prezzo B2B, prezzo retail).
+   - Tempi stagionatura per ogni prodotto (giorni o mesi).
+   - Temperatura e umidità di stagionatura (se documentabili).
+   - Filiera carne: fornitori principali, paese di origine suini, eventuali allevamenti veneti.
+   - Eventuali DOP/IGP/PAT applicabili: confronto col registro MASAF.
+   - Certificazioni qualità: HACCP (obbligatoria), eventuali BRC, IFS, ISO 22000, BIO.
+   - Numero stabilimento CE bollo sanitario.
+   - Modalità vendita B2C: in azienda? Orari? Solo per ordini su appuntamento?
+   - Modalità vendita B2B: rivenditori attuali (gastronomie, salumerie, ristoratori). Listino con prezzi differenziati per quantità.
+   - Eventuale e-commerce attivo o desiderato.
+   - Foto autorizzate: laboratorio, cantina stagionatura, soci Faccioli e Biasetti.
+   - Logo SVG/PDF.
+2. **Visura camerale** Camera di Commercio Verona (10 €) per chiudere REA, eventuali variazioni anagrafiche.
+3. **Verifica MASAF** sui disciplinari DOP/IGP/PAT applicabili a Effebi:
+   - Soppressa Vicentina IGP — esclusa (zona Vicenza).
+   - Pancetta Veneta PAT — verificare disciplinare.
+   - Soppressa nostrana veneta PAT — verificare.
+   - Eventuali altri PAT veneti applicabili.
+4. **Bozza testi 7 pagine + 4-6 schede prodotto pilota** con etichettatura completa secondo Reg. UE 1169/2011 (ingredienti, allergeni, valori nutrizionali, lotto, conservazione, origine).
+5. **Setup Google Business Profile** Effebi con NAP corretto, categoria "Salumificio".
+6. **Privacy policy + cookie policy** approvate (template adattato).
+7. **Pianificazione servizio fotografico locale** (1 giornata): laboratorio in funzione, cantina stagionatura, scaffalature prodotti, soci al lavoro, eventuale ambiente di vendita diretta. Preventivo tipico 400-700 € per fotografo specializzato in food.
 
 ### F2 — Build (sett. 3-6, ~38-48h)
 

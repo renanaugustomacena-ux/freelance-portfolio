@@ -78,11 +78,12 @@ Il portfolio contiene tre varianti del template Giovannini: **Template A "Farmac
 4. Template B può evolvere in landing campaign per servizi specifici (es. "test diagnostici primaverili"); Template C come base eventuale per area pet/cosmetico.
 
 ### Cosa funziona già
-1. **HTML semantico** con landmark + `<h1>` unico.
-2. **Sezione "Servizi"** strutturata — base per espansione.
-3. **`tel:+390457930015`** wired.
-4. **Tipografia editoriale moderna** (Inter + Space Grotesk) coerente con farmacia contemporanea.
-5. **Skip-link** già presente nei template Mozzecane più moderni.
+1. **HTML semantico** con landmark `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>` e `<h1>` unico ("Farmacia Giovannini"). Buona base accessibilità.
+2. **Sezione "Servizi"** già strutturata come griglia di 4-6 voci — base solida per espansione a sub-pagine in F2.
+3. **`tel:+390457930015`** wired come `tel:` link nella nav (CTA "Chiama") e nella sezione Contatti — pattern UX italiano corretto.
+4. **Tipografia editoriale moderna** (Inter + Space Grotesk) coerente con farmacia contemporanea — evita il rischio "farmacia anni '80" di font troppo formali, ma rispetta la sobrietà richiesta dal vertical sanitario.
+5. **Skip-link** "Vai al contenuto principale" già presente nel Template A — Giovannini è uno dei template Mozzecane più curati lato accessibilità.
+6. **Sezione "Reparti"** distinguibile da "Servizi": pattern utile per separare l'offerta retail (cosmetica, omeopatia, ortopedia, pet) dai servizi sanitari (NRE, galenica, test). Da mantenere e raffinare.
 
 ### Cosa non regge
 1. **Citazione "Farmacia Giovannini della Dott.ssa Paola Securani — da oltre 75 anni il punto di riferimento per salute, benessere ed energia a Mozzecane"** — "energia" è un claim di marketing wellness, non sostenuto e fuori posizionamento per una farmacia. Va riscritto come "salute e benessere quotidiano" o omettere "energia". Inoltre "75 anni" — al 2026 sono 78 (1948-2026), aggiornare.
@@ -220,6 +221,17 @@ Il portfolio contiene tre varianti del template Giovannini: **Template A "Farmac
 
 Posizionamento sintetico: **"La Farmacia di Mozzecane dal 1948. La Dott.ssa Securani al banco. Tradizione, competenza, vicinanza."**
 
+### Le 6 occasioni di scelta del cliente
+
+Per costruire un sito che parli alle persone reali della comunità, va capito *quando* il cliente sceglie Giovannini rispetto alle alternative. Sei occasioni tipiche:
+
+1. **"Ho la ricetta del medico, devo ritirare un farmaco"** — intent transazionale, alta frequenza, bassa frizione. Il sito deve facilitare: orari precisi, eventuale verifica disponibilità farmaco specifico via telefono. Per NRE (ricetta dematerializzata), spiegare che basta tessera sanitaria + codice NRE/QR-code dello smartphone.
+2. **"Mi è venuta la febbre, mio figlio sta male — cosa posso prendere?"** — intent diagnostico-orientativo. Il farmacista può consigliare un OTC adeguato, ma non può sostituire il medico per casi gravi. Sito: pagina FAQ con domande tipiche + invito a chiamare o venire al banco. **Vietato** sul sito: lista farmaci specifici raccomandati per sintomo (D.Lgs. 219/2006).
+3. **"Ho dolore — devo prendere paracetamolo o ibuprofene?"** — intent comparativo OTC. Farmacia ha competenza specifica. Sito: non può fare comparazioni farmaco-farmaco (vietato), ma può comunicare "Chiedi al farmacista — siamo qui per consigliarti".
+4. **"Mi serve un cosmetico/integratore"** — intent reparto cosmetica/integratori. Concorrenza diretta con erboristeria Girasole + parafarmacie + e-commerce. Differenziatore Giovannini: Securani al banco con competenza farmacologica.
+5. **"È notte/festivo, dove trovo una farmacia aperta?"** — intent emergency. Sito: pagina turni di guardia con stato corrente + tabella prossimi 30 giorni.
+6. **"Voglio prenotare un test/visita CUP"** — intent servizio. Se Giovannini è punto CUP `[DA CONFERMARE]`, è un differenziatore importante per anziani che non navigano l'online da soli.
+
 ---
 
 ## §7 Architettura informativa proposta
@@ -269,23 +281,64 @@ Posizionamento sintetico: **"La Farmacia di Mozzecane dal 1948. La Dott.ssa Secu
 
 ### Pagina Home
 
-**Blocchi:**
+**Blocchi richiesti, dall'alto al basso:**
 
-1. **Banner stato turno** (sticky in alto, condizionale): "Stanotte di turno: Farmacia Giovannini" oppure "Stanotte di turno: [altra farmacia, link]". Auto-aggiornato.
-2. **Hero**: foto reale della farmacia (esterno o banco). Titolo "Farmacia Giovannini". Sottotitolo "Mozzecane dal 1948 — Dott.ssa Paola Securani al banco". CTA "Chiama 045 793 0015".
-3. **Tre prove di fiducia** (banda): "1948 · 78 anni di attività", "DT al banco", "Servizi sanitari completi".
-4. **Servizi in evidenza** (grid 3×2): NRE / ricetta dematerializzata, Test pressione e glicemia, Galenica, Prenotazione CUP, Pannolini e neonato, Ortopedia. Ogni voce linka a `/servizi/`.
-5. **La Farmacia in breve**: 80-120 parole sul 1948 + Securani + filosofia. CTA "La nostra storia".
-6. **Reparti**: 4-6 reparti illustrati (cosmetica, omeopatia, ortopedia, pet, sportivo, neonato).
-7. **Turni di guardia preview**: link a pagina dedicata.
-8. **Recensioni reali** o link GBP.
-9. **CTA finale** + footer con codice 106 Federfarma + autorizzazione sanitaria.
+1. **Banner stato turno** (sticky in alto, condizionale): "Stanotte di turno: Farmacia Giovannini" oppure "Stanotte di turno: [altra farmacia, link]". Auto-aggiornato. Pattern di alta utilità per i clienti che cercano "farmacia di turno mozzecane stanotte".
+2. **Hero**: foto reale della farmacia (esterno o banco). Titolo "Farmacia Giovannini". Sottotitolo "Mozzecane dal 1948 — Dott.ssa Paola Securani al banco". CTA primaria "Chiama 045 793 0015". Sotto hero: indirizzo, orari del giorno corrente.
+3. **Tre prove di fiducia** (banda orizzontale): "1948 · 78 anni di attività", "DT al banco", "Servizi sanitari completi". Esposte come trust badge essenziali.
+4. **Servizi in evidenza** (grid 3×2 o 2×3): NRE / ricetta dematerializzata, Test pressione e glicemia, Galenica magistrale, Prenotazione CUP `[DA CONFERMARE]`, Pannolini e neonato, Ortopedia `[DA CONFERMARE]`. Ogni voce linka a sub-pagina servizio specifico.
+5. **La Farmacia in breve**: 80-120 parole sul 1948 + storia generazionale (`[DA CONFERMARE]` quante generazioni) + Securani come direttrice tecnica. CTA "La nostra storia" → `/la-farmacia/`.
+6. **Reparti** (griglia 4-6 voci): Cosmetica (con marchi `[DA CONFERMARE]`), Omeopatia, Ortopedia, Pet care, Sportivo (integratori), Neonato e mamma. Ogni reparto con foto e descrizione 30-40 parole.
+7. **Turni di guardia preview** (banda informativa): "Questa settimana siamo aperti tutti i giorni feriali 8:30-19:30 `[DA CONFERMARE]`. Il turno di guardia notturna del [data]: vedi `/turni-di-guardia/`". Link prominente.
+8. **Recensioni reali** (3 con autorizzazione) o link GBP scheda Federfarma 106.
+9. **CTA finale**: "Per qualsiasi consiglio o servizio, vieni in farmacia o chiama. Siamo qui dal 1948."
+10. **Footer** con codice Federfarma 106, autorizzazione sanitaria, P.IVA, REA, ragione sociale completa, link privacy/cookie/imprint.
 
-**Copy guideline:** prima persona plurale per Farmacia, terza per descrivere servizi. Niente "energia/vitalità/scopri".
+**Copy guideline:**
+- Storia: prima persona plurale ("siamo", "abbiamo"), max 100 parole, riferimenti concreti (anno, numero generazioni, fatti accaduti come ad esempio "dopo la guerra" o "negli anni del boom economico").
+- Servizi: terza persona neutra, descrizione operativa, no claim.
+- CTA: imperativo + "Chiama" / "Vieni" — mai "Scopri".
 
-**Elementi visivi:** foto esterno farmacia, foto banco con DT, foto reparti.
+**Elementi visivi necessari:**
+- Foto esterno farmacia (autorizzazione).
+- Foto banco con DT Securani al lavoro (autorizzazione esplicita).
+- Foto reparti (cosmetica, omeopatia, ortopedia con scaffalature reali).
+- Foto galenica preparazione `[DA CONFERMARE]` se attiva.
+- Logo SVG vettoriale.
 
-`[CONTENUTO DA RACCOGLIERE]`: tutte le foto, autorizzazione esplicita per Securani.
+`[CONTENUTO DA RACCOGLIERE]`: tutte le foto sopra. Servizio fotografico locale.
+
+### Sub-pagine Servizi (da pagina `/servizi/`)
+
+**`/servizi/ricetta-dematerializzata/`** (NRE)
+- Cosa è la NRE (Numero Ricetta Elettronica).
+- Cosa serve per ritirare il farmaco (codice NRE numerico/QR + tessera sanitaria).
+- Cosa fare se non funziona (rivolgersi al medico curante).
+- Riferimento Sistema Tessera Sanitaria + Regione Veneto FSE.
+
+**`/servizi/galenica/`** (`[DA CONFERMARE]` se attiva)
+- Cosa è la galenica magistrale (preparazione personalizzata su prescrizione del medico) e officinale.
+- Tempi tipici (3-7 giorni `[DA CONFERMARE]`).
+- Esempi categorici (creme dermatologiche, preparazioni per bambini con dosaggi specifici, integratori personalizzati).
+- Disclaimer: "Le preparazioni galeniche richiedono ricetta medica e si svolgono nel laboratorio interno della farmacia."
+
+**`/servizi/test-diagnostici/`**
+- Lista test offerti `[DA CONFERMARE]`: pressione (gratis o nominale?), glicemia, peso, eventuali test rapidi (urine, gravidanza, covid se ancora attivo).
+- Modalità: walk-in o appuntamento.
+- Costi `[DA CONFERMARE]`.
+- Disclaimer: "I risultati hanno carattere informativo e non sostituiscono diagnosi medica."
+
+**`/servizi/prenotazione-cup/`** (`[DA CONFERMARE]` attivo)
+- Cosa si può prenotare al CUP (visite specialistiche SSN, esami strumentali).
+- Cosa serve (tessera sanitaria, ricetta dematerializzata o impegnativa).
+- Costi (ticket regionale standard).
+- Modalità: walk-in.
+
+**`/servizi/consegna-domicilio/`** (`[DA CONFERMARE]` attivo)
+- Per chi: anziani, persone con difficoltà di movimento, isolati.
+- Modalità: telefonata, indirizzo nel comune di Mozzecane.
+- Costi: gratuito o nominale `[DA CONFERMARE]`.
+- Tempi: stessa giornata se chiamata entro le 11.
 
 ### Pagina Servizi
 
@@ -450,6 +503,31 @@ Conforme **provvedimento del Garante per la protezione dei dati personali del 10
 
 Particolare attenzione: il vertical sanitario richiede attenzione extra a categorie sensibili — niente remarketing su prodotti sanitari, niente Facebook Pixel su pagine farmaceutiche.
 
+**Cookie e privacy in ambito sanitario** — considerazioni aggiuntive:
+
+- Le pagine relative a sintomi, farmaci OTC, integratori sanitari sono classificabili da Google Ads come "categorie sensibili — Salute". Implicazione: vietato remarketing dinamico, vietato display targeting su queste pagine.
+- Google Analytics 4 con configurazione "Ads Personalization Disabled" è obbligatoria per farmacia che vuole essere conservativa.
+- Per chi vuole essere ancora più rigoroso: disabilitare Google signals + abilitare anonimizzazione IP + non collegare GA4 a Google Ads.
+- Eventuale Facebook Pixel (per gestire pagina aziendale Facebook): caricare solo dopo consenso categoria marketing accettato; mai installare di default su pagine prodotto sanitarie.
+
+### Codice Deontologico FOFI (Federazione Ordini Farmacisti Italiani)
+
+Anche se non normativa di stato, il Codice Deontologico FOFI vincola la professione di farmacista. Implicazioni per il sito:
+
+- **Art. 25-30**: pubblicità del farmacista. Ammessa la pubblicità informativa veritiera, vietata pubblicità ingannevole o suggestiva.
+- **Riservatezza**: il farmacista è tenuto a riservatezza professionale. Implicazione sito: niente foto identificabili di clienti senza consenso esplicito; niente storie di "casi" anche anonimizzati.
+- **Indicazioni terapeutiche**: il farmacista è competente a consigliare uso di OTC, ma non a diagnosticare. Pagina FAQ va orientata in questa direzione.
+
+### Provvedimento Min. Salute pubblicità sanitaria — funzionamento
+
+Per qualsiasi forma di pubblicità di OTC o SOP:
+1. Il produttore (azienda farmaceutica) richiede autorizzazione Min. Salute con fac-simile del messaggio.
+2. Il messaggio approvato include: nome del prodotto, indicazione terapeutica autorizzata (come da AIC), avvertenze, dicitura "Leggere attentamente il foglietto illustrativo. Chiedere consiglio al medico o al farmacista."
+3. La farmacia (Giovannini) può **riprodurre il messaggio approvato** dal produttore, ma non crearlo né modificarlo.
+4. La farmacia può comunicare i propri **servizi** liberamente entro i limiti del Codice Deontologico.
+
+Implicazione operativa per il sito: il sito non pubblicizza farmaci specifici. Pubblicizza la farmacia, i suoi servizi, i suoi reparti generici.
+
 ### §11.c Imprint legale (footer)
 
 ```
@@ -527,6 +605,41 @@ Oltre all'imprint standard (P.IVA, REA), per farmacia è opportuno includere:
 - Niente comparazioni ("più efficace di X", "alternativa a Y") tra farmaci.
 - Niente "richiedi consiglio farmacista" come call-to-action implicita di consulenza terapeutica online — la consulenza farmacistica si fa al banco, non via form web.
 
+### Casi specifici di pubblicità e copy
+
+**Pubblicità di farmaco con AIC (Autorizzazione Immissione in Commercio)**:
+Il D.Lgs. 219/2006 art. 116 richiede per OTC pubblicizzati al pubblico l'autorizzazione preventiva del Ministero della Salute (Provvedimento per la pubblicità sanitaria). Il sito di Giovannini, in quanto farmacia (non produttore farmaceutico), **non pubblicizza farmaci** ma comunica i propri servizi. Differenza chiave:
+
+- **Vietato**: "Da Giovannini trovi i migliori antinfluenzali al miglior prezzo." (pubblicità di farmaco non autorizzata)
+- **Ammesso**: "Giovannini è una farmacia con reparto influenzali, antitussivi, antidolorifici da banco. Chiedi al farmacista." (comunicazione di servizio).
+
+**Pubblicità di integratore**:
+Sotto Reg. UE 1924/2006. Solo claim approvati EFSA.
+
+- **Vietato**: "Curcuma per le difese — il rimedio che combatte l'influenza."
+- **Ammesso**: "Curcuma — La curcuma contribuisce alla normale funzione articolare (claim Reg. UE 432/2012)."
+
+**Pubblicità di cosmetico**:
+Sotto Reg. UE 1223/2009.
+
+- **Vietato**: "La Roche-Posay Effaclar elimina l'acne e cura la pelle problematica."
+- **Ammesso**: "La Roche-Posay Effaclar — Linea per pelli a tendenza acneica. Uso quotidiano. (claim cosmetico, Reg. UE 1223/2009)."
+
+**Pubblicità di dispositivo medico**:
+Sotto Reg. UE 2017/745. Indicazione registrata, marchio CE Medical Device, classe del dispositivo.
+
+- **Vietato**: "Un termometro digitale che misura tutto e ti dice se hai la febbre."
+- **Ammesso**: "Termometro digitale [marca] — Dispositivo medico classe IIa, marchio CE [numero]. Per misurazione temperatura corporea."
+
+### Errori frequenti da evitare nel sito di farmacia
+
+1. **"Vendita online di farmaci"** senza certificazione DM Salute 6 luglio 2015 (logo verde europeo richiesto). Giovannini, non avendo certificazione e-commerce farmaceutico, non può vendere farmaci online. Può vendere parafarmaceutici e cosmetici, con etichettatura a distanza.
+2. **"Consulto medico online via chat"** — è atto medico, non farmaceutico. Un farmacista non può sostituire il medico. Vietato.
+3. **"Farmaci scontati"** — claim di prezzo per farmaci OTC è ammesso solo se il prezzo è davvero ridotto rispetto al prezzo consigliato e non c'è inganno; il prezzo dei farmaci con prescrizione è normato e non scontabile.
+4. **Foto di farmaci nelle pagine generiche** — meglio foto del banco, dei reparti, del personale. Le foto dei farmaci specifici sono pubblicità implicita.
+5. **Testimonial di guarigione** — vietati per farmaci. Anche per OTC. Anche se "veri".
+6. **Confronto con concorrenti** ("più conveniente di [farmacia X]") — sgradevole + potenzialmente concorrenza sleale. Evitare.
+
 ---
 
 ## §12 Accessibilità e prestazioni
@@ -600,21 +713,48 @@ Vietato Hotjar/Clarity/heatmap senza opt-in.
 
 ### Fase F2 — Build (settimane 3-6, ~40-50h)
 
-1. 7 pagine + tabella turni di guardia dinamica.
-2. Schema.org `Pharmacy + LocalBusiness` validato.
-3. Cookie banner Garante-conforme.
-4. Form contatto con anti-spam.
-5. Test responsive, a11y, performance.
-6. SEO on-page.
-7. GA4 anonimizzato + Search Console.
-8. Lancio.
+**Deliverable dettagliati:**
+
+1. **Implementazione 7 pagine principali**:
+   - Home (~3.000 parole / 800-900 con copy efficace).
+   - Servizi (overview, ~600 parole) + 5-6 sub-pagine servizio (NRE, galenica, test, CUP, consegna domicilio, eventuali altri) — ognuna ~400 parole.
+   - Reparti (overview, ~500 parole) + 6 sub-pagine reparto (cosmetica, omeopatia, ortopedia, pet, sportivo, neonato) — ognuna ~300 parole con marchi distribuiti.
+   - Turni di guardia (pattern dinamico, vedi sotto).
+   - La Farmacia / Storia (~700 parole).
+   - FAQ (~600 parole con 12-15 domande).
+   - Contatti (~300 parole).
+2. **Tabella turni di guardia dinamica**:
+   - JSON locale con calendario 90 giorni (fonte ASL Verona Distretto 3, aggiornamento trimestrale).
+   - Script JS (~30 righe) che legge il JSON e mostra lo stato corrente nel banner sticky della Home.
+   - Pagina `/turni-di-guardia/` con tabella completa + spiegazione.
+3. **Schema.org JSON-LD `Pharmacy + LocalBusiness`** validato con Rich Results Test di Google.
+4. **Cookie banner Garante-conforme** (Iubenda o custom — preferenza custom per controllo categoria sensibili).
+5. **Form contatto** con anti-spam (honeypot + rate limiting), consenso GDPR esplicito, nota "no consulto sanitario via web".
+6. **Test responsive** 375/768/1440px su tutte le pagine.
+7. **Test accessibilità WCAG 2.1 AA** con axe DevTools — focus su contrasto tema light, gerarchia heading, alt text foto reparti, navigazione tastiera tabella turni.
+8. **Test performance Lighthouse** — target ≥90 in Performance e Accessibility, su tutte le 14+ pagine.
+9. **SEO on-page completo**: title, description, OG, Twitter Card, alt tag, gerarchia heading, schema.org, NAP consistency con scheda Federfarma 106.
+10. **Setup Google Analytics 4** con anonimizzazione IP, Ads Personalization Disabled, eventi custom (chiamate `tel:`, click "indica indirizzo", visualizzazioni pagina turni di guardia, click su NRE).
+11. **Setup Search Console** con sitemap.xml + robots.txt.
+12. **Lancio in produzione** con DNS configurato, redirect 301 da eventuali URL precedenti se Securani aveva un sito storico.
+
+**Dipendenze cliente**: foto definitive consegnate, approvazione testi (specialmente reparti per claim cosmetici e omeopatici), accesso DNS/hosting, dump iniziale calendario turni di guardia.
 
 ### Fase F3 — Iterazione (settimane 7-9, ~11-16h)
 
 1. Misurazione baseline KPI.
 2. Aggiornamento tabella turni di guardia con prossimi 90 giorni.
-3. Eventuale primo articolo blog stagionale ("Allergie di primavera: cosa offriamo in farmacia").
-4. Backlog migliorie.
+3. Eventuale primo articolo blog stagionale ("Allergie di primavera: cosa offriamo in farmacia") — copy revisionato da Securani per compliance.
+4. Eventuale newsletter mensile (soft opt-in) con consigli stagionali claim-compliant.
+5. Backlog migliorie F4.
+
+### Note finali roadmap
+
+- **Onboarding F1 critico**: Giovannini ha 78 anni di storia e Securani ha responsabilità di Direttore Tecnico. Riservare 2 sessioni da 90 minuti: una su anagrafica/storia, una su servizi e compliance pubblicità sanitaria.
+- **Tabella turni di guardia**: la fonte è ASL Verona Distretto 3. Verificare se esiste API o dump pubblico utilizzabile; altrimenti aggiornamento manuale trimestrale di JSON. Il sito mostra automaticamente lo stato corrente attingendo dal JSON.
+- **Compliance pubblicità sanitaria**: ogni voce di servizio e ogni descrizione di reparto va revisionata da Securani prima della pubblicazione. È un costo di tempo non banale ma è la differenza tra un sito conforme e una contestazione potenziale.
+- **Foto staff**: oltre Securani, eventuali altri farmacisti collaboratori vanno fotografati con autorizzazione esplicita per uso web. Se il personale cambia, il sito va aggiornato.
+- **Blog F3 opzionale**: l'investimento in blog vale solo se Giovannini può sostenere 6-12 articoli all'anno con contenuto compliant. Sotto questa soglia, sproporzionato.
 
 ### KPI a 90gg
 
@@ -692,10 +832,33 @@ Vietato Hotjar/Clarity/heatmap senza opt-in.
 - Dominio già registrato? Possibili: `farmaciagiovannini.it`, `farmacia-giovannini-mozzecane.it`.
 - Hosting, account Google.
 
-### A.11 Budget e tempi
+### A.11 Marchi distribuiti per reparto
+
+#### Cosmetica (tipici per farmacia veronese di tradizione)
+- Avène, La Roche-Posay, Bioderma, Caudalíe, Vichy, Eucerin, Rilastil, Mustela (per neonato), Rougj?
+
+#### Omeopatia
+- Boiron, Heel, Guna, Specchiasol, Pegaso?
+
+#### Ortopedia (`[DA CONFERMARE]` se Giovannini è punto vendita autorizzato)
+- Tutori (Donjoy, Pavis), fasce, calze a compressione (Solidea, Sigvaris), plantari, eventuali noleggio carrozzine, stampelle.
+
+#### Pet care
+- Antiparassitari (Frontline, Bayer Advantix), alimenti speciali (Royal Canin, Hill's, Specific), shampoo medicati.
+
+#### Sportivo
+- Integratori EFSA-compliant (Enervit, Named Sport, Pro Action), bende, supporti, ghiaccio istantaneo.
+
+#### Neonato e mamma
+- Pannolini (`[DA CONFERMARE]` quale marca: Pampers? Naturaverde?), latte in polvere, biberon, ciucci, igiene neonatale.
+
+#### Veterinario
+- Ricette veterinarie ammesse `[DA CONFERMARE]`: tipologie di farmaci dispensati (vermifughi, antiparassitari, eventuali farmaci per animali da affezione).
+
+### A.12 Budget e tempi
 - Scadenza target.
 - Budget servizio fotografico.
-- Disponibilità revisioni.
+- Disponibilità revisioni testi (cruciale per compliance pubblicità sanitaria — ogni voce di reparto va revisionata da Securani prima della pubblicazione).
 
 ---
 

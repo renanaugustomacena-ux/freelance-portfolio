@@ -225,8 +225,21 @@ Il portfolio contiene tre varianti del template Girasole: **Template A "Terra Ve
 | Prodotto | Erbe + integratori + cosmetici curati | Farmaci + integratori | Bio food + integratori | Catalogo vasto generico |
 | Esperienza | Consulenza Paola | Consulenza farmacista | Self-service bio | Recensioni online |
 | Prezzo | Medio | Medio-alto | Alto | Variabile |
+| Tempo decisionale cliente | 10-30 min con Paola | 2-5 min al banco | 15-40 min girando | 30 sec di click |
+| Reso | Su valutazione | Limitato | Standard GDO | 14gg recesso |
+| Personalizzazione | Alta (consulenza) | Media | Bassa | Bassa |
 
-Posizionamento: **"L'erboristeria di Paola Reani: consulenza, selezione curata, e prodotti naturali a Mozzecane."**
+### Le 5 occasioni di scelta del cliente
+
+Per costruire un sito che parli alle persone reali, va capito *quando* il cliente sceglie Girasole rispetto alle alternative. Cinque occasioni tipiche:
+
+1. **"Mio figlio non riesce a dormire, voglio qualcosa di naturale"** — il cliente ha già escluso il farmaco perché parla di "bambino" + "naturale". Va dalla farmacia se vuole una soluzione veloce, da Girasole se vuole capire prima cosa sta facendo. Il sito deve servire questo intent con una pagina "Sonno" che spiega le opzioni (melatonina, valeriana, camomilla) senza promettere efficacia ma con dettaglio onesto.
+2. **"Ho letto su internet che la curcuma fa bene per [...]" — vuole conferma o smentita** — il cliente arriva con un'idea, spesso amplificata da contenuti non scientifici. Girasole è il punto in cui si possono rimettere le cose in proporzione, calibrando l'aspettativa entro il claim EFSA reale. Il sito deve gestire questo intent con tatto: non smentire pubblicamente l'idea sbagliata, ma fornire il claim corretto e l'invito a parlarne.
+3. **"Devo fare un regalo a una persona attenta al benessere"** — intent regalo, valore percepito. Cosmetici naturali, set tisane, candele aromatiche. Differenziatore vs e-commerce: confezione locale, biglietto scritto a mano.
+4. **"Ho una pelle problematica e i prodotti normali non funzionano"** — intent skincare, percepisce i prodotti farmaceutici dermocosmetici come opzione, ma vuole anche un consiglio non commerciale. Girasole può raccomandare un prodotto cosmetico naturale + invitare a vedere il dermatologo se persistente.
+5. **"Sto seguendo una dieta e mi serve un integratore mirato"** — intent integratori sportivi/nutrizionali, fascia 25-50 anni. Differenziatore vs e-commerce: Girasole controlla la dose, l'interazione con farmaci eventualmente assunti, l'appropriatezza del prodotto.
+
+Posizionamento: **"L'erboristeria di Paola Reani: consulenza, selezione curata, e prodotti naturali a Mozzecane. Per chi vuole capire prima di scegliere."**
 
 ---
 
@@ -560,6 +573,34 @@ Disclaimer obbligatorio in ogni pagina che parla di consulenza:
 ### Tracciabilità prodotti bio
 Per la linea bio, etichettatura conforme Reg. UE 2018/848: logo bio EU, codice organismo di controllo, origine UE/non UE.
 
+### Cookie e profilazione su pagine "salute-adjacent"
+
+Le pagine relative a esigenze di salute (sonno, immunità, digestione, ecc.) possono essere classificate da Google Ads e Meta come "categorie sensibili — salute e benessere". Implicazioni:
+
+- **Niente remarketing** su queste pagine: chi visita "/prodotti/sonno/" non deve essere reidentificato successivamente con annunci.
+- **Niente Facebook Pixel** di base senza consenso categoria marketing accettato esplicitamente.
+- **GA4 con anonimizzazione IP** e modalità basic — niente categorie sensibili in custom dimension.
+- **Cookie di terze parti** (Google Fonts CDN, font Awesome CDN, ecc.) self-hosted dove possibile per evitare tracking implicito.
+
+### Esempi pratici di copy compliance
+
+Ecco tre scenari di copy comune, prima/dopo:
+
+**Scenario 1 — Prodotto: Integratore di curcuma**
+
+- *Prima (rischioso)*: "La curcuma è un potente antinfiammatorio naturale che aiuta a combattere i dolori articolari."
+- *Dopo (compliant)*: "Integratore alimentare a base di curcuma. La curcuma contribuisce alla normale funzione articolare (claim ammesso Reg. UE 432/2012). 500 mg per dose, da assumere durante i pasti."
+
+**Scenario 2 — Categoria: "Detox primaverile"**
+
+- *Prima (rischioso)*: "Depura il fegato e ripulisci l'organismo dalle scorie invernali."
+- *Dopo (compliant)*: "Soluzioni di stagione per il benessere quotidiano. Tisane drenanti, integratori a base di carciofo (claim approvato: 'Il carciofo contribuisce alla normale funzione del fegato' — solo per prodotti che soddisfano dose minima EFSA). Vieni a parlarne con Paola."
+
+**Scenario 3 — Cosmetico: Crema viso anti-età**
+
+- *Prima (rischioso)*: "Elimina rughe e segni del tempo, riportando la pelle alla sua giovinezza."
+- *Dopo (compliant)*: "Crema viso con [ingrediente attivo verificato] (Reg. UE 1223/2009). Aiuta a contrastare i segni del tempo. Adatta a pelli mature, applicare la sera dopo la detersione."
+
 ---
 
 ## §12 Accessibilità e prestazioni
@@ -689,6 +730,15 @@ Vietato senza opt-in esplicito utente: Hotjar, Microsoft Clarity, FullStory, qua
 ### Note finali roadmap
 - L'onboarding F1 di Girasole richiede particolare attenzione alle schede prodotto: il copy claim-compliant non si improvvisa. Prevedere 2-3 ore aggiuntive di revisione testi prima di pubblicare.
 - Schede prodotto: 30 alla F2, 60 a 90gg, 120-150 a regime nei 6-12 mesi successivi.
+- Articoli blog: 0 in F1-F2 (sproporzionato per il traffico atteso); 1-2 in F3 (es. "Tisane di stagione: novembre", "Quando l'integratore di vitamina D ha senso?"); 6-8 a regime annuo se Paola può dedicare 1-2 ore al mese.
+
+### Evoluzione F4 (post-90gg, opzionale)
+
+Quando i KPI F3 confermano un traffico sostenuto, valutare:
+1. **Prenotazione consulenza online** — slot configurabili per consulenze "lunghe" (20-30 min su appuntamento), separate dalla consulenza al banco walk-in. Strumento: Calendly o equivalente self-hosted.
+2. **Newsletter mensile** — 1 email al mese con consigli stagionali (sempre claim-compliant), nuovi prodotti, eventi. Soft opt-in con consenso esplicito.
+3. **Mini e-commerce per prodotti scaffalo** — solo se Paola ha capacità logistica di spedire (imballaggio, etichettatura a distanza Reg. 1169 art. 14 per integratori, contabilità). Inizio con 20-30 prodotti pilota.
+4. **Workshop e mini-eventi in negozio** — "Aperitivo erboristico", "Come preparare la tisana di stagione" — 1-2 al trimestre. Pagina dedicata sul sito con prenotazione.
 
 ---
 
