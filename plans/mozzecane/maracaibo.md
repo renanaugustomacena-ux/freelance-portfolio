@@ -162,6 +162,20 @@ Lacune contenuto: dati anagrafici, listino, eventi programmati, autorizzazioni, 
 
 Posizionamento: **"Bar Maracaibo: colazione, aperitivo, serata e cocktail a Mozzecane. Tre occasioni, un posto."**
 
+### Le 5 occasioni di scelta del cliente
+
+1. **"Mattina, caffè e brioche prima del lavoro"** — intent colazione, fascia 25-65 anni. Decisione di abitudine, non di scelta. Sito: orari mattutini precisi.
+2. **"Aperitivo del venerdì con colleghi"** — intent socialità, fascia 25-50 anni. Format aperitivo con drink + tagliere. Differenziatore Maracaibo vs altri bar: format aperitivo specifico.
+3. **"Cocktail bar per dopo cena con amici"** — intent serale, fascia 25-45 anni. Differenziatore: cocktail signature, atmosfera curata.
+4. **"Festa privata di compleanno"** — intent evento privato. Privatizzazione locale o spazio dedicato. Form richiesta evento.
+5. **"Sono nuovo a Mozzecane, dove vado a bere?"** — intent ricerca prossimità. Sito + GBP + recensioni. Differenziatore: storia, stile, format eventi.
+
+### Tre profili clienti tipici
+
+- **Andrea, 35 anni, abitudinario**: caffè ogni mattina, aperitivo del venerdì. Cliente fidelizzato. Non guarda il sito.
+- **Giulia, 28 anni, social**: cerca posti via Instagram, valuta foto e atmosfera. Sceglie Maracaibo se foto serali sono curate.
+- **Famiglia che cerca location per festeggiamenti**: 50esimo compleanno, pensionamento. Privatizza il locale. Sito: pagina Eventi è cruciale.
+
 ---
 
 ## §7 Architettura informativa proposta

@@ -157,6 +157,20 @@ Lacune contenuto: allergeni, ingredienti dettagliati, orari precisi, modalità a
 
 Posizionamento: **"La Bottega della Pizza: pizza da asporto a Mozzecane dal `[DA CONFERMARE]`. Davide al forno, 80% ingredienti italiani, verdure fresche."**
 
+### Le 5 occasioni di scelta del cliente
+
+1. **"Stasera non cucino, prendo una pizza"** — intent serale veloce, fascia 25-65 anni. Decisione presa nei 30 minuti prima della cena. Sito: stato "aperti adesso" + tap su WhatsApp con messaggio precompilato.
+2. **"Domani ho gli amici a casa, ordino pizze"** — intent gruppo, ordine multi-pezzi. Forma di prenotazione anticipata via telefono o WhatsApp. Sito: form ordine con quantità.
+3. **"Cerco una pizza per un compleanno bambini"** — intent evento, fascia genitori. Pizze classiche (margherita, prosciutto), eventuale pizza dolce. Sito: lista pizze "per bambini" + opzioni speciali.
+4. **"Sono nuovo a Mozzecane, dove ordino pizza?"** — intent ricerca prossimità. Sito + GBP + recensioni come strumenti decisionali. Differenziatore Bottega: 12 anni di attività, conduzione Davide.
+5. **"Ho un'esigenza alimentare specifica (no glutine, vegan)"** — intent allergeni/dieta. Pagina menu con allergeni ben evidenziati ed eventuali pizze speciali. Differenziatore vs catene: Davide può consigliare e adattare.
+
+### Tre profili clienti tipici
+
+- **Marco, 40 anni, padre di famiglia**: ordina pizza 1-2 volte a settimana, classica margherita o quattro stagioni. Sceglie per qualità + prezzo + velocità ritiro. Sito: deve servire l'ordine veloce.
+- **Lucia, 30 anni, lavoratrice fuori sede**: ordina pizza la sera al rientro casa. Tap su WhatsApp con "la solita" se cliente abituale. Sito: meno rilevante, WhatsApp è dominante.
+- **Federico, 25 anni, studente universitario**: cerca pizza al taglio o slice veloce, prezzo basso, asporto rapido. Sito: lista prezzi pubblica, orari precisi.
+
 ---
 
 ## §7 Architettura informativa proposta

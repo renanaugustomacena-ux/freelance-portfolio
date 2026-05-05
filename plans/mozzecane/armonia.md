@@ -194,6 +194,20 @@ Lacune:
 
 Posizionamento: **"Armonia: il centro estetico di San Zeno di Mozzecane. Trattamenti viso, trucco semipermanente, manicure su appuntamento via WhatsApp."**
 
+### Le 5 occasioni di scelta del cliente
+
+1. **"Mi voglio fare un regalo dopo una settimana stressante"** — intent self-care, fascia 25-55 anni. Trattamento viso o massaggio. Differenziatore Armonia: rapporto personale con Raffaella, ambiente raccolto.
+2. **"Devo prepararmi per un matrimonio/cerimonia"** — intent occasione speciale, fascia 25-50 anni. Trucco semipermanente preventivo, manicure, eventuale trattamento prep. Pacchetto personalizzato.
+3. **"Mi sono trasferita a Mozzecane e cerco un'estetista"** — intent ricerca prossimità, nuove residenti. Sito + GBP + Instagram come strumenti di scoperta. Differenziatore vs colleghi: 5 minuti dalla casa.
+4. **"Voglio provare il trucco semipermanente"** — intent specialistico. Cliente che ha visto il trattamento online o da amica e vuole capire. Pagina dedicata col disclaimer "non è atto medico".
+5. **"Ho bisogno di una manicure veloce prima di un meeting"** — intent funzionale, breve. Fascia 30-55 anni. Differenziatore: orari ampi (Mar-Ven 09-20).
+
+### Tre profili clienti tipici
+
+- **Anna, 35 anni, mamma di 2 bambini**: cerca trattamenti viso mensili, manicure ogni 3 settimane. Tempo limitato, vuole appuntamenti puntuali. Sito serve: WhatsApp prenotazione veloce con messaggio precompilato.
+- **Marina, 52 anni, professionista**: trucco semipermanente sopracciglia, qualche trattamento corpo. Budget medio-alto, cerca qualità + relazione. Sito serve: pagina trucco semipermanente con disclaimer + gallery progetti realizzati.
+- **Sofia, 28 anni, social-aware**: si sceglie via Instagram, valuta foto e recensioni, prenota via DM. Sito è secondario; Instagram è primario. Sito serve come backup informativo + autorità.
+
 ---
 
 ## §7 Architettura informativa proposta
@@ -407,6 +421,35 @@ WhatsApp Business per prenotazioni richiede:
 
 **Disclaimer per trucco semipermanente / trattamenti invasivi minimi**:
 - "Il trucco semipermanente è una procedura estetica, non sanitaria. Per controindicazioni di natura medica (cute non integra, allergie, dermatiti), consultare il medico curante prima del trattamento."
+
+### Pattern operativi compliance per copy estetica
+
+**Pattern 1 — Trattamento viso anti-età:**
+- *Prima*: "Trattamento viso anti-età che cancella le rughe e ringiovanisce la pelle."
+- *Dopo*: "Trattamento viso (50 min) — Detersione, esfoliazione, massaggio, maschera personalizzata in base al tipo di pelle. Aiuta a contrastare i segni del tempo."
+
+**Pattern 2 — Massaggio rilassante:**
+- *Prima*: "Massaggio terapeutico che cura tensioni e dolori."
+- *Dopo*: "Massaggio rilassante (60 min) — Tecnica di rilassamento muscolare per ridurre la sensazione di tensione. Non è massaggio terapeutico/medicale."
+
+**Pattern 3 — Trattamento corpo dimagrante:**
+- *Prima*: "Trattamento dimagrante che fa perdere centimetri in poche sedute."
+- *Dopo*: "Trattamento corpo (60 min) — Massaggio drenante con prodotti cosmetici a base di [ingredienti]. I risultati possono variare; non sostituisce uno stile di vita sano e l'attività fisica. Per perdita di peso significativa, consultare il medico."
+
+**Pattern 4 — Trucco semipermanente sopracciglia:**
+- *Prima*: "Sopracciglia perfette per anni con il nostro trucco semipermanente."
+- *Dopo*: "Trucco semipermanente sopracciglia (180 min, prima sessione + ritocco a 30 giorni). Tecnica `[DA CONFERMARE]` (microblading / microshading / ombré). Durata indicativa 1-3 anni in base al tipo di pelle. Procedura estetica non sanitaria."
+
+### Errori frequenti da evitare nel sito di centro estetico
+
+1. **Foto stock di donne perfette al mare**: cliché. Vietato per sito serio. Foto reali del centro o di Raffaella al lavoro.
+2. **Testimonial "ho perso 10 kg con questo trattamento"**: claim impossibile per estetica non sanitaria. Vietato.
+3. **Foto before/after senza autorizzazione cliente**: violazione GDPR. Mai.
+4. **Filtri Instagram-style sulle foto post-trattamento**: deformanti, ingannevoli. Foto naturali.
+5. **Pacchetti "10 sedute al prezzo di 6"** senza policy chiara su rinunce/scadenza: contestabili. Definire termini.
+6. **"Risultato garantito"**: estetica non garantisce. Tutti i risultati sono "indicativi".
+7. **Recensioni clonate da altri centri**: violazione + facile da scoprire. Solo recensioni autentiche.
+8. **Ricetta "naturale" con ingredienti descritti come terapeutici**: claim cosmetico al limite. Verificare.
 
 ---
 

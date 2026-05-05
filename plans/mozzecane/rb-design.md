@@ -156,6 +156,20 @@ Lacune contenuto: brand distribuiti, prezzi indicativi (anche solo fasce), tempi
 
 Posizionamento: **"RB Design: showroom arredamento e interior design a Mozzecane. Roberto Bertolaso vi guida dalla progettazione alla consegna."**
 
+### Le 5 occasioni di scelta del cliente
+
+1. **"Mi sto trasferendo in casa nuova, devo arredare"** — intent progetto completo, fascia 30-55 anni. Budget medio-alto. Form preventivo con planimetria.
+2. **"Voglio rifare la cucina dopo 15 anni"** — intent ristrutturazione mirata. Sopralluogo + progettazione 3D + preventivo dettagliato.
+3. **"Apro un negozio/ufficio e cerco arredamento commerciale"** — intent B2B. Differenziatore RB Design vs IKEA: progettazione professionale per spazi commerciali.
+4. **"Cerco un mobile su misura"** — intent specialistico. Falegname o showroom con linea su misura. Differenziatore RB Design (`[DA CONFERMARE]` se attiva): progettazione + fornitura.
+5. **"Voglio vedere mobili veri prima di acquistare"** — intent showroom fisico. Differenziatore vs e-commerce: toccare, sedersi, valutare.
+
+### Tre profili clienti tipici
+
+- **Coppia 35 anni primo arredamento casa**: budget 15-30k €, cucina + soggiorno + camera. Vuole consulenza ma anche spazio decisionale. Sceglie RB Design per Bertolaso che progetta + non spinge alle decisioni.
+- **Famiglia 50 anni rifà bagno + cucina**: budget 20-50k €, qualità superiore al primo arredamento. Sceglie RB Design per relazione personale + brand selezionati.
+- **Imprenditore che apre ufficio**: budget 10-30k €, esigenze funzionali (scrivanie, sedute, sale riunione). Sceglie RB Design per progettazione professionale + tempi di consegna.
+
 ---
 
 ## §7 Architettura informativa proposta

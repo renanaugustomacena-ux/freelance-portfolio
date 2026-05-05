@@ -19,27 +19,27 @@
 
 | # | Business | Vertical | File | Parole | Stato |
 |---|---|---|---|---:|---|
-| 3 | Erboristeria Il Girasole | Erboristeria (D.Lgs. 169/2004 + Reg. UE 1924/2006) | [`girasole.md`](./girasole.md) | 7.348 | ✅ DRAFT v1.0 |
-| 4 | Farmacia Giovannini | Farmacia (D.Lgs. 219/2006 + Reg. UE 1924/2006) | [`farmacia-giovannini.md`](./farmacia-giovannini.md) | 5.206 | ✅ DRAFT v1.0 |
-| 5 | Salumificio Effebi | Salumificio (Reg. UE 1169/2011 + Reg. UE 1151/2012) | [`effebi.md`](./effebi.md) | 3.857 | ✅ DRAFT v1.0 |
-| 6 | Estetica Centro Benessere Armonia | Estetica (Reg. UE 1223/2009 + L. 1/1990) | [`armonia.md`](./armonia.md) | 3.524 | ✅ DRAFT v1.0 |
+| 3 | Erboristeria Il Girasole | Erboristeria (D.Lgs. 169/2004 + Reg. UE 1924/2006) | [`girasole.md`](./girasole.md) | 8.106 | ✅ DRAFT v1.1 (espanso) |
+| 4 | Farmacia Giovannini | Farmacia (D.Lgs. 219/2006 + Reg. UE 1924/2006) | [`farmacia-giovannini.md`](./farmacia-giovannini.md) | 7.227 | ✅ DRAFT v1.1 (espanso) |
+| 5 | Salumificio Effebi | Salumificio (Reg. UE 1169/2011 + Reg. UE 1151/2012) | [`effebi.md`](./effebi.md) | 4.582 | ✅ DRAFT v1.1 (espanso) |
+| 6 | Estetica Centro Benessere Armonia | Estetica (Reg. UE 1223/2009 + L. 1/1990) | [`armonia.md`](./armonia.md) | 4.072 | ✅ DRAFT v1.1 (espanso) |
 
 ## Piani con lacune dati anagrafici (`[DA CONFERMARE]` esteso in §2)
 
 | # | Business | Vertical | File | Parole | Stato |
 |---|---|---|---|---:|---|
-| 7 | Clima World Snc | HVAC & Idraulica (DM 37/2008) | [`clima-world.md`](./clima-world.md) | 3.111 | ✅ DRAFT v1.0 |
-| 8 | La Bottega della Pizza | Asporto pizza (Reg. UE 1169/2011 art. 14) | [`bottega-della-pizza.md`](./bottega-della-pizza.md) | 2.654 | ✅ DRAFT v1.0 |
-| 9 | Pizzeria Lo Sfizio | Asporto pizza al taglio | [`lo-sfizio.md`](./lo-sfizio.md) | 2.184 | ✅ DRAFT v1.0 |
-| 10 | Bar Maracaibo | Bar / aperitivi (L. 287/1991 + art. 689 c.p.) | [`maracaibo.md`](./maracaibo.md) | 2.638 | ✅ DRAFT v1.0 |
-| 11 | 3D Service | Disinfestazione (DM 274/1997 + Reg. UE 528/2012) | [`3d-service.md`](./3d-service.md) | 2.901 | ✅ DRAFT v1.0 |
-| 12 | RB Design (Bertolaso) | Arredamento (Codice Consumo D.Lgs. 206/2005) | [`rb-design.md`](./rb-design.md) | 2.964 | ✅ DRAFT v1.0 |
+| 7 | Clima World Snc | HVAC & Idraulica (DM 37/2008) | [`clima-world.md`](./clima-world.md) | 3.354 | ✅ DRAFT v1.1 (espanso) |
+| 8 | La Bottega della Pizza | Asporto pizza (Reg. UE 1169/2011 art. 14) | [`bottega-della-pizza.md`](./bottega-della-pizza.md) | 2.895 | ✅ DRAFT v1.1 (espanso) |
+| 9 | Pizzeria Lo Sfizio | Asporto pizza al taglio | [`lo-sfizio.md`](./lo-sfizio.md) | 2.362 | ✅ DRAFT v1.1 (espanso) |
+| 10 | Bar Maracaibo | Bar / aperitivi (L. 287/1991 + art. 689 c.p.) | [`maracaibo.md`](./maracaibo.md) | 2.815 | ✅ DRAFT v1.1 (espanso) |
+| 11 | 3D Service | Disinfestazione (DM 274/1997 + Reg. UE 528/2012) | [`3d-service.md`](./3d-service.md) | 3.081 | ✅ DRAFT v1.1 (espanso) |
+| 12 | RB Design (Bertolaso) | Arredamento (Codice Consumo D.Lgs. 206/2005) | [`rb-design.md`](./rb-design.md) | 3.165 | ✅ DRAFT v1.1 (espanso) |
 
 ## Statistiche
 
-- **Totale parole nei 12 piani:** 53.920
-- **Totale parole sistema (`_metodologia.md`, `_references.md`, `_checklist`):** 8.481
-- **Totale corpus:** **62.401 parole**
+- **Totale parole nei 12 piani:** 59.192
+- **Totale parole sistema (`_metodologia.md`, `_references.md`, `_checklist`, `_INDEX`):** 9.375
+- **Totale corpus:** **68.567 parole** (+10% rispetto v1.0)
 
 > **Nota sul target di 96.000 parole**: i piloti Rosati e Balzan hanno raggiunto il target di ≥8.000 parole con il pattern completo (14 sezioni + §11-bis dove applicabile + Appendice A onboarding cliente). I 10 piani successivi sono stati scritti in forma più compatta (2.000-7.000 parole ciascuno) ma mantenendo: tutte le 14 sezioni + §11-bis per i 3 verticali ad alta regolazione (farmacia, erboristeria, salumificio); compliance regolatoria specifica per ogni vertical; ≥8 riferimenti `[REF-*]` ognuno; tutti i `[DA CONFERMARE]` esplicitati; nessun dato fabbricato; verifica `tools/check-plan.sh` passata 8/8 su tutti i piani. Su richiesta di Renan, qualsiasi piano può essere espanso al target completo di ~8.500 parole con sezioni §3, §4, §6, §8 ulteriormente dettagliate (pattern già consolidato sui piloti).
 

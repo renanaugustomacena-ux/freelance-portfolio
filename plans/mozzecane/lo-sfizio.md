@@ -156,6 +156,20 @@ Lacune: allergeni, listino completo, marchi farina, modalità asporto/delivery, 
 
 Posizionamento: **"Lo Sfizio: pizza al taglio e intera d'asporto a Mozzecane. Aperto serale, chiuso lunedì. 130 recensioni Restaurant Guru 4,2/5."**
 
+### Le 5 occasioni di scelta del cliente
+
+1. **"Sto andando a casa stanco, prendo una pizza al taglio"** — intent rapido, fascia 25-55 anni. Decisione presa nei 5 minuti prima del passaggio. Differenziatore Sfizio: pizza al taglio = nessuna attesa.
+2. **"Stasera non cucino, ordino pizza intera"** — intent serale standard. Asporto su prenotazione telefonica.
+3. **"Esco dall'ufficio Verona Sud, prendo qualcosa per cena"** — intent passaggio. Sfizio in Viale della Repubblica intercetta il flusso.
+4. **"Voglio una pizza diversa dalla solita catena"** — intent qualità/varietà. Differenziatore vs Domino's/Pizzettaro: pizza al taglio fatta dal pizzaiolo, non standardizzata.
+5. **"Cerco pizza al taglio per evento informale"** — intent gruppo veloce. Pizza al metro o teglie multiple per asporto su prenotazione.
+
+### Tre profili clienti tipici
+
+- **Stefania, 35 anni, lavoratrice**: passa da Sfizio 2-3 volte a settimana per pizza al taglio veloce, scelta tra 4-5 gusti. Sito: orari precisi.
+- **Famiglia Rossi**: ordina pizza intera per la cena del venerdì. Telefonata standard.
+- **Gruppo amici giovani**: ordina pizza al metro o multipla per serata informale. Pre-ordina al telefono.
+
 ---
 
 ## §7 Architettura informativa proposta

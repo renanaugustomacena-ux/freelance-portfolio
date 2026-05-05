@@ -180,6 +180,23 @@ Lacune:
 
 Posizionamento sintetico: **"Clima World: HVAC e idraulica a Mozzecane e Valeggio sul Mincio. Conduzione Quaranta e Antonioli."**
 
+### Le 6 occasioni di scelta del cliente
+
+1. **"Caldaia non parte stamattina, casa fredda con figli"** — intent emergency residenziale. Frequenza alta in inverno. CTA primaria: `tel:` immediato. Differenziatore Clima World vs aggregatori 24/7: ditta locale reale, raggiungibile.
+2. **"Climatizzatore rotto, ho ospiti tra 2 giorni"** — intent urgenza residenziale. Frequenza alta in estate. CTA: `tel:` + form preventivo con upload foto.
+3. **"Devo ristrutturare bagno, cerco preventivo"** — intent progetto pianificato, fascia 30-65 anni. Form preventivo dettagliato, sopralluogo gratuito.
+4. **"Voglio cambiare caldaia con bonus fiscale"** — intent strategico. Cliente che ha sentito parlare di Ecobonus / Conto Termico ma non sa come funziona. Sito serve: pagina dedicata bonus fiscali.
+5. **"Aprirò un negozio/ufficio e mi serve impianto idraulico-elettrico-clima"** — intent commerciale. Differenziatore vs colleghi piccoli: capacità di gestire impianti commerciali multi-servizio.
+6. **"Ho un condominio e cerco fornitore manutenzione"** — intent B2B amministratore condominio. Contratto di manutenzione caldaia centralizzata, controllo fumi, RCEE.
+
+### Differenziazione fine vs Balzan
+
+Il sito Clima World deve evitare di apparire come "fotocopia di Balzan". Tre asset distintivi possibili (`[DA CONFERMARE]` con cliente):
+
+- **Specializzazione climatizzazione**: Clima World può posizionarsi come "lo specialista del clima" (split, pompe di calore, VRV/VRF per ufficio) lasciando a Balzan il primato sull'idraulica/bagni.
+- **Sede secondaria Valeggio**: copertura territoriale che Balzan non ha. Le landing zona di Clima World possono essere più aggressive su Valeggio/Roverbella/Lago di Garda sud.
+- **Centro assistenza Radiant** (`[DA CONFERMARE]` se confermato esclusivo): differenziatore di partnership produttore.
+
 ---
 
 ## §7 Architettura informativa proposta

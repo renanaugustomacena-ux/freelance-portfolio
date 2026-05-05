@@ -157,6 +157,21 @@ Lacune contenuto: numeri autorizzazione, lista biocidi, certificazioni HACCP, sm
 
 Posizionamento: **"3D Service: disinfestazione, derattizzazione, allontanamento volatili a Mozzecane e provincia. Claudio Zampieri, autorizzato e specializzato in HACCP."**
 
+### Le 6 occasioni di scelta del cliente
+
+1. **"Trovato un nido di vespe sul balcone, ho figli"** — intent emergency residenziale, urgenza alta. CTA `tel:` immediato.
+2. **"Sento topi nel sottotetto / cantina"** — intent residenziale frequente. Sopralluogo + trattamento programmato.
+3. **"Ho un ristorante e devo essere a posto con HACCP"** — intent B2B periodico. Contratto annuale di monitoraggio.
+4. **"Albergo / B&B con problema infestazione cimici"** — intent B2B emergency reputazionale. Trattamento immediato + certificazione.
+5. **"Ho legno antico in casa, sento rumori da tarli"** — intent specialistico. Trattamento legno (anti-tarlo) con prodotti specifici.
+6. **"Piccioni che danneggiano il balcone/tettoia"** — intent allontanamento volatili. Sistemi meccanici (reti, dissuasori, filari elettrici).
+
+### Tre profili clienti tipici
+
+- **Mario, 50 anni, proprietario casa con giardino**: chiama per emergenza vespe in estate, derattizzazione una volta in inverno. Sceglie per prossimità + recensioni Google.
+- **Luca, ristoratore 40 anni**: cerca contratto HACCP annuale per soddisfare audit. Sceglie per credenziali + report ben strutturati.
+- **Famiglia in trasloco**: appartamento da bonificare prima di entrare. Sopralluogo + trattamento singolo. Sceglie per disponibilità rapida.
+
 ---
 
 ## §7 Architettura informativa proposta
