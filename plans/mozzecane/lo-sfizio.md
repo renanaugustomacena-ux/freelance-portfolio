@@ -32,6 +32,14 @@ Il template "Pizza Gourmet" (Template A — dark, refined) suggerisce un posizio
 
 **Stima ore complessive:** 45-60 ore in 7 settimane.
 
+**Vincoli di scope espliciti**: il piano **non** include sistema ordini online integrato (eventuale F4 con investimento separato), **non** include integrazione automatica con piattaforme delivery (gestione esterna), **non** include consulenza fiscale specifica. Produce: sito canonico con 5 pagine + menu interattivo con WhatsApp prefilled + GBP, conformità GDPR/cookie/Reg. UE 1169/2011 art. 14, baseline SEO locale, valorizzazione asset 4,2/5 su 130 recensioni RestaurantGuru.
+
+**Decisioni strategiche aperte all'avvio:**
+1. Pizza al taglio: tipologia precisa (quadrato romano, rotondo napoletano, al metro)?
+2. Delivery diretto Mozzecane o solo asporto + piattaforme terze?
+3. Pranzo veloce (es. weekend o pause pranzo lavoratori): in scope o solo serale?
+4. Eventuali specialità "al taglio" particolari (es. taglio gourmet, taglio integrale, taglio senza glutine)?
+
 ---
 
 ## §2 Dati verificati e da confermare
@@ -170,6 +178,39 @@ Posizionamento: **"Lo Sfizio: pizza al taglio e intera d'asporto a Mozzecane. Ap
 - **Famiglia Rossi**: ordina pizza intera per la cena del venerdì. Telefonata standard.
 - **Gruppo amici giovani**: ordina pizza al metro o multipla per serata informale. Pre-ordina al telefono.
 
+### Quattro profili tipici di cliente Lo Sfizio
+
+**Profilo 1 — Stefania, 35 anni, lavoratrice (cliente al taglio veloce).**
+Stefania torna da Verona in macchina, passa da Sfizio 2-3 sere a settimana per pizza al taglio (1 fetta marinara o margherita + bibita). Spesa 4-7 €. Decisione veloce, no prenotazione, walk-in. Sito: serve solo per orari verifica + eventuale novità menu.
+
+**Profilo 2 — Famiglia Rossi (cliente pizza intera del venerdì).**
+Famiglia di 4 persone ordina 4 pizze intere venerdì sera per cena. Spesa 25-35 €. Telefonata 30 minuti prima per ordine + ritiro. Sito: menu chiaro per scelta + tempi attesa onesti.
+
+**Profilo 3 — Gruppo amici 25-30 anni (cliente pizza al metro).**
+Federico organizza serata in casa con 6-8 amici, ordina 2-3 pizze al metro (`[DA CONFERMARE]` se Sfizio fa al metro). Spesa 30-50 €. Pre-ordine telefonico almeno 1h prima. Sito: pagina pizza al metro con foto + listino + tempi.
+
+**Profilo 4 — Cliente di passaggio Verona Sud (Roberto, lavoratore zona industriale).**
+Roberto esce dall'ufficio Verona Sud alle 18:30, passa da Viale della Repubblica per cena veloce. Cerca pizza al taglio veloce o fetta margherita + bibita per cena rapida. Spesa 5-8 €. Sito: orari verifica + parcheggio (Viale della Repubblica = arteria con possibile parcheggio facile).
+
+### Calendario stagionale (asporto pizza serale)
+
+Pattern stagionale tipico:
+- **Settembre-Maggio**: alta stagione, picco venerdì-sabato.
+- **Giugno-Luglio**: media stagione, eventuali clienti turisti Lago Garda.
+- **Agosto**: bassa (clientela in vacanza). Eventualmente 1 settimana di chiusura ferie.
+
+Sfizio ha vantaggio "solo serale" in alta stagione: niente pranzo da gestire, focus sul picco serale.
+
+### Differenziazione vs Bottega + Rosati (specifico)
+
+Tre pizzerie a Mozzecane = mercato segmentato. Posizionamenti distinti:
+
+- **Bottega della Pizza** (Tria Davide, Via Roma 7): asporto puro, 12+ anni, 80% IT, target qualità + cliente abituale.
+- **Pizzeria Trattoria Rosati** (Via Bon Brenzoni 20): trattoria + asporto, forno legna, posizionamento dine-in + qualità più alta.
+- **Lo Sfizio** (Viale Repubblica): asporto serale + pizza al taglio, target velocità + prezzo accessibile + posizione di passaggio.
+
+Sfizio cattura: cliente di passaggio + cliente che vuole pizza al taglio veloce + cliente serale rapido.
+
 ---
 
 ## §7 Architettura informativa proposta
@@ -216,6 +257,64 @@ Posizionamento: **"Lo Sfizio: pizza al taglio e intera d'asporto a Mozzecane. Ap
 ### Contatti
 - Mappa (Viale della Repubblica), NAP, orari.
 - tel + WhatsApp + Facebook.
+
+### Pagina Menu espansa con allergeni
+
+**Struttura della pagina menu:**
+1. Hero "Il nostro menu — pizza al taglio e intera, asporto Mozzecane".
+2. Box informativo "Allergeni" Reg. UE 1169/2011: lista 14 allergeni + codici utilizzati.
+3. **Pizza al taglio** (sezione visibile in primo piano, asset distintivo):
+   - Margherita al taglio: pomodoro, mozzarella, basilico. Allergeni: G, L. Prezzo `[DA CONFERMARE]` €/etto o /trancio.
+   - Marinara al taglio: pomodoro, aglio, origano. Allergeni: G. Prezzo.
+   - Bianca al taglio: olio, sale, rosmarino. Allergeni: G. Prezzo.
+   - Patate al taglio: patate, rosmarino, olio. Allergeni: G. Prezzo.
+   - Salsiccia e funghi al taglio. Allergeni: G, L. Prezzo.
+   - Tonno e cipolla al taglio. Allergeni: G, P. Prezzo.
+   - 2-3 specialità giornaliere `[DA CONFERMARE]`.
+4. **Pizza intera** (sezione classica):
+   - Margherita, Marinara, Quattro stagioni, Capricciosa, Diavola, Prosciutto, Funghi, Würstel-patatine, Tonno, Vegetariana, Bufala. ~10-12 voci.
+5. **Pizza al metro** (`[DA CONFERMARE]` se attivo):
+   - Margherita 1 metro: tipico per gruppi 5-7 persone. Prezzo `[DA CONFERMARE]`.
+   - Mista: 4 farciture diverse su 1 metro.
+   - Personalizzata: tu scegli ingredienti.
+6. **Calzoni** (`[DA CONFERMARE]`):
+   - Calzone classico (prosciutto-mozzarella-pomodoro). Allergeni: G, L.
+7. **Bibite**: acqua, bibite gassate, birre `[DA CONFERMARE]` se anche alcoliche.
+8. Per ogni voce: nome, ingredienti, allergeni, prezzo, tap → WhatsApp prefilled.
+9. Disclaimer: "Le informazioni allergeni sono indicative. Cucina condivisa: tracce di allergeni possibili. Per celiaci accertati, contattare prima di ordinare."
+
+### Pagina Asporto / Come funziona
+
+**Blocchi:**
+1. Hero "Come ordinare al Lo Sfizio".
+2. **Modalità ordine**:
+   - **Telefono**: 045 793 0582 — modalità più rapida, conferma immediata.
+   - **WhatsApp** (`[DA CONFERMARE]`): per chi preferisce scrivere, messaggio precompilato dal menu.
+   - **Walk-in al banco** per pizza al taglio: nessun ordine necessario, scegli al banco e paghi.
+   - **Piattaforme delivery** (`[DA CONFERMARE]` se attive): gestione esterna.
+3. **Tempi tipici**:
+   - Pizza al taglio: nessuna attesa (pronta al banco).
+   - Pizza intera: 15-25 minuti tipici.
+   - Pizza al metro: 25-40 minuti (lievitazione + cottura).
+   - Picco venerdì-sabato 19:30-21: tempi possono salire a 30-40 minuti per pizze intere.
+4. **Pacchetti asporto**:
+   - Pizza al taglio: foglio carta forno + cartoncino di trasporto.
+   - Pizza intera: cartone pizza con base anti-aderente.
+   - Etichetta su packaging: nome cliente, ingredienti, allergeni della pizza.
+5. **Pagamenti accettati** `[DA CONFERMARE]`: contanti, bancomat, carte di credito, eventuali buoni pasto.
+
+### Pagina Recensioni espansa
+
+Asset distintivo Lo Sfizio: 4,2/5 su 130 recensioni RestaurantGuru.
+
+**Blocchi:**
+1. Hero "Cosa dicono di noi — 4,2/5 su 130 recensioni".
+2. **Recensioni in evidenza** (3-5 con autorizzazione cliente):
+   - Citazione testuale + data + nome (come pubblicato originale).
+   - Eventuale risposta del titolare a recensione.
+3. **Link a piattaforme**: RestaurantGuru, Google Maps, Facebook.
+4. **Disclaimer**: "Le recensioni mostrate sono pubbliche e citate testualmente. Per consultare l'elenco completo, visita le piattaforme di recensione."
+5. **Risposta a recensioni negative**: pattern di buona gestione (rispondere costruttivamente a critiche, ringraziare per segnalazioni).
 
 ---
 
@@ -272,6 +371,45 @@ Posizionamento: **"Lo Sfizio: pizza al taglio e intera d'asporto a Mozzecane. Ap
 ### Microcopy
 - "Ordina su WhatsApp" → wa.me prefilled.
 
+### Pattern WhatsApp prefilled per Lo Sfizio
+
+**Pizza intera Margherita:**
+```
+https://wa.me/39XXXXXXXX?text=Buonasera%2C%20vorrei%20una%20Margherita%20intera.%20Quanto%20tempo%20di%20attesa%3F%20Grazie.
+```
+
+**Pizza al taglio (richiesta info):**
+```
+https://wa.me/39XXXXXXXX?text=Buonasera%2C%20stasera%20avete%20pizza%20al%20taglio%20[gusto]%20disponibile%3F%20Grazie.
+```
+
+**Pizza al metro (gruppo):**
+```
+https://wa.me/39XXXXXXXX?text=Buonasera%2C%20vorrei%20ordinare%201%20pizza%20al%20metro%20mista%20per%20stasera%20alle%20[ora].%20Per%206%20persone.%20Grazie.
+```
+
+**Ordine multi-pezzi:**
+```
+https://wa.me/39XXXXXXXX?text=Buonasera%2C%20vorrei%20ordinare%3A%20[lista%20pizze].%20Ritiro%20alle%20[ora].%20Grazie.
+```
+
+### Form contatti generico (`/contatti/`)
+
+Per richieste informazioni meno urgenti (no ordini):
+- Campi: Nome, Email **o** Telefono, Messaggio, Consenso GDPR.
+- Risposta entro 1 giorno lavorativo via email/telefono.
+- Anti-spam honeypot, no captcha invasivo.
+
+### CTA gerarchia per pagina
+
+| Pagina | CTA primaria | CTA secondaria | Note |
+|---|---|---|---|
+| Home | "📞 Chiama 045 793 0582" | "💬 WhatsApp" | Sticky mobile tel |
+| Menu | Tap pizza → WhatsApp prefilled | "📞 Chiama" | Pattern dominante |
+| Asporto | "📞 Chiama" | "💬 WhatsApp" | |
+| Recensioni | Link RestaurantGuru | — | |
+| Contatti | "📞 Chiama" | Form + WA | |
+
 ---
 
 ## §11 Conformità: GDPR, cookie, regole settoriali
@@ -314,6 +452,40 @@ Identico a Bottega della Pizza:
 **Differenza asporto vs delivery** dichiarata.
 
 **Pizza al taglio** specifico: vendita per taglio richiede etichettatura su packaging singolo (Reg. 1169 art. 14 anche per vendita al banco con etichetta).
+
+### Etichettatura pizza al taglio: dettagli operativi
+
+La pizza al taglio è un prodotto **somministrato al banco** — l'etichetta sul singolo pezzo non sempre è obbligatoria nel banco di vendita, ma:
+1. **Cartello vicino al banco** con: nome di ogni gusto + ingredienti completi + allergeni evidenziati. Obbligatorio.
+2. **Etichetta su packaging asporto** (foglio carta forno + cartoncino): nome pizza + ingredienti + allergeni + data.
+3. Differenza tra somministrazione (banco con cliente che sceglie e mangia subito) e asporto vero (cliente porta a casa): solo l'asporto richiede etichettatura sul packaging.
+
+Per Lo Sfizio: cartello al banco + etichette pre-stampate per ogni gusto al taglio (rotazione settimanale o stagionale dei gusti = etichette aggiornate).
+
+### Esempi prima/dopo descrizioni pizza al taglio compliant
+
+**Margherita al taglio:**
+- *Vietato:* "La nostra Margherita al taglio: la migliore di Mozzecane."
+- *Compliant:* "**Margherita al taglio** — Pomodoro pelato, mozzarella fior di latte, basilico, olio EVO. **Allergeni**: glutine (G), latte (L). Trancio ~150g. Prezzo `[DA CONFERMARE]` €/etto o /trancio."
+
+**Patate al taglio (specialità popolare):**
+- *Vietato:* "Pizza patate fragrante e croccante."
+- *Compliant:* "**Patate al taglio** — Patate sottili, rosmarino, olio EVO, sale. **Allergeni**: glutine (G). Variante con pancetta: aggiunge allergene niente di nuovo, ma indicare ingrediente sull'etichetta."
+
+**Pizza al metro mista:**
+- *Vietato:* "Pizza al metro: il modo più divertente di mangiare pizza."
+- *Compliant:* "**Pizza al metro mista** — 4 farciture diverse su 1 metro: Margherita, Marinara, Funghi, Salsiccia. **Allergeni** complessivi: glutine (G), latte (L). Per `[5-7]` persone. Tempi preparazione: 25-40 minuti. Prezzo `[DA CONFERMARE]` €. Pre-ordine consigliato."
+
+### Errori frequenti da evitare nel sito di pizzeria al taglio + asporto
+
+1. **"Pizza più gustosa di Mozzecane"** senza dato: claim vuoto.
+2. **Listino al taglio non aggiornato**: cliente paga di più di quello visto = controversia.
+3. **Promesse "pizza pronta in 5 minuti"** non rispettabili: meglio onesto "pizza al taglio sempre disponibile, pizza intera 15-25 minuti".
+4. **Foto pizza al taglio fatto su sfondo bianco da catalogo**: ingannevole. Meglio foto naturale al banco con luce ambient.
+5. **Mancata distinzione al banco vs asporto**: cliente confuso. Distinguerli chiaramente nel sito.
+6. **"Pizza romana" se è pizza napoletana sottile**: errore tecnico. Definire correttamente lo stile.
+7. **Recensioni clonate**: scopribili da Google. Solo recensioni autentiche.
+8. **Promesse "consegna gratuita"** se è solo asporto: fuorviante. Distinguere asporto da delivery.
 
 ---
 
@@ -397,14 +569,61 @@ Vietato Hotjar/Clarity senza opt-in.
 2. Aggiornamento menu stagionale.
 3. Backlog F4.
 
+### F4 — Backlog post-90gg
+
+**Sistema ordini online**: tool tipo MenuFy, Vivid per ordini con pagamento. Investimento 2-5k €. Pro: 24/7 ordini, dati strutturati. Decisione cost/benefit con misurazione F3.
+
+**Blog stagionale 6-8 articoli/anno**: "La storia della pizza al taglio romana", "Quattro stagioni: l'origine", "Differenza tra pizza al taglio e pizza intera", "Lievitazione 24h vs 48h: cosa cambia". Long-form 800-1.200 parole. SEO + autorità.
+
+**Newsletter mensile opt-in**: novità menu, eventuali pizze al taglio del mese, promozioni periodi bassi (es. martedì sera "fetta al taglio + bibita 5 €"). Iubenda + double opt-in.
+
+**Punti fedeltà semplici**: card "10° pizza al taglio gratis" o app semplice. Tipico per cliente di passaggio.
+
+**Pizza del mese**: gusto speciale stagionale (es. settembre "tartufo nero", dicembre "salmone Natale", marzo "asparagi", giugno "estate fresca"). Comunicazione sito + Facebook + foto.
+
+**Cross-promo con altri food locali**: "Cliente Maracaibo che mostra ricevuta = sconto 10% pizza al taglio". Iniziativa di rete locale.
+
+**Eventuale catering pizza al metro**: per eventi privati Mozzecane (compleanni, comunioni, lauree). Ordini 30-60 € per 5-7 persone. Decisione operativa: Lo Sfizio ha capacità extra in fascia mattutina (chiusa) per lavorare ordini catering?
+
+**Casi-study video**: 30-60 sec del banco al taglio, della preparazione pizza al metro, del forno acceso. Instagram + sito embed.
+
+### Rischi a 90gg e mitigazioni
+
+- **Rischio allergeni non aggiornati su pizza al taglio**: gusti cambiano spesso al banco — etichette devono essere aggiornate. Mitigazione: procedure pizzaiolo/banchista con checklist allergeni + revisione settimanale gusti pubblicati sul sito.
+- **Rischio orari sbagliati pubblicati**: cliente arriva alle 16:30 e trova chiuso (apertura 17:00) → recensione negativa. Mitigazione: orari 17-22 sempre visibili in alto, evidenziati come asset distintivo.
+- **Rischio competizione vs Bottega + Rosati**: tre pizzerie a Mozzecane = mercato segmentato. Mitigazione: differenziazione netta (Sfizio = veloce + al taglio + Viale della Repubblica + serale).
+- **Rischio Sfizio overload picco venerdì-sabato**: troppo lavoro = qualità erosa. Mitigazione: limitare prenotazioni telefoniche pizza al metro nei picchi + comunicare onestamente tempi attesa.
+- **Rischio recensioni Google peggiorano da 4,2/5**: una recensione negativa pesante = scivolata. Mitigazione: rispondere a tutte le recensioni, chiedere recensioni nuove a clienti soddisfatti.
+
 ### KPI a 90gg
 
 | KPI | Strumento | Baseline | Target |
 |---|---|---|---|
 | Click WhatsApp | GA4 | 0 | ≥30/mese |
+| Click WhatsApp per pizza specifica | GA4 custom | 0 | ≥60/mese sommato |
 | Chiamate `tel:` | GA4 | 0 | ≥25/mese |
 | Pageview Menu | GA4 | 0 | ≥250/mese |
+| Pageview Pizza al taglio | GA4 | 0 | ≥120/mese |
+| Click "indica indirizzo" GBP | GBP Insights | da catturare | +30% |
 | Posizionamento "pizza al taglio mozzecane" | Search Console | da misurare | top 3 |
+| Posizionamento "pizza asporto viale repubblica mozzecane" | Search Console | da misurare | top 3 |
+| Posizionamento "pizza al metro mozzecane" | Search Console | da misurare | top 5 |
+| Recensioni Google +Nuove | GBP | 130 | ≥150 (target +20) |
+
+Strumenti: GA4, Search Console, GBP, RestaurantGuru. Mai heatmap senza opt-in.
+
+### Logica dietro i target KPI
+
+Lo Sfizio ha asset particolare: 4,2/5 su 130 recensioni RestaurantGuru già esistenti. Target conservative:
+
+- **Click WhatsApp ≥30/mese**: numero modesto perché Sfizio ha alto walk-in di passaggio. WhatsApp serve per gruppi/ordine pre-ritiro.
+- **Chiamate `tel:` ≥25/mese**: clientela tradizionale + ordini intere/al metro che richiedono prenotazione.
+- **Pageview Menu ≥250/mese**: pagina centrale. Se <100 = problema SEO.
+- **Pageview Pizza al taglio ≥120/mese**: differenziatore distintivo.
+- **Posizionamento "pizza al taglio mozzecane" top 3**: realistico in 90gg, parola-chiave specifica con pochi competitor diretti.
+- **Recensioni Google +20 in 90gg**: 4,2 attuale a Restaurant Guru, ma Google probabilmente meno coperto. Costruire base Google con QR-code in cassa.
+
+A 180gg post-lancio: tutte le metriche +30-50%.
 
 ---
 

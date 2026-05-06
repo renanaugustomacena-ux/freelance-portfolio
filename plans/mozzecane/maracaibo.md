@@ -32,6 +32,15 @@ Il template "Caffè Nero" (Template A — dark, moody) è coerente con un'esteti
 
 **Stima ore complessive:** 50-65 ore in 7-8 settimane.
 
+**Vincoli di scope espliciti**: il piano **non** include sistema di prenotazione tavoli online (decisione F4 con valutazione costi/benefici dopo F3), **non** include configuratore eventi privati con preventivo automatico (i preventivi eventi richiedono trattativa umana), **non** include integrazione con piattaforma SIAE (gestione separata del cliente con SIAE), **non** include consulenza fiscale specifica. Produce: sito canonico con 5 pagine + GBP, conformità GDPR/cookie/L. 287/1991/art. 689 c.p./SIAE, baseline SEO locale.
+
+**Decisioni strategiche aperte all'avvio (priorità alta — bloccanti per F2):**
+1. Verifica claim "#1 per recensioni" — risulta vera con dati GBP attuali?
+2. Programmazione eventi: ricorrenti (es. DJ ogni sabato) o ad-hoc? Influenza pagina Eventi.
+3. Dehors estivo: attivo? Stagione? Capienza?
+4. Cocktail signature: lista definita (con ingredienti) o solo "cocktail classici"?
+5. Privatizzazione locale: prezzo standard o trattativa caso per caso?
+
 ---
 
 ## §2 Dati verificati e da confermare
@@ -176,6 +185,49 @@ Posizionamento: **"Bar Maracaibo: colazione, aperitivo, serata e cocktail a Mozz
 - **Giulia, 28 anni, social**: cerca posti via Instagram, valuta foto e atmosfera. Sceglie Maracaibo se foto serali sono curate.
 - **Famiglia che cerca location per festeggiamenti**: 50esimo compleanno, pensionamento. Privatizza il locale. Sito: pagina Eventi è cruciale.
 
+### Quattro profili tipici di cliente Maracaibo
+
+**Profilo 1 — Giuseppe, 65 anni, pensionato Mozzecane (cliente colazione mattutina).**
+Giuseppe va al Maracaibo ogni mattina alle 7:30 per caffè + cornetto + giornale. Conosce tutti, è cliente da 10+ anni. Spesa giornaliera 3-4 €. Sito: irrilevante per Giuseppe, ma serve a chi cerca "bar Mozzecane apertura mattina" su Google (figli/nipoti che organizzano colazione).
+
+**Profilo 2 — Marco e Sara, 35 anni, coppia con amici (cliente aperitivo venerdì).**
+Marco e Sara si trovano con altri 4 amici al venerdì sera (18:30-20:30) per aperitivo. Spesa per gruppo 50-80 €. Sito: deve mostrare format aperitivo (drink + tagliere o buffet), prezzo, foto reale dell'aperitivo, eventuali eventi live.
+
+**Profilo 3 — Lorenzo e Federica, 28 anni, coppia serata cocktail.**
+Lorenzo e Federica vogliono cocktail bar serale (21:00-23:30), atmosfera curata, foto belle per Instagram. Spesa per coppia 30-50 €. Sito: pagina Cocktail con foto editoriale, signature drinks, eventuale calendario serate tematiche (es. "happy hour del giovedì", "cocktail+sushi del sabato").
+
+**Profilo 4 — Anna, 50 anni, organizza compleanno marito.**
+Anna cerca location per festa privata 30-40 ospiti (50° compleanno marito), budget 1.500-3.000 €. Vuole: privatizzazione locale (o spazio dedicato), buffet/aperitivo + bar libero, eventuale DJ, parcheggio. Sito: pagina Eventi è critica — form richiesta + foto eventi passati + listino indicativo + possibilità sopralluogo.
+
+### Calendario stagionale e fasce orarie del bar
+
+Il bar Maracaibo opera su 3 fasce orarie e 4 stagioni:
+
+**Fasce orarie tipiche** `[DA CONFERMARE]`:
+- **Colazione** (6:30-11:00): caffè, cornetti, brioche, eventuali cappuccini freddi estivi.
+- **Pranzo veloce** (11:30-14:30): panini, toast, eventuali piatti veloci.
+- **Pomeriggio "siesta"** (14:30-17:00): caffè/tè per chi è fuori.
+- **Aperitivo** (17:00-20:00 estate, 17:00-19:30 inverno): drink + tagliere/buffet.
+- **Serata cocktail** (21:00-1:00): cocktail signature, eventuale DJ, eventi tematici.
+
+**Stagionalità**:
+- **Estate (giugno-settembre)**: dehors aperto, aperitivi serali al fresco, picco serate tematiche, cocktail freschi (Spritz, Hugo, Mojito). Eventi privati di matrimoni/comunioni.
+- **Autunno (ottobre-novembre)**: ripresa normale, eventi tematici Halloween, aperitivi con focus formaggi/salumi veneti.
+- **Inverno (dicembre-febbraio)**: cocktail caldi (vin brûlé, Irish coffee), Capodanno serata speciale, San Valentino. Picco serate brevi (chiusura anticipata in feriali).
+- **Primavera (marzo-maggio)**: ripresa serate, riapertura dehors, primi aperitivi all'aperto.
+
+Pattern editoriale (post Facebook + GBP): 2-3 post/settimana con foto cocktail/aperitivo + serate tematiche + eventi prossimi. Tempo gestione: 1-2h/settimana per il barista/titolare.
+
+### Cross-sell con altri food/HORECA locali
+
+Maracaibo può fare cross-promo con:
+- **Effebi (salumificio)**: tagliere aperitivo con prodotti Effebi citati ("salame all'aglio Effebi"). Vantaggio reciproco.
+- **Rosati (pizzeria/trattoria)**: cliente Rosati con ricevuta riceve sconto cocktail Maracaibo (e viceversa). Comunicazione semplice.
+- **3D Service**: HACCP cross-sell (vedi piano 3D Service §8 per dettagli).
+- **Lo Sfizio + Bottega**: alleanza informale "food locali Mozzecane" per eventi turistici Lago Garda.
+
+Sezione opzionale nel sito `/i-nostri-amici-locali/`: lista food business veronesi che Maracaibo cita per fiducia/qualità + eventuali partnership (con consenso).
+
 ---
 
 ## §7 Architettura informativa proposta
@@ -237,6 +289,72 @@ Posizionamento: **"Bar Maracaibo: colazione, aperitivo, serata e cocktail a Mozz
 - Mappa, NAP, orari.
 - tel + WA + Facebook + form.
 
+### Sub-pagina "Aperitivo" espansa
+
+**Blocchi:**
+1. Hero "L'aperitivo di Mozzecane — Bar Maracaibo".
+2. Format aperitivo `[DA CONFERMARE]`:
+   - **Aperitivo classico**: 1 drink (Spritz, Hugo, vino) + tagliere salumi/formaggi locali. Prezzo 8-12 €.
+   - **Aperitivo full** (sera): 1 drink + buffet libero (focacce, frittate, finger food, salatini). Prezzo 12-18 €.
+   - **Aperitivo cocktail**: 1 cocktail signature + tagliere. Prezzo 14-20 €.
+3. Orari aperitivo `[DA CONFERMARE]` (tipici 17:00-20:00 con picco 18:30-19:30).
+4. Foto aperitivo serale ambientato (banco con drinks pronti, tagliere su tavolo, eventuale dehors estivo).
+5. Eventuali eventi tematici aperitivo: "Aperitivo del giovedì con musica live", "Mercoledì del salumificio veronese" (cross-sell Effebi).
+6. CTA: "Vieni stasera, posti limitati" + tel + WA per gruppi >6 persone.
+
+### Sub-pagina "Cocktail e serata" espansa
+
+**Blocchi:**
+1. Hero "Cocktail e serata al Maracaibo — Mozzecane (VR)".
+2. Cocktail signature `[DA CONFERMARE]` (6-10 voci, prezzi 8-12 € tipici):
+   - Cocktail classici (Negroni, Old Fashioned, Manhattan, Margarita).
+   - Cocktail signature Maracaibo (idee: Spritz creativo, Mojito alla pesca veronese, drink stagionale).
+   - Cocktail analcolici (Mocktail Caribe, Spritz Zero).
+3. Per ogni cocktail: nome, ingredienti, eventuale storia, prezzo.
+4. **Disclaimer alcolici**: "Bevi responsabilmente. Vendita alcolici vietata ai minori (art. 689 c.p.)."
+5. **Cartello etilometro testuale**: replica obbligatoria ai sensi della normativa locale.
+6. Foto bancone serale con barista al lavoro.
+7. Eventuali serate tematiche `[DA CONFERMARE]`: "Cocktail party del sabato", "DJ ogni venerdì", "Karaoke una volta al mese".
+8. CTA: "Vieni in serata" + tel + WA per gruppi.
+
+### Sub-pagina "Eventi privati" espansa
+
+Pagina commerciale primaria — privatizzazione locale è il prodotto a margine più alto:
+
+**Blocchi:**
+1. Hero "Festeggia al Maracaibo — Eventi privati per compleanni, anniversari, cene aziendali".
+2. **Cosa offriamo**:
+   - Privatizzazione totale locale (capienza `[DA CONFERMARE]` 40-80 ospiti).
+   - Privatizzazione spazio dedicato (con altre tavolate operative): per gruppi 15-25.
+   - Buffet personalizzato (aperitivo + cena leggera) o cena strutturata.
+   - Bar libero o consumazione individuale.
+   - DJ/musica ambient (con SIAE inclusa) o silenzio + chiacchiere.
+   - Eventuale animazione (cabaret, mago per bambini, karaoke) — `[DA CONFERMARE]` se Maracaibo offre o solo location.
+3. **Tipologie evento**:
+   - **Compleanni** (50esimo, 60esimo, 18esimi): location calda + buffet + torta. Budget tipico 25-50 €/ospite.
+   - **Anniversari di matrimonio**: cena privata + bar dedicato. Budget 35-60 €/ospite.
+   - **Cene aziendali**: privatizzazione + buffet + DJ moderato. Budget 30-45 €/ospite.
+   - **Comunioni/Cresime piccole**: lunch dedicato. Budget 25-40 €/ospite.
+   - **Lauree**: cena con amici + cocktail bar. Budget 25-40 €/ospite.
+4. **Listino indicativo** `[DA CONFERMARE]` con range:
+   - Privatizzazione totale: minimo 25 ospiti, da 600 € (locale solo) + buffet/cena variabile.
+   - Spazio dedicato: minimo 15 ospiti, da 250 € + consumazioni.
+5. **Modalità prenotazione**:
+   - Form richiesta sul sito.
+   - Sopralluogo gratuito.
+   - Preventivo strutturato in 3-5 giorni.
+   - Caparra 30% alla conferma + saldo a fine evento.
+6. CTA: form "Richiedo preventivo evento" + tel + WhatsApp.
+
+### Pagina "Privacy + cartelli obbligatori" (`/info-utili/`)
+
+Pagina informativa con:
+1. **Cartello etilometro** (obbligatorio in locali con somministrazione alcolici): "Il consumo di alcol può influire sulle capacità di guida. Il limite legale è di 0,5 g/L di alcolemia. Bevi responsabilmente."
+2. **Divieto vendita ai minori (art. 689 c.p.)**: "Vendita di alcolici vietata ai minori di 18 anni. Sarà richiesto documento d'identità in caso di dubbio."
+3. **SIAE musica diffusa** `[DA CONFERMARE]`: "La diffusione musicale è eseguita ai sensi della convenzione SIAE."
+4. **Orari massimi tabella ASL/Comune Mozzecane**: dichiarazione ufficiale (`[DA CONFERMARE]` orari massimi).
+5. **HACCP**: eventuale citazione di partner monitoraggio (cross-sell 3D Service).
+
 ---
 
 ## §9 SEO locale
@@ -293,6 +411,67 @@ Campi: Nome, Telefono, Data evento, Numero ospiti, Tipo evento (compleanno/cena 
 - "Vieni in via [DA CONFERMARE]" → mappa.
 - "Richiedi info evento" → form successo: "Grazie. Ti rispondiamo entro 1 giorno lavorativo."
 
+### Pattern WhatsApp scenari Maracaibo
+
+WhatsApp `[CONDIZIONALE]` come canale secondario:
+- Cliente per gruppo aperitivo (>6 persone): "Sabato sera siamo in 8, posso prenotare?".
+- Cliente per evento privato: "Vorrei info su privatizzazione per compleanno".
+- Cliente abituale: "Stasera siete aperti?", "Posso prenotare il tavolo grande in dehors?".
+- **Vietato in WhatsApp**: caparra/bonifico evento (richiede email + documento), discussione contestazioni qualità (telefono o email).
+
+Pattern messaggio precompilato CTA "Prenota gruppo aperitivo":
+```
+https://wa.me/39XXXXXXXX?text=Buonasera%2C%20vorrei%20prenotare%20per%20[N]%20persone%20[data]%20alle%20[ora].%20Grazie.
+```
+
+Pattern CTA "Info evento privato":
+```
+https://wa.me/39XXXXXXXX?text=Buonasera%2C%20vorrei%20informazioni%20sulla%20privatizzazione%20del%20locale%20per%20un%20evento%20di%20[tipo]%20con%20[N]%20ospiti.%20Grazie.
+```
+
+### Form Eventi Privati dettagliato
+
+**Step 1 — Tipo evento:**
+- [ ] Compleanno (con dettaglio età/persona)
+- [ ] Anniversario
+- [ ] Cena aziendale
+- [ ] Comunione / Cresima / Battesimo
+- [ ] Laurea
+- [ ] Altro
+
+**Step 2 — Dettagli evento:**
+- [ ] Numero ospiti (dropdown: 15-25 / 25-40 / 40-60 / 60+)
+- [ ] Data desiderata (calendar picker, validazione orari Maracaibo)
+- [ ] Orario inizio
+- [ ] Durata stimata (3h / 4h / 5h+ / serata intera)
+- [ ] Tipologia: solo aperitivo / aperitivo + buffet / cena strutturata / open bar libero
+
+**Step 3 — Servizi opzionali:**
+- [ ] Privatizzazione totale locale
+- [ ] Spazio dedicato all'interno
+- [ ] DJ / musica live
+- [ ] Decorazioni a tema
+- [ ] Torta personalizzata
+- [ ] Animazione bambini
+
+**Step 4 — Contatti:**
+- Nome, Email, Telefono.
+- Eventuale contatto secondario (organizzatore).
+- Note libere.
+- Consenso GDPR.
+
+Microcopy: "Step 4 di 4 — Confermando, ti contattiamo entro 1-2 giorni lavorativi per discutere dettagli e fornirti preventivo personalizzato. Per urgenze, chiama 045 [DA CONFERMARE]."
+
+### CTA gerarchia per pagina
+
+| Pagina | CTA primaria | CTA secondaria | Note |
+|---|---|---|---|
+| Home | "Vieni stasera" link mappa | "📞 Chiama" | Mobile sticky tel |
+| Aperitivo | "Vieni stasera" + WA gruppi | "📞 Chiama" | |
+| Cocktail | "Vieni in serata" | WA gruppi | |
+| Eventi | "Richiedi preventivo evento" form | "📞 Chiama" | |
+| Contatti | "📞 Chiama" | Form + WA | |
+
 ---
 
 ## §11 Conformità: GDPR, cookie, regole settoriali
@@ -343,6 +522,30 @@ Tel. [DA CONFERMARE] · Email [DA CONFERMARE] · PEC [DA CONFERMARE]
 
 **Eventi privati**:
 - SCIA non copre eventi privati (matrimoni, compleanni con musica): SIAE specifica per evento, eventuale autorizzazione comunale.
+
+### Esempi prima/dopo cocktail compliant
+
+**Spritz:**
+- *Vietato:* "Lo Spritz più buono della provincia di Verona, garantito."
+- *Compliant:* "**Spritz** — Aperol o Campari, prosecco DOC, soda, scorza arancia. Servito in calice da vino. Volume alcolico ~9° (prosecco) + Aperol ~11°/Campari ~25°. Prezzo `[DA CONFERMARE]` €. Bevi responsabilmente."
+
+**Cocktail signature Maracaibo:**
+- *Vietato:* "Il drink unico che farà esplodere la tua serata."
+- *Compliant:* "**Maracaibo Mojito** — Rum cubano, lime, menta, zucchero di canna, soda. Variante con scorza di pesca veronese fresca (stagionale luglio-settembre). Volume alcolico ~10°. Prezzo `[DA CONFERMARE]` €. Bevi responsabilmente."
+
+**Disclaimer obbligatorio in pagina Cocktail:**
+> "I cocktail contengono alcol. Vendita vietata ai minori di 18 anni (art. 689 c.p.). Bevi responsabilmente. Il consumo di alcol può influire sulle capacità di guida — il limite legale è di 0,5 g/L di alcolemia (per i guidatori under 21 e professionali: 0,0 g/L)."
+
+### Errori frequenti da evitare nel sito di bar
+
+1. **Claim "#1 per recensioni" / "miglior bar di Mozzecane"** non sostenuto: ingannevole, contestabile.
+2. **Foto cocktail eccessivamente filtrate**: ingannano cliente. Foto naturali in luce ambient.
+3. **Promesse "atmosfera magica" / "esperienza unica"**: vuoti. Sostituire con descrizione concreta (es. "luce calda, musica jazz a basso volume, posti seduti per 30 ospiti").
+4. **Claim "tutto naturale" su cocktail con additivi**: ingannevole. I cocktail sono mix di alcol + zuccheri + acidi — non "naturali" in senso assoluto.
+5. **Recensioni clonate o stelle Google senza link al GBP**: violazione + scopribile.
+6. **Foto di cocktail di altri locali**: oltre violazione copyright, è ingannevole. Solo foto del proprio bar.
+7. **Promesse "cocktail bar #1 della zona"**: relativo, contestabile. Sostituire con dato concreto ("4.7 stelle Google su 250+ recensioni" se vero).
+8. **Claim "tradizione veneta" se locale è cocktail bar moderno**: contraddittorio. Definire posizionamento netto.
 
 ---
 
@@ -429,6 +632,32 @@ Vietato Hotjar/Clarity senza opt-in.
 2. Aggiunta calendario eventi mensile.
 3. Backlog F4 (eventuale prenotazione tavoli).
 
+### F4 — Backlog post-90gg
+
+**Sistema prenotazione tavoli online**: tool tipo TheFork, OpenTable, Resy. Investimento commissione 0-3 €/coperto. Pro: 24/7 prenotazioni, riduzione telefonate, dati strutturati clienti. Contro: clientela tipo bar di paese non sempre prenota in anticipo.
+
+**Calendario eventi pubblico**: pagina dedicata con calendario eventi prossimi (DJ set, serate tematiche, eventi privati pubblici, eventuali concerti). Embed Google Calendar o sistema custom semplice.
+
+**Newsletter mensile opt-in**: eventi prossimi, novità menu cocktail, eventuali promozioni serale (Iubenda + double opt-in).
+
+**Pacchetti regalo**: voucher eventi compleanno regalabili. Picco Natale + ricorrenze.
+
+**Programma fidelizzazione**: card fisica o digitale "10° caffè gratis", "5° aperitivo sconto 20%". Tipico per bar di paese, semplice da gestire.
+
+**Cocktail kit da asporto**: idea innovativa (post-COVID) = cocktail in bottiglia personalizzato per asporto. Investimento minimo, differenziazione forte.
+
+**Eventi tematici regolari**: "Mercoledì cocktail jazz", "Sabato cabaret veronese", "Domenica brunch". Pianificazione + comunicazione + foto post evento.
+
+**Partnership eventi locali**: feste paese Mozzecane, sagre, eventi sportivi. Maracaibo come "punto di ritrovo prima/dopo evento".
+
+### Rischi a 90gg e mitigazioni
+
+- **Rischio claim "#1 per recensioni" non rispettato**: contestabile + ingannevole. Mitigazione: rimuovere claim non verificato + sostituire con dato concreto se vero.
+- **Rischio dati anagrafici sbagliati pubblicati**: indirizzo sbagliato = clienti persi. Mitigazione: F1 critico per verifica, pubblicazione solo dopo conferma.
+- **Rischio orari sbagliati pubblicati**: cliente trova chiuso = recensione negativa. Mitigazione: orari verificati F1 + sezione "Stato corrente" eventualmente.
+- **Rischio claim alcolici irresponsabili**: pubblicità ingannevole su alcol espone a sanzioni AGCM. Mitigazione: revisione testi cocktail + disclaimer "bevi responsabilmente" sempre presente.
+- **Rischio SIAE non pagata**: se Maracaibo diffonde musica senza convenzione SIAE, contestazione legale. Mitigazione: F1 verifica + pubblicazione conformità solo se confermata.
+
 ### KPI a 90gg
 
 | KPI | Strumento | Baseline | Target |
@@ -436,8 +665,28 @@ Vietato Hotjar/Clarity senza opt-in.
 | Click "indica indirizzo" GBP | GBP Insights | da catturare | +30% |
 | Submission form Eventi | GA4 | 0 | ≥3/mese |
 | Chiamate `tel:` | GA4 | 0 | ≥10/mese |
+| Click WhatsApp gruppi | GA4 custom | 0 | ≥5/mese |
 | Pageview pagina Eventi | GA4 | 0 | ≥80/mese |
+| Pageview pagina Cocktail | GA4 | 0 | ≥120/mese |
+| Pageview pagina Aperitivo | GA4 | 0 | ≥150/mese (alta nei venerdì-sabato) |
 | Posizionamento "bar mozzecane" | Search Console | da misurare | top 5 |
+| Posizionamento "aperitivo mozzecane" | Search Console | da misurare | top 3 |
+| Posizionamento "cocktail bar verona sud" | Search Console | da misurare | top 10 |
+| Posizionamento "eventi privati mozzecane" | Search Console | da misurare | top 5 |
+
+Strumenti: GA4, Search Console, GBP. Mai heatmap senza opt-in.
+
+### Logica dietro i target KPI
+
+Maracaibo ha pattern tipico bar: alto walk-in spontaneo + bassa conversione web esplicita. Numeri conservativi:
+
+- **Submission form Eventi ≥3/mese**: target piccolo perché eventi privati sono mercato di nicchia (matrimoni, compleanni 50esimi). 3 form/mese = 36 in 90gg = 8-12 eventi reali realizzati = ricavo 6.000-15.000 € all'anno.
+- **Chiamate `tel:` ≥10/mese**: numero modesto perché bar = walk-in forte. Chi chiama è per gruppi grandi o eventi.
+- **Pageview Eventi ≥80/mese**: forte intent commerciale per organizzatori. Stagionalità (alta autunno-primavera, bassa estate).
+- **Posizionamento "aperitivo mozzecane" top 3**: realistico in 90gg, mercato locale.
+- **Posizionamento "cocktail bar verona sud" top 10**: più competitivo, realistico solo con Instagram + GBP attivi.
+
+A 180gg post-lancio: form Eventi 5+/mese, click WhatsApp gruppi raddoppia.
 
 ---
 
