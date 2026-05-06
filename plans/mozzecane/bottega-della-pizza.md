@@ -32,6 +32,14 @@ Il template "Impasto D'Oro" (Template A — dark, premium) è coerente con un po
 
 **Stima ore complessive:** 50-65 ore in 7-8 settimane.
 
+**Vincoli di scope espliciti**: il piano **non** include sistema ordini online con pagamento integrato (deliverable separato F4 con investimento 3-8k €), **non** include integrazione automatica con piattaforme delivery (Glovo, Deliveroo — gestite indipendentemente), **non** include consulenza HACCP nuova (Tria ha già know-how operativo + cross-sell con 3D Service possibile), **non** include consulenza fiscale specifica. Produce: sito canonico con 5 pagine + menu interattivo con WhatsApp prefilled + GBP, conformità GDPR/cookie/Reg. UE 1169/2011 art. 14, baseline SEO locale.
+
+**Decisioni strategiche aperte all'avvio:**
+1. Delivery diretto (Davide consegna in zona Mozzecane) o solo asporto + piattaforme terze (Glovo, Deliveroo)?
+2. Pizze speciali stagionali (es. tartufo autunnale, zucca invernale): pagina dedicata "Pizze del mese"?
+3. Eventuali pizze senza glutine o vegan: linea attiva o no?
+4. Cross-sell con 3D Service per HACCP: pagina trust "siamo controllati da 3D Service" come signal?
+
 ---
 
 ## §2 Dati verificati e da confermare
@@ -171,6 +179,38 @@ Posizionamento: **"La Bottega della Pizza: pizza da asporto a Mozzecane dal `[DA
 - **Lucia, 30 anni, lavoratrice fuori sede**: ordina pizza la sera al rientro casa. Tap su WhatsApp con "la solita" se cliente abituale. Sito: meno rilevante, WhatsApp è dominante.
 - **Federico, 25 anni, studente universitario**: cerca pizza al taglio o slice veloce, prezzo basso, asporto rapido. Sito: lista prezzi pubblica, orari precisi.
 
+### Quattro profili tipici di cliente Bottega della Pizza
+
+**Profilo 1 — Famiglia veronese sud (Marco e Sara, 38 anni, 2 figli 8 e 10 anni).**
+Marco e Sara ordinano pizza la sera del venerdì o sabato. 4 pizze (2 margherite, 1 quattro stagioni, 1 diavola), cliente abituale di 12 anni che conosce il numero a memoria. Spesa tipica 30-40 €. Sito: serve come "verifica orari quando ho dubbi" + eventuale consultazione novità menu. Conversione tipica: telefono diretto o WhatsApp "la solita" sguinto.
+
+**Profilo 2 — Gruppo di amici per cena casalinga (Giulia, 28 anni, organizza spesso le serate).**
+Giulia ordina 6-8 pizze per gruppo di 5-7 amici. Spesa 60-90 €. Decisione spesso al pomeriggio (anticipare l'ordine), ritiro il sabato sera 19:30-20:00. Sito: deve mostrare menu chiaro per scelta multipla + WhatsApp ordine multi-pezzi facilitato.
+
+**Profilo 3 — Cliente serale impulso (Roberto, 45 anni, lavoratore autonomo).**
+Roberto torna a casa stanco alle 19:30, decide di ordinare pizza al volo. Cerca su Google "pizza asporto mozzecane stasera" o usa Google Maps. Sito: deve catturare con orari + stato "aperto adesso" + tap WhatsApp/`tel:` immediato. 1 pizza, 8-10 €.
+
+**Profilo 4 — Cliente con esigenza alimentare specifica (Anna, 30 anni, intolleranza glutine).**
+Anna cerca pizzeria che faccia pizza senza glutine, allergeni evidenti, comunicazione affidabile. Sito: pagina menu con allergeni perfettamente categorizzati + eventuale linea senza glutine se attiva (`[DA CONFERMARE]`). Anche se cliente di nicchia, pagina ben fatta = recensioni positive su forum celiachia + AIC.
+
+### Calendario stagionale dell'asporto pizza
+
+L'asporto pizza ha pattern stagionali:
+
+- **Settembre-Maggio**: alta stagione (asporto = freddo, casa, comfort food). Picco ordini venerdì/sabato sera.
+- **Giugno-Luglio**: stagione media (cene all'aperto, picnic, eventuali cene rapide pre-uscita Lago Garda).
+- **Agosto**: bassa stagione (clientela in vacanza, eventuali turisti residenziali ordinano).
+
+Pattern editoriale opzionale (post Facebook/GBP):
+- **Settembre**: "Riapertura completa post-vacanze", lancio eventuali pizze nuove.
+- **Halloween (ottobre)**: pizza speciale a tema (zucca, formaggi piccanti).
+- **Novembre-Dicembre**: pizza tartufo, pizza con prodotti tipici veneti.
+- **Gennaio**: ripresa post-Capodanno, pizze classiche valorizzate.
+- **Pasqua (marzo-aprile)**: pizza con prodotti pasquali (es. asparagi, agnello — solo se Davide propone).
+- **Estate**: pizze leggere (cetrioli, rucola, pomodorini), promo "estate".
+
+Pattern di pubblicazione: 1 post/settimana su Facebook o Instagram. Tria Davide gestisce direttamente, tempo 30-60 minuti settimanali.
+
 ---
 
 ## §7 Architettura informativa proposta
@@ -232,6 +272,72 @@ Posizionamento: **"La Bottega della Pizza: pizza da asporto a Mozzecane dal `[DA
 - Mappa, NAP, orari `[DA CONFERMARE]`, tel + WhatsApp + Facebook link.
 - Pagamenti accettati `[DA CONFERMARE]`.
 
+### Pagina Menu espansa con etichettatura allergeni
+
+Il menu è il **deliverable più sensibile** per Bottega — sia commercialmente sia per compliance Reg. UE 1169/2011 art. 14.
+
+**Struttura della pagina menu:**
+1. Hero "Il nostro menu — pizze da asporto a Mozzecane".
+2. Box informativo "Allergeni" in apertura: lista 14 allergeni + spiegazione codici utilizzati nelle schede.
+3. **Pizze classiche** (~12-15 voci):
+   - Margherita, Marinara, Quattro stagioni, Capricciosa, Diavola, Prosciutto, Funghi, Würstel-patatine, Tonno, Salmone, Bufala, Vegetariana, Quattro formaggi, Romana, Calabrese.
+4. **Pizze speciali** (~6-10 voci):
+   - Tartufata, Bresaola-rucola, Speck-brie, Salsiccia, Crudo-mozzarella di bufala, Mediterranea, eventuali pizze stagionali.
+5. **Calzoni** (`[DA CONFERMARE]` se in menu).
+6. **Bibite e dolci**: acqua, Coca-Cola, birra (con cartello alcolici), eventuali dolci casalinghi.
+7. Per ogni voce:
+   - Nome.
+   - Ingredienti completi (lista come da etichetta).
+   - **Allergeni evidenziati** (lettere/icone in grassetto): G (glutine), L (latte), U (uova), N (frutta a guscio), S (sedano), Sn (senape), Ss (sesamo), So (soia), P (pesce), C (crostacei), M (molluschi), Ar (arachidi), Su (solfiti), Lu (lupino).
+   - Prezzo `[DA CONFERMARE]`.
+   - Tap → WhatsApp prefilled "Vorrei una [nome pizza] medio/grande".
+8. **Linea senza glutine** (`[DA CONFERMARE]` se attiva):
+   - Pizze base con base senza glutine certificata.
+   - Disclaimer: "Cucina condivisa: tracce di glutine possibili. Per celiaci accertati consigliamo struttura dedicata AIC."
+   - Lista 4-6 pizze base sicure.
+9. **Linea vegana** (`[DA CONFERMARE]` se attiva):
+   - Pizze senza ingredienti animali (no formaggi tradizionali, no uova nell'impasto se applicabile).
+   - Eventuale formaggio vegano disponibile.
+10. **Allergeni in dettaglio**: pagina sub `/allergeni/` con dettaglio completo per chi vuole approfondire (Reg. UE 1169/2011, art. 9, 10, 14).
+11. **Disclaimer finali**: "Le informazioni allergeni sono indicative e si riferiscono al menu base. Variazioni e personalizzazioni vi saranno comunicate al telefono o in fase di ordine."
+
+### Pagina "Come funziona" espansa
+
+Pagina dedicata a chiarire processo asporto/delivery:
+
+**Blocchi:**
+1. Hero "Come ordinare alla Bottega della Pizza".
+2. **3 modalità di ordine**:
+   - **Telefono** `tel:+390457930327`: il classico, Tria conferma disponibilità + tempo + ritiro.
+   - **WhatsApp** (`[DA CONFERMARE]` numero): per chi preferisce scrivere. Messaggio precompilato dal menu interattivo.
+   - **Piattaforme delivery** (`[DA CONFERMARE]` quali attive — ProntoPizza, Glovo, Deliveroo, JustEat): con commissione, gestita esternamente.
+3. **Flusso ordine standard**:
+   - Cliente ordina (telefono/WhatsApp/piattaforma).
+   - Tria conferma tempi ritiro (15-25 minuti tipici per pizza).
+   - Cliente ritira al locale o riceve via piattaforma.
+4. **Tempi attesa** indicativi `[DA CONFERMARE]`:
+   - Sera feriale 18-19: 15-20 minuti.
+   - Sera weekend 19-21: 20-30 minuti.
+   - Picco venerdì/sabato 20-21: 30-40 minuti (anticipare se possibile).
+5. **Pacchetto/contenitori asporto**:
+   - Cartone pizza con base anti-aderente.
+   - Etichetta con: nome cliente, ora ritiro, ordine, allergeni della pizza specifica.
+   - Eventuale shopper con manici per ordini multipli.
+6. **Pagamenti accettati** `[DA CONFERMARE]`: contanti, bancomat, carte di credito, eventuali buoni pasto.
+7. **Politica di rinuncia**: ordini telefonici annullati ammessi se entro 5-10 minuti dalla conferma. Oltre, eventuale obbligo ritiro.
+
+### Pagina "Chi siamo / La Bottega" espansa
+
+**Storytelling Tria Davide:**
+
+> "Sono Davide Tria, pizzaiolo. Ho aperto La Bottega della Pizza a Mozzecane nel `[DA CONFERMARE — anno preciso]` e da allora preparo pizze ogni sera. Mi alleno a fare la pizza dal `[DA CONFERMARE]` anni, ho imparato a `[DA CONFERMARE]` (forse Napoli, forse altro), e a Mozzecane ho trovato il posto giusto per restare.
+>
+> Lavoro con `[DA CONFERMARE]` farina (es. Caputo? Petra? 5 stagioni?), lievitazione `[DA CONFERMARE — 24h o 48h?]`, forno `[DA CONFERMARE — legna o elettrico?]`. Le verdure sono fresche, lo so perché vado in continuazione al mercato `[DA CONFERMARE]`. L'80% degli ingredienti è italiano `[DA CONFERMARE]` (questa è una promessa che mantengo, non un claim).
+>
+> Lavoro da solo / con `[DA CONFERMARE]` collaboratori. Niente delivery diretto / ho un ragazzo che consegna in zona Mozzecane `[DA CONFERMARE]`. Sempre asporto al banco oppure piattaforme `[DA CONFERMARE]`. Sono in Via Roma 7, vi aspetto."
+
+Foto: Davide al forno in azione, cucina pulita, banco con pizze pronte, esterno locale con insegna.
+
 ---
 
 ## §9 SEO locale
@@ -289,6 +395,52 @@ Generico, sobrio: Nome, Telefono, Messaggio, consenso GDPR.
 ### Microcopy
 - "Ordina su WhatsApp" → wa.me con messaggio precompilato.
 
+### Pattern WhatsApp messaggio precompilato (per pizza)
+
+Ogni voce del menu ha tap che apre WhatsApp con messaggio già scritto:
+
+**Margherita:**
+```
+https://wa.me/39XXXXXXXX?text=Buonasera%2C%20vorrei%20ordinare%201%20Margherita%20media.%20Grazie.
+```
+
+**Pizza speciale (es. Tartufata):**
+```
+https://wa.me/39XXXXXXXX?text=Buonasera%2C%20vorrei%20ordinare%201%20Tartufata%20media.%20Per%20quando%20sara%27%20pronta%3F%20Grazie.
+```
+
+**Ordine multiplo (4 pizze):**
+```
+https://wa.me/39XXXXXXXX?text=Buonasera%2C%20vorrei%20ordinare%204%20pizze%3A%20[lista]%2C%20ritiro%20alle%20[ora].%20Grazie.
+```
+
+**Ordine senza glutine** (se linea attiva):
+```
+https://wa.me/39XXXXXXXX?text=Buonasera%2C%20vorrei%20ordinare%201%20Margherita%20senza%20glutine.%20Confermate%20la%20disponibilit%C3%A0%3F%20Grazie.
+```
+
+**Vantaggi**:
+1. Riduce friction (cliente non scrive ex novo).
+2. Categorizza intent (Tria distingue "ordine speciale" da "info generica").
+3. Tracciabile via GA4 con click event ID per pizza.
+
+### Form contatti generico (per chi non WhatsApp né telefono)
+
+Pagina contatti `/contatti/`:
+- Campi: Nome, Email **o** Telefono, Messaggio, Consenso GDPR.
+- Risposta entro 1 giorno lavorativo (Tria gestisce via email — non per ordini, ma per richieste informazioni, ricerche eventi, contatti collaborazioni).
+- Anti-spam honeypot + niente captcha invasivo.
+
+### CTA gerarchia per pagina
+
+| Pagina | CTA primaria | CTA secondaria | Note |
+|---|---|---|---|
+| Home | "📞 Chiama 045 7930327" pulsante grande | "💬 Ordina su WhatsApp" | Mobile sticky CTA telefono full-width bottom |
+| Menu | Tap pizza → WhatsApp prefilled | "📞 Chiama" link sopra il menu | Pattern dominante |
+| Come funziona | "📞 Chiama" | "💬 WhatsApp" | Generic |
+| Chi siamo | "Vieni a trovarci" | "📞 Chiama" | Storytelling |
+| Contatti | "📞 Chiama" pulsante grande | Form contatti | Generic |
+
 ---
 
 ## §11 Conformità: GDPR, cookie, regole settoriali
@@ -343,6 +495,60 @@ Per asporto:
 Il sito deve dichiarare quale modalità è offerta.
 
 **Forniture di alcolici per asporto**: se la Bottega vende birra/vino in asporto, divieto vendita ai minori (art. 689 c.p.) e cartello informativo.
+
+### Esempi prima/dopo descrizioni pizza compliant
+
+**Margherita:**
+- *Vietato:* "Margherita: la nostra specialità, base perfetta per qualsiasi pizza."
+- *Compliant:* "**Margherita** — Pomodoro pelato, mozzarella fior di latte, basilico fresco, olio EVO. **Allergeni**: latte (L), glutine (G). Prezzo `[DA CONFERMARE]` €."
+
+**Diavola:**
+- *Vietato:* "Diavola: pizza piccante per i veri palati italiani."
+- *Compliant:* "**Diavola** — Pomodoro pelato, mozzarella fior di latte, salame piccante. **Allergeni**: latte (L), glutine (G). Prezzo `[DA CONFERMARE]` €. Picante."
+
+**Pizza tartufata speciale:**
+- *Vietato:* "Tartufata: il sapore unico del tartufo nero."
+- *Compliant:* "**Tartufata** — Mozzarella fior di latte, crema di tartufo nero estivo (Tuber aestivum), funghi porcini saltati. **Allergeni**: latte (L), glutine (G), può contenere tracce di noci. Prezzo `[DA CONFERMARE]` €."
+
+**Pizza senza glutine** (se linea attiva):
+- *Vietato:* "Pizza senza glutine garantita per celiaci."
+- *Compliant:* "**Margherita senza glutine** — Base con farina senza glutine certificata `[DA CONFERMARE]` brand, pomodoro pelato, mozzarella fior di latte, basilico, olio EVO. **Cucina condivisa: tracce di glutine possibili**. Per celiaci accertati AIC consigliamo struttura dedicata. Prezzo `[DA CONFERMARE]` €."
+
+### Errori frequenti da evitare nel sito di pizzeria asporto
+
+1. **"Migliore pizza di Mozzecane"** senza dato verificabile: claim vuoto, contestabile.
+2. **Allergeni nascosti in pagina remota**: non conforme art. 14 Reg. 1169 — devono essere visibili **prima** della conclusione ordine.
+3. **Foto pizze ritoccate troppo**: ingannano cliente. Foto naturali.
+4. **Listino prezzi non aggiornato**: cliente paga di più di quello visto sul sito = controversia. Aggiornare almeno trimestralmente + data ultima revisione.
+5. **Promesse "consegna 30 minuti" non rispettabili**: meglio "20-30 minuti" onesto che "20 minuti garantiti" non rispettato.
+6. **"Pizza italiana" generico vs "80% ingredienti italiani"**: il secondo è verificabile + più credibile.
+7. **Recensioni clonate**: Google le scopre + danneggia trust. Solo recensioni autentiche.
+8. **Foto del forno con fiamme drammatiche** se forno è elettrico: ingannevole. Foto vera del forno.
+
+### Etichetta di trasparenza forno + farina + lievitazione
+
+Pagina opzionale `/qualita/` o sezione in Chi siamo:
+
+**Forno** `[DA CONFERMARE]`:
+- Tipo: legna / gas / elettrico.
+- Temperatura cottura: 350-450°C tipica.
+- Tempi cottura: 60-90 secondi pizza napoletana, 4-7 minuti pizza romana.
+
+**Farina** `[DA CONFERMARE]`:
+- Marchio (es. Caputo Pizzeria, Petra Molino Quaglia, 5 Stagioni).
+- Tipologia (00, 0, integrale, semola).
+- W e P/L (forza farina).
+
+**Lievitazione** `[DA CONFERMARE]`:
+- Tempi: 24h, 48h, 72h.
+- Lievito: madre, lievito di birra, autolisi.
+- Temperatura controllata (camera fermentazione).
+
+**Pomodoro e mozzarella** `[DA CONFERMARE]`:
+- Pomodoro: pelato di San Marzano DOP / Italia / Marche.
+- Mozzarella: fior di latte vaccino / mozzarella di bufala campana DOP (per linea premium).
+
+Questa pagina è opzionale ma trasforma "asporto generico" in "asporto curato verificabile" — asset distintivo vs catene.
 
 ---
 
@@ -410,32 +616,102 @@ Vietato Hotjar/Clarity senza opt-in.
 5. **Privacy/cookie**.
 6. **Servizio fotografico** (forno, pizze, locale, Davide). 200-400€.
 
-### F2 — Build (sett. 3-5, ~30-40h)
+### F2 — Build (sett. 3-5, ~30-40h, deliverable dettagliati)
 
-1. 5 pagine + menu interattivo con WhatsApp prefilled.
-2. Schema.org + OG.
-3. Cookie banner Garante.
-4. Test responsive, a11y, performance.
-5. SEO on-page.
-6. GA4 + Search Console.
-7. Lancio.
+1. **Implementazione 5 pagine principali**:
+   - Home (~600 parole) con hero + stato corrente + 3 trust signal + 6 pizze in evidenza + come funziona + chi è Davide + footer.
+   - Menu (~1.000 parole) con listing completo categorizzato + allergeni per voce + tap WhatsApp prefilled.
+   - Come funziona (~500 parole) con 3 modalità ordine + tempi + pacchetti + pagamenti.
+   - Chi siamo (~500 parole) con storytelling Davide + foto forno + filosofia ingredienti.
+   - Contatti (~300 parole) con NAP + mappa + orari + tel + WhatsApp + Facebook + form generico.
+2. **Pagina opzionale "Allergeni"** (~400 parole) con dettaglio Reg. UE 1169/2011 art. 9, 10, 14.
+3. **Pagina opzionale "Qualità"** (~400 parole) con forno + farina + lievitazione + provenienza ingredienti.
+4. **Schema.org JSON-LD** `FastFoodRestaurant + Restaurant` con `takeaway: true`, `acceptsReservations: false`, `servesCuisine`, `priceRange`, `openingHoursSpecification`, `sameAs` (Facebook).
+5. **Cookie banner Garante-conforme** (Iubenda preferito).
+6. **Menu interattivo** con tap pizza → WhatsApp prefilled. Codice JS minimo (~30 righe) per costruire URL dinamicamente.
+7. **Form contatti generico** (Nome, Email/Telefono, Messaggio, Consenso GDPR) + auto-risposta + anti-spam.
+8. **Mobile sticky CTA** "📞 045 7930327" full-width fixed bottom.
+9. **Test responsive** 375/768/1440 con focus su menu (deve scorrere bene su mobile) + foto pizze (devono caricare veloci).
+10. **Test accessibilità** WCAG 2.1 AA con axe DevTools.
+11. **Test performance** Lighthouse target ≥90 Performance + ≥95 Accessibility.
+12. **SEO on-page** completo: title/description/OG/Twitter Card, alt foto pizze descrittive, gerarchia heading, schema.org, NAP consistency con Facebook + Sluurpy + Yelp.
+13. **Setup GA4** anonimizzato + eventi custom (chiamate `tel:`, click WhatsApp prefilled per ogni pizza, submission form, click stato corrente "aperto").
+14. **Setup Search Console** sitemap.xml + robots.txt.
+15. **Lancio in produzione** + verifica NAP post-lancio su tutti gli aggregatori esistenti.
 
 ### F3 — Iterazione (sett. 6-7, ~10-15h)
 
 1. Misurazione baseline.
-2. Aggiornamento menu stagionale.
-3. Backlog F4.
+2. Aggiornamento menu stagionale (eventuali pizze ottobre/dicembre/marzo).
+3. Eventuale primo articolo blog ("La nostra lievitazione 48h: come funziona").
+4. Aggiunta foto stagionali (forno acceso, pizze nuove).
+5. Eventuale linea senza glutine se non già attiva.
+6. Backlog F4.
+
+### F4 — Backlog post-90gg
+
+**Sistema ordini online integrato**: tool tipo MenuFy, Vivid, ChefMenu per consentire ordini con pagamento online. Investimento 2-5k €. Pro: 24/7 ordini, riduzione telefonate, dati strutturati. Contro: commissioni piattaforma o costo di sviluppo, gestione tecnica.
+
+**Blog stagionale 6-8 articoli/anno**: "La storia della pizza margherita", "Differenza tra pizza romana e napoletana", "Lievitazione 24h vs 48h", "Come si sceglie la farina giusta", "Ingredienti italiani: cosa conta davvero". Long-form 800-1.200 parole. SEO + autorità.
+
+**Newsletter mensile opt-in**: novità menu, eventi locali Bottega presente (sagre Mozzecane), promozioni famiglia (es. "venerdì del cliente abituale"). Iubenda + double opt-in.
+
+**Punti fedeltà o pacchetto famiglia**: meccanismo semplice ("la decima pizza è gratis"), gestito su carta cartacea o app semplice. Tipico per pizzerie di paese.
+
+**Cross-promo con altri food locali**: "Cliente di Effebi che porta lo scontrino → 10% sconto" come iniziativa di rete locale.
+
+**Pacchetti regalo**: "Voucher pizza" con confezione brandizzata. Picco Natale + compleanni.
+
+**Eventi tematici**: serata speciale (es. "pizza siciliana ogni primo venerdì del mese"), comunicati su Facebook + sito.
+
+**Casi-study video**: 30-60 sec del forno acceso, della preparazione impasto, della pizza che esce dal forno. Instagram Reels + sito embed.
+
+### Rischi a 90gg e mitigazioni
+
+- **Rischio allergeni non aggiornati**: cliente celiaco mangia pizza con glutine non segnalato → conseguenze sanitarie e legali serie. Mitigazione: revisione mensile menu + Tria firma checklist allergeni per ogni voce + procedura aggiornamento immediata sito quando cambia ricetta.
+- **Rischio orari sbagliati pubblicati**: cliente arriva e trova chiuso = recensione negativa. Mitigazione: orari verificati F1 + sezione "Stato corrente" eventualmente automatizzata.
+- **Rischio competizione Lo Sfizio + Rosati**: tre pizzerie a Mozzecane = mercato tagliato. Mitigazione: differenziazione netta (Bottega = asporto puro + 12 anni + 80% IT; Lo Sfizio = al taglio + veloce; Rosati = trattoria + dine-in).
+- **Rischio Tria overload telefonate**: aumento clienti via sito senza scaling capacità. Mitigazione: WhatsApp prefilled riduce telefonate "informative" + eventuali assunzioni in F4.
+- **Rischio recensioni Google**: una recensione negativa pesante a 4 stelle attuali = scivolata a 3.7. Mitigazione: rispondere a tutte le recensioni in modo professionale + chiedere recensioni a clienti soddisfatti.
 
 ### KPI a 90gg
 
 | KPI | Strumento | Baseline | Target |
 |---|---|---|---|
 | Click WhatsApp prefilled | GA4 | 0 | ≥40/mese |
+| Click WhatsApp per pizza specifica (top 5) | GA4 custom | 0 | ≥80/mese sommato |
 | Chiamate `tel:` | GA4 | 0 | ≥30/mese |
 | Pageview Menu | GA4 | 0 | ≥300/mese |
+| Pageview Allergeni | GA4 | 0 | ≥30/mese |
+| Click "Stato corrente: aperto" | GA4 custom | 0 | ≥100/mese |
+| Submission form contatti | GA4 | 0 | ≥3/mese |
+| Click "indica indirizzo" GBP | GBP Insights | da catturare | +30% |
 | Posizionamento "pizza asporto mozzecane" | Search Console | da misurare | top 3 |
+| Posizionamento "pizza asporto via roma mozzecane" | Search Console | da misurare | top 3 |
+| Posizionamento "pizza asporto verona sud" | Search Console | da misurare | top 10 |
 
 Strumenti: GA4, Search Console, GBP. Mai heatmap senza opt-in.
+
+### Logica dietro i target KPI
+
+Bottega ha pattern conversion semplice ma volumi importanti:
+
+- **Click WhatsApp ≥40/mese**: target conservativo per pizzeria asporto consolidata (12 anni). Rapporto WhatsApp/tel circa 4:3 in target.
+- **Chiamate `tel:` ≥30/mese**: clientela tradizionale + cliente abituale "sa il numero a memoria". Numero significativo perché 30 chiamate = ~80-100 ordini effettivi (ratio chiamate/ordini ~1:3 visite).
+- **Pageview Menu ≥300/mese**: pagina centrale del sito. Se <100 = problema SEO o navigazione.
+- **Submission form ≥3/mese**: piccolo perché cliente preferisce telefono o WhatsApp diretto. Form serve per richieste informazioni meno urgenti.
+- **Posizionamento "pizza asporto mozzecane" top 3**: realistico in 90gg, mercato locale poco competitivo.
+
+A 180gg post-lancio: Click WhatsApp 70+/mese (con maturazione SEO + recensioni accumulate).
+
+### Funnel tipo per pizzeria asporto
+
+1. **Visitatore web** → 5-8% conversione (alta perché intent "ordino pizza" è transazionale).
+2. **WhatsApp/tel/form** → 90-95% completa ordine (alta — chi contatta vuole davvero ordinare).
+3. **Ritiro/consegna** → 100% completa.
+4. **Soddisfazione cliente** → 60-70% torna entro 30 giorni.
+
+Il sito influisce su step 1-2 (qualità lead + facilità ordine). Forno + ingredienti determinano step 3-4.
 
 ---
 
