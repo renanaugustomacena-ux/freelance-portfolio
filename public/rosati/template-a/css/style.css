@@ -1142,6 +1142,134 @@ body::after {
 }
 
 /* ============================================
+   REVIEW PLATFORM CARDS (linkati a fonti reali)
+   ============================================ */
+.review__platform {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-wheat);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.review__link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--accent-ember);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: color var(--transition-fast);
+}
+
+.review__link:hover {
+  color: var(--accent-flame);
+}
+
+/* ============================================
+   FOOTER (multi-colonna + legale)
+   ============================================ */
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.footer__col p {
+  margin-bottom: 0.4rem;
+}
+
+.footer__col a {
+  color: var(--accent-wheat);
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+}
+
+.footer__col a:hover {
+  opacity: 1;
+}
+
+.footer__legal {
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+@media (max-width: 767px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ============================================
+   COOKIE BANNER (Garante 10/06/2021 n. 231)
+   ============================================ */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(17, 14, 10, 0.96);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--accent-wheat);
+  padding: 1.25rem 1rem;
+  z-index: 10000;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.cookie-banner__text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.cookie-banner__text a {
+  color: var(--accent-wheat);
+  text-decoration: underline;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .cookie-banner__inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cookie-banner__actions {
+    width: 100%;
+  }
+
+  .cookie-banner__actions .btn {
+    flex: 1;
+  }
+}
+
+/* ============================================
    REDUCED MOTION
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
