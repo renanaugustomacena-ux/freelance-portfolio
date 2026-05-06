@@ -16,6 +16,45 @@
   <link rel="stylesheet" href="../../shared/css/utilities.css">
   <link rel="stylesheet" href="../../shared/css/components.css">
   <link rel="stylesheet" href="css/style.css">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pizzeria Trattoria Rosati — Mozzecane (VR)">
+  <meta property="og:description" content="Pizzeria Trattoria Rosati a Mozzecane (VR). Pizza nel forno a legna, cucina veronese, pasta fatta in casa. Tel. 045 793 0601.">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pizzeria Trattoria Rosati — Mozzecane (VR)">
+  <meta name="twitter:description" content="Pizzeria Trattoria Rosati a Mozzecane (VR). Pizza nel forno a legna, cucina veronese, pasta fatta in casa. Tel. 045 793 0601.">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "Restaurant",
+    "LocalBusiness"
+  ],
+  "name": "Pizzeria Trattoria Rosati",
+  "legalName": "Pizzeria Trattoria Rosati",
+  "image": [],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Caterina Bon Brenzoni 20",
+    "postalCode": "37060",
+    "addressLocality": "Mozzecane",
+    "addressRegion": "VR",
+    "addressCountry": "IT"
+  },
+  "telephone": "+39-045-7930601",
+  "servesCuisine": [
+    "Italiana",
+    "Veronese",
+    "Pizza"
+  ],
+  "priceRange": "€€",
+  "acceptsReservations": "True"
+}
+  </script>
+
 </head>
 <body>
 
@@ -306,6 +345,8 @@
       <p class="footer__brand">Rosati</p>
       <p class="footer__tagline">Cucina tipica veronese dal cuore</p>
       <p class="footer__copy">&copy; 2026 Pizzeria e Trattoria Rosati Snc — Via C. Bon Brenzoni 20, 37060 Mozzecane (VR)</p>
+    
+      <p class="footer__text footer__legal-links" style="margin-top: 0.75rem;"><a href="privacy.html">Privacy policy</a> &middot; <a href="cookie.html">Cookie policy</a></p>
     </div>
   </footer>
 
@@ -318,5 +359,35 @@
   <script src="../../shared/js/mobile-nav.js"></script>
   <script src="../../shared/js/smooth-scroll.js"></script>
   <script src="../../shared/js/reveal-on-scroll.js"></script>
+
+  <!-- ===== COOKIE BANNER (Garante 10/06/2021 n. 231) ===== -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Informativa cookie" hidden>
+    <div class="cookie-banner__inner">
+      <p class="cookie-banner__text">
+        Questo sito utilizza solo cookie tecnici necessari al funzionamento. Eventuali cookie analitici o di profilazione vengono installati solo previo consenso esplicito.
+        Per maggiori informazioni leggi la <a href="cookie.html">Cookie policy</a> e la <a href="privacy.html">Privacy policy</a>.
+      </p>
+      <div class="cookie-banner__actions">
+        <button type="button" id="cookie-accept" class="btn btn--primary btn--small">Accetta tutti</button>
+        <button type="button" id="cookie-reject" class="btn btn--outline btn--small">Rifiuta</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var banner = document.getElementById('cookie-banner');
+      var key = 'rosati-cookie-choice';
+      try {
+        if (!localStorage.getItem(key)) banner.hidden = false;
+      } catch (e) { banner.hidden = false; }
+      function decide(value) {
+        try { localStorage.setItem(key, value); } catch (e) {}
+        banner.hidden = true;
+      }
+      document.getElementById('cookie-accept').addEventListener('click', function () { decide('accepted'); });
+      document.getElementById('cookie-reject').addEventListener('click', function () { decide('rejected'); });
+    })();
+  </script>
+
 </body>
 </html>

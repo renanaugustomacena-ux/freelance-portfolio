@@ -14,6 +14,38 @@
   <link rel="stylesheet" href="../../shared/css/utilities.css">
   <link rel="stylesheet" href="../../shared/css/components.css">
   <link rel="stylesheet" href="css/style.css">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Estetica Centro Benessere Armonia — Mozzecane (VR)">
+  <meta property="og:description" content="Centro estetico a Mozzecane (San Zeno). Trattamenti viso, trucco semipermanente, manicure. Prenota: WhatsApp 045 793 0048.">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Estetica Centro Benessere Armonia — Mozzecane (VR)">
+  <meta name="twitter:description" content="Centro estetico a Mozzecane (San Zeno). Trattamenti viso, trucco semipermanente, manicure. Prenota: WhatsApp 045 793 0048.">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "BeautySalon",
+    "LocalBusiness"
+  ],
+  "name": "Estetica Centro Benessere Armonia",
+  "legalName": "Estetica Centro Benessere Armonia di Dalla Brea Raffaella",
+  "image": [],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Francesco Miniscalchi 5",
+    "postalCode": "37060",
+    "addressLocality": "Mozzecane",
+    "addressRegion": "VR",
+    "addressCountry": "IT"
+  },
+  "telephone": "+39-045-7930048"
+}
+  </script>
+
 </head>
 <body>
 
@@ -289,6 +321,8 @@
   <footer class="footer">
     <div class="container footer__inner">
       <p class="footer__text">&copy; 2026 Estetica Centro Benessere Armonia di Dalla Brea Raffaella — Via F. Miniscalchi 5, San Zeno di Mozzecane (VR)</p>
+    
+      <p class="footer__text footer__legal-links" style="margin-top: 0.75rem;"><a href="privacy.html">Privacy policy</a> &middot; <a href="cookie.html">Cookie policy</a></p>
     </div>
   </footer>
 
@@ -299,5 +333,35 @@
   <script src="../../shared/js/mobile-nav.js"></script>
   <script src="../../shared/js/smooth-scroll.js"></script>
   <script src="../../shared/js/reveal-on-scroll.js"></script>
+
+  <!-- ===== COOKIE BANNER (Garante 10/06/2021 n. 231) ===== -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Informativa cookie" hidden>
+    <div class="cookie-banner__inner">
+      <p class="cookie-banner__text">
+        Questo sito utilizza solo cookie tecnici necessari al funzionamento. Eventuali cookie analitici o di profilazione vengono installati solo previo consenso esplicito.
+        Per maggiori informazioni leggi la <a href="cookie.html">Cookie policy</a> e la <a href="privacy.html">Privacy policy</a>.
+      </p>
+      <div class="cookie-banner__actions">
+        <button type="button" id="cookie-accept" class="btn btn--primary btn--small">Accetta tutti</button>
+        <button type="button" id="cookie-reject" class="btn btn--outline btn--small">Rifiuta</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var banner = document.getElementById('cookie-banner');
+      var key = 'armonia-cookie-choice';
+      try {
+        if (!localStorage.getItem(key)) banner.hidden = false;
+      } catch (e) { banner.hidden = false; }
+      function decide(value) {
+        try { localStorage.setItem(key, value); } catch (e) {}
+        banner.hidden = true;
+      }
+      document.getElementById('cookie-accept').addEventListener('click', function () { decide('accepted'); });
+      document.getElementById('cookie-reject').addEventListener('click', function () { decide('rejected'); });
+    })();
+  </script>
+
 </body>
 </html>

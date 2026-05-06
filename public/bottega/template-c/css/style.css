@@ -922,3 +922,105 @@ h1, h2, h3 {
     transition: none;
   }
 }
+
+
+/* ============================================
+   COMPLIANCE BASELINE v1.2
+   Footer multi-colonna + Cookie banner Garante 2021
+   Aggiunto automaticamente da tools/inject-compliance.sh
+   ============================================ */
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.footer__col p {
+  margin-bottom: 0.4rem;
+}
+
+.footer__col a {
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+
+.footer__col a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer__legal {
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+@media (max-width: 767px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(20, 20, 20, 0.96);
+  color: #f5f5f5;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-top: 2px solid currentColor;
+  padding: 1.25rem 1rem;
+  z-index: 10000;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.cookie-banner__text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cookie-banner__text a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .cookie-banner__inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cookie-banner__actions {
+    width: 100%;
+  }
+
+  .cookie-banner__actions .btn {
+    flex: 1;
+  }
+}
