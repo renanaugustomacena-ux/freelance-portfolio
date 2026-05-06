@@ -160,6 +160,17 @@ BUSINESSES = {
         "og_description": "Balzan Impianti — Idraulica, riscaldamento, climatizzazione a Mozzecane (VR). Tel. 045 793 0309.",
         "templates": ["template-b", "template-c"],
     },
+    "sambenini": {
+        "name": "Sambenini Auto",
+        "address": "Mozzecane (VR)",
+        "tel": "+39-045-0000000",
+        "tel_display": "[da confermare]",
+        "schema_types": ["AutoRepair", "LocalBusiness"],
+        "extra_schema": {"foundingDate": "1987"},
+        "fonts_url": "https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&family=Oswald:wght@400;500&display=swap",
+        "og_description": "Sambenini Auto — Officina multimarca a Mozzecane dal 1987. Diagnostica, climatizzazione, GPL/metano.",
+        "templates": ["template-a", "template-b"],
+    },
 }
 
 

@@ -19,6 +19,39 @@
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sambenini Auto — Mozzecane (VR)">
+  <meta property="og:description" content="Sambenini Auto — Officina multimarca a Mozzecane dal 1987. Diagnostica, climatizzazione, GPL/metano.">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sambenini Auto — Mozzecane (VR)">
+  <meta name="twitter:description" content="Sambenini Auto — Officina multimarca a Mozzecane dal 1987. Diagnostica, climatizzazione, GPL/metano.">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "AutoRepair",
+    "LocalBusiness"
+  ],
+  "name": "Sambenini Auto",
+  "legalName": "Sambenini Auto",
+  "image": [],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Mozzecane (VR)",
+    "postalCode": "37060",
+    "addressLocality": "Mozzecane",
+    "addressRegion": "VR",
+    "addressCountry": "IT"
+  },
+  "telephone": "+39-045-0000000",
+  "foundingDate": "1987"
+}
+  </script>
+
 </head>
 <body>
 
@@ -332,6 +365,8 @@
         <a href="#contatti">Contatti</a>
         <a href="https://www.facebook.com/people/Sambenini-Marco/100070082282388/" target="_blank" rel="noopener" aria-label="Seguici su Facebook">Facebook</a>
       </nav>
+    
+      <p class="footer__text footer__legal-links" style="margin-top: 0.75rem;"><a href="privacy.html">Privacy policy</a> &middot; <a href="cookie.html">Cookie policy</a></p>
     </div>
   </footer>
 
@@ -344,6 +379,36 @@
   <script src="../../shared/js/mobile-nav.js"></script>
   <script src="../../shared/js/smooth-scroll.js"></script>
   <script src="../../shared/js/reveal-on-scroll.js"></script>
+
+
+  <!-- ===== COOKIE BANNER (Garante 10/06/2021 n. 231) ===== -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Informativa cookie" hidden>
+    <div class="cookie-banner__inner">
+      <p class="cookie-banner__text">
+        Questo sito utilizza solo cookie tecnici necessari al funzionamento. Eventuali cookie analitici o di profilazione vengono installati solo previo consenso esplicito.
+        Per maggiori informazioni leggi la <a href="cookie.html">Cookie policy</a> e la <a href="privacy.html">Privacy policy</a>.
+      </p>
+      <div class="cookie-banner__actions">
+        <button type="button" id="cookie-accept" class="btn btn--primary btn--small">Accetta tutti</button>
+        <button type="button" id="cookie-reject" class="btn btn--outline btn--small">Rifiuta</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var banner = document.getElementById('cookie-banner');
+      var key = 'sambenini-cookie-choice';
+      try {
+        if (!localStorage.getItem(key)) banner.hidden = false;
+      } catch (e) { banner.hidden = false; }
+      function decide(value) {
+        try { localStorage.setItem(key, value); } catch (e) {}
+        banner.hidden = true;
+      }
+      document.getElementById('cookie-accept').addEventListener('click', function () { decide('accepted'); });
+      document.getElementById('cookie-reject').addEventListener('click', function () { decide('rejected'); });
+    })();
+  </script>
 
 </body>
 </html>
