@@ -32,6 +32,15 @@ Il template "RB Design" è coerente con un posizionamento arredamento di prossim
 
 **Stima ore complessive:** 50-65 ore in 7-8 settimane.
 
+**Vincoli di scope espliciti**: il piano **non** include configuratore 3D arredamento online (deliverable separato eventualmente F4 con budget aggiuntivo 5-15k €), **non** include e-commerce di mobili (RB Design è showroom + consulenza, non e-commerce), **non** include consulenza fiscale specifica su detrazioni mobili (commercialista del cliente), **non** include progettazione architettonica formale (architetto incaricato dal cliente). Produce: sito canonico con 6 pagine + 6 sotto-pagine per ambiente + galleria progetti, schema.org FurnitureStore, conformità GDPR/cookie/Codice del Consumo, baseline SEO locale.
+
+**Decisioni strategiche aperte all'avvio:**
+1. Su misura: RB Design propone linea mobili su misura (cucine, armadi, librerie) o solo selezione brand?
+2. Outlet/promozioni: c'è un'area di mobili scontati o ex-esposizione da valorizzare?
+3. Detrazione mobili 50% (Bonus Mobili): pagina dedicata sì/no?
+4. Servizio "Visita su appuntamento" come alternativa al walk-in?
+5. Instagram @rb.arredamenti è ufficiale di RB Design Mozzecane o di altra attività?
+
 ---
 
 ## §2 Dati verificati e da confermare
@@ -83,6 +92,23 @@ Tre varianti del template RB Design. Lavoro su Template A.
 ### Cosa va ripensato
 1. **Architettura per ambiente** (cucina / soggiorno / camera / ufficio) [REF-arredamento-03].
 2. **Pagina "Consulenza con Roberto"** come asset narrativo distintivo.
+3. **Form preventivo strutturato** con upload planimetria/foto e domande sul budget come pre-qualifica.
+
+### Audit per blocchi specifici del Template
+
+**Hero attuale**: foto evocativa di interni di lusso, titolo brandizzato. Da ricalibrare con foto reale dello showroom RB Design (interno luminoso, vetrina con prodotti in evidenza, eventualmente Bertolaso al lavoro). Titolo "RB Design" + sottotitolo concreto (vedi §5). CTA "Prenota appuntamento" + secondaria "Vedi i progetti".
+
+**Sezione "Servizi"**: lista standard (progettazione, fornitura, ecc.). Da riscrivere con focus su Bertolaso interior designer: la consulenza non è "mostrare cataloghi" ma "ascoltare esigenze, capire stile, progettare ambiente, selezionare brand giusti".
+
+**Sezione "Progetti"**: galleria foto generica. Da rifare con: foto reali di progetti realizzati (autorizzati cliente), descrizione 80-100 parole per ognuno (location, tipologia, brand utilizzati, durata, eventuale citazione cliente), filtri per ambiente.
+
+**Sezione "Brand"**: probabilmente assente. Da aggiungere: griglia 8-12 loghi brand distribuiti `[DA CONFERMARE]`, organizzati per categoria (cucine: Veneta/Stosa/Doimo; soggiorni: Calligaris/Tonin/Doimo; camere: Doimo/Tomasella; ufficio: Della Rovere/Quadrifoglio).
+
+**Sezione "Showroom"**: probabilmente assente o sottovalorizzata. Da creare come pagina dedicata: mappa, orari, foto interni, motivazione visita ("vedere/toccare prima di acquistare"), eventuale possibilità appuntamento personalizzato fuori orario.
+
+**Footer**: minimale. Da espandere con: ragione sociale, P.IVA, REA VR-278118, garanzie legali, link privacy/cookie/imprint, eventuale link Instagram.
+
+**Mobile experience**: galleria progetti deve essere fluida su 375px. Lightbox accessibile. Foto pesanti se non ottimizzate = LCP problematico.
 
 ---
 
@@ -129,6 +155,61 @@ Lacune contenuto: brand distribuiti, prezzi indicativi (anche solo fasce), tempi
 ### Trattamento del nome
 **"RB Design"** marchio. **"Roberto Bertolaso"** quando si parla del titolare-progettista.
 
+### Esempi micro-copy estesi prima/dopo
+
+**Hero CTA primaria:**
+- *Prima:* "Scopri il nostro mondo"
+- *Dopo:* "Prenota un appuntamento in showroom"
+
+**Hero CTA secondaria:**
+- *Prima:* "Scopri di più"
+- *Dopo:* "Vedi i progetti realizzati"
+
+**Card ambiente "Cucina":**
+- *Prima:* "Cucine moderne e tradizionali per ogni stile."
+- *Dopo:* "**Cucine** — Componibili, su misura, made in Italy. Brand `[lista]`. Sopralluogo gratuito + progettazione 3D."
+
+**Card progetto realizzato:**
+- *Prima:* "Bellissimo progetto realizzato."
+- *Dopo:* "**Cucina moderna a Mozzecane** — Componibile in laccato matt, isola con top in quarzo, elettrodomestici da incasso. 14 m². Tempo realizzazione: 10 settimane. Brand: Veneta Cucine."
+
+**Pulsante "Visita showroom" mobile:**
+- *Prima:* "Visita"
+- *Dopo:* "Vieni a trovarci in showroom"
+
+**Conferma form preventivo:**
+- *Prima:* "Grazie per il tuo messaggio."
+- *Dopo:* "Richiesta ricevuta. Roberto la contatterà entro 24 ore lavorative per concordare un appuntamento o un sopralluogo gratuito."
+
+**Disclaimer pagina cucine su misura:**
+- *Prima:* (assente)
+- *Dopo:* "Le cucine su misura sono beni personalizzati ai sensi dell'art. 59 c) D.Lgs. 206/2005 — esclusi dal diritto di recesso. La condizione di personalizzazione è comunicata espressamente al momento della conferma ordine. Tolleranze dimensionali ±5mm previste in contratto."
+
+**Footer "Termini di vendita":**
+- *Prima:* (assente)
+- *Dopo:* "I prodotti RB Design sono coperti da garanzia legale di conformità di 2 anni (D.Lgs. 206/2005, art. 128-135). Eventuale garanzia commerciale del produttore in aggiunta."
+
+### Tono per tipologie di pagina
+
+- **Pagine ambiente (cucina, soggiorno, ecc.)**: tono curato-tecnico, dettaglio brand + materiali + tempi.
+- **Pagina Showroom**: tono accogliente-invitante, "vieni a vedere/toccare" come messaggio centrale.
+- **Pagina Progetti**: tono descrittivo-fattuale, location + dimensioni + brand + durata.
+- **Pagina Bonus Mobili**: tono pragmatico-disclaimante, "ti spieghiamo cosa abbiamo capito noi, ma il commercialista decide".
+- **Pagina Chi siamo**: tono personale di Bertolaso, "io sono interior designer da X anni, ho aperto RB Design perché...".
+- **Pagina Termini e condizioni**: tono istituzionale-completo.
+- **Form e CTA**: tono attivo e ridotto ("prenota", "richiedi", "scopri").
+- **Footer**: tono neutro-istituzionale.
+
+### Tre temi narrativi per Bertolaso interior designer
+
+Bertolaso è il differenziatore. Tre temi narrativi che il sito può sviluppare:
+
+1. **L'ascolto come prima fase**: "Prima di proporre, ascolto. Stile di vita, abitudini, vincoli, sogni, budget. Solo dopo si progetta." — pattern accogliente.
+2. **Il progetto come strumento, non come imposizione**: "Vi consegno un progetto 3D che potete portare a casa, dormirci sopra, modificare. La decisione finale è vostra." — pattern rispettoso.
+3. **La selezione brand come servizio**: "Conosco i brand che distribuisco. So quale conviene per quale esigenza, quale dura e quale meno, quali si combinano bene." — pattern competente.
+
+I tre temi devono essere visibili in: pagina Chi siamo (storia di Bertolaso), pagina Servizi/Consulenza (processo di lavoro), pagina Progetti (esempi del processo applicato), pagina Showroom (invito al primo contatto).
+
 ---
 
 ## §6 Posizionamento competitivo locale
@@ -169,6 +250,35 @@ Posizionamento: **"RB Design: showroom arredamento e interior design a Mozzecane
 - **Coppia 35 anni primo arredamento casa**: budget 15-30k €, cucina + soggiorno + camera. Vuole consulenza ma anche spazio decisionale. Sceglie RB Design per Bertolaso che progetta + non spinge alle decisioni.
 - **Famiglia 50 anni rifà bagno + cucina**: budget 20-50k €, qualità superiore al primo arredamento. Sceglie RB Design per relazione personale + brand selezionati.
 - **Imprenditore che apre ufficio**: budget 10-30k €, esigenze funzionali (scrivanie, sedute, sale riunione). Sceglie RB Design per progettazione professionale + tempi di consegna.
+
+### Calendario stagionale arredamento
+
+L'arredamento ha cicli stagionali marcati che il sito può anticipare:
+
+- **Gennaio-Febbraio**: post-Natale, Bonus Mobili 50% disponibile per ristrutturazioni (chi ha fatto ristrutturazione 2025/2026 può detrarre acquisti mobili). Picco ricerche "bonus mobili 2026". Pagina dedicata fa SEO.
+- **Marzo-Maggio**: alta stagione arredamento (primavera = nuovi progetti casa). Coppie che si trasferiscono per matrimonio (giugno-luglio), famiglie che ristrutturano in vista dell'estate.
+- **Giugno-Luglio**: matrimoni → primo arredamento. Coppie giovani vengono in showroom per cucina + soggiorno + camera. Budget tipici 15-30k €. Servizio cruciale: tempi di consegna (per "abitare a settembre").
+- **Agosto**: calo (ferie). Showroom spesso aperto 1 settimana iniziale + 1 finale, chiuso settimana centrale.
+- **Settembre-Ottobre**: ripresa, ristrutturazioni autunnali (cucine, bagni). Picco progetti commerciali (negozi che aprono prima di Natale).
+- **Novembre-Dicembre**: arredamento "regalo importante" (cucina ai genitori per Natale, ufficio per il familiare imprenditore). Qualche promozione mirata ammessa con cautela (no svalutazione brand).
+
+Il sito può supportare con: pagina Bonus Mobili sempre aggiornata + post GBP stagionali + eventuale articolo blog "Tempi di consegna mobili: come pianificare" (utile per matrimoni primaverili).
+
+### Quattro profili tipici di cliente RB Design
+
+**Profilo 1 — Coppia 30-40 anni primo acquisto casa.**
+Marco e Sara hanno comprato villetta di 110 m² a Mozzecane, devono arredare cucina + soggiorno + 2 camere + bagno principale + studio. Budget 18-28k €. Tempo: vorrebbero abitare entro 3-4 mesi dall'inizio del progetto. Sfide: gusti diversi tra i due, devono raggiungere accordi su stile e budget. **Bisogni del sito**: galleria progetti realizzati per persone simili (case 100-150 m², primo arredamento), pagina su processo (sopralluogo → progettazione → preventivo → fornitura → montaggio → consegna), pagina Bonus Mobili (Marco e Sara hanno detrazione applicabile per ristrutturazione casa nuova), form preventivo che consenta di indicare tutti gli ambienti contemporaneamente.
+
+**Profilo 2 — Famiglia 45-55 anni rifà cucina + bagni.**
+Stefano e Laura hanno casa di proprietà da 18 anni, cucina di 16 anni che vogliono rifare moderna, bagni da rinnovare. Budget 25-50k €. Aspettative: qualità superiore al primo arredamento (fascia medio-alta), durata stimata 15-20 anni. Bisogni: consulenza professionale (Bertolaso), brand selezionati (made in Italy preferito), tempi flessibili (non urgenti, decidono accuratamente). **Bisogni del sito**: pagina cucina con esempi medio-alti, pagina bagno con marchi sanitari distribuiti, eventuale pagina su Bertolaso come consulente. Form preventivo con campo "tempi flessibili" preselezionato. Conversione tipica: 3-4 visite in showroom + 2-3 sopralluoghi prima dell'ordine.
+
+**Profilo 3 — Imprenditore apre ufficio o negozio.**
+Andrea, 42 anni, apre studio professionale (commercialista) a Verona Sud. Spazio 80 m², esigenze: 4 postazioni operative + sala riunioni 6 persone + reception + archivio. Budget 12-20k €. Tempi rapidi (apertura prevista in 3 mesi). **Bisogni del sito**: pagina ufficio con esempi di studi/uffici realizzati, brand professionali (Quadrifoglio, Della Rovere, Estel), capacità di gestire fornitura + montaggio in cantiere attivo, eventuale gestione documenti per fatturazione B2B con detrazione iva.
+
+**Profilo 4 — Architetto/progettista esterno per cliente finale.**
+Arch. Bianchi, 38 anni, progetta ristrutturazione casa cliente, cerca fornitore arredamento da consigliare. Bianchi vuole: dialogo professionale (terminologia tecnica), affidabilità (rispetto tempi e qualità), eventuale margine commissione. **Bisogni del sito**: pagina "Per architetti e progettisti" o sezione professionisti con: capacità tecniche, brand serie distribuite, modalità collaborazione, eventuale listino orientativo per progettisti.
+
+**Implicazione architettura informativa:** quattro profili convergono su tre macro-audience — Privati primo arredamento (1), Privati ristrutturazione (2), B2B commerciale e architetti (3, 4). Il sito ha bivio iniziale o scroll sezionato.
 
 ---
 
@@ -232,9 +342,208 @@ Posizionamento: **"RB Design: showroom arredamento e interior design a Mozzecane
 - Modalità per ognuno.
 - Prezzi indicativi `[DA CONFERMARE]` o "preventivo personalizzato".
 
+### Sezione "Brand distribuiti" (in Home + pagina dedicata)
+
+**Pagina dedicata** `/brand/` con:
+1. Hero "I brand che distribuiamo".
+2. Griglia loghi `[DA CONFERMARE]` con organizzazione per categoria:
+
+**Cucine:**
+- Veneta Cucine
+- Stosa Cucine
+- Doimo Cucine
+- Eventuali fasce alte (Scavolini, Snaidero)
+
+**Soggiorno e zona giorno:**
+- Calligaris
+- Tonin Casa
+- Doimo Salotti
+- Bonaldo
+- Fimes
+
+**Camere e zona notte:**
+- Doimo Camere
+- Tomasella
+- San Giacomo
+- Spar
+
+**Bagno:**
+- Ideal Standard
+- Catalano
+- Hatria
+- Geberit
+- Cersaie
+
+**Ufficio:**
+- Della Rovere
+- Quadrifoglio
+- Estel
+- Las Mobili
+
+3. Per ogni brand, breve descrizione (50 parole) e foto di un prodotto distribuito.
+4. CTA: "Vieni a vedere in showroom" + form preventivo.
+
+### Storytelling Bertolaso interior designer
+
+Pagina `/chi-siamo/` o sezione dedicata in Home con racconto personale:
+
+**Bozza testo (`[DA CONFERMARE]` con Bertolaso, da adattare):**
+
+> "Sono Roberto Bertolaso, interior designer. Ho aperto RB Design a Mozzecane perché credo che arredare casa sia una decisione importante che merita ascolto, tempo, e progettazione vera. Non vendo mobili: progetto ambienti.
+>
+> La mia formazione è in `[DA CONFERMARE]`: scuola di interior design (`[DA CONFERMARE]` quale), esperienza precedente in `[DA CONFERMARE]`. Da `[anno DA CONFERMARE]` ho RB Design in Via Montanari Carlo 33: showroom, laboratorio progettuale, base operativa.
+>
+> Lavoro così: prima ascolto. Stile di vita, abitudini, vincoli, sogni, budget. Solo dopo si progetta. Vi consegno un progetto 3D che potete portare a casa, dormirci sopra, modificare. La decisione finale è sempre vostra. La mia parte è proporvi le opzioni migliori in base ai brand che conosco e alle vostre esigenze.
+>
+> Distribuisco brand italiani selezionati — `[DA CONFERMARE]` lista — che conosco bene per qualità, durata, e rapporto prezzo/valore. Non tutto va bene per tutti: parte del mio lavoro è scegliere insieme.
+>
+> Sopralluoghi, preventivi, primo appuntamento in showroom: gratuiti. Vi aspetto in Via Montanari Carlo 33."
+
+Foto: Bertolaso al lavoro in showroom, davanti a una progettazione 3D, con cliente in consultazione (autorizzazione cliente).
+
+### Note sulla qualifica "interior designer"
+
+In Italia "interior designer" non è professione ordinata (non c'è Ordine specifico come per architetti). Bertolaso può legittimamente usare il titolo se ha:
+- Formazione documentata in interior design (corso accademico, scuola privata riconosciuta).
+- Esperienza professionale documentata.
+- Eventualmente iscrizione a associazioni di categoria (AIID — Associazione Italiana Interior Designer, IIDA, ecc.).
+
+Sul sito: usare "interior designer" è ammesso. Evitare "architetto" se Bertolaso non è iscritto all'Ordine (uso abusivo del titolo è reato).
+
+### Caso particolare: ristrutturazione + arredamento congiunto
+
+Alcuni clienti ristrutturano la casa e cercano fornitore unico per:
+- Pavimenti e rivestimenti.
+- Sanitari e mobili bagno.
+- Arredamento mobili.
+- Eventuale impianto elettrico aggiuntivo (lampade, prese).
+
+RB Design può posizionarsi come **partner per la fase finale** (post-impianti, post-finiture, sull'arredamento) o come **partner integrato con architetto/impresa** (collaborazione coordinata).
+
+Sito: pagina "Ristrutturazione + arredamento" eventuale per indicare modalità di collaborazione con architetti/imprese di costruzione locali.
+
 ### Contatti
 - Mappa, NAP, orari showroom `[DA CONFERMARE]`.
 - tel + WhatsApp `[DA CONFERMARE]` + email + form.
+
+### Sub-pagina "Cucina" (`/cucina/`) — espansa
+
+**Blocchi:**
+1. Hero "Cucine moderne, classiche, su misura — RB Design Mozzecane".
+2. Cosa proponiamo:
+   - Selezione brand cucine (`[DA CONFERMARE]`: Veneta Cucine, Stosa, Doimo Cucine, eventualmente fasce alte come Scavolini, Snaidero).
+   - Su misura per spazi non standard (cucine ad angolo, isole grandi, soluzioni open-space).
+   - Materiali: laccato, legno, melaminico, fenix, gres porcellanato.
+   - Elettrodomestici da incasso (eventuali partnership).
+3. Processo di acquisto cucina:
+   - **Visita showroom** per vedere finiture e modelli.
+   - **Sopralluogo casa** con misure precise (gratuito).
+   - **Progettazione 3D** con resa fotorealistica (1-2 ore di lavoro Bertolaso).
+   - **Preventivo dettagliato** con voci separate per mobili, elettrodomestici, montaggio, eventuale demolizione.
+   - **Conferma ordine** con caparra (`[DA CONFERMARE]` percentuale tipica 30%).
+   - **Tempi consegna**: tipici 8-12 settimane per cucine standard, 12-16 per su misura.
+   - **Montaggio in 2-4 giorni** in base a complessità.
+4. Range prezzi indicativi `[DA CONFERMARE]`: 4.000-8.000 € (cucine compatte 6 m), 8.000-15.000 € (cucine medie 10 m con elettrodomestici), 15.000+ € (cucine progetto/su misura).
+5. Bonus Mobili 50%: dettrazione IRPEF per acquisti mobili in caso di ristrutturazione collegata. Pagina dedicata.
+6. CTA: form preventivo cucina + appuntamento showroom + `tel:`.
+
+### Sub-pagina "Soggiorno" (`/soggiorno/`)
+
+Brand distribuiti `[DA CONFERMARE]`: Calligaris, Tonin Casa, Doimo Salotti, Bonaldo, Fimes. Composizioni: divani, librerie, mobili TV, tavoli pranzo, sedie. Range prezzi 2.500-12.000 € per soggiorno completo.
+
+### Sub-pagina "Camera" (`/camera/`)
+
+Brand distribuiti `[DA CONFERMARE]`: Doimo Camere, Tomasella, San Giacomo, Spar. Composizioni: armadi (battente o scorrevole), letti, comodini, comò, eventuale gruppo notte completo. Range prezzi 1.800-7.000 € per camera matrimoniale completa.
+
+### Sub-pagina "Bagno" (`/bagno/`)
+
+Brand sanitari distribuiti `[DA CONFERMARE]`: Ideal Standard, Catalano, Hatria, Geberit, Cersaie. Composizioni: lavabi, sanitari, mobili bagno, box doccia, vasche, rubinetteria. Range prezzi: 1.200-5.000 € per bagno medio. Servizio progettazione con dimensionamento e selezione coordinata.
+
+### Sub-pagina "Ufficio" (`/ufficio/`) — B2B
+
+Brand distribuiti `[DA CONFERMARE]`: Della Rovere, Quadrifoglio, Estel, Las Mobili. Composizioni: scrivanie operative, scrivanie direzionali, sedute ergonomiche, librerie e armadi, sale riunioni, reception. Range prezzi: 1.500-3.500 € per postazione completa, 8.000-25.000 € per ufficio completo 4-8 postazioni. Pagina dedicata B2B con modalità fatturazione, eventuale leasing operativo (`[DA CONFERMARE]` se RB Design propone).
+
+### Sub-pagina "Negozio / Locali commerciali" (`/negozio/`) — B2B
+
+Brand e soluzioni per arredamento commerciale `[DA CONFERMARE]`: marchi specifici come Effegibi (locali ristorazione), Ada Showroom, Italvetrine. Tipologie: arredamento negozi abbigliamento, ristoranti, bar, gelaterie, parrucchieri. Eventuale collaborazione con architetti per progetti commerciali completi (impianti + arredamento).
+
+### Pagina "Bonus Mobili 2026" (`/bonus-mobili/`)
+
+Asset SEO + commerciale forte:
+
+**Blocchi:**
+1. Hero "Bonus Mobili 50% per il 2026 — cosa abbiamo capito noi".
+2. Cosa è il Bonus Mobili: detrazione IRPEF 50% in 10 anni per acquisti mobili e grandi elettrodomestici (classe A+ o superiore) collegati a ristrutturazione edilizia.
+3. Tetto di spesa 2026 `[DA CONFERMARE]` per la legge di Bilancio aggiornata.
+4. Cosa è ammesso: cucine complete, mobili soggiorno, mobili camera, divani, scrivanie ufficio, mobili bagno se inclusi in ristrutturazione bagno.
+5. Cosa NON è ammesso: tende, accessori non mobili, prodotti tessili, decorazione.
+6. Modalità documento: fattura intestata + bonifico parlante + dichiarazione collegamento a ristrutturazione (CILA o equivalente).
+7. RB Design supporta: fattura conforme, bonifico parlante (cliente esegue, RB Design fornisce dati), eventuale lettera collegamento a ristrutturazione.
+8. **Disclaimer**: "Le informazioni qui riportate sono indicative al `[data]`. La normativa fiscale può cambiare. Per la pratica fiscale specifica, consultare il proprio commercialista. RB Design fornisce documentazione tecnica conforme ma la responsabilità fiscale è del contribuente."
+9. CTA: form preventivo "Voglio acquistare con Bonus Mobili" + appuntamento showroom + `tel:`.
+
+### Pagina "Showroom" (`/showroom/`)
+
+**Blocchi:**
+1. Hero "Lo showroom RB Design — Mozzecane".
+2. Foto interni: panoramica, dettagli espositivi, area cucina, area soggiorno, area camera, area ufficio (`[DA CONFERMARE]` cosa è effettivamente esposto).
+3. Cosa potete vedere/toccare: 5-8 cucine, 4-6 soggiorni, 3-5 camere, esempi ufficio.
+4. Orari (`[DA CONFERMARE]`): tipici 9-12:30 / 15-19, lunedì mattina chiuso, sabato aperto.
+5. Visita su appuntamento: alternativa a walk-in, garantisce tempo dedicato di Bertolaso (consigliato per progetti complessi).
+6. Mappa + indicazioni stradali + parcheggio.
+7. CTA: prenota appuntamento + visita oggi (walk-in) + `tel:`.
+
+### Pagina "Per architetti e progettisti" (`/per-progettisti/`)
+
+Pagina B2B specialistica per architetti, geometri, designer freelance:
+
+**Blocchi:**
+1. Hero "Per architetti, geometri, designer — RB Design come fornitore arredamento".
+2. Cosa offriamo:
+   - Listino orientativo per progettisti (sconto sul retail).
+   - Disponibilità sopralluogo congiunto con il vostro cliente.
+   - Selezione brand serie con marginalità sostenibile.
+   - Documentazione tecnica completa (schede prodotto, certificazioni, dichiarazioni).
+   - Tempi consegna comunicati con precisione (per pianificazione cantieri).
+   - Eventuale fatturazione differita per progetti grandi (con valutazione caso per caso).
+3. Modalità di collaborazione:
+   - Primo contatto: form dedicato o telefono.
+   - Sopralluogo congiunto: gratuito.
+   - Preventivo strutturato in 3-5 giorni lavorativi.
+   - Eventuali campioni di materiali per cliente finale.
+4. Chi è già nostro partner `[DA CONFERMARE]` se RB Design ha collaborazioni continuative con architetti/studi locali.
+5. CTA: form "Sono progettista" + `tel:`.
+
+### Sezione "Su misura" (sub-pagina di `/servizi/`)
+
+Se RB Design propone linea su misura `[DA CONFERMARE]`:
+
+**Blocchi:**
+1. Cosa proponiamo su misura: cucine non standard, armadi adattati, librerie, soluzioni di design specifico (es. tavoli da pranzo unici, pareti attrezzate).
+2. Materiali disponibili: legno massello, impiallacciato, laccato, melaminico, metallo, vetro.
+3. Tempi tipici: 12-18 settimane dalla conferma del progetto definitivo.
+4. Tolleranze dimensionali: ±5mm previste in contratto.
+5. **Disclaimer Codice Consumo art. 59 c)**: "Le opere su misura sono beni personalizzati. Sono escluse dal diritto di recesso ai sensi dell'art. 59 c) D.Lgs. 206/2005. La condizione di personalizzazione viene comunicata e accettata espressamente al momento della conferma ordine. Resta in essere la garanzia legale di conformità di 2 anni."
+6. CTA: form preventivo "Su misura" + appuntamento sopralluogo + `tel:`.
+
+### Pagina "Trasporto e montaggio" (`/servizi/trasporto-montaggio/`)
+
+**Blocchi:**
+1. Cosa includiamo:
+   - **Trasporto** in zona Mozzecane + raggio 30 km: incluso/al costo `[DA CONFERMARE]`.
+   - **Trasporto** oltre 30 km: preventivo specifico.
+   - **Montaggio** mobili componibili: incluso/al costo `[DA CONFERMARE]`.
+   - **Montaggio** mobili su misura: sempre incluso (necessario data la complessità).
+   - **Smontaggio mobili esistenti**: opzionale, costo separato.
+   - **Ritiro mobili usati** (`[DA CONFERMARE]`): gratuito a soglia / costo nominale / opzionale.
+2. Garanzie sul trasporto:
+   - Verifica integrità prodotto al momento della consegna (insieme al cliente).
+   - Eventuali danni di trasporto coperti da assicurazione.
+   - Tempi consegna comunicati 7-10 giorni prima (con possibilità riconcordare).
+3. Servizi accessori a pagamento:
+   - Smaltimento imballaggi.
+   - Spostamento mobili in altra stanza.
+   - Riparazioni/regolazioni post-installazione (entro 30 giorni: incluso; oltre: a pagamento per richieste estetiche, in garanzia per difetti).
 
 ---
 
@@ -292,6 +601,56 @@ Campi: Nome, Telefono, Data preferita, Orario preferito, Tipo progetto, Note, Co
 
 ### Microcopy
 - "Prenota appuntamento in showroom" → "Grazie. Roberto vi contatterà entro 24 ore lavorative."
+
+### Pattern WhatsApp scenari RB Design
+
+WhatsApp `[CONDIZIONALE]` — solo se Bertolaso attiva numero come Business profile:
+- Cliente in fase preliminare: "Ho visto sui vostri progetti la cucina X — quanto costa indicativamente?". Bertolaso risponde con range + invito appuntamento.
+- Cliente già in showroom: "Ho dimenticato di chiederle il nome del divano blu — può scrivermi?". Comunicazione operativa.
+- Architetto/professionista: "Vi mando le misure dell'appartamento del mio cliente, può rivedere il preventivo?". Scambio di documenti tecnici (CONSENTITO con consenso GDPR).
+- **Vietato in WhatsApp**: invio caparra/bonifico (richiede email + documento), discussione contestazioni qualità (telefono + email + raccomandata se grave), conferma ordine finale (richiede firma su PDF).
+
+Pattern messaggio precompilato per CTA "Vorrei informazioni":
+```
+https://wa.me/390456340804?text=Buongiorno%20Roberto%2C%20vorrei%20informazioni%20su%20[ambiente].%20Spazio%20indicativo%20[mq].%20Grazie.
+```
+
+### Form Preventivo dettagliato (multi-step opzionale)
+
+**Step 1 — Tipo progetto:**
+- [ ] Cucina
+- [ ] Soggiorno
+- [ ] Camera
+- [ ] Bagno
+- [ ] Ufficio
+- [ ] Negozio
+- [ ] Casa completa (più ambienti)
+- [ ] Su misura specifico (libreria, armadio, altro)
+
+**Step 2 — Dettagli spazio:**
+- [ ] Mq stimati o dimensioni note
+- [ ] Tipologia immobile: appartamento / villa / locale commerciale / ufficio
+- [ ] Stato: ristrutturazione in corso / casa già abitata / casa nuova / locale da allestire
+- [ ] Eventuale collegamento a ristrutturazione edilizia (per Bonus Mobili)
+
+**Step 3 — Stile e budget:**
+- [ ] Stile: moderno / contemporaneo / classico / industriale / scandinavo / personalizzato
+- [ ] Budget indicativo: <5k / 5-15k / 15-30k / 30k+ / da definire
+- [ ] Tempi: urgente (<2 mesi) / 2-4 mesi / 4-6 mesi / flessibile
+
+**Step 4 — Contatti + foto opzionale:**
+- Nome, email, telefono.
+- Upload foto/planimetria (3-5 file, max 5MB ognuno).
+- Note libere.
+- Consenso GDPR esplicito.
+
+Microcopy: "Step 4 di 4 — Confermando, Roberto vi contatterà entro 24 ore lavorative per concordare un appuntamento o un sopralluogo gratuito."
+
+### Form Appuntamento Showroom semplice
+
+Per chi vuole prenotare visita senza dare ancora dettagli progetto:
+- Nome, telefono, data preferita (calendar picker), orario (mattina/pomeriggio), tipo progetto (select breve), note libere, consenso GDPR.
+- Conferma: "Bertolaso vi contatterà per confermare data e orario entro 24 ore lavorative."
 
 ---
 
@@ -355,6 +714,49 @@ Tel. 045 6340804 · Email [DA CONFERMARE] · PEC [DA CONFERMARE]
 - Niente "soddisfatti o rimborsati" se non c'è policy scritta.
 - Eventuale "soddisfazione del cliente" come obiettivo, non garanzia.
 
+### Esempi prima/dopo: scheda prodotto/progetto compliant
+
+**Cucina su misura:**
+- *Vietato:* "Cucina su misura: il sogno realizzato per la tua casa, garantita per sempre."
+- *Compliant:* "Cucina su misura su progetto Bertolaso. Composizione `[esempio]`. Materiali: ante laccato matt, top in quarzo, basi in melaminico bianco. Tempo realizzazione 12-14 settimane dalla conferma ordine. Tolleranze dimensionali ±5mm previste in contratto. Bene personalizzato — escluso dal diritto di recesso ai sensi dell'art. 59 c) D.Lgs. 206/2005. Garanzia legale 2 anni Codice del Consumo + eventuale garanzia commerciale produttore."
+
+**Cucina Veneta Cucine standard:**
+- *Vietato:* "La migliore cucina italiana al miglior prezzo."
+- *Compliant:* "Cucina Veneta Cucine modello `[esempio]`. Composizione standard. Tempi consegna 8-10 settimane. Garanzia legale 2 anni + garanzia commerciale Veneta Cucine. Acquisto con diritto di recesso 14 giorni se ordinato a distanza, no recesso se ordinato in showroom."
+
+**Pacchetto cucina + soggiorno per primo arredamento:**
+- *Vietato:* "Pacchetto coppia: tutto per la prima casa, prezzo unico imbattibile."
+- *Compliant:* "Soluzione 'Casa nuova': cucina componibile + soggiorno con divano e tavolo + camera matrimoniale. Range prezzi `[fascia indicativa]`. Personalizzazione finiture e materiali. Sopralluogo gratuito per misure precise. Preventivo dettagliato con voci separate."
+
+### Errori frequenti da evitare nel sito di showroom arredamento
+
+1. **Foto da banche immagini di interni di lusso non realizzati da RB Design**: cliché. Vietato. Foto solo di progetti reali realizzati.
+2. **Prezzi "a partire da" senza chiarire condizioni**: ingannevoli. Sostituire con "fascia di prezzo indicativa" + nota "Il prezzo finale dipende da finiture, dimensioni, eventuale su misura".
+3. **"Spedizione e montaggio gratis"** se solo a soglia di spesa: chiarire condizione.
+4. **Foto progetti senza autorizzazione cliente**: violazione GDPR + rispetto. Modulo consenso obbligatorio.
+5. **"Made in Italy"** generico se solo alcuni brand sono italiani: chiarire quali brand.
+6. **Recensioni clonate da altri showroom**: violazione + scopribile. Solo recensioni autentiche.
+7. **"Garanzia totale"** senza specifica: ambiguo. Sostituire con citazione art. 128-135 Codice del Consumo + eventuale garanzia commerciale specifica.
+8. **Consigli architettonici senza qualifica**: Bertolaso può fare interior design (consulenza arredamento + scelta materiali) ma non architettura formale (calcoli strutturali, autorizzazioni, progetto edilizio). Chiarire confine.
+
+### Codice Etico Federmobili / Federdistribuzione
+
+Eventuale iscrizione `[DA CONFERMARE]`. Vincoli: trasparenza commerciale, gestione contestazioni, modalità pubblicità conformi ai principi del settore.
+
+### Termini e condizioni di vendita standard
+
+Da pubblicare in pagina dedicata `/termini-condizioni/`:
+
+1. **Tempi consegna**: indicativi al momento dell'ordine, possibili variazioni in base a disponibilità produttore. Comunicazione tempestiva di ritardi.
+2. **Caparra**: tipica 30% alla conferma ordine, saldo alla consegna o post-montaggio. Restituibile in caso di rinuncia entro 14 giorni (se acquisto a distanza) o secondo art. 1385 c.c. (caparra confirmatoria).
+3. **Trasporto**: incluso fino al piano `[DA CONFERMARE]` (es. piano terra o primo piano). Costo aggiuntivo per piani superiori senza ascensore.
+4. **Montaggio**: incluso/escluso `[DA CONFERMARE]`. Costo separato indicato in preventivo.
+5. **Ritiro usato**: eventuale costo o gratuito a soglia.
+6. **Garanzia legale**: 2 anni Codice del Consumo (art. 128-135).
+7. **Garanzia commerciale**: variabile per produttore (citazione del documento allegato).
+8. **Foro competente**: Tribunale di Verona.
+9. **Codice Etico**: aderenza ai principi di trasparenza e correttezza commerciale.
+
 ---
 
 ## §12 Accessibilità e prestazioni
@@ -409,6 +811,19 @@ Vietato Hotjar/Clarity senza opt-in.
 9. **[REF-arredamento-09] — MobiliDesignOccasioni** ([mobilidesignoccasioni.com](https://www.mobilidesignoccasioni.com)) — Outlet model. *§10*.
 10. **[REF-ristorazione-01] — Tenuta Centoporte** ([tenutacentoporte.it](https://tenutacentoporte.it)) — Storytelling territoriale (utile cross-vertical). *§5*.
 
+### Lezioni operative trasferibili dai 10 riferimenti
+
+- **Da Rimadesio (REF-01)**: Made in Italy come asset narrativo + configuratore prodotto online. Per RB Design: configuratore F4+ (fuori scope F1/F2). Made in Italy come messaggio se brand distribuiti italiani.
+- **Da LAGO (REF-02)**: galleria progetti realizzati con foto ambientate + descrizione contesto. Per RB Design: pattern di galleria progetti con location, mq, brand, durata.
+- **Da Mohd (REF-03)**: filtri per ambiente come navigazione primaria. Per RB Design: replicare pattern (cucina/soggiorno/camera/ufficio/negozio).
+- **Da Archiproducts (REF-04)**: showroom raccontato online con tour virtuale o foto interni dettagliate. Per RB Design: pagina Showroom dedicata con foto interni multipli, eventualmente video tour 60-90 sec in F3.
+- **Da Interni Online (REF-05)**: consulenza personale come asset distintivo + foto del designer. Per RB Design: pagina "Consulenza con Roberto" + foto Bertolaso al lavoro.
+- **Da ARHome (REF-06)**: messaggio Made in Italy semplice e diretto. Per RB Design: se applicabile, "Selezione brand italiani" come messaggio chiaro.
+- **Da PagineGialle (REF-07)**: verifica NAP esistente e consistency con sito.
+- **Da iCRIBIS (REF-08)**: REA verificato VR-278118 — usato per imprint legale.
+- **Da MobiliDesignOccasioni (REF-09)**: outlet/promozioni model — eventuale sezione "Disponibili subito" o "Esposizione" con pezzi a sconto. Per RB Design: F4+ se Bertolaso vuole valorizzare ex-esposizione.
+- **Da Tenuta Centoporte (REF-10)**: storytelling territoriale cross-vertical — il pattern "siamo un'azienda di Mozzecane, qui da X anni, gestita dalla famiglia" è applicabile. Per RB Design: storytelling Bertolaso interior designer di paese.
+
 ---
 
 ## §14 Roadmap di implementazione e KPI
@@ -422,16 +837,40 @@ Vietato Hotjar/Clarity senza opt-in.
 5. **Privacy/cookie**.
 6. **Servizio fotografico** (showroom + 4-6 progetti realizzati). 350-600€.
 
-### F2 — Build (sett. 3-5, ~30-40h)
+### F2 — Build (sett. 3-5, ~30-40h, deliverable dettagliati)
 
-1. 6 pagine + sotto-pagine per ambiente + galleria progetti.
-2. Schema.org `FurnitureStore + LocalBusiness`.
-3. Cookie banner.
-4. Form preventivo con upload foto + form appuntamento showroom.
-5. Test responsive, a11y, performance.
-6. SEO on-page.
-7. GA4 + Search Console.
-8. Lancio.
+1. **Implementazione 6 pagine principali**:
+   - Home (~700 parole) con hero + griglia ambienti + progetti recenti + brand distribuiti + consulenza Bertolaso + footer.
+   - Servizi (~500 parole overview) + 4-5 sub-servizi (Progettazione interior design, Fornitura, Trasporto e montaggio, Su misura se attivo, Ritiro usato se attivo).
+   - Per ambiente — 6 sotto-pagine (Cucina, Soggiorno, Camera, Bagno, Ufficio, Negozio) — ognuna ~500-700 parole con brand + esempi + processo + form.
+   - Progetti realizzati (~600 parole) con galleria filtrabile 8-12 progetti.
+   - Chi siamo (~500 parole) con bio Bertolaso + foto + storia + filosofia + foto showroom.
+   - Contatti (~300 parole) con NAP + mappa + orari showroom + form + tel + WhatsApp.
+2. **Pagina specialistica "Bonus Mobili 2026"** (~800 parole) con disclaimer fiscale + CTA preventivo.
+3. **Pagina specialistica "Showroom"** (~400 parole) con foto interni + appuntamento.
+4. **Pagina specialistica "Termini e condizioni di vendita"** (~600 parole) per compliance Codice Consumo.
+5. **Galleria progetti** filtrabile per ambiente con 8-12 progetti pilota (foto autorizzate cliente, descrizione strutturata).
+6. **Schema.org JSON-LD** `FurnitureStore + LocalBusiness` con priceRange, hasOfferCatalog (categorie ambiente), areaServed Mozzecane + comuni limitrofi.
+7. **Cookie banner Garante-conforme** (Iubenda preferito).
+8. **Form Preventivo multi-step** con upload foto/planimetria + invio email a Bertolaso + auto-risposta cliente + anti-spam honeypot.
+9. **Form Appuntamento Showroom** con calendar picker + invio email + conferma cliente.
+10. **Test responsive** 375/768/1440/1920 su tutte le pagine.
+11. **Test accessibilità** WCAG 2.1 AA con axe DevTools, focus su galleria progetti (lightbox accessibile) + form multi-step + tabella prezzi.
+12. **Test performance** Lighthouse target ≥90 Performance + ≥95 Accessibility.
+13. **SEO on-page** completo: title/description/OG/Twitter Card per ogni pagina, alt foto progetti dettagliati, gerarchia heading, schema.org, NAP consistency.
+14. **Setup Google Analytics 4** anonimizzato + eventi custom (chiamate `tel:`, click WhatsApp, submission form preventivo, submission form appuntamento, upload foto, click ambiente, visualizzazioni Bonus Mobili).
+15. **Setup Search Console** sitemap.xml + robots.txt.
+16. **Lancio in produzione** con DNS + redirect 301 da eventuali aggregatori esistenti che reindirizzano + verifica NAP consistency post-lancio.
+
+**Dipendenze cliente**: foto definitive (showroom + 8-12 progetti realizzati con consenso cliente), approvazione testi (specialmente Bonus Mobili + Termini), accesso DNS/hosting, lista brand distribuiti definitiva, pagamenti accettati.
+
+### Note finali roadmap
+
+- **Foto progetti**: deliverable più sensibile. Se Bertolaso non ha 8 progetti documentabili con consenso, F2 lancia con 4-5 progetti e si arricchisce in F3 (target 12 a 90gg).
+- **Bonus Mobili**: pagina con potenziale SEO alto ma normativa cambia. Pianificare revisione trimestrale.
+- **Brand distribuiti**: lista definitiva critica per credibilità. Se RB Design non è dealer ufficiale di un brand citato, problema legale.
+- **Showroom**: foto pulite e luminose sono cruciali. Se interni non si fotografano bene (vetrine sporche, prodotti vecchi esposti), prima ripulire e riallestire.
+- **Compliance**: ogni pagina con prezzi indicativi va revisionata da Bertolaso pre-pubblicazione per aderenza a listino reale.
 
 ### F3 — Iterazione (sett. 6-7, ~10-15h)
 
@@ -440,18 +879,82 @@ Vietato Hotjar/Clarity senza opt-in.
 3. Eventuale primo articolo blog ("Come progettare la cucina ideale a Mozzecane").
 4. Backlog F4.
 
+### F4 — Backlog post-90gg
+
+**Configuratore 3D online**: tool per visualizzare cucina/soggiorno con scelta colori e materiali. Investimento alto (5-15k €), ROI dipende dalla conversione effettiva. Decisione strategica.
+
+**Tour virtuale showroom**: video 360° o foto sferica del showroom — utile per chi non può visitare prima del primo contatto. Investimento medio (1-2k €), valore informativo + qualificazione visitatori online.
+
+**Blog interior design 8-12 articoli/anno**: temi long-tail SEO che convertono — "Come progettare una cucina di 12 m²", "Differenza tra cucina componibile e cucina su misura", "Come scegliere il divano del soggiorno", "Bonus Mobili 2026: cosa abbiamo capito noi", "Stili di arredamento: moderno vs contemporaneo vs scandinavo". Tempo Bertolaso: 3-4h/articolo. ROI long-term + autorità tematica locale.
+
+**Newsletter trimestrale opt-in**: novità arredamento, eventuali promozioni stagionali, articoli blog. Iubenda + double opt-in. Stagionalità (più aperture in primavera + autunno).
+
+**Outlet / sezione promozioni**: ex-esposizione, fine serie, occasioni. Pagina dedicata con prezzo barrato + prezzo finale + condizioni (visibile in showroom, fino a esaurimento). Stagionale (saldi gennaio-febbraio + luglio-agosto).
+
+**Sistema preventivo strutturato + CRM**: integrazione con tool tipo Pipedrive o HubSpot per gestire pipeline cliente (richiesta → sopralluogo → preventivo → conferma → consegna → installazione → garanzia). Costo 30-100 €/mese, valore organizzativo importante con crescita volumi.
+
+**Sezione progettisti / architetti**: pagina dedicata B2B con condizioni speciali, listino orientativo, modalità collaborazione. Cresce mercato B2B locale.
+
+**Casi-study video**: 3-5 video 60-90 sec per progetti significativi. YouTube + embed sito + Instagram.
+
+**Eventuale e-commerce di accessori e complementi**: prodotti piccoli (lampade, tessili coordinati, oggetti decorativi) vendibili online senza problemi logistici. F4+++. Solo se RB Design vuole esplorare canale e-commerce.
+
+### Rischi a 90gg e mitigazioni
+
+- **Rischio claim non conformi Codice Consumo**: pubblicare "soddisfatti o rimborsati" o "garanzia totale" senza policy. Mitigazione: revisione testi pre-pubblicazione + glossario interno parole vietate.
+- **Rischio foto progetti senza autorizzazione cliente**: violazione GDPR. Mitigazione: workflow strutturato di consenso al momento della consegna progetto + archivio consensi separato.
+- **Rischio Bonus Mobili non aggiornato**: la pagina è asset SEO ma normativa cambia. Mitigazione: revisione trimestrale + data ultima revisione visibile.
+- **Rischio overload Bertolaso preventivi**: aumento richieste senza aumento capacità di risposta. Mitigazione: form preventivo strutturato con pre-qualifica budget/tempi (filtro automatico) + auto-risposta entro 24h.
+- **Rischio competition con IKEA Verona Est**: IKEA è 30 minuti, RB Design 5 minuti per Mozzecane. Mitigazione: differenziazione netta (IKEA = self-service basso costo; RB Design = consulenza + qualità medio-alta + Made in Italy + prossimità).
+- **Rischio Instagram @rb.arredamenti non ufficiale**: confusione clienti. Mitigazione: F1 verifica + eventuale richiesta revoca handle / creazione handle ufficiale.
+
 ### KPI a 90gg
 
 | KPI | Strumento | Baseline | Target |
 |---|---|---|---|
 | Submission form Preventivo | GA4 | 0 | ≥8/mese |
 | Submission form Appuntamento | GA4 | 0 | ≥4/mese |
+| Submission con foto upload | GA4 custom | 0 | ≥3/mese |
 | Chiamate `tel:` | GA4 | 0 | ≥15/mese |
+| Click WhatsApp | GA4 | 0 | ≥6/mese |
 | Pageview pagine per ambiente | GA4 | 0 | ≥250/mese (sommate) |
+| Pageview Pagina Bonus Mobili | GA4 | 0 | ≥150/mese |
+| Pageview pagina Showroom | GA4 | 0 | ≥120/mese |
+| Pageview pagina Progetti | GA4 | 0 | ≥200/mese |
+| Click "indica indirizzo" GBP | GBP Insights | da catturare | +30% |
 | Posizionamento "arredamento mozzecane" | Search Console | da misurare | top 3 |
 | Posizionamento "interior design verona sud" | Search Console | da misurare | top 5 |
+| Posizionamento "bonus mobili 2026" | Search Console | da misurare | top 20 (competitive) |
+| Posizionamento "cucine mozzecane" | Search Console | da misurare | top 5 |
 
 Strumenti: GA4, Search Console, GBP. Mai heatmap senza opt-in.
+
+### Logica dietro i target KPI
+
+I target sono pensati per showroom arredamento di provincia con conversion tipica B2C+B2B mista:
+
+- **Form Preventivo ≥8/mese**: conversion tipica showroom arredamento è 5-10 preventivi qualificati/mese da web (gli altri vengono da passaparola, walk-in, GBP). 8 preventivi = ~24 in 90gg = base solida.
+- **Form Appuntamento ≥4/mese**: pattern alternativo per chi vuole prima visitare showroom. Indica engagement alto.
+- **Chiamate `tel:` ≥15/mese**: clientela tipica cliente che vuole "primo contatto rapido" prima di compilare form. Ratio chiamate/form tipico ~2:1.
+- **Pageview ambienti ≥250/mese sommate**: indicatore di engagement. Se molto bassa, problema SEO o navigazione.
+- **Pageview Bonus Mobili ≥150/mese**: forte intent commerciale + ricerche stagionali (gennaio-febbraio picco).
+- **Pageview Progetti ≥200/mese**: galleria progetti = trust signal + selezione naturale qualificati.
+- **Posizionamento "arredamento mozzecane" top 3**: realistico in 90gg, mercato locale poco competitivo.
+- **Posizionamento "interior design verona sud" top 5**: più competitivo (Verona ha showroom molto più grandi), realistico solo con landing dedicata + 2-3 articoli blog F3.
+
+A 180gg post-lancio: form Preventivo ≥12/mese, Pageview Bonus Mobili ≥300/mese (con maturazione SEO).
+
+### Conversion tipica showroom arredamento
+
+Il funnel arredamento è lungo (4-12 settimane dal primo contatto al primo ordine):
+
+1. **Visita sito → form/tel**: 2-5% conversion del traffico qualificato.
+2. **Form/tel → primo appuntamento showroom**: 30-50% (dipende qualità lead).
+3. **Primo appuntamento → preventivo**: 70-85%.
+4. **Preventivo → ordine**: 25-40%.
+5. **Ordine → consegna + installazione**: ~6-12 settimane.
+
+Il sito è il **primo touchpoint** del funnel. La sua qualità determina la qualifica del lead più che la conversion finale.
 
 ---
 
