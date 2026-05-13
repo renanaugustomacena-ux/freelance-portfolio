@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../../shared/css/reset.css">
   <link rel="stylesheet" href="../../shared/css/utilities.css">
   <link rel="stylesheet" href="../../shared/css/components.css">
+  <link rel="stylesheet" href="../../shared/css/template-presets.css">
   <link rel="stylesheet" href="css/style.css">
   <!-- OpenGraph -->
   <meta property="og:type" content="website">
@@ -53,7 +54,7 @@
   </script>
 
 </head>
-<body>
+<body data-tpl="sfizio-c">
 
   <a href="#main-content" class="skip-link">Vai al contenuto</a>
 
@@ -348,6 +349,10 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
   </button>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="../../shared/js/gsap-init.js" defer></script>
+  <script src="../../shared/js/scroll-animations.js" defer></script>
   <script src="../../shared/js/mobile-nav.js"></script>
   <script src="../../shared/js/smooth-scroll.js"></script>
   <script src="../../shared/js/reveal-on-scroll.js"></script>
