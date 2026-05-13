@@ -749,30 +749,56 @@
 
 /* ============================================
    WEBGL BACKGROUND CANVAS
-   Renders behind hero content for atmospheric tpls
+   Renders behind hero content but ABOVE the
+   template's own decorative pseudo-elements
+   (radial gradients, grain, etc) so the shader
+   is the dominant visual.
    ============================================ */
 
-.webgl-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  z-index: 0;
-  pointer-events: none;
+canvas.webgl-bg {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-.hero,
-.hero--full,
-[data-webgl-host] {
+.hero {
   position: relative;
   isolation: isolate;
 }
 
-.hero > *:not(.webgl-bg),
-[data-webgl-host] > *:not(.webgl-bg) {
+/* Make sure hero content sits above the WebGL canvas */
+.hero > *:not(canvas):not(script) {
   position: relative;
-  z-index: 2;
+  z-index: 3;
+}
+
+/* Push existing pseudo-element decorations behind the canvas
+   so the WebGL shader is the dominant background visual */
+.hero:has(> canvas.webgl-bg)::before,
+.hero:has(> canvas.webgl-bg)::after {
+  z-index: 0 !important;
+  opacity: 0.4 !important;
+}
+
+/* Decorative inner elements (smoke, embers, particles divs)
+   stay above the canvas but below content */
+[data-tpl] .hero__smoke,
+[data-tpl] .hero__embers,
+[data-tpl] .hero__diagonal,
+[data-tpl] .hero__bg,
+[data-tpl] .hero__overlay,
+[data-tpl] .hero__particles,
+[data-tpl] .hero__glow {
+  z-index: 2 !important;
+  opacity: 0.5 !important;
+  mix-blend-mode: screen;
 }
 
 /* Default palettes per template (override in template style.css if needed) */
