@@ -79,7 +79,8 @@
   </nav>
 
   <!-- ===== HERO ===== -->
-  <header class="hero" id="main-content">
+  <header class="hero" id="main-content" data-c="forest">
+    <canvas class="webgl-bg" data-webgl-bg="particles" aria-hidden="true"></canvas>
     <div class="hero__botanical" aria-hidden="true"></div>
     <div class="container hero__content">
       <span class="hero__badge">Erboristeria a Mozzecane</span>
@@ -96,7 +97,7 @@
   </header>
 
   <!-- ===== CHI SIAMO ===== -->
-  <section class="section chi-siamo" id="chi-siamo">
+  <section class="section chi-siamo" id="chi-siamo" data-c="warm">
     <div class="container">
       <div class="chi-siamo__grid">
         <div class="reveal">
@@ -127,7 +128,7 @@
   </section>
 
   <!-- ===== PRODOTTI ===== -->
-  <section class="section prodotti" id="prodotti">
+  <section class="section prodotti" id="prodotti" data-c="forest">
     <div class="container">
       <div class="section-header section-header--centered reveal">
         <span class="section-header__label">I Nostri Prodotti</span>
@@ -182,7 +183,7 @@
   </section>
 
   <!-- ===== RIMEDI STAGIONALI ===== -->
-  <section class="section rimedi" id="rimedi">
+  <section class="section rimedi" id="rimedi" data-c="gold">
     <div class="container">
       <div class="section-header section-header--centered reveal">
         <span class="section-header__label">Rimedi Naturali</span>
@@ -215,7 +216,7 @@
   </section>
 
   <!-- ===== CONSULENZA ===== -->
-  <section class="section consulenza" id="consulenza">
+  <section class="section consulenza" id="consulenza" data-c="forest">
     <div class="container">
       <div class="consulenza__wrapper reveal">
         <div class="consulenza__content">
@@ -241,7 +242,7 @@
   </section>
 
   <!-- ===== MARCHI ===== -->
-  <section class="section marchi" id="marchi">
+  <section class="section marchi" id="marchi" data-c="dark">
     <div class="container">
       <div class="section-header section-header--centered reveal">
         <span class="section-header__label">I Nostri Marchi</span>
@@ -261,7 +262,7 @@
   </section>
 
   <!-- ===== FAQ ===== -->
-  <section class="section faq" id="faq">
+  <section class="section faq" id="faq" data-c="dark">
     <div class="container container--narrow">
       <div class="section-header section-header--centered reveal">
         <span class="section-header__label">Domande Frequenti</span>
@@ -341,6 +342,10 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
   <script src="../../shared/js/gsap-init.js" defer></script>
   <script src="../../shared/js/scroll-animations.js" defer></script>
+  <script src="../../shared/js/webgl-bg.js" defer></script>
+  <script src="../../shared/js/color-shift.js" defer></script>
+  <script src="../../shared/js/image-reveal.js" defer></script>
+  <script src="../../shared/js/tilt-3d.js" defer></script>
   <script src="../../shared/js/mobile-nav.js"></script>
   <script src="../../shared/js/smooth-scroll.js"></script>
   <script src="../../shared/js/reveal-on-scroll.js"></script>

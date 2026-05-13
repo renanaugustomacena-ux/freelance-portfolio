@@ -73,7 +73,8 @@
   </nav>
 
   <!-- ===== HERO ===== -->
-  <header class="hero" id="main-content">
+  <header class="hero" id="main-content" data-c="ember">
+    <canvas class="webgl-bg" data-webgl-bg="liquid" aria-hidden="true"></canvas>
     <div class="hero__diagonal" aria-hidden="true"></div>
     <div class="hero__embers" aria-hidden="true">
       <span class="ember"></span>
@@ -103,7 +104,7 @@
   </header>
 
   <!-- ===== LA NOSTRA STORIA ===== -->
-  <section class="section storia" id="storia">
+  <section class="section storia" id="storia" data-c="warm">
     <div class="container">
       <div class="storia__grid">
         <div class="storia__text reveal">
@@ -126,7 +127,7 @@
   </section>
 
   <!-- ===== MENU ===== -->
-  <section class="section menu" id="menu">
+  <section class="section menu" id="menu" data-c="copper">
     <div class="container">
       <div class="section-header section-header--centered reveal">
         <span class="section-header__label">Il Nostro Menu</span>
@@ -212,7 +213,7 @@
   </div>
 
   <!-- ===== INFO BAR ===== -->
-  <section class="section info-section" id="info">
+  <section class="section info-section" id="info" data-c="dark">
     <div class="container">
       <div class="section-header section-header--centered reveal">
         <span class="section-header__label">Info & Contatti</span>
@@ -263,7 +264,7 @@
   </section>
 
   <!-- ===== REVIEWS ===== -->
-  <section class="section recensioni" id="recensioni">
+  <section class="section recensioni" id="recensioni" data-c="cream">
     <div class="container">
       <div class="section-header section-header--centered reveal">
         <span class="section-header__label">Cosa Dicono di Noi</span>
@@ -367,6 +368,10 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
   <script src="../../shared/js/gsap-init.js" defer></script>
   <script src="../../shared/js/scroll-animations.js" defer></script>
+  <script src="../../shared/js/webgl-bg.js" defer></script>
+  <script src="../../shared/js/color-shift.js" defer></script>
+  <script src="../../shared/js/image-reveal.js" defer></script>
+  <script src="../../shared/js/tilt-3d.js" defer></script>
   <script src="../../shared/js/mobile-nav.js"></script>
   <script src="../../shared/js/smooth-scroll.js"></script>
   <script src="../../shared/js/reveal-on-scroll.js"></script>

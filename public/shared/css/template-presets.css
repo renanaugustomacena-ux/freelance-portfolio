@@ -748,6 +748,193 @@
 }
 
 /* ============================================
+   WEBGL BACKGROUND CANVAS
+   Renders behind hero content for atmospheric tpls
+   ============================================ */
+
+.webgl-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero,
+.hero--full,
+[data-webgl-host] {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero > *:not(.webgl-bg),
+[data-webgl-host] > *:not(.webgl-bg) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Default palettes per template (override in template style.css if needed) */
+[data-tpl="effebi-a"] .webgl-bg     { --webgl-c1: #0A0507; --webgl-c2: #2A1520; --webgl-c3: #C8A050; }
+[data-tpl="effebi-b"] .webgl-bg     { --webgl-c1: #FBF6EE; --webgl-c2: #E8D8C8; --webgl-c3: #6B1E2E; }
+[data-tpl="effebi-c"] .webgl-bg     { --webgl-c1: #0F0F0F; --webgl-c2: #1A1A1A; --webgl-c3: #D4382D; }
+
+[data-tpl="armonia-a"] .webgl-bg    { --webgl-c1: #FBF8F6; --webgl-c2: #E8D8CC; --webgl-c3: #B8806C; }
+[data-tpl="armonia-b"] .webgl-bg    { --webgl-c1: #0A0908; --webgl-c2: #2A2420; --webgl-c3: #C89A6A; }
+[data-tpl="armonia-c"] .webgl-bg    { --webgl-c1: #F8FAF6; --webgl-c2: #E0EFE0; --webgl-c3: #5A8A6A; }
+
+[data-tpl="rbdesign-a"] .webgl-bg   { --webgl-c1: #F7F6F3; --webgl-c2: #E8E2D8; --webgl-c3: #A68B6A; }
+[data-tpl="rbdesign-b"] .webgl-bg   { --webgl-c1: #FFFFFF; --webgl-c2: #E8E8E8; --webgl-c3: #1A1A1A; }
+[data-tpl="rbdesign-c"] .webgl-bg   { --webgl-c1: #0C0B0A; --webgl-c2: #1A1918; --webgl-c3: #C8A878; }
+
+[data-tpl="maracaibo-a"] .webgl-bg  { --webgl-c1: #0D0A08; --webgl-c2: #2A1A10; --webgl-c3: #D4923C; }
+[data-tpl="maracaibo-b"] .webgl-bg  { --webgl-c1: #08080E; --webgl-c2: #1E1E2A; --webgl-c3: #C8A050; }
+[data-tpl="maracaibo-c"] .webgl-bg  { --webgl-c1: #FBF5EE; --webgl-c2: #F0E0C8; --webgl-c3: #C85A28; }
+
+[data-tpl="rosati-a"] .webgl-bg     { --webgl-c1: #0F0A07; --webgl-c2: #261C16; --webgl-c3: #E8712A; }
+[data-tpl="rosati-b"] .webgl-bg     { --webgl-c1: #FDFAF5; --webgl-c2: #F5EDE0; --webgl-c3: #B5442A; }
+
+[data-tpl="girasole-a"] .webgl-bg   { --webgl-c1: #0E1A0E; --webgl-c2: #152015; --webgl-c3: #8BB05E; }
+[data-tpl="girasole-b"] .webgl-bg   { --webgl-c1: #FAFDF7; --webgl-c2: #E0EFD8; --webgl-c3: #4A7A4A; }
+[data-tpl="girasole-c"] .webgl-bg   { --webgl-c1: #F7F6F3; --webgl-c2: #E0EDDC; --webgl-c3: #3D7A5C; }
+
+/* ============================================
+   SCROLL-LINKED COLOR SHIFT (gethapply pattern)
+   Body[data-color] swaps drive nav + accent + bg
+   Each business has a palette set
+   ============================================ */
+
+body { transition: background-color 0.5s ease, color 0.4s ease; }
+
+.nav { transition: background-color 0.4s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+
+/* Generic color palettes activated by [data-color="..."]
+   Templates assign data-c="palette-name" to sections */
+
+body[data-color="warm"]    { --color-shift-bg: #F5EDE0; --color-shift-fg: #1A1210; --color-shift-accent: #E8712A; }
+body[data-color="cool"]    { --color-shift-bg: #E8F0F5; --color-shift-fg: #0A1929; --color-shift-accent: #1565C0; }
+body[data-color="dark"]    { --color-shift-bg: #0F0A07; --color-shift-fg: #F5EDE4; --color-shift-accent: #C8A050; }
+body[data-color="light"]   { --color-shift-bg: #FAFBFA; --color-shift-fg: #1A1A1A; --color-shift-accent: #3D7A5C; }
+body[data-color="gold"]    { --color-shift-bg: #2A1520; --color-shift-fg: #F0E8E0; --color-shift-accent: #C8A050; }
+body[data-color="rose"]    { --color-shift-bg: #FBF8F6; --color-shift-fg: #2A2320; --color-shift-accent: #B8806C; }
+body[data-color="forest"]  { --color-shift-bg: #0E1A0E; --color-shift-fg: #E8EDE4; --color-shift-accent: #8BB05E; }
+body[data-color="copper"]  { --color-shift-bg: #1A0F08; --color-shift-fg: #F0E8D8; --color-shift-accent: #D4923C; }
+body[data-color="ember"]   { --color-shift-bg: #1A1410; --color-shift-fg: #F5EDE0; --color-shift-accent: #FF6B35; }
+body[data-color="cream"]   { --color-shift-bg: #FBF5EE; --color-shift-fg: #1A1008; --color-shift-accent: #C85A28; }
+
+/* When data-color is set, the nav shifts subtly */
+body[data-color] .nav {
+  background-color: color-mix(in srgb, var(--color-shift-bg, transparent) 92%, transparent);
+  color: var(--color-shift-fg, inherit);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+body[data-color] .nav__logo,
+body[data-color] .nav__links a {
+  color: var(--color-shift-fg, inherit);
+  transition: color 0.4s ease;
+}
+
+body[data-color] .nav__links a::after {
+  background: var(--color-shift-accent, currentColor);
+}
+
+body[data-color] .nav__hamburger span {
+  background: var(--color-shift-fg, currentColor);
+}
+
+/* Override only when nav doesn't have its own opaque bg */
+@media (max-width: 767px) {
+  body[data-color] .nav__links {
+    background: var(--color-shift-bg, var(--bg-primary, #fff));
+    color: var(--color-shift-fg, inherit);
+  }
+}
+
+/* ============================================
+   IMAGE REVEAL (floema pattern) — two-layer
+   clip-path animation
+   ============================================ */
+
+.image-reveal {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.image-reveal__bg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--reveal-bg, var(--accent-primary, currentColor));
+  clip-path: inset(0 0 100% 0);
+  z-index: 1;
+}
+
+.image-reveal__img,
+.image-reveal img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: inset(0 0 100% 0);
+  z-index: 2;
+}
+
+/* Per-template reveal background colors */
+[data-tpl="rosati-a"] .image-reveal__bg { background-color: #E8712A; }
+[data-tpl="effebi-a"] .image-reveal__bg { background-color: #C8A050; }
+[data-tpl="armonia-a"] .image-reveal__bg { background-color: #B8806C; }
+[data-tpl="rbdesign-a"] .image-reveal__bg { background-color: #A68B6A; }
+[data-tpl="maracaibo-a"] .image-reveal__bg { background-color: #D4923C; }
+[data-tpl="girasole-a"] .image-reveal__bg { background-color: #8BB05E; }
+
+/* ============================================
+   3D CARD TILT (antigravity-inspired)
+   Adds shadow + glow that responds to pointer
+   ============================================ */
+
+.card-tilt {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-tilt__inner {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-tilt__glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  mix-blend-mode: overlay;
+  border-radius: inherit;
+}
+
+.card-tilt:hover .card-tilt__glow {
+  opacity: 1;
+}
+
+/* Float decoration: layer that visually pops forward on hover */
+.card-tilt__layer {
+  transform: translateZ(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-tilt:hover .card-tilt__layer {
+  transform: translateZ(40px);
+}
+
+/* ============================================
    IMAGE PLACEHOLDER STYLING for templates
    without real images yet
    ============================================ */

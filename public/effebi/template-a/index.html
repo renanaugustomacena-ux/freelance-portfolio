@@ -79,7 +79,8 @@
   </nav>
 
   <!-- ===== HERO ===== -->
-  <header class="hero" id="main-content">
+  <header class="hero" id="main-content" data-c="dark">
+    <canvas class="webgl-bg" data-webgl-bg="aurora" aria-hidden="true"></canvas>
     <div class="hero__smoke" aria-hidden="true">
       <span class="smoke"></span>
       <span class="smoke"></span>
@@ -104,7 +105,7 @@
   </header>
 
   <!-- ===== LA NOSTRA STORIA ===== -->
-  <section class="section storia" id="storia">
+  <section class="section storia" id="storia" data-c="gold">
     <div class="container">
       <div class="storia__grid">
         <div class="storia__text reveal">
@@ -127,7 +128,7 @@
   </section>
 
   <!-- ===== PRODOTTI ===== -->
-  <section class="section prodotti" id="prodotti">
+  <section class="section prodotti" id="prodotti" data-c="copper">
     <div class="container">
       <div class="section-header section-header--centered reveal">
         <span class="section-header__label">I Nostri Prodotti</span>
@@ -203,7 +204,7 @@
   </section>
 
   <!-- ===== LA LAVORAZIONE ===== -->
-  <section class="section lavorazione" id="lavorazione">
+  <section class="section lavorazione" id="lavorazione" data-c="dark">
     <div class="container">
       <div class="section-header section-header--centered reveal">
         <span class="section-header__label">La Lavorazione</span>
@@ -237,7 +238,7 @@
   </section>
 
   <!-- ===== DOVE TROVARCI ===== -->
-  <section class="section dove-trovarci" id="dove-trovarci">
+  <section class="section dove-trovarci" id="dove-trovarci" data-c="cream">
     <div class="container">
       <div class="section-header section-header--centered reveal">
         <span class="section-header__label">Dove Trovarci</span>
@@ -332,6 +333,10 @@
   <script src="https://unpkg.com/lenis@1/dist/lenis.min.js" defer></script>
   <script src="../../shared/js/gsap-init.js" defer></script>
   <script src="../../shared/js/scroll-animations.js" defer></script>
+  <script src="../../shared/js/webgl-bg.js" defer></script>
+  <script src="../../shared/js/color-shift.js" defer></script>
+  <script src="../../shared/js/image-reveal.js" defer></script>
+  <script src="../../shared/js/tilt-3d.js" defer></script>
   <script src="../../shared/js/mobile-nav.js"></script>
   <script src="../../shared/js/smooth-scroll.js"></script>
   <script src="../../shared/js/reveal-on-scroll.js"></script>

@@ -82,7 +82,8 @@
   </nav>
 
   <!-- ======================== HERO ======================== -->
-  <section class="hero" id="main-content">
+  <section class="hero" id="main-content" data-c="light">
+    <canvas class="webgl-bg" data-webgl-bg="noise" aria-hidden="true"></canvas>
     <div class="hero__glow" aria-hidden="true"></div>
     <div class="hero__content">
       <span class="hero__badge">Interior Design &bull; Mozzecane</span>
@@ -220,7 +221,7 @@
   </section>
 
   <!-- ======================== MATERIALI ======================== -->
-  <section class="section section--dark" id="materiali">
+  <section class="section section--dark" id="materiali" data-c="light">
     <div class="container">
       <header class="section-header section-header--centered reveal">
         <span class="section-header__label">Materiali</span>
@@ -439,6 +440,10 @@
   <script src="https://unpkg.com/lenis@1/dist/lenis.min.js" defer></script>
   <script src="../../shared/js/gsap-init.js" defer></script>
   <script src="../../shared/js/scroll-animations.js" defer></script>
+  <script src="../../shared/js/webgl-bg.js" defer></script>
+  <script src="../../shared/js/color-shift.js" defer></script>
+  <script src="../../shared/js/image-reveal.js" defer></script>
+  <script src="../../shared/js/tilt-3d.js" defer></script>
   <script src="../../shared/js/mobile-nav.js"></script>
   <script src="../../shared/js/smooth-scroll.js"></script>
   <script src="../../shared/js/reveal-on-scroll.js"></script>
