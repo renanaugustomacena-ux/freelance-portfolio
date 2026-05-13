@@ -296,6 +296,349 @@
             gl_FragColor = vec4(base, 0.95);
           }
         `,
+
+        mesh: `
+          precision highp float;
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uResolution;
+          uniform vec2 uMouse;
+          uniform vec3 uC1; uniform vec3 uC2; uniform vec3 uC3;
+
+          float grid(vec2 p, float lineW){
+            vec2 g = abs(fract(p - 0.5) - 0.5) / fwidth(p);
+            float l = min(g.x, g.y);
+            return 1.0 - smoothstep(0.0, lineW, l);
+          }
+
+          void main(){
+            vec2 uv = vUv;
+            vec2 aspect = vec2(uResolution.x/uResolution.y, 1.0);
+            vec2 p = (uv - 0.5) * aspect;
+            float t = uTime * 0.3;
+            float md = length(uMouse - uv);
+            vec2 warp = vec2(sin(uv.y*8.0 + t)*0.04, cos(uv.x*8.0 + t*1.3)*0.04);
+            warp *= (1.0 - smoothstep(0.0, 0.5, md));
+            float g1 = grid((p + warp)*8.0, 1.5);
+            float g2 = grid((p + warp)*16.0, 1.0) * 0.4;
+            vec3 col = mix(uC1, uC2, length(p)*0.6);
+            col = mix(col, uC3, g1*0.85 + g2);
+            col += uC3 * (1.0 - smoothstep(0.0, 0.25, md)) * 0.15;
+            gl_FragColor = vec4(col, 0.94);
+          }
+        `,
+
+        waves: `
+          precision highp float;
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uResolution;
+          uniform vec2 uMouse;
+          uniform vec3 uC1; uniform vec3 uC2; uniform vec3 uC3;
+
+          void main(){
+            vec2 uv = vUv;
+            vec2 aspect = vec2(uResolution.x/uResolution.y, 1.0);
+            vec2 p = (uv - 0.5) * aspect;
+            float t = uTime * 0.4;
+            float w1 = sin(p.x*4.0 + t)             * 0.5 + 0.5;
+            float w2 = sin(p.x*7.0 - t*1.3 + p.y*3.0)*0.5 + 0.5;
+            float w3 = sin(p.x*3.0 + t*0.7 - p.y*5.0)*0.5 + 0.5;
+            float md = length(uMouse - uv);
+            float wMouse = (1.0 - smoothstep(0.0, 0.35, md)) * 0.3;
+            float band = smoothstep(0.45, 0.55, w1*0.4 + w2*0.4 + w3*0.2 + wMouse);
+            float band2 = smoothstep(0.55, 0.65, w2*0.5 + w3*0.5);
+            vec3 col = mix(uC1, uC2, band);
+            col = mix(col, uC3, band2 * 0.6);
+            col *= 1.0 - length(p)*0.25;
+            gl_FragColor = vec4(col, 0.94);
+          }
+        `,
+
+        dots: `
+          precision highp float;
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uResolution;
+          uniform vec2 uMouse;
+          uniform vec3 uC1; uniform vec3 uC2; uniform vec3 uC3;
+
+          void main(){
+            vec2 uv = vUv;
+            vec2 aspect = vec2(uResolution.x/uResolution.y, 1.0);
+            float t = uTime * 0.15;
+            float gridSize = 32.0;
+            vec2 gp = uv * gridSize;
+            gp.x *= uResolution.x / uResolution.y;
+            vec2 cell = floor(gp);
+            vec2 f = fract(gp) - 0.5;
+            vec2 cellNorm = cell / gridSize;
+            float md = length(uMouse - cellNorm);
+            float pulse = 0.5 + 0.5*sin(t*2.0 + cell.x*0.3 + cell.y*0.4);
+            float radius = 0.18 + 0.12*pulse + 0.25*(1.0 - smoothstep(0.0, 0.35, md));
+            float d = length(f);
+            float dot = 1.0 - smoothstep(radius*0.7, radius, d);
+            vec3 col = mix(uC1, uC2, uv.y);
+            col = mix(col, uC3, dot * (0.6 + 0.4*(1.0 - smoothstep(0.0, 0.5, md))));
+            gl_FragColor = vec4(col, 0.95);
+          }
+        `,
+
+        ribbons: `
+          precision highp float;
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uResolution;
+          uniform vec2 uMouse;
+          uniform vec3 uC1; uniform vec3 uC2; uniform vec3 uC3;
+
+          void main(){
+            vec2 uv = vUv;
+            vec2 aspect = vec2(uResolution.x/uResolution.y, 1.0);
+            vec2 p = (uv - 0.5) * aspect;
+            float t = uTime * 0.25;
+            float md = length(uMouse - uv);
+            float mInfl = (1.0 - smoothstep(0.0, 0.45, md));
+            vec3 col = uC1;
+            for(int i=0; i<5; i++){
+              float fi = float(i);
+              float phase = t + fi*0.6;
+              float wave = sin(p.x*2.0 + phase) * 0.18 + cos(p.x*5.5 - phase*0.7) * 0.06;
+              wave += mInfl * sin(phase*2.0) * 0.05;
+              float baseY = -0.4 + fi*0.2;
+              float dist = abs(p.y - baseY - wave);
+              float thickness = 0.025 + 0.015*sin(t + fi);
+              float ribbon = 1.0 - smoothstep(thickness*0.7, thickness, dist);
+              vec3 ribColor = mix(uC2, uC3, fi/5.0);
+              col = mix(col, ribColor, ribbon * 0.85);
+            }
+            gl_FragColor = vec4(col, 0.95);
+          }
+        `,
+
+        voronoi: `
+          precision highp float;
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uResolution;
+          uniform vec2 uMouse;
+          uniform vec3 uC1; uniform vec3 uC2; uniform vec3 uC3;
+
+          vec2 hash2(vec2 p){
+            p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
+            return fract(sin(p)*43758.5453);
+          }
+
+          void main(){
+            vec2 uv = vUv;
+            vec2 aspect = vec2(uResolution.x/uResolution.y, 1.0);
+            vec2 p = (uv - 0.5) * aspect * 6.0;
+            float t = uTime * 0.25;
+            vec2 i_st = floor(p);
+            vec2 f_st = fract(p);
+            float minDist = 1.0;
+            vec2 minCell = vec2(0.0);
+            for(int y=-1; y<=1; y++){
+              for(int x=-1; x<=1; x++){
+                vec2 neighbor = vec2(float(x), float(y));
+                vec2 point = hash2(i_st + neighbor);
+                point = 0.5 + 0.5*sin(t + 6.28318*point);
+                vec2 diff = neighbor + point - f_st;
+                float d = length(diff);
+                if(d < minDist){ minDist = d; minCell = i_st + neighbor; }
+              }
+            }
+            float cellHash = hash2(minCell).x;
+            vec3 cellCol = mix(uC1, uC2, cellHash);
+            cellCol = mix(cellCol, uC3, smoothstep(0.6, 1.0, cellHash));
+            float edge = smoothstep(0.0, 0.06, minDist);
+            float md = length(uMouse - uv);
+            cellCol += uC3 * (1.0 - smoothstep(0.0, 0.35, md)) * 0.2;
+            vec3 col = mix(uC1*0.4, cellCol, edge);
+            gl_FragColor = vec4(col, 0.94);
+          }
+        `,
+
+        iridescent: `
+          precision highp float;
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uResolution;
+          uniform vec2 uMouse;
+          uniform vec3 uC1; uniform vec3 uC2; uniform vec3 uC3;
+
+          vec3 palette(float t){
+            return 0.5 + 0.5*cos(6.28318*(vec3(1.0)*t + vec3(0.0, 0.33, 0.67)));
+          }
+
+          void main(){
+            vec2 uv = vUv;
+            vec2 p = uv - 0.5;
+            float md = length(uMouse - uv);
+            float t = uTime * 0.18;
+            float angle = atan(p.y, p.x);
+            float radial = length(p);
+            float bands = sin(angle*4.0 + radial*8.0 + t*2.0)*0.5 + 0.5;
+            float ripple = sin(md*22.0 - t*4.0)*0.5 + 0.5;
+            float mix1 = bands*0.6 + ripple*0.4;
+            vec3 ir = palette(mix1 + t*0.4);
+            vec3 brand = mix(uC1, uC2, mix1);
+            brand = mix(brand, uC3, smoothstep(0.6, 1.0, mix1));
+            vec3 col = mix(brand, brand*ir*1.8, 0.5);
+            col *= 1.0 - length(p)*0.4;
+            gl_FragColor = vec4(col, 0.94);
+          }
+        `,
+
+        topology: `
+          precision highp float;
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uResolution;
+          uniform vec2 uMouse;
+          uniform vec3 uC1; uniform vec3 uC2; uniform vec3 uC3;
+
+          vec3 permute(vec3 x){return mod(((x*34.0)+1.0)*x, 289.0);}
+          float snoise(vec2 v){
+            const vec4 C=vec4(0.211324865405187,0.366025403784439,-0.577350269189626,0.024390243902439);
+            vec2 i=floor(v+dot(v,C.yy)); vec2 x0=v-i+dot(i,C.xx);
+            vec2 i1=(x0.x>x0.y)?vec2(1.0,0.0):vec2(0.0,1.0);
+            vec4 x12=x0.xyxy+C.xxzz; x12.xy-=i1;
+            i=mod(i,289.0);
+            vec3 p=permute(permute(i.y+vec3(0.0,i1.y,1.0))+i.x+vec3(0.0,i1.x,1.0));
+            vec3 m=max(0.5-vec3(dot(x0,x0),dot(x12.xy,x12.xy),dot(x12.zw,x12.zw)),0.0);
+            m=m*m; m=m*m;
+            vec3 x=2.0*fract(p*C.www)-1.0; vec3 h=abs(x)-0.5; vec3 ox=floor(x+0.5);
+            vec3 a0=x-ox;
+            m*=1.79284291400159-0.85373472095314*(a0*a0+h*h);
+            vec3 g; g.x=a0.x*x0.x+h.x*x0.y;
+            g.yz=a0.yz*x12.xz+h.yz*x12.yw;
+            return 130.0*dot(m,g);
+          }
+
+          void main(){
+            vec2 uv = vUv;
+            vec2 aspect = vec2(uResolution.x/uResolution.y, 1.0);
+            vec2 p = (uv - 0.5) * aspect;
+            float t = uTime * 0.08;
+            float n = snoise(p*1.3 + vec2(t, t*0.4));
+            n += 0.5*snoise(p*2.7 - vec2(t*0.6, 0.0));
+            float v = n*0.5 + 0.5;
+            float lines = abs(fract(v*9.0) - 0.5);
+            float contour = 1.0 - smoothstep(0.0, 0.04, lines);
+            vec3 col = mix(uC1, uC2, v);
+            col = mix(col, uC3, contour*0.85);
+            float md = length(uMouse - uv);
+            col += uC3 * (1.0 - smoothstep(0.0, 0.3, md)) * 0.12;
+            gl_FragColor = vec4(col, 0.94);
+          }
+        `,
+
+        plasma: `
+          precision highp float;
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uResolution;
+          uniform vec2 uMouse;
+          uniform vec3 uC1; uniform vec3 uC2; uniform vec3 uC3;
+
+          void main(){
+            vec2 uv = vUv;
+            vec2 aspect = vec2(uResolution.x/uResolution.y, 1.0);
+            vec2 p = (uv - 0.5) * aspect;
+            float t = uTime * 0.5;
+            float v = sin(p.x*4.0 + t);
+            v += sin((p.y*4.0 + t)*0.8);
+            v += sin((p.x*4.0 + p.y*4.0 + t)*1.2);
+            v += sin(length(p)*8.0 - t*2.0);
+            float md = length(uMouse - uv) * 6.0;
+            v += sin(md - t*3.0)*0.6;
+            v = v*0.125 + 0.5;
+            vec3 col = mix(uC1, uC2, v);
+            col = mix(col, uC3, smoothstep(0.5, 0.85, v));
+            gl_FragColor = vec4(col, 0.94);
+          }
+        `,
+
+        glitch: `
+          precision highp float;
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uResolution;
+          uniform vec2 uMouse;
+          uniform vec3 uC1; uniform vec3 uC2; uniform vec3 uC3;
+
+          float hash(vec2 p){return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);}
+
+          void main(){
+            vec2 uv = vUv;
+            float t = uTime * 0.2;
+            float scanline = sin(uv.y*uResolution.y*1.2)*0.5+0.5;
+            scanline = pow(scanline, 3.0)*0.12;
+            float blockY = floor(uv.y * 22.0) / 22.0;
+            float glitch = step(0.85, hash(vec2(blockY, floor(t*7.0))));
+            float xOffset = (hash(vec2(blockY, floor(t*7.0)+1.0)) - 0.5) * 0.08 * glitch;
+            uv.x += xOffset;
+            float md = length(uMouse - uv);
+            float mInfl = (1.0 - smoothstep(0.0, 0.3, md)) * 0.4;
+            vec3 col = mix(uC1, uC2, uv.y + sin(uv.x*8.0 + t)*0.05);
+            col = mix(col, uC3, glitch + mInfl);
+            col += vec3(scanline);
+            col.r += hash(uv + t)*0.04;
+            col.b += hash(uv - t)*0.04;
+            gl_FragColor = vec4(col, 0.95);
+          }
+        `,
+
+        starfield: `
+          precision highp float;
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uResolution;
+          uniform vec2 uMouse;
+          uniform vec3 uC1; uniform vec3 uC2; uniform vec3 uC3;
+
+          float hash(vec2 p){return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);}
+
+          void main(){
+            vec2 uv = vUv;
+            vec2 aspect = vec2(uResolution.x/uResolution.y, 1.0);
+            vec3 col = mix(uC1, uC2, uv.y*0.7 + 0.15);
+            float t = uTime * 0.04;
+            vec2 m = (uMouse - 0.5) * 0.06;
+            for(int layer=0; layer<3; layer++){
+              float depth = float(layer)+1.0;
+              vec2 sp = (uv + m*depth*0.8) * (8.0 + depth*8.0);
+              vec2 ci = floor(sp);
+              vec2 cf = fract(sp) - 0.5;
+              float h = hash(ci);
+              float twinkle = 0.5 + 0.5*sin(t*8.0 + h*40.0);
+              float starSize = (0.04 + h*0.06) * (1.0 - float(layer)*0.2);
+              float star = (1.0 - smoothstep(0.0, starSize, length(cf)))*step(0.78, h);
+              col = mix(col, uC3, star * twinkle * (1.0 - float(layer)*0.25));
+            }
+            gl_FragColor = vec4(col, 0.96);
+          }
+        `,
+
+        static: `
+          precision highp float;
+          varying vec2 vUv;
+          uniform float uTime;
+          uniform vec2 uResolution;
+          uniform vec2 uMouse;
+          uniform vec3 uC1; uniform vec3 uC2; uniform vec3 uC3;
+
+          void main(){
+            vec2 uv = vUv;
+            vec3 col = mix(uC1, uC2, uv.y);
+            float md = length(uMouse - uv);
+            col = mix(col, uC3, (1.0 - smoothstep(0.0, 0.45, md))*0.25);
+            float angle = uv.x*2.0 - uv.y*1.0;
+            col = mix(col, uC2, sin(angle*3.14159 + uTime*0.1)*0.08 + 0.08);
+            gl_FragColor = vec4(col, 0.96);
+          }
+        `,
       };
 
       const fragment = fragments[variant] || fragments.noise;

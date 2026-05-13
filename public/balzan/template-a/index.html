@@ -97,7 +97,8 @@
   </nav>
 
   <!-- ===== HERO ===== -->
-  <header class="hero" id="main-content">
+  <header class="hero" id="main-content" >
+    <canvas class="webgl-bg" data-webgl-bg="waves" aria-hidden="true"></canvas>
     <div class="hero__pipes" aria-hidden="true"></div>
     <div class="hero__drop" aria-hidden="true"></div>
     <div class="container hero__content">
@@ -457,6 +458,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
   </button>
 
+  <script src="../../shared/js/webgl-bg.js" defer></script>
   <script src="../../shared/js/mobile-nav.js"></script>
   <script src="../../shared/js/smooth-scroll.js"></script>
   <script src="../../shared/js/reveal-on-scroll.js"></script>

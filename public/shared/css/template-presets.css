@@ -799,6 +799,32 @@
 [data-tpl="girasole-b"] .webgl-bg   { --webgl-c1: #FAFDF7; --webgl-c2: #E0EFD8; --webgl-c3: #4A7A4A; }
 [data-tpl="girasole-c"] .webgl-bg   { --webgl-c1: #F7F6F3; --webgl-c2: #E0EDDC; --webgl-c3: #3D7A5C; }
 
+[data-tpl="bottega-a"] .webgl-bg    { --webgl-c1: #FFF8F0; --webgl-c2: #F5E8D8; --webgl-c3: #C4351A; }
+[data-tpl="bottega-b"] .webgl-bg    { --webgl-c1: #0F0A07; --webgl-c2: #1A1410; --webgl-c3: #FF6B35; }
+[data-tpl="bottega-c"] .webgl-bg    { --webgl-c1: #FFFFFF; --webgl-c2: #F5F5F5; --webgl-c3: #E31C25; }
+
+[data-tpl="sfizio-a"] .webgl-bg     { --webgl-c1: #FFFAF0; --webgl-c2: #FFF0D4; --webgl-c3: #FF5722; }
+[data-tpl="sfizio-b"] .webgl-bg     { --webgl-c1: #0F0F0F; --webgl-c2: #1A1A1A; --webgl-c3: #FFD600; }
+[data-tpl="sfizio-c"] .webgl-bg     { --webgl-c1: #FFFFFF; --webgl-c2: #F8F4EE; --webgl-c3: #E64A19; }
+
+[data-tpl="sambenini-a"] .webgl-bg  { --webgl-c1: #0A0C14; --webgl-c2: #141828; --webgl-c3: #3D7ADB; }
+[data-tpl="sambenini-b"] .webgl-bg  { --webgl-c1: #F4F6F8; --webgl-c2: #E8ECF0; --webgl-c3: #1A5DB5; }
+
+[data-tpl="balzan-a"] .webgl-bg     { --webgl-c1: #F8FAFB; --webgl-c2: #E3F2FD; --webgl-c3: #1565C0; }
+[data-tpl="balzan-b"] .webgl-bg     { --webgl-c1: #FAF9F7; --webgl-c2: #EAEDF2; --webgl-c3: #2D6A8F; }
+[data-tpl="balzan-c"] .webgl-bg     { --webgl-c1: #0F1419; --webgl-c2: #1A2332; --webgl-c3: #4FC3F7; }
+
+[data-tpl="climaworld-a"] .webgl-bg { --webgl-c1: #F5F9F7; --webgl-c2: #E0F2EC; --webgl-c3: #0D7A5F; }
+[data-tpl="climaworld-b"] .webgl-bg { --webgl-c1: #0A0F14; --webgl-c2: #141E28; --webgl-c3: #00D4AA; }
+
+[data-tpl="3dservice-a"] .webgl-bg  { --webgl-c1: #F5F8F5; --webgl-c2: #E0F0E0; --webgl-c3: #2D7A3D; }
+[data-tpl="3dservice-b"] .webgl-bg  { --webgl-c1: #0A1410; --webgl-c2: #141E18; --webgl-c3: #4CAF50; }
+[data-tpl="3dservice-c"] .webgl-bg  { --webgl-c1: #FAFBF8; --webgl-c2: #F0F2EC; --webgl-c3: #558B2F; }
+
+[data-tpl="farmacia-a"] .webgl-bg   { --webgl-c1: #FAFCFA; --webgl-c2: #F0F5F0; --webgl-c3: #2D8C4E; }
+[data-tpl="farmacia-b"] .webgl-bg   { --webgl-c1: #F9F7F4; --webgl-c2: #EFECEA; --webgl-c3: #1A7A7A; }
+[data-tpl="farmacia-c"] .webgl-bg   { --webgl-c1: #0A1A12; --webgl-c2: #122A1E; --webgl-c3: #38D67A; }
+
 /* ============================================
    SCROLL-LINKED COLOR SHIFT (gethapply pattern)
    Body[data-color] swaps drive nav + accent + bg
@@ -932,6 +958,193 @@ body[data-color] .nav__hamburger span {
 
 .card-tilt:hover .card-tilt__layer {
   transform: translateZ(40px);
+}
+
+/* ============================================
+   PER-TEMPLATE LAYOUT DIFFERENTIATION
+   Within each business, A/B/C templates must
+   feel structurally different. These overrides
+   change hero alignment, container width, card
+   grid density, and section flow so the same
+   business looks like 3 separate websites.
+   ============================================ */
+
+/* --- Hero alignment variations --- */
+[data-tpl$="-b"] .hero,
+[data-tpl$="-b"] .hero__content,
+[data-tpl$="-b"] .hero__inner {
+  text-align: left;
+}
+
+[data-tpl$="-c"] .hero,
+[data-tpl$="-c"] .hero__content,
+[data-tpl$="-c"] .hero__inner {
+  text-align: center;
+}
+
+/* --- Container width per variant --- */
+[data-tpl$="-a"] .container { max-width: 1200px; }
+[data-tpl$="-b"] .container { max-width: 1280px; }
+[data-tpl$="-c"] .container { max-width: 1100px; }
+
+/* --- Section spacing rhythm per variant --- */
+[data-tpl$="-a"] .section { padding-block: clamp(3rem, 7vw, 6rem); }
+[data-tpl$="-b"] .section { padding-block: clamp(4rem, 9vw, 8rem); }
+[data-tpl$="-c"] .section { padding-block: clamp(2.5rem, 6vw, 5rem); }
+
+/* --- Card grid density per variant --- */
+[data-tpl$="-a"] .info-grid,
+[data-tpl$="-a"] .cards-grid,
+[data-tpl$="-a"] .servizi__grid,
+[data-tpl$="-a"] .menu__grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+[data-tpl$="-b"] .info-grid,
+[data-tpl$="-b"] .cards-grid,
+[data-tpl$="-b"] .servizi__grid,
+[data-tpl$="-b"] .menu__grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+[data-tpl$="-c"] .info-grid,
+[data-tpl$="-c"] .cards-grid,
+[data-tpl$="-c"] .servizi__grid,
+[data-tpl$="-c"] .menu__grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+}
+
+/* --- Nav letter-spacing variations --- */
+[data-tpl$="-a"] .nav__logo { letter-spacing: -0.01em; }
+[data-tpl$="-b"] .nav__logo { letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.95rem; }
+[data-tpl$="-c"] .nav__logo { letter-spacing: 0.04em; font-weight: 800; }
+
+/* --- Section header variation --- */
+[data-tpl$="-b"] .section-header { text-align: left; max-width: 720px; }
+[data-tpl$="-b"] .section-header__title { font-size: clamp(2.4rem, 5vw, 3.5rem); line-height: 1.05; }
+[data-tpl$="-c"] .section-header { text-align: center; max-width: 600px; margin-inline: auto; }
+[data-tpl$="-c"] .section-header__title { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+
+/* --- Card border style per variant --- */
+[data-tpl$="-a"] .card { box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.06)); }
+[data-tpl$="-b"] .card { border: 1px solid var(--border, rgba(0,0,0,0.08)); box-shadow: none; }
+[data-tpl$="-c"] .card { background: transparent; border: 1px solid var(--border, rgba(0,0,0,0.08)); }
+
+/* --- Footer variation --- */
+[data-tpl$="-b"] .footer__inner {
+  flex-direction: column;
+  text-align: center;
+  gap: 1.5rem;
+}
+[data-tpl$="-c"] .footer__inner {
+  flex-direction: row-reverse;
+}
+
+/* --- Per-business unique flourishes --- */
+
+/* Rosati: B is editorial light — uses serif italic accents */
+[data-tpl="rosati-b"] .section-header__label { font-style: italic; text-transform: none; letter-spacing: 0.02em; }
+
+/* Balzan: C is industrial dark — uses uppercase mono labels */
+[data-tpl="balzan-c"] .section-header__label,
+[data-tpl="sambenini-a"] .section-header__label {
+  font-family: 'JetBrains Mono', 'Space Grotesk', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+}
+
+/* Effebi: each variant has unique heading scale */
+[data-tpl="effebi-a"] .section-header__title { font-size: clamp(2.6rem, 6vw, 4.5rem); letter-spacing: -0.03em; }
+[data-tpl="effebi-b"] .section-header__title { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 400; }
+[data-tpl="effebi-c"] .section-header__title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Armonia: B is dark hammam — center-aligned with extra wide spacing */
+[data-tpl="armonia-b"] .hero__title { letter-spacing: 0.18em; font-weight: 300; }
+[data-tpl="armonia-b"] .section-header { text-align: center; }
+
+/* RB Design: variants differ by margin philosophy */
+[data-tpl="rbdesign-a"] { --content-side-padding: clamp(2rem, 6vw, 6rem); }
+[data-tpl="rbdesign-b"] .container { max-width: 100%; padding-inline: clamp(1.5rem, 5vw, 5rem); }
+[data-tpl="rbdesign-c"] .section-header__title { font-style: italic; font-weight: 400; }
+
+/* Maracaibo: B has copper border accents on cards */
+[data-tpl="maracaibo-b"] .card {
+  border: 1px solid rgba(200, 160, 80, 0.25);
+  border-radius: 4px;
+}
+
+/* Girasole: A is dark herbal — has rounded pill section labels */
+[data-tpl="girasole-a"] .section-header__label {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background: rgba(139, 176, 94, 0.12);
+  border-radius: 50px;
+  border: 1px solid rgba(139, 176, 94, 0.3);
+}
+
+/* Farmacia: C is dark digital — uses tech-grid pattern overlay */
+[data-tpl="farmacia-c"] .section {
+  position: relative;
+}
+[data-tpl="farmacia-c"] .section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56, 214, 122, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 214, 122, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Clima World: B has gradient nav accent line */
+[data-tpl="climaworld-b"] .nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #00D4AA, #0080FF);
+  opacity: 0.6;
+}
+
+/* Sambenini: A has industrial racing-stripe accent */
+[data-tpl="sambenini-a"] .hero {
+  background-image: linear-gradient(135deg, transparent 45%, rgba(61, 122, 219, 0.04) 45%, rgba(61, 122, 219, 0.04) 55%, transparent 55%);
+}
+
+/* Sfizio: B has neon glow on buttons */
+[data-tpl="sfizio-b"] .btn--primary {
+  text-shadow: 0 0 12px rgba(255, 214, 0, 0.6);
+}
+[data-tpl="sfizio-b"] .btn--primary:hover {
+  text-shadow: 0 0 20px rgba(255, 214, 0, 0.9);
+}
+
+/* Bottega: B has gradient mask overlay on hero */
+[data-tpl="bottega-b"] .hero {
+  background-image: radial-gradient(ellipse at top, rgba(255, 107, 53, 0.15), transparent 60%);
+}
+
+/* 3D Service: B is dark tech — has subtle scan-line effect */
+[data-tpl="3dservice-b"] .hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(76, 175, 80, 0.03) 3px,
+    rgba(76, 175, 80, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 3;
 }
 
 /* ============================================
