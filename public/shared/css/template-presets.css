@@ -857,7 +857,25 @@ canvas.webgl-bg {
    Each business has a palette set
    ============================================ */
 
-body { transition: background-color 0.5s ease, color 0.4s ease; }
+body { transition: background-color 0.8s cubic-bezier(0.65, 0, 0.35, 1), color 0.6s ease; }
+
+/* Apply data-color BACKGROUND to the whole page, not just nav.
+   This is the dramatic gethapply-style scroll color shift. */
+body[data-color="warm"]    { background-color: #F5EDE0; color: #1A1210; }
+body[data-color="cool"]    { background-color: #E8F0F5; color: #0A1929; }
+body[data-color="dark"]    { background-color: #0F0A07; color: #F5EDE4; }
+body[data-color="light"]   { background-color: #FAFBFA; color: #1A1A1A; }
+body[data-color="gold"]    { background-color: #2A1520; color: #F0E8E0; }
+body[data-color="rose"]    { background-color: #FBF8F6; color: #2A2320; }
+body[data-color="forest"]  { background-color: #0E1A0E; color: #E8EDE4; }
+body[data-color="copper"]  { background-color: #1A0F08; color: #F0E8D8; }
+body[data-color="ember"]   { background-color: #1A1410; color: #F5EDE0; }
+body[data-color="cream"]   { background-color: #FBF5EE; color: #1A1008; }
+
+/* Per-template scoping: only apply if the template opts in via
+   data-tpl AND the page has at least one data-c section.
+   Some templates have their own opinionated body bg via style.css —
+   we don't override unless this body[data-color] is actually set. */
 
 .nav { transition: background-color 0.4s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
 
@@ -942,6 +960,64 @@ body[data-color] .nav__hamburger span {
 [data-tpl="rbdesign-a"] .image-reveal__bg { background-color: #A68B6A; }
 [data-tpl="maracaibo-a"] .image-reveal__bg { background-color: #D4923C; }
 [data-tpl="girasole-a"] .image-reveal__bg { background-color: #8BB05E; }
+
+/* ============================================
+   CURSOR BLOB — soft glow follower
+   ============================================ */
+
+.cursor-blob {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: difference;
+  background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 35%, rgba(255,255,255,0) 70%);
+  transition: opacity 0.25s ease;
+  will-change: transform;
+  filter: blur(0.5px);
+}
+
+.cursor-blob--hover {
+  mix-blend-mode: difference;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  transition: opacity 0.25s ease;
+}
+
+/* Hide native cursor on premium templates only */
+[data-tpl="effebi-a"],
+[data-tpl="effebi-b"],
+[data-tpl="effebi-c"],
+[data-tpl="rbdesign-a"],
+[data-tpl="rbdesign-b"],
+[data-tpl="rbdesign-c"],
+[data-tpl="maracaibo-a"],
+[data-tpl="maracaibo-b"],
+[data-tpl="armonia-a"],
+[data-tpl="armonia-b"],
+[data-tpl="armonia-c"] {
+  /* don't hide cursor — blob is additive */
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-blob, .cursor-dot { display: none; }
+}
 
 /* ============================================
    3D CARD TILT (antigravity-inspired)

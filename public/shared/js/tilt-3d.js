@@ -70,7 +70,30 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    // Manual opt-in selectors
     document.querySelectorAll('.card-tilt').forEach(setup);
     document.querySelectorAll('[data-tilt] .card').forEach(setup);
+
+    // Auto-attach for premium templates — any .card element will tilt
+    var tpl = document.body.getAttribute('data-tpl') || '';
+    var autoTilt = [
+      'effebi-a', 'effebi-b', 'effebi-c',
+      'armonia-a', 'armonia-b', 'armonia-c',
+      'rbdesign-a', 'rbdesign-b', 'rbdesign-c',
+      'maracaibo-a', 'maracaibo-b', 'maracaibo-c',
+      'rosati-a', 'rosati-b',
+      'girasole-a', 'girasole-b', 'girasole-c',
+      'sambenini-a', 'sambenini-b',
+      'sfizio-a', 'sfizio-b', 'sfizio-c',
+      'bottega-a', 'bottega-b', 'bottega-c',
+      'balzan-c',
+      'climaworld-b',
+      'farmacia-c',
+      '3dservice-b'
+    ];
+    if (autoTilt.indexOf(tpl) > -1) {
+      var cards = document.querySelectorAll('.card, .servizio-card, .menu-card, .testimonial, .feature');
+      cards.forEach(setup);
+    }
   });
 })();
