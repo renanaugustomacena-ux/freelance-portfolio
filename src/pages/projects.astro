@@ -46,6 +46,14 @@ const repos = await fetchGitHubRepos();
       {repos.length > 0 && (
         <div class="projects__section reveal">
           <h2 class="projects__section-title">GitHub</h2>
+          {/* MODIFICA 1 — intro narrativa prima della lista dei repo.
+              Riusa la classe esistente .section-header__subtitle (nessun CSS nuovo). */}
+          <p class="section-header__subtitle" style="margin-bottom: 1.75rem;">
+            Questi sono progetti tecnici personali — architetture che costruisco per
+            approfondire stack enterprise (Go, NestJS, TypeScript, IoT). Non sono il mio
+            focus commerciale attuale, ma dimostrano la profondità tecnica dietro ogni
+            sito che consegno.
+          </p>
           <div class="projects__repos">
             {repos.map((repo) => (
               <ProjectCard repo={repo} />
