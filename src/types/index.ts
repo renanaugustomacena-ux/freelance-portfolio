@@ -75,3 +75,21 @@ export interface MusicMember {
   name: string;
   href: string;
 }
+
+export interface Client {
+  slug: string;
+  name: string;            // legal / display name
+  category: string;        // sector
+  location: string;
+  year: number;
+  tagline: string;         // one-line positioning
+  description: string;     // short case narrative
+  liveUrl: string;
+  status: 'live' | 'in-progress' | 'archived';
+  scope: string[];         // what was delivered
+  services: string[];      // the client's offered services (showcase)
+  palette: string[];       // brand swatch hexes
+  thumbnail: string;       // path relative to BASE_URL (e.g. 'clients/x.webp')
+  badge?: string;          // e.g. 'Primo cliente'
+  featured?: boolean;
+}

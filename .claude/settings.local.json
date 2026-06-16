@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /home/renan/freelance-portfolio remote -v)",
+      "Bash(git -C /home/renan/freelance-portfolio branch -vv)",
+      "Bash(git rev-list *)"
+    ]
+  }
+}

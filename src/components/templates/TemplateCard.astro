@@ -6,6 +6,9 @@ interface Props {
 }
 
 const { variant } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const key = variant.href.replace(/^\/freelance-portfolio\//, '').replace(/\/$/, '').replace(/\//g, '-');
+const thumb = `${base}templates/${key}.webp`;
 ---
 
 <a href={variant.href} target="_blank" rel="noopener" class="pcard" aria-label={`${variant.name}, apri in nuova scheda`}>
@@ -15,6 +18,8 @@ const { variant } = Astro.props;
         {variant.decorationText && <Fragment set:html={variant.decorationText} />}
       </div>
     )}
+    <img class="pcard__thumb" src={thumb} alt={`Anteprima ${variant.name}`} width="1280" height="800" loading="lazy" decoding="async" />
+    <span class="pcard__scrim" aria-hidden="true"></span>
     <span class:list={['pcard__vname', { 'pcard__vname--dark': variant.styleTheme === 'light' }]}>{variant.name}</span>
   </div>
   <div class="pcard__meta">
@@ -51,6 +56,32 @@ const { variant } = Astro.props;
     display: flex;
     align-items: flex-end;
     padding: 1rem;
+  }
+
+  /* real demo screenshot layered over the css-decoration fallback */
+  .pcard__thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    z-index: 1;
+    transition: transform 0.7s var(--ease-out-expo);
+  }
+  .pcard:hover .pcard__thumb { transform: scale(1.05); }
+  .pcard__scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(5, 5, 7, 0.9) 0%, rgba(5, 5, 7, 0.2) 42%, transparent 68%);
+    pointer-events: none;
+  }
+  .pcard__vname,
+  .pcard__vname--dark {
+    color: var(--text-bright) !important;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+    z-index: 2;
   }
 
   .pcard__vname {

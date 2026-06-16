@@ -1,0 +1,101 @@
+---
+// Global interaction layer: custom cursor + magnetic buttons.
+// Zero dependencies. Gated to fine pointers and non-reduced-motion.
+---
+
+<div class="cursor" aria-hidden="true" data-cursor>
+  <span class="cursor__dot"></span>
+  <span class="cursor__ring"></span>
+</div>
+
+<style>
+  .cursor { display: none; }
+
+  @media (hover: hover) and (pointer: fine) {
+    .cursor {
+      display: block;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 10000;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      will-change: transform;
+    }
+    .cursor__dot,
+    .cursor__ring {
+      position: absolute;
+      top: 0; left: 0;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .cursor__dot {
+      width: 6px; height: 6px;
+      background: #fff;
+    }
+    .cursor__ring {
+      width: 34px; height: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      transition: width var(--dur) var(--ease-out-expo),
+                  height var(--dur) var(--ease-out-expo),
+                  border-color var(--dur);
+    }
+    .cursor.is-hover .cursor__ring {
+      width: 56px; height: 56px;
+      border-color: #fff;
+    }
+    /* hide native cursor only when fine pointer is active */
+    :global(body.has-cursor),
+    :global(body.has-cursor a),
+    :global(body.has-cursor button) { cursor: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor { display: none !important; }
+  }
+</style>
+
+<script>
+  const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cursor = document.querySelector<HTMLElement>('[data-cursor]');
+  const dot = cursor?.querySelector<HTMLElement>('.cursor__dot');
+  const ring = cursor?.querySelector<HTMLElement>('.cursor__ring');
+
+  if (fine && !reduce && cursor && dot && ring) {
+    document.body.classList.add('has-cursor');
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    let dx = mx, dy = my, rx = mx, ry = my;
+
+    window.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; }, { passive: true });
+
+    const interactive = 'a, button, [data-magnetic], input, textarea, select, label';
+    document.addEventListener('mouseover', (e) => {
+      if ((e.target as Element)?.closest?.(interactive)) cursor.classList.add('is-hover');
+    });
+    document.addEventListener('mouseout', (e) => {
+      if ((e.target as Element)?.closest?.(interactive)) cursor.classList.remove('is-hover');
+    });
+
+    const tick = () => {
+      dx += (mx - dx) * 0.85; dy += (my - dy) * 0.85;   // dot: snappy
+      rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;   // ring: trailing
+      dot.style.transform = `translate(${dx}px, ${dy}px) translate(-50%, -50%)`;
+      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+
+    // Magnetic buttons
+    const magnets = document.querySelectorAll<HTMLElement>('[data-magnetic]');
+    magnets.forEach((el) => {
+      const strength = 0.35;
+      el.addEventListener('mousemove', (e) => {
+        const r = el.getBoundingClientRect();
+        const x = e.clientX - (r.left + r.width / 2);
+        const y = e.clientY - (r.top + r.height / 2);
+        el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+      });
+      el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+    });
+  }
+</script>

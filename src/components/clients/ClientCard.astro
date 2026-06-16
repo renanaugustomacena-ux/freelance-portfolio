@@ -1,0 +1,221 @@
+---
+import type { Client } from '../../types';
+
+interface Props {
+  client: Client;
+  feature?: boolean;
+}
+
+const { client, feature = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/'); // ensure single trailing slash
+const img = `${base}${client.thumbnail}`;
+const statusLabel = client.status === 'live' ? 'Online' : client.status === 'in-progress' ? 'In corso' : 'Archiviato';
+---
+
+<article class:list={['ccard', { 'ccard--feature': feature }]}>
+  <a
+    class="ccard__media"
+    href={client.liveUrl}
+    target="_blank"
+    rel="noopener"
+    data-magnetic
+    aria-label={`Apri il sito di ${client.name} in una nuova scheda`}
+  >
+    <img
+      src={img}
+      alt={`Anteprima del sito ${client.name}`}
+      width="1200"
+      height="750"
+      loading={feature ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+    <span class:list={['ccard__status', `ccard__status--${client.status}`]}>
+      <span class="ccard__status-dot" aria-hidden="true"></span>{statusLabel}
+    </span>
+    <span class="ccard__open" aria-hidden="true">Visita il sito&nbsp;&nearr;</span>
+    {client.badge && <span class="ccard__badge">{client.badge}</span>}
+  </a>
+
+  <div class="ccard__body">
+    <p class="ccard__labels">{client.category} · {client.location} · {client.year}</p>
+    <h3 class="ccard__name">{client.name}</h3>
+    <p class="ccard__tagline">{client.tagline}</p>
+
+    {feature && <p class="ccard__desc">{client.description}</p>}
+
+    <div class="ccard__palette" aria-hidden="true">
+      {client.palette.map((c) => <span style={`--c:${c}`} title={c}></span>)}
+    </div>
+
+    <div class="ccard__scope">
+      {client.scope.map((s) => <span class="ccard__chip">{s}</span>)}
+    </div>
+
+    <a class="ccard__cta" href={client.liveUrl} target="_blank" rel="noopener" data-magnetic>
+      Visita il sito <span aria-hidden="true">&nearr;</span>
+    </a>
+  </div>
+</article>
+
+<style>
+  .ccard {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color var(--dur-slow) var(--ease-out-expo),
+                box-shadow var(--dur-slow) var(--ease-out-expo),
+                transform var(--dur-slow) var(--ease-out-expo);
+  }
+  .ccard:hover {
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-lg), var(--shadow-blue);
+    transform: translateY(-4px);
+  }
+
+  .ccard__media {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--bg-card);
+  }
+  .ccard__media img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.7s var(--ease-out-expo), filter 0.7s var(--ease-out-expo);
+    filter: saturate(0.95);
+  }
+  .ccard:hover .ccard__media img { transform: scale(1.04); filter: saturate(1.08); }
+
+  .ccard__status {
+    position: absolute;
+    top: 1rem; left: 1rem;
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: var(--radius-full);
+    background: rgba(5, 5, 7, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--hairline);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+  }
+  .ccard__status-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent-live);
+    box-shadow: 0 0 8px var(--accent-live);
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+  .ccard__status--in-progress .ccard__status-dot { background: var(--accent-gold); box-shadow: 0 0 8px var(--accent-gold); }
+
+  .ccard__badge {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: var(--radius-full);
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .ccard__open {
+    position: absolute;
+    inset: 0;
+    display: grid; place-items: center;
+    background: linear-gradient(120deg, rgba(10,10,16,0.55), rgba(78,143,224,0.28));
+    color: var(--text-bright);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity var(--dur-slow) var(--ease-out-expo);
+  }
+  .ccard__media:hover .ccard__open,
+  .ccard__media:focus-visible .ccard__open { opacity: 1; }
+
+  .ccard__body { padding: clamp(1.5rem, 1rem + 2vw, 2.6rem); }
+
+  .ccard__labels {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent-blue);
+    margin-bottom: 0.75rem;
+  }
+  .ccard__name {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--text-bright);
+    line-height: 1;
+    margin-bottom: 0.7rem;
+  }
+  .ccard__tagline {
+    font-size: var(--text-lg);
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 1.1rem;
+  }
+  .ccard__desc {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1.4rem;
+    max-width: 52ch;
+  }
+
+  .ccard__palette { display: flex; gap: 0.4rem; margin-bottom: 1.3rem; }
+  .ccard__palette span {
+    width: 26px; height: 26px;
+    border-radius: var(--radius-sm);
+    background: var(--c);
+    border: 1px solid var(--hairline);
+  }
+
+  .ccard__scope { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.6rem; }
+  .ccard__chip {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: 0.32rem 0.7rem;
+    border-radius: var(--radius-full);
+    background: var(--accent-blue-dim);
+    color: var(--accent-blue);
+    letter-spacing: 0.04em;
+  }
+
+  .ccard__cta {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 1.8rem;
+    border-radius: var(--radius-sm);
+    background: var(--accent-blue);
+    color: var(--bg-primary);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    transition: background var(--dur), box-shadow var(--dur), transform var(--dur) var(--ease-out-expo);
+  }
+  .ccard__cta:hover { background: var(--accent-blue-bright); box-shadow: var(--shadow-blue); }
+
+  /* ---- feature (flagship) two-column ---- */
+  @media (min-width: 920px) {
+    .ccard--feature {
+      grid-template-columns: 1.15fr 1fr;
+      align-items: stretch;
+    }
+    .ccard--feature .ccard__media { aspect-ratio: auto; height: 100%; min-height: 480px; }
+    .ccard--feature .ccard__body { display: flex; flex-direction: column; justify-content: center; }
+    .ccard--feature .ccard__name { font-size: var(--text-3xl); }
+  }
+</style>

@@ -1,32 +1,96 @@
-/* ---- Custom Properties ---- */
+/* ============================================================
+   DESIGN TOKENS — elevated editorial-tech
+   Existing tokens preserved (names + values). New scales added.
+   ============================================================ */
 :root {
+  /* ---- Surface layers (deep → elevated) ---- */
+  --bg-void:       #050507;
   --bg-primary:    #0A0A10;
   --bg-secondary:  #0F1018;
   --bg-panel:      #14161F;
   --bg-card:       #181A24;
+  --bg-elevated:   #1E2130;
 
-  --accent-blue:   #4E8FE0;
-  --accent-gold:   #E8A040;
+  /* ---- Accents ---- */
+  --accent-blue:     #4E8FE0;
+  --accent-blue-bright: #6AA5E8;
+  --accent-gold:     #E8A040;
+  --accent-gold-bright: #F2B560;
+  --accent-violet:   #9B8CFF;   /* signal / special emphasis */
+  --accent-live:     #43D17A;   /* live status only */
+
   --accent-blue-dim: rgba(78, 143, 224, 0.12);
   --accent-gold-dim: rgba(232, 160, 64, 0.12);
+  --accent-violet-dim: rgba(155, 140, 255, 0.12);
+  --accent-live-dim: rgba(67, 209, 122, 0.14);
 
+  /* ---- Text ---- */
+  --text-bright:    #F4F6FB;
   --text-primary:   #DEE2EC;
   --text-secondary: #8A94AE;
   --text-muted:     #4A5068;
 
+  /* ---- Borders / hairlines ---- */
   --border:         #1C1F2E;
   --border-soft:    rgba(255, 255, 255, 0.04);
+  --border-bright:  rgba(255, 255, 255, 0.09);
+  --hairline:       rgba(255, 255, 255, 0.06);
 
+  /* ---- Type families ---- */
   --font-display: 'Space Grotesk', sans-serif;
   --font-body:    'Inter', sans-serif;
   --font-mono:    'JetBrains Mono', monospace;
 
+  /* ---- Fluid type scale ---- */
+  --text-micro: clamp(0.68rem, 0.66rem + 0.1vw, 0.74rem);
+  --text-xs:    clamp(0.78rem, 0.75rem + 0.15vw, 0.86rem);
+  --text-sm:    clamp(0.88rem, 0.85rem + 0.2vw, 0.96rem);
+  --text-base:  clamp(1rem, 0.95rem + 0.3vw, 1.12rem);
+  --text-lg:    clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+  --text-xl:    clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  --text-2xl:   clamp(1.9rem, 1.5rem + 2vw, 3rem);
+  --text-3xl:   clamp(2.6rem, 1.9rem + 3.4vw, 4.5rem);
+  --text-display: clamp(3.2rem, 2rem + 6vw, 6rem);
+  --text-hero:  clamp(3.5rem, 1.5rem + 9vw, 8.5rem);
+
+  /* ---- Spacing scale ---- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.5rem;
+  --space-6:  2rem;
+  --space-7:  2.5rem;
+  --space-8:  3.5rem;
+  --space-9:  5rem;
+  --space-10: 7rem;
+  --section-pad: clamp(4rem, 3rem + 5vw, 9rem);
+
+  /* ---- Radius ---- */
+  --radius-sm:  4px;
+  --radius:     8px;
+  --radius-lg:  14px;
+  --radius-xl:  22px;
+  --radius-full: 999px;
+
+  /* ---- Easing ---- */
   --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-q:  cubic-bezier(0.76, 0, 0.24, 1);
   --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  --shadow-blue:  0 0 30px rgba(78, 143, 224, 0.15);
-  --shadow-gold:  0 0 30px rgba(232, 160, 64, 0.12);
+  /* ---- Motion durations ---- */
+  --dur-fast:   150ms;
+  --dur:        300ms;
+  --dur-slow:   600ms;
+  --dur-slower: 1000ms;
+  --stagger:    80ms;
+
+  /* ---- Shadows ---- */
+  --shadow-sm:   0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md:   0 8px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg:   0 24px 60px rgba(0, 0, 0, 0.45);
+  --shadow-blue: 0 0 30px rgba(78, 143, 224, 0.15);
+  --shadow-gold: 0 0 30px rgba(232, 160, 64, 0.12);
 
   --nav-height: 72px;
 }

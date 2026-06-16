@@ -12,8 +12,11 @@ import PublicRepoCard from '../components/projects/PublicRepoCard.astro';
 import { fetchGitHubRepos, LANDING_EXCLUDE } from '../utils/github';
 import { landingNav } from '../data/navigation';
 import { site } from '../data/site';
+import { clients } from '../data/clients';
 
 const publicRepos = await fetchGitHubRepos(LANDING_EXCLUDE);
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const spot = clients.find((c) => c.featured) ?? clients[0];
 ---
 
 <PageLayout
@@ -23,6 +26,28 @@ const publicRepos = await fetchGitHubRepos(LANDING_EXCLUDE);
 >
   <Hero />
   <ValueProp />
+
+  {spot && (
+    <section class="spotlight" aria-label="Primo cliente dal vivo">
+      <div class="container spotlight__inner reveal">
+        <a class="spotlight__media" href={spot.liveUrl} target="_blank" rel="noopener" data-magnetic aria-label={`Apri il sito di ${spot.name}`}>
+          <img src={`${base}${spot.thumbnail}`} alt={`Anteprima del sito ${spot.name}`} width="1200" height="750" loading="lazy" decoding="async" />
+          <span class="spotlight__pill"><span class="spotlight__dot" aria-hidden="true"></span>Online</span>
+        </a>
+        <div class="spotlight__body">
+          <span class="mono-label">Primo cliente dal vivo</span>
+          <h2 class="spotlight__name">{spot.name}</h2>
+          <p class="spotlight__tag">{spot.tagline}</p>
+          <p class="spotlight__desc">{spot.description}</p>
+          <div class="spotlight__actions">
+            <a href={spot.liveUrl} target="_blank" rel="noopener" class="btn btn--blue" data-magnetic>Visita il sito <span aria-hidden="true">&nearr;</span></a>
+            <a href="/freelance-portfolio/clienti/" class="btn btn--ghost" data-magnetic>Tutti i clienti <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
   <About />
   <FeaturedWork />
 
@@ -68,6 +93,76 @@ const publicRepos = await fetchGitHubRepos(LANDING_EXCLUDE);
 </PageLayout>
 
 <style>
+  /* ---- MasterTetto spotlight ---- */
+  .spotlight {
+    padding: var(--section-pad) 0;
+    background:
+      radial-gradient(70% 90% at 88% 0%, var(--accent-blue-dim), transparent 60%),
+      var(--bg-secondary);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .spotlight__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+    align-items: center;
+  }
+  .spotlight__media {
+    position: relative;
+    display: block;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 16 / 10;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--dur-slow) var(--ease-out-expo), box-shadow var(--dur-slow);
+  }
+  .spotlight__media img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center;
+    transition: transform 0.8s var(--ease-out-expo);
+  }
+  .spotlight__media:hover { box-shadow: var(--shadow-lg), var(--shadow-blue); }
+  .spotlight__media:hover img { transform: scale(1.04); }
+  .spotlight__pill {
+    position: absolute; top: 1rem; left: 1rem;
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    padding: 0.35rem 0.75rem; border-radius: var(--radius-full);
+    background: rgba(5,5,7,0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--hairline);
+    font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-primary);
+  }
+  .spotlight__dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent-live); box-shadow: 0 0 8px var(--accent-live);
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+  .spotlight__name {
+    font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 700;
+    color: var(--text-bright); line-height: 1; margin: 0.8rem 0 0.6rem;
+  }
+  .spotlight__tag { font-size: var(--text-lg); color: var(--text-primary); margin-bottom: 1rem; }
+  .spotlight__desc { color: var(--text-secondary); line-height: 1.75; margin-bottom: 1.6rem; max-width: 52ch; }
+  .spotlight__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.85rem 1.9rem; border-radius: var(--radius-sm);
+    font-weight: 600; font-size: var(--text-sm); cursor: pointer; text-decoration: none;
+    transition: background var(--dur), border-color var(--dur), color var(--dur), box-shadow var(--dur), transform var(--dur) var(--ease-out-expo);
+  }
+  .btn--blue { background: var(--accent-blue); color: var(--bg-primary); }
+  .btn--blue:hover { background: var(--accent-blue-bright); box-shadow: var(--shadow-blue); transform: translateY(-2px); }
+  .btn--ghost {
+    background: transparent; border: 1px solid var(--border-bright); color: var(--text-primary);
+  }
+  .btn--ghost:hover { border-color: var(--accent-blue); color: var(--accent-blue); transform: translateY(-2px); }
+
+  @media (min-width: 880px) {
+    .spotlight__inner { grid-template-columns: 1.1fr 0.9fr; }
+  }
+
   .projects {
     background: var(--bg-secondary);
   }

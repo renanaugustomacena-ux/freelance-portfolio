@@ -2,33 +2,51 @@
 ---
 
 <section class="hero" id="hero" aria-label="Presentazione">
+  <canvas class="hero__dither" aria-hidden="true"></canvas>
   <div class="hero__grid" aria-hidden="true"></div>
-  <div class="hero__glow" aria-hidden="true"></div>
-  <div class="hero__glow hero__glow--gold" aria-hidden="true"></div>
-  <div class="container hero__content">
-    <p class="hero__eyebrow">
-      <span class="hero__eyebrow-dot" aria-hidden="true"></span>
-      Web Developer Freelance &middot; Mozzecane, Verona
-    </p>
-    <h1 class="hero__title">
-      Renan<br>
-      <span class="hero__title-gradient">Augusto</span><br>
-      Macena
-    </h1>
-    <p class="hero__tagline">
-      Designed and built by hand.<br>
-      <em>No templates. No frameworks.</em>
-    </p>
-    <div class="hero__stack" role="list" aria-label="Tecnologie">
-      <code role="listitem">HTML</code><span aria-hidden="true">&nbsp;&middot;&nbsp;</span>
-      <code role="listitem">CSS</code><span aria-hidden="true">&nbsp;&middot;&nbsp;</span>
-      <code role="listitem">JavaScript</code>
-    </div>
-    <div class="hero__actions">
-      <a href="#lavoro" class="btn btn--blue btn--large">Vedi il Lavoro</a>
-      <a href="#contatti" class="btn btn--gold-outline btn--large">Parliamo</a>
+  <div class="hero__veil" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal-up" style="--d:0ms">
+        <span class="hero__dot" aria-hidden="true"></span>
+        Web Developer Freelance — Mozzecane, Verona
+      </p>
+
+      <h1 class="hero__title">
+        <span class="hero__line reveal-up" style="--d:90ms">Renan</span>
+        <span class="hero__line reveal-up" style="--d:180ms"><span class="hero__grad">Augusto</span></span>
+        <span class="hero__line reveal-up" style="--d:270ms">Macena</span>
+      </h1>
+
+      <p class="hero__tagline reveal-up" style="--d:420ms">
+        Siti su misura, disegnati attorno alla tua attività<br>
+        <em>e costruiti per durare.</em>
+      </p>
+
+      <div class="hero__meta reveal-up" style="--d:520ms" role="list" aria-label="Cosa faccio">
+        <span role="listitem">Design</span><i aria-hidden="true">·</i>
+        <span role="listitem">Sviluppo</span><i aria-hidden="true">·</i>
+        <span role="listitem">SEO Locale</span><i aria-hidden="true">·</i>
+        <span role="listitem">Performance</span>
+      </div>
+
+      <div class="hero__actions reveal-up" style="--d:620ms">
+        <a href="#lavoro" class="btn btn--blue btn--large" data-magnetic>Vedi il Lavoro</a>
+        <a href="#contatti" class="btn btn--gold-outline btn--large" data-magnetic>Parliamo</a>
+      </div>
     </div>
   </div>
+
+  <div class="hero__rail" aria-hidden="true">
+    <span class="hero__rail-top">MZ · 45.36°N&nbsp;&nbsp;10.78°E</span>
+    <span class="hero__rail-bot">PORTFOLIO ’26</span>
+  </div>
+
+  <a href="#lavoro" class="hero__scroll" aria-label="Scorri al lavoro">
+    <span>Scorri</span>
+    <span class="hero__scroll-line" aria-hidden="true"></span>
+  </a>
 </section>
 
 <style>
@@ -38,118 +56,100 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: var(--bg-primary);
     padding-top: var(--nav-height);
+    isolation: isolate;
+  }
+
+  /* WebGL dithered field — strongest on the right, faded behind text */
+  .hero__dither {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.9;
+    -webkit-mask-image: radial-gradient(120% 100% at 100% 35%, #000 18%, transparent 78%);
+    mask-image: radial-gradient(120% 100% at 100% 35%, #000 18%, transparent 78%);
   }
 
   .hero__grid {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(78, 143, 224, 0.18) 1px, transparent 1px);
-    background-size: 36px 36px;
-    mask-image: radial-gradient(ellipse 70% 80% at 30% 50%, black 20%, transparent 90%);
-    -webkit-mask-image: radial-gradient(ellipse 70% 80% at 30% 50%, black 20%, transparent 90%);
+    z-index: -2;
+    background-image: radial-gradient(rgba(78, 143, 224, 0.16) 1px, transparent 1px);
+    background-size: 38px 38px;
+    -webkit-mask-image: radial-gradient(ellipse 60% 70% at 26% 50%, black 10%, transparent 80%);
+    mask-image: radial-gradient(ellipse 60% 70% at 26% 50%, black 10%, transparent 80%);
     animation: grid-breathe 8s ease-in-out infinite;
   }
 
-  .hero__glow {
+  /* legibility veil under the text column */
+  .hero__veil {
     position: absolute;
-    top: 40%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(78, 143, 224, 0.07) 0%, transparent 70%);
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(100deg, var(--bg-primary) 22%, rgba(10, 10, 16, 0.55) 46%, transparent 70%);
     pointer-events: none;
-    animation: glow-breathe 7s ease-in-out infinite;
   }
 
-  .hero__glow--gold {
-    top: 60%;
-    left: 5%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(232, 160, 64, 0.05) 0%, transparent 70%);
-    animation-delay: 3.5s;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 42%;
-    height: 100%;
-    background: var(--bg-secondary);
-    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
-    z-index: 0;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 42%;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent, var(--accent-blue) 30%, var(--accent-gold) 70%, transparent);
-    opacity: 0.25;
-    z-index: 1;
-  }
-
-  .hero__content {
+  .hero__inner {
     position: relative;
-    z-index: 2;
-    max-width: 680px;
+    z-index: 1;
+    width: 90%;
   }
+
+  .hero__content { max-width: 760px; }
 
   .hero__eyebrow {
     display: flex;
     align-items: center;
     gap: 0.6rem;
     font-family: var(--font-mono);
-    font-size: 0.92rem;
+    font-size: var(--text-xs);
     color: var(--text-secondary);
-    letter-spacing: 0.08em;
-    margin-bottom: 2rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
+    margin-bottom: 2rem;
   }
 
-  .hero__eyebrow-dot {
-    display: block;
-    width: 6px;
-    height: 6px;
+  .hero__dot {
+    width: 7px; height: 7px;
     border-radius: 50%;
-    background: var(--accent-blue);
-    box-shadow: 0 0 8px rgba(78, 143, 224, 0.5);
+    background: var(--accent-live);
+    box-shadow: 0 0 10px rgba(67, 209, 122, 0.7);
     animation: dot-pulse 2s ease-in-out infinite;
     flex-shrink: 0;
   }
 
   .hero__title {
     font-family: var(--font-display);
-    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-size: var(--text-hero);
     font-weight: 700;
-    line-height: 0.88;
-    letter-spacing: -0.03em;
-    color: var(--text-primary);
-    margin-bottom: 1.75rem;
+    line-height: 0.86;
+    letter-spacing: -0.04em;
+    color: var(--text-bright);
+    margin-bottom: 1.9rem;
+    text-wrap: balance;
   }
 
-  .hero__title-gradient {
-    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-gold) 100%);
+  .hero__line { display: block; }
+
+  .hero__grad {
+    background: linear-gradient(118deg, var(--accent-blue) 0%, var(--accent-violet) 42%, var(--accent-gold) 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   .hero__tagline {
     font-family: var(--font-body);
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-size: var(--text-lg);
     font-weight: 300;
-    line-height: 1.65;
+    line-height: 1.55;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.6rem;
+    max-width: 30ch;
   }
 
   .hero__tagline em {
@@ -158,151 +158,263 @@
     font-weight: 400;
   }
 
-  .hero__stack {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-family: var(--font-mono);
-    font-size: 0.88rem;
-    color: var(--accent-blue);
-    margin-bottom: 2.5rem;
-  }
-
-  .hero__stack code {
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    background: none;
-    padding: 0;
-  }
-
-  .hero__stack span {
-    color: var(--text-muted);
-  }
-
-  .hero__actions {
+  .hero__meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  /* Button styles (scoped) */
-  .btn {
-    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.85rem 2rem;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    white-space: nowrap;
-    text-decoration: none;
+    gap: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 2.4rem;
   }
+  .hero__meta i { color: var(--accent-blue); font-style: normal; }
 
-  .btn--large {
-    padding: 1rem 2.5rem;
-    font-size: 1.05rem;
-  }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
 
-  .btn--blue {
-    background: var(--accent-blue);
-    color: var(--bg-primary);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn--blue::before {
-    content: '';
+  /* vertical editorial rail */
+  .hero__rail {
     position: absolute;
-    top: 0; left: -100%;
+    right: clamp(1rem, 3vw, 3rem);
+    top: 0; bottom: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: calc(var(--nav-height) + 2rem) 0 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+  .hero__rail-top, .hero__rail-bot {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+  .hero__rail-bot { color: var(--accent-gold); }
+
+  .hero__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 1.6rem;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color var(--dur) var(--ease-out-expo);
+  }
+  .hero__scroll:hover { color: var(--accent-blue); }
+  .hero__scroll-line {
+    width: 1px; height: 38px;
+    background: linear-gradient(to bottom, var(--accent-blue), transparent);
+    animation: scroll-cue 2.2s ease-in-out infinite;
+  }
+
+  /* staggered load reveal */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(26px);
+    animation: hero-rise 0.9s var(--ease-out-expo) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+  @keyframes hero-rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scroll-cue {
+    0%, 100% { transform: scaleY(0.4); transform-origin: top; opacity: 0.4; }
+    50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  }
+
+  /* ---- buttons (scoped, reused) ---- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 0.5rem; padding: 0.9rem 2rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600; font-size: var(--text-sm);
+    letter-spacing: 0.02em; cursor: pointer; white-space: nowrap;
+    text-decoration: none;
+    transition: background var(--dur), color var(--dur), box-shadow var(--dur), transform var(--dur) var(--ease-out-expo);
+  }
+  .btn--large { padding: 1.05rem 2.6rem; font-size: var(--text-base); }
+  .btn--blue {
+    background: var(--accent-blue); color: var(--bg-primary);
+    position: relative; overflow: hidden;
+  }
+  .btn--blue::before {
+    content: ''; position: absolute; top: 0; left: -100%;
     width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
     transition: left 0.5s var(--ease-out-expo);
   }
-
   .btn--blue:hover::before { left: 100%; }
-
-  .btn--blue:hover {
-    background: #6AA5E8;
-    box-shadow: var(--shadow-blue);
-    transform: translateY(-2px);
-  }
-
+  .btn--blue:hover { background: var(--accent-blue-bright); box-shadow: var(--shadow-blue); transform: translateY(-2px); }
   .btn--gold-outline {
-    background: transparent;
-    border: 2px solid var(--accent-gold);
-    color: var(--accent-gold);
-    font-weight: 500;
-    position: relative;
-    overflow: hidden;
+    background: transparent; border: 1.5px solid var(--accent-gold);
+    color: var(--accent-gold); font-weight: 500;
+    position: relative; overflow: hidden;
   }
-
   .btn--gold-outline::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--accent-gold);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s var(--ease-out-expo);
-    z-index: -1;
+    content: ''; position: absolute; inset: 0;
+    background: var(--accent-gold); transform: scaleX(0); transform-origin: right;
+    transition: transform var(--dur-slow) var(--ease-out-expo); z-index: -1;
   }
+  .btn--gold-outline:hover::before { transform: scaleX(1); transform-origin: left; }
+  .btn--gold-outline:hover { color: var(--bg-primary); box-shadow: var(--shadow-gold); transform: translateY(-2px); }
 
-  .btn--gold-outline:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
-  .btn--gold-outline:hover {
-    color: var(--bg-primary);
-    box-shadow: var(--shadow-gold);
-    transform: translateY(-2px);
+  @media (max-width: 900px) {
+    .hero__rail { display: none; }
+    .hero__veil { background: linear-gradient(180deg, var(--bg-primary) 30%, rgba(10,10,16,0.5) 60%, transparent 100%); }
+    .hero__dither {
+      -webkit-mask-image: radial-gradient(140% 80% at 80% 18%, #000 10%, transparent 76%);
+      mask-image: radial-gradient(140% 80% at 80% 18%, #000 10%, transparent 76%);
+    }
   }
 
   @media (max-width: 767px) {
-    .hero {
-      min-height: auto;
-      padding-top: calc(var(--nav-height) + 4rem);
-      padding-bottom: 5rem;
-    }
-
-    .hero::before {
-      width: 100%;
-      height: 30%;
-      top: auto;
-      bottom: 0;
-      clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
-    }
-
-    .hero::after { display: none; }
-
-    .hero__title {
-      font-size: clamp(3rem, 14vw, 5rem);
-    }
-
-    .hero__actions {
-      flex-direction: column;
-    }
-
-    .hero__actions .btn {
-      width: 100%;
-      text-align: center;
-      justify-content: center;
-    }
+    .hero { min-height: auto; padding-top: calc(var(--nav-height) + 3rem); padding-bottom: 5rem; }
+    .hero__actions { flex-direction: column; }
+    .hero__actions .btn { width: 100%; }
+    .hero__scroll { display: none; }
   }
 
-  @media (max-width: 480px) {
-    .hero__title {
-      font-size: 2.8rem;
-      line-height: 0.9;
-    }
-
-    .hero__eyebrow {
-      font-size: 0.88rem;
-    }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-up { animation: none; opacity: 1; transform: none; }
+    .hero__grid, .hero__dot, .hero__scroll-line { animation: none; }
   }
 </style>
+
+<script>
+  // Raw-WebGL ordered-dither field. No dependencies. Degrades to CSS atmosphere.
+  const canvas = document.querySelector<HTMLCanvasElement>('.hero__dither');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (canvas) {
+    const gl = canvas.getContext('webgl', { antialias: false, alpha: true, premultipliedAlpha: false });
+    if (!gl) {
+      canvas.style.display = 'none';
+    } else {
+      const vert = `
+        attribute vec2 a_pos;
+        void main(){ gl_Position = vec4(a_pos, 0.0, 1.0); }`;
+      const frag = `
+        precision mediump float;
+        uniform vec2 u_res;
+        uniform float u_time;
+
+        float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453); }
+        float noise(vec2 p){
+          vec2 i = floor(p), f = fract(p);
+          vec2 u = f*f*(3.0-2.0*f);
+          return mix(mix(hash(i+vec2(0.,0.)), hash(i+vec2(1.,0.)), u.x),
+                     mix(hash(i+vec2(0.,1.)), hash(i+vec2(1.,1.)), u.x), u.y);
+        }
+        float fbm(vec2 p){
+          float v = 0.0, a = 0.55;
+          for(int i=0;i<5;i++){ v += a*noise(p); p = p*2.03 + 1.7; a *= 0.5; }
+          return v;
+        }
+        // 4x4 ordered Bayer threshold in [0,1)
+        float bayer(vec2 c){
+          vec2 p = floor(mod(c, 4.0));
+          float i = p.x + p.y * 4.0;
+          float m = 0.0;
+          if(i<0.5) m=0.0;      else if(i<1.5) m=8.0;  else if(i<2.5) m=2.0;  else if(i<3.5) m=10.0;
+          else if(i<4.5) m=12.0;else if(i<5.5) m=4.0;  else if(i<6.5) m=14.0; else if(i<7.5) m=6.0;
+          else if(i<8.5) m=3.0; else if(i<9.5) m=11.0; else if(i<10.5) m=1.0; else if(i<11.5) m=9.0;
+          else if(i<12.5) m=15.0;else if(i<13.5) m=7.0;else if(i<14.5) m=13.0;else m=5.0;
+          return m / 16.0;
+        }
+        void main(){
+          vec2 uv = gl_FragCoord.xy / u_res.xy;
+          vec2 p = uv;
+          p.x *= u_res.x / u_res.y;
+          float t = u_time * 0.04;
+          float f = fbm(p * 2.4 + vec2(t, t*0.6));
+          f += 0.5 * fbm(p * 4.8 - vec2(t*0.8, t));
+          f = f * 0.62;
+          float v = smoothstep(0.15, 1.05, f);
+
+          // brand ramp: navy -> electric blue -> violet -> gold
+          vec3 c0 = vec3(0.039, 0.043, 0.066);
+          vec3 c1 = vec3(0.305, 0.560, 0.878);
+          vec3 c2 = vec3(0.608, 0.549, 1.0);
+          vec3 c3 = vec3(0.910, 0.627, 0.251);
+          vec3 col = mix(c0, c1, smoothstep(0.0, 0.55, v));
+          col = mix(col, c2, smoothstep(0.5, 0.8, v));
+          col = mix(col, c3, smoothstep(0.82, 1.0, v));
+
+          // ordered dithering / posterize for the print-halftone feel
+          float levels = 5.0;
+          float d = (bayer(gl_FragCoord.xy) - 0.5) / levels;
+          col += d;
+          col = floor(col * levels + 0.5) / levels;
+
+          float a = (0.32 + v * 0.5);
+          gl_FragColor = vec4(col, a);
+        }`;
+
+      const compile = (type: number, src: string) => {
+        const s = gl.createShader(type)!;
+        gl.shaderSource(s, src); gl.compileShader(s);
+        return s;
+      };
+      const prog = gl.createProgram()!;
+      gl.attachShader(prog, compile(gl.VERTEX_SHADER, vert));
+      gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, frag));
+      gl.linkProgram(prog);
+      gl.useProgram(prog);
+
+      const buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+      const loc = gl.getAttribLocation(prog, 'a_pos');
+      gl.enableVertexAttribArray(loc);
+      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+      const uRes = gl.getUniformLocation(prog, 'u_res');
+      const uTime = gl.getUniformLocation(prog, 'u_time');
+
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      const resize = () => {
+        const w = Math.floor(canvas.clientWidth * dpr);
+        const h = Math.floor(canvas.clientHeight * dpr);
+        if (canvas.width !== w || canvas.height !== h) {
+          canvas.width = w; canvas.height = h;
+          gl.viewport(0, 0, w, h);
+        }
+        gl.uniform2f(uRes, w, h);
+      };
+
+      const render = (ms: number) => {
+        gl.uniform1f(uTime, ms * 0.001);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+      };
+
+      let raf = 0, running = false;
+      const loop = (ms: number) => { resize(); render(ms); raf = requestAnimationFrame(loop); };
+      const start = () => { if (!running) { running = true; raf = requestAnimationFrame(loop); } };
+      const stop = () => { running = false; cancelAnimationFrame(raf); };
+
+      window.addEventListener('resize', resize);
+
+      if (reduce) {
+        resize(); render(1200); // single static dithered frame
+      } else {
+        const io = new IntersectionObserver((e) => { e[0].isIntersecting ? start() : stop(); }, { threshold: 0.01 });
+        io.observe(canvas);
+        document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+      }
+    }
+  }
+</script>

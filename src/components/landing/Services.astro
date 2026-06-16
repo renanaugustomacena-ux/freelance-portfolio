@@ -2,133 +2,138 @@
 import { services } from '../../data/services';
 ---
 
-<section class="section services-offer" id="servizi">
-  <div class="container">
-    <div class="section-header section-header--centered reveal">
-      <span class="section-header__label">Cosa Offro</span>
-      <h2 class="section-header__title">Servizi</h2>
-    </div>
-    <div class="offer-grid">
-      {services.map((service, i) => (
-        <div class:list={['offer-card', 'reveal', `reveal-delay-${(i % 3) + 1}`]}>
-          <span class="offer-card__num" aria-hidden="true">{service.num}</span>
-          <h3 class="offer-card__title">{service.title}</h3>
-          <p class="offer-card__desc">{service.description}</p>
-        </div>
+<section class="services" id="servizi">
+  <div class="container services__inner">
+    <aside class="services__intro reveal">
+      <span class="mono-label">Cosa offro</span>
+      <h2 class="services__title">Servizi <span class="services__title-em">end&#8209;to&#8209;end</span></h2>
+      <p class="services__lead">
+        Dal primo schizzo al server che lo tiene online — un unico
+        interlocutore per tutta la tua presenza digitale.
+      </p>
+      <span class="services__count" aria-hidden="true">06 / aree</span>
+    </aside>
+
+    <ol class="services__list">
+      {services.map((service) => (
+        <li class="srow reveal">
+          <span class="srow__num" aria-hidden="true">{service.num}</span>
+          <div class="srow__text">
+            <h3 class="srow__title">{service.title}</h3>
+            <p class="srow__desc">{service.description}</p>
+          </div>
+          <span class="srow__mark" aria-hidden="true">&rarr;</span>
+        </li>
       ))}
-    </div>
+    </ol>
   </div>
 </section>
 
 <style>
-  .services-offer {
+  .services {
+    padding: var(--section-pad) 0;
     background: var(--bg-secondary);
+    border-top: 1px solid var(--hairline);
   }
 
-  .section-header {
-    margin-bottom: 3rem;
-  }
-
-  .section-header--centered {
-    text-align: center;
-  }
-
-  .section-header__label {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.88rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--accent-blue);
-    margin-bottom: 0.75rem;
-  }
-
-  .section-header__title {
-    font-family: var(--font-display);
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    color: var(--text-primary);
-  }
-
-  .offer-grid {
+  .services__inner {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 1rem + 4vw, 4.5rem);
   }
 
-  .offer-card {
-    position: relative;
-    padding: 2.5rem 1.75rem 2rem;
-    background: var(--bg-panel);
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    overflow: hidden;
-    transition: all 0.4s var(--ease-out-expo);
-  }
-
-  .offer-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 2px;
-    background: linear-gradient(to right, var(--accent-blue), transparent);
-    opacity: 0;
-    transition: opacity 0.4s var(--ease-out-expo);
-  }
-
-  .offer-card:hover {
-    border-color: rgba(78, 143, 224, 0.15);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-  }
-
-  .offer-card:hover::before {
-    opacity: 1;
-  }
-
-  .offer-card__num {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 3rem;
-    font-weight: 500;
-    line-height: 1;
-    color: var(--text-muted);
-    margin-bottom: 1.25rem;
-    transition: color 0.4s var(--ease-out-expo);
-  }
-
-  .offer-card:hover .offer-card__num {
-    color: rgba(78, 143, 224, 0.25);
-  }
-
-  .offer-card__title {
+  .services__title {
     font-family: var(--font-display);
-    font-size: 1.1rem;
+    font-size: var(--text-2xl);
     font-weight: 700;
+    color: var(--text-bright);
+    line-height: 1;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .services__title-em {
+    display: block;
+    background: linear-gradient(110deg, var(--accent-blue), var(--accent-gold));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .services__lead {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    max-width: 34ch;
+  }
+  .services__count {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .services__list { border-top: 1px solid var(--border); }
+
+  .srow {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: baseline;
+    gap: clamp(1rem, 0.5rem + 2vw, 2.5rem);
+    padding: clamp(1.5rem, 1rem + 1.5vw, 2.4rem) 0.5rem;
+    border-bottom: 1px solid var(--border);
+    transition: padding-left var(--dur-slow) var(--ease-out-expo),
+                background var(--dur-slow) var(--ease-out-expo);
+  }
+  .srow:hover {
+    padding-left: 1.5rem;
+    background: linear-gradient(90deg, var(--accent-blue-dim), transparent 60%);
+  }
+
+  .srow__num {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color var(--dur) var(--ease-out-expo);
+  }
+  .srow:hover .srow__num { color: var(--accent-blue); }
+
+  .srow__title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 600;
     color: var(--text-primary);
     letter-spacing: -0.01em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    transition: color var(--dur);
   }
+  .srow:hover .srow__title { color: var(--text-bright); }
 
-  .offer-card__desc {
-    font-size: 0.92rem;
-    line-height: 1.7;
+  .srow__desc {
     color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    max-width: 60ch;
   }
 
-  @media (max-width: 1024px) {
-    .offer-grid {
-      grid-template-columns: 1fr 1fr;
-    }
+  .srow__mark {
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity var(--dur), transform var(--dur) var(--ease-out-expo), color var(--dur);
+  }
+  .srow:hover .srow__mark { opacity: 1; transform: translateX(0); color: var(--accent-blue); }
+
+  /* first service reads as the headline offer */
+  .srow:first-child .srow__title { font-size: var(--text-2xl); }
+
+  @media (min-width: 900px) {
+    .services__inner { grid-template-columns: 0.85fr 1.6fr; align-items: start; }
+    .services__intro { position: sticky; top: calc(var(--nav-height) + 2rem); }
   }
 
-  @media (max-width: 480px) {
-    .offer-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .offer-card {
-      padding: 2rem 1.5rem 1.5rem;
-    }
+  @media (max-width: 560px) {
+    .srow { grid-template-columns: auto 1fr; }
+    .srow__mark { display: none; }
   }
 </style>

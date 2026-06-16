@@ -1,0 +1,179 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import ClientCard from '../components/clients/ClientCard.astro';
+import { clients } from '../data/clients';
+import { pageNav } from '../data/navigation';
+import { site } from '../data/site';
+
+const featured = clients.filter((c) => c.featured);
+const rest = clients.filter((c) => !c.featured);
+const liveCount = clients.filter((c) => c.status === 'live').length;
+---
+
+<PageLayout
+  title={`Clienti — ${site.name}`}
+  description="Clienti reali, siti online. Lavoro su misura per attività del territorio veronese — progettato, sviluppato e mantenuto a mano."
+  navLinks={pageNav}
+>
+  <main class="section clienti" style="padding-top: calc(var(--nav-height) + 3.5rem);">
+    <div class="container">
+      <header class="clienti__head reveal">
+        <span class="mono-label">Clienti</span>
+        <h1 class="clienti__title">Lavoro reale, <span class="clienti__title-grad">online.</span></h1>
+        <p class="clienti__sub">
+          Non solo demo. Questi sono progetti dal vivo, in produzione — disegnati attorno
+          all'attività e costruiti per durare.
+        </p>
+        <div class="clienti__stats" role="list">
+          <div role="listitem"><strong>{liveCount}</strong><span>online</span></div>
+          <div role="listitem"><strong>100%</strong><span>su misura</span></div>
+          <div role="listitem"><strong>Verona</strong><span>&amp; provincia</span></div>
+        </div>
+      </header>
+
+      {featured.map((c) => (
+        <div class="clienti__feature reveal">
+          <ClientCard client={c} feature={true} />
+        </div>
+      ))}
+
+      {rest.length > 0 && (
+        <div class="clienti__grid">
+          {rest.map((c) => <ClientCard client={c} />)}
+        </div>
+      )}
+
+      <!-- next-client slots: keeps the page intentional while the roster grows -->
+      <div class="clienti__next">
+        <span class="mono-label">In arrivo</span>
+        <div class="clienti__slots" aria-hidden="true">
+          <div class="clienti__slot"><span>02</span><p>Il prossimo cliente</p></div>
+          <div class="clienti__slot"><span>03</span><p>Potrebbe essere la tua attività</p></div>
+        </div>
+      </div>
+
+      <div class="clienti__cta reveal">
+        <h2 class="clienti__cta-title">Vuoi essere il prossimo?</h2>
+        <p class="clienti__cta-body">
+          Ti preparo una proposta di design gratuita, su misura per la tua attività — senza impegno.
+        </p>
+        <a href="/freelance-portfolio/#contatti" class="btn btn--blue btn--large" data-magnetic>Parliamo</a>
+      </div>
+    </div>
+  </main>
+</PageLayout>
+
+<style>
+  .clienti { background: var(--bg-primary); min-height: 100vh; }
+
+  .clienti__head { margin-bottom: clamp(2.5rem, 2rem + 3vw, 4.5rem); max-width: 720px; }
+  .clienti__title {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--text-bright);
+    line-height: 0.95;
+    margin: 0.9rem 0 1.2rem;
+  }
+  .clienti__title-grad {
+    background: linear-gradient(118deg, var(--accent-blue), var(--accent-violet) 55%, var(--accent-gold));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .clienti__sub {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 56ch;
+  }
+
+  .clienti__stats { display: flex; gap: 2.5rem; margin-top: 2rem; }
+  .clienti__stats div { display: flex; flex-direction: column; }
+  .clienti__stats strong {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    color: var(--accent-blue);
+    line-height: 1;
+  }
+  .clienti__stats span {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+  }
+
+  .clienti__feature { margin-bottom: 2rem; }
+  .clienti__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .clienti__next { margin: 3.5rem 0 2rem; }
+  .clienti__slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.2rem;
+  }
+  .clienti__slot {
+    border: 1px dashed var(--border-bright);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 1.75rem;
+    min-height: 180px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    background: linear-gradient(180deg, rgba(255,255,255,0.012), transparent);
+  }
+  .clienti__slot span {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+  }
+  .clienti__slot p {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    max-width: 18ch;
+  }
+
+  .clienti__cta {
+    text-align: center;
+    margin-top: 3.5rem;
+    padding: clamp(2.5rem, 2rem + 3vw, 4rem) 2rem;
+    background:
+      radial-gradient(80% 120% at 50% 0%, var(--accent-blue-dim), transparent 70%),
+      var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+  }
+  .clienti__cta-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    color: var(--text-bright);
+    margin-bottom: 0.8rem;
+  }
+  .clienti__cta-body {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.6rem;
+    max-width: 46ch;
+    margin-inline: auto;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.9rem 2rem; border-radius: var(--radius-sm);
+    font-weight: 600; font-size: var(--text-sm); cursor: pointer; text-decoration: none;
+    transition: background var(--dur), box-shadow var(--dur), transform var(--dur) var(--ease-out-expo);
+  }
+  .btn--large { padding: 1.05rem 2.6rem; font-size: var(--text-base); }
+  .btn--blue { background: var(--accent-blue); color: var(--bg-primary); }
+  .btn--blue:hover { background: var(--accent-blue-bright); box-shadow: var(--shadow-blue); transform: translateY(-2px); }
+
+  @media (max-width: 560px) {
+    .clienti__stats { gap: 1.5rem; }
+  }
+</style>

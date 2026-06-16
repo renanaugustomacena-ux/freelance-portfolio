@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Nav from '../components/global/Nav.astro';
 import Footer from '../components/global/Footer.astro';
 import BackToTop from '../components/global/BackToTop.astro';
+import Motion from '../components/global/Motion.astro';
 import type { NavLink } from '../types';
 
 interface Props {
@@ -19,4 +20,5 @@ const { title, description, navLinks } = Astro.props;
   <slot />
   <Footer />
   <BackToTop />
+  <Motion />
 </BaseLayout>
