@@ -27,6 +27,7 @@ const statusLabel = client.status === 'live' ? 'Online' : client.status === 'in-
       width="1200"
       height="750"
       loading={feature ? 'eager' : 'lazy'}
+      fetchpriority={feature ? 'high' : 'auto'}
       decoding="async"
     />
     <span class:list={['ccard__status', `ccard__status--${client.status}`]}>
