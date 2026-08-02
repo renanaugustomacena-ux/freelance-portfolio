@@ -92,4 +92,5 @@ export interface Client {
   thumbnail: string;       // path relative to BASE_URL (e.g. 'clients/x.webp')
   badge?: string;          // e.g. 'Primo cliente'
   featured?: boolean;
+  caseStudy?: string;      // path relative to BASE_URL (e.g. 'clienti/mastertetto/')
 }

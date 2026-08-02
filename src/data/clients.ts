@@ -29,5 +29,6 @@ export const clients: Client[] = [
     thumbnail: 'clients/mastertetto.webp',
     badge: 'Primo cliente',
     featured: true,
+    caseStudy: 'clienti/mastertetto/',
   },
 ];
