@@ -6,6 +6,8 @@ import Stats from '../components/landing/Stats.astro';
 import ValueProp from '../components/landing/ValueProp.astro';
 import FeaturedWork from '../components/landing/FeaturedWork.astro';
 import Services from '../components/landing/Services.astro';
+import Process from '../components/landing/Process.astro';
+import Faq from '../components/landing/Faq.astro';
 import About from '../components/landing/About.astro';
 import ContactCTA from '../components/landing/ContactCTA.astro';
 import { featuredProjects } from '../data/projects';
@@ -94,6 +96,8 @@ const spot = clients.find((c) => c.featured) ?? clients[0];
   </section>
 
   <Services />
+  <Process />
+  <Faq />
   <ContactCTA />
   </main>
 </PageLayout>
