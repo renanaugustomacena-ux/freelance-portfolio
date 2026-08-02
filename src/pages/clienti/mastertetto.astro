@@ -35,13 +35,14 @@ const results = [
   { value: '100%', label: 'Proprietà del cliente' },
 ];
 
+const siteUrl = new URL(base, Astro.site).toString();
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: `${Astro.site}${base}` },
-    { '@type': 'ListItem', position: 2, name: 'Clienti', item: `${Astro.site}${base}clienti/` },
-    { '@type': 'ListItem', position: 3, name: 'MasterTetto', item: `${Astro.site}${base}clienti/mastertetto/` },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Clienti', item: `${siteUrl}clienti/` },
+    { '@type': 'ListItem', position: 3, name: 'MasterTetto', item: `${siteUrl}clienti/mastertetto/` },
   ],
 };
 ---
@@ -163,10 +164,9 @@ const breadcrumbSchema = {
       </section>
 
     </div>
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </main>
 </PageLayout>
-
-<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
 <style>
   .cs {
