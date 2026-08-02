@@ -69,8 +69,36 @@ table {
 }
 
 :focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Anchored sections must not hide under the fixed nav (WCAG 2.4.13) */
+[id] {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
+/* ---- Skip link ---- */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10001;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-blue);
+  color: var(--bg-primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transform: translateY(-200%);
+  transition: transform var(--dur) var(--ease-out-expo);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline-color: var(--text-bright);
 }
 
 ::selection {

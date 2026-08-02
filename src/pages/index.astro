@@ -24,6 +24,7 @@ const spot = clients.find((c) => c.featured) ?? clients[0];
   description={site.description}
   navLinks={landingNav}
 >
+  <main id="main">
   <Hero />
   <ValueProp />
 
@@ -90,6 +91,7 @@ const spot = clients.find((c) => c.featured) ?? clients[0];
 
   <Services />
   <ContactCTA />
+  </main>
 </PageLayout>
 
 <style>
