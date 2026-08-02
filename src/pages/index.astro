@@ -1,6 +1,8 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import Hero from '../components/landing/Hero.astro';
+import Marquee from '../components/landing/Marquee.astro';
+import Stats from '../components/landing/Stats.astro';
 import ValueProp from '../components/landing/ValueProp.astro';
 import FeaturedWork from '../components/landing/FeaturedWork.astro';
 import Services from '../components/landing/Services.astro';
@@ -26,6 +28,7 @@ const spot = clients.find((c) => c.featured) ?? clients[0];
 >
   <main id="main">
   <Hero />
+  <Marquee />
   <ValueProp />
 
   {spot && (
@@ -49,6 +52,7 @@ const spot = clients.find((c) => c.featured) ?? clients[0];
     </section>
   )}
 
+  <Stats />
   <About />
   <FeaturedWork />
 

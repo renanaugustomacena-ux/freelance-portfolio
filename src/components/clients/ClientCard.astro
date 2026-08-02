@@ -12,7 +12,7 @@ const img = `${base}${client.thumbnail}`;
 const statusLabel = client.status === 'live' ? 'Online' : client.status === 'in-progress' ? 'In corso' : 'Archiviato';
 ---
 
-<article class:list={['ccard', { 'ccard--feature': feature }]}>
+<article class:list={['ccard', { 'ccard--feature': feature }]} data-tilt>
   <a
     class="ccard__media"
     href={client.liveUrl}

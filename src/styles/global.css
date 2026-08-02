@@ -106,6 +106,57 @@ table {
   color: var(--bg-primary);
 }
 
+/* ---- Cross-document View Transitions (MPA, zero JS) ---- */
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: vt-fade-out 0.22s var(--ease-out-expo) both;
+  }
+  ::view-transition-new(root) {
+    animation: vt-fade-in 0.34s var(--ease-out-expo) both;
+  }
+}
+
+@keyframes vt-fade-out {
+  to { opacity: 0; transform: translateY(-8px); }
+}
+@keyframes vt-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+}
+
+/* Nav persists visually across page navigations */
+.nav {
+  view-transition-name: site-nav;
+}
+
+/* ---- Scroll progress bar (CSS scroll-driven, zero JS) ---- */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      z-index: 1002;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-violet) 55%, var(--accent-gold));
+      transform-origin: 0 50%;
+      transform: scaleX(0);
+      animation: progress-grow linear both;
+      animation-timeline: scroll(root);
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes progress-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 /* ---- Film Grain ---- */
 body::after {
   content: '';

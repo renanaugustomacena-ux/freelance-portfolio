@@ -136,10 +136,17 @@
 
   .hero__grad {
     background: linear-gradient(118deg, var(--accent-blue) 0%, var(--accent-violet) 42%, var(--accent-gold) 100%);
+    background-size: 220% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+    animation: grad-sweep 9s ease-in-out infinite alternate;
+  }
+
+  @keyframes grad-sweep {
+    from { background-position: 0% 50%; }
+    to { background-position: 100% 50%; }
   }
 
   .hero__tagline {
@@ -289,7 +296,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .reveal-up { animation: none; opacity: 1; transform: none; }
-    .hero__grid, .hero__dot, .hero__scroll-line { animation: none; }
+    .hero__grid, .hero__dot, .hero__scroll-line, .hero__grad { animation: none; }
   }
 </style>
 

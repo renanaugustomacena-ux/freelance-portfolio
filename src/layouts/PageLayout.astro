@@ -16,6 +16,7 @@ const { title, description, navLinks } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <Nav links={navLinks} />
   <slot />
   <Footer />
