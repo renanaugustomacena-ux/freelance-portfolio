@@ -28,7 +28,7 @@
   --text-bright:    #F4F6FB;
   --text-primary:   #DEE2EC;
   --text-secondary: #8A94AE;
-  --text-muted:     #4A5068;
+  --text-muted:     #7580A2; /* >=4.6:1 su tutte le superfici (WCAG AA) */
 
   /* ---- Borders / hairlines ---- */
   --border:         #1C1F2E;
