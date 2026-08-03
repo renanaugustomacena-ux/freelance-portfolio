@@ -1,0 +1,86 @@
+---
+// Editorial ticker between hero and value props. Pure CSS, pauses on hover,
+// static list under prefers-reduced-motion.
+const items = [
+  'Siti su misura',
+  'Zero template',
+  'SEO locale',
+  'Performance 90+',
+  'Design artigianale',
+  'Mozzecane → Verona',
+  'Un unico interlocutore',
+  'Costruito per durare',
+];
+---
+
+<aside class="marquee" aria-label="In sintesi">
+  <div class="marquee__track" aria-hidden="false">
+    {[0, 1].map((copy) => (
+      <ul class="marquee__list" aria-hidden={copy === 1}>
+        {items.map((item) => (
+          <li>
+            <span class="marquee__item">{item}</span>
+            <span class="marquee__sep" aria-hidden="true">✦</span>
+          </li>
+        ))}
+      </ul>
+    ))}
+  </div>
+</aside>
+
+<style>
+  .marquee {
+    overflow: hidden;
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    background: var(--bg-void);
+    padding: 1.1rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marquee-slide 36s linear infinite;
+  }
+
+  .marquee:hover .marquee__track {
+    animation-play-state: paused;
+  }
+
+  .marquee__list {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .marquee__list li {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .marquee__item {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    padding: 0 1.4rem;
+  }
+
+  .marquee__sep {
+    color: var(--accent-blue);
+    font-size: 0.6rem;
+  }
+
+  @keyframes marquee-slide {
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__track { animation: none; }
+    .marquee { mask-image: none; -webkit-mask-image: none; }
+  }
+</style>

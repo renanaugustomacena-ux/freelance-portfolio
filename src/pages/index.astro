@@ -1,9 +1,13 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import Hero from '../components/landing/Hero.astro';
+import Marquee from '../components/landing/Marquee.astro';
+import Stats from '../components/landing/Stats.astro';
 import ValueProp from '../components/landing/ValueProp.astro';
 import FeaturedWork from '../components/landing/FeaturedWork.astro';
 import Services from '../components/landing/Services.astro';
+import Process from '../components/landing/Process.astro';
+import Faq from '../components/landing/Faq.astro';
 import About from '../components/landing/About.astro';
 import ContactCTA from '../components/landing/ContactCTA.astro';
 import { featuredProjects } from '../data/projects';
@@ -24,7 +28,9 @@ const spot = clients.find((c) => c.featured) ?? clients[0];
   description={site.description}
   navLinks={landingNav}
 >
+  <main id="main">
   <Hero />
+  <Marquee />
   <ValueProp />
 
   {spot && (
@@ -41,18 +47,22 @@ const spot = clients.find((c) => c.featured) ?? clients[0];
           <p class="spotlight__desc">{spot.description}</p>
           <div class="spotlight__actions">
             <a href={spot.liveUrl} target="_blank" rel="noopener" class="btn btn--blue" data-magnetic>Visita il sito <span aria-hidden="true">&nearr;</span></a>
-            <a href="/freelance-portfolio/clienti/" class="btn btn--ghost" data-magnetic>Tutti i clienti <span aria-hidden="true">&rarr;</span></a>
+            {spot.caseStudy && (
+              <a href={`${base}${spot.caseStudy}`} class="btn btn--ghost" data-magnetic>Leggi il caso studio <span aria-hidden="true">&rarr;</span></a>
+            )}
           </div>
+          <a href="/freelance-portfolio/clienti/" class="spotlight__all">Tutti i clienti <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </section>
   )}
 
+  <Stats />
   <About />
   <FeaturedWork />
 
   <!-- Personal Projects Preview -->
-  <section class="section projects" id="progetti">
+  <section class="section projects cv-auto" id="progetti">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-header__label">Progetti Personali</span>
@@ -89,7 +99,10 @@ const spot = clients.find((c) => c.featured) ?? clients[0];
   </section>
 
   <Services />
+  <Process />
+  <Faq />
   <ContactCTA />
+  </main>
 </PageLayout>
 
 <style>
@@ -145,6 +158,19 @@ const spot = clients.find((c) => c.featured) ?? clients[0];
   .spotlight__tag { font-size: var(--text-lg); color: var(--text-primary); margin-bottom: 1rem; }
   .spotlight__desc { color: var(--text-secondary); line-height: 1.75; margin-bottom: 1.6rem; max-width: 52ch; }
   .spotlight__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+  .spotlight__all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.2rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    letter-spacing: 0.03em;
+    transition: color var(--dur);
+  }
+  .spotlight__all:hover { color: var(--accent-blue); }
 
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;

@@ -1,0 +1,124 @@
+---
+// How-I-work timeline: sets expectations and lowers the barrier to contact.
+const steps = [
+  {
+    num: '01',
+    title: 'Ascolto',
+    desc: 'Una chiamata o un incontro per capire la tua attività, i clienti che vuoi raggiungere e cosa deve fare il sito per te.',
+  },
+  {
+    num: '02',
+    title: 'Proposta gratuita',
+    desc: 'Ti preparo una demo su misura, senza impegno: vedi il design con i tuoi occhi prima di decidere qualsiasi cosa.',
+  },
+  {
+    num: '03',
+    title: 'Sviluppo artigianale',
+    desc: 'Costruzione a mano, riga per riga: pagine veloci, sicure e ottimizzate per Google. Niente template, niente scorciatoie.',
+  },
+  {
+    num: '04',
+    title: 'Lancio & cura',
+    desc: 'Messa online, SEO locale e manutenzione continuativa. Il sito resta fresco, aggiornato e funzionante nel tempo.',
+  },
+];
+---
+
+<section class="process cv-auto" id="processo">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="mono-label">Come lavoro</span>
+      <h2 class="process__title">Dal primo caffè al sito online</h2>
+      <p class="process__subtitle">
+        Un percorso chiaro, in quattro passi — sai sempre a che punto siamo e cosa succede dopo.
+      </p>
+    </div>
+
+    <ol class="process__steps">
+      {steps.map((step, i) => (
+        <li class:list={['pstep', 'reveal', i > 0 && `reveal-delay-${Math.min(i, 4)}`]}>
+          <span class="pstep__num" aria-hidden="true">{step.num}</span>
+          <div class="pstep__line" aria-hidden="true"></div>
+          <h3 class="pstep__title">{step.title}</h3>
+          <p class="pstep__desc">{step.desc}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .process {
+    padding: var(--section-pad) 0;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--hairline);
+  }
+
+  .section-header { margin-bottom: 3.5rem; }
+
+  .process__title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--text-bright);
+    margin: 0.9rem 0 1rem;
+  }
+
+  .process__subtitle {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 52ch;
+  }
+
+  .process__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    counter-reset: step;
+  }
+
+  .pstep { position: relative; }
+
+  .pstep__num {
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    font-weight: 500;
+    color: var(--accent-blue);
+    display: block;
+    margin-bottom: 0.9rem;
+  }
+
+  .pstep__line {
+    position: absolute;
+    top: 0.9rem;
+    left: 3.2rem;
+    right: 0.5rem;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-bright), transparent);
+  }
+
+  .pstep:last-child .pstep__line { display: none; }
+
+  .pstep__title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+  }
+
+  .pstep__desc {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .process__steps { grid-template-columns: repeat(2, 1fr); }
+    .pstep__line { display: none; }
+  }
+
+  @media (max-width: 520px) {
+    .process__steps { grid-template-columns: 1fr; gap: 1.75rem; }
+  }
+</style>

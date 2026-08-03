@@ -1,5 +1,8 @@
 ---
 import SEOHead from '../components/global/SEOHead.astro';
+import '@fontsource-variable/space-grotesk';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/jetbrains-mono';
 import '../styles/variables.css';
 import '../styles/typography.css';
 import '../styles/global.css';
@@ -20,6 +23,12 @@ const { title, description } = Astro.props;
   <SEOHead title={title} description={description} />
 </head>
 <body>
+  <a href="#main" class="skip-link">Salta al contenuto</a>
+  <noscript>
+    <style>
+      .reveal, .reveal-up { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
   <slot />
 </body>
 </html>

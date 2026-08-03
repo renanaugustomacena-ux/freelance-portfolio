@@ -1,0 +1,452 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { pageNav } from '../../data/navigation';
+import { site } from '../../data/site';
+import { clients } from '../../data/clients';
+
+const client = clients.find((c) => c.slug === 'mastertetto')!;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const challenge = [
+  'MasterTetto interviene sulle coperture con tecniche acrobatiche certificate — senza ponteggi, più rapido e meno invasivo dei metodi tradizionali.',
+  'Prima del progetto l’azienda non aveva una presenza online credibile: niente sito, servizi non documentati, nessun canale digitale per richiedere un preventivo. Chi cercava "riparazione tetto senza ponteggi Verona" non li trovava.',
+];
+
+const solution = [
+  'Un sito su misura di 8 pagine — home, servizi, chi siamo, lavori, contatti e pagine legali — disegnato attorno al mestiere: scuro, materico, con il rosso del brand.',
+  'Gli 8 servizi (dal ripasso al rifacimento completo) sono documentati uno per uno, con benefici concreti e riferimenti normativi reali (D.Lgs. 81/2008). Il preventivo si richiede in un tap: form, telefono o WhatsApp.',
+];
+
+const techStack = [
+  { label: 'Sito statico Astro', desc: 'pagine pre-renderizzate, veloci per natura' },
+  { label: 'Animazioni GSAP + Lenis', desc: 'scroll fluido e micro-interazioni curate' },
+  { label: 'Sfondo WebGL custom', desc: 'shader scritto a mano, non un plugin' },
+  { label: 'Font self-hosted', desc: 'zero CDN esterne, privacy GDPR' },
+  { label: 'Schema.org + SEO locale', desc: 'dati strutturati LocalBusiness' },
+  { label: 'Cookie banner a norma', desc: 'Provv. Garante 231/2021' },
+  { label: 'Test automatici', desc: 'unit test + end-to-end su ogni build' },
+  { label: 'Pipeline immagini', desc: 'ottimizzazione automatica in build' },
+];
+
+const results = [
+  { value: '8', label: 'Servizi documentati online' },
+  { value: '~23 KB', label: 'Peso HTML della homepage' },
+  { value: '< 0,5 s', label: 'Risposta del server misurata' },
+  { value: '100%', label: 'Proprietà del cliente' },
+];
+
+const siteUrl = new URL(base, Astro.site).toString();
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Clienti', item: `${siteUrl}clienti/` },
+    { '@type': 'ListItem', position: 3, name: 'MasterTetto', item: `${siteUrl}clienti/mastertetto/` },
+  ],
+};
+---
+
+<PageLayout
+  title={`Caso studio: MasterTetto — ${site.name}`}
+  description="Come MasterTetto, specialisti veronesi della manutenzione acrobatica del tetto, è passata da zero presenza online a un sito veloce, a norma e di proprietà. Caso studio completo."
+  navLinks={pageNav}
+>
+  <main id="main" class="cs">
+    <div class="container">
+
+      <nav class="cs__crumbs reveal" aria-label="Percorso">
+        <a href={`${base}clienti/`}>Clienti</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">MasterTetto</span>
+      </nav>
+
+      <header class="cs__head reveal">
+        <span class="mono-label">Caso studio — 01</span>
+        <h1 class="cs__title">MasterTetto</h1>
+        <p class="cs__tagline">{client.tagline}</p>
+        <div class="cs__meta" role="list">
+          <span role="listitem">{client.category}</span>
+          <span role="listitem">{client.location}</span>
+          <span role="listitem">{client.year}</span>
+          <span role="listitem" class="cs__meta-live"><span class="cs__dot" aria-hidden="true"></span>Online</span>
+        </div>
+        <div class="cs__palette" aria-label="Palette del brand">
+          {client.palette.map((c) => <span style={`--c:${c}`} title={c}></span>)}
+        </div>
+      </header>
+
+      <a
+        class="cs__shot reveal"
+        href={client.liveUrl}
+        target="_blank"
+        rel="noopener"
+        data-magnetic
+        aria-label="Apri il sito di MasterTetto in una nuova scheda"
+      >
+        <img
+          src={`${base}${client.thumbnail}`}
+          alt="Anteprima del sito MasterTetto"
+          width="1200"
+          height="750"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <span class="cs__shot-cta">Visita il sito &nearr;</span>
+      </a>
+
+      <div class="cs__cols">
+        <section class="cs__block reveal" aria-labelledby="cs-sfida">
+          <h2 class="cs__block-title" id="cs-sfida"><span aria-hidden="true">01 · </span>La sfida</h2>
+          {challenge.map((p) => <p class="cs__body">{p}</p>)}
+        </section>
+
+        <section class="cs__block reveal reveal-delay-1" aria-labelledby="cs-soluzione">
+          <h2 class="cs__block-title" id="cs-soluzione"><span aria-hidden="true">02 · </span>La soluzione</h2>
+          {solution.map((p) => <p class="cs__body">{p}</p>)}
+          <div class="cs__scope">
+            {client.scope.map((s) => <span class="cs__chip">{s}</span>)}
+          </div>
+        </section>
+      </div>
+
+      <section class="cs__tech reveal" aria-labelledby="cs-tech">
+        <h2 class="cs__block-title" id="cs-tech"><span aria-hidden="true">03 · </span>Sotto il cofano</h2>
+        <p class="cs__body cs__body--lead">
+          Niente CMS pesanti, niente abbonamenti nascosti: tecnologia scelta per durare
+          e restare di proprietà del cliente.
+        </p>
+        <ul class="cs__tech-grid">
+          {techStack.map((t) => (
+            <li class="cs__tech-item">
+              <strong>{t.label}</strong>
+              <span>{t.desc}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="cs__results reveal" aria-labelledby="cs-risultati">
+        <h2 class="cs__block-title" id="cs-risultati"><span aria-hidden="true">04 · </span>Risultati, misurati</h2>
+        <dl class="cs__results-grid">
+          {results.map((r) => (
+            <div class="cs__result">
+              <dd>{r.value}</dd>
+              <dt>{r.label}</dt>
+            </div>
+          ))}
+        </dl>
+        <p class="cs__note">Misurazioni effettuate sul sito live ad agosto 2026.</p>
+      </section>
+
+      <section class="cs__services reveal" aria-labelledby="cs-servizi">
+        <h2 class="cs__block-title" id="cs-servizi"><span aria-hidden="true">05 · </span>Gli 8 servizi portati online</h2>
+        <ul class="cs__services-grid">
+          {client.services.map((s, i) => (
+            <li>
+              <span class="cs__services-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              {s}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="cs__cta reveal">
+        <h2 class="cs__cta-title">Vuoi un risultato così per la tua attività?</h2>
+        <p class="cs__cta-body">
+          Ti preparo una proposta di design gratuita, su misura — senza impegno.
+        </p>
+        <div class="cs__cta-actions">
+          <a href={`${base}#contatti`} class="btn btn--blue btn--large" data-magnetic>Parliamo</a>
+          <a href={client.liveUrl} target="_blank" rel="noopener" class="btn btn--ghost btn--large" data-magnetic>Visita mastertetto.it <span aria-hidden="true">&nearr;</span></a>
+        </div>
+      </section>
+
+    </div>
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </main>
+</PageLayout>
+
+<style>
+  .cs {
+    background: var(--bg-primary);
+    min-height: 100vh;
+    padding: calc(var(--nav-height) + 3rem) 0 var(--section-pad);
+  }
+
+  .cs__crumbs {
+    display: flex;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+  }
+  .cs__crumbs a { color: var(--text-secondary); transition: color var(--dur); }
+  .cs__crumbs a:hover { color: var(--accent-blue); }
+
+  .cs__head { max-width: 760px; margin-bottom: 3rem; }
+
+  .cs__title {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--text-bright);
+    line-height: 0.95;
+    margin: 0.9rem 0 0.8rem;
+  }
+
+  .cs__tagline {
+    font-size: var(--text-lg);
+    color: var(--text-primary);
+    margin-bottom: 1.4rem;
+    max-width: 44ch;
+  }
+
+  .cs__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1.4rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 1.4rem;
+  }
+
+  .cs__meta-live { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--accent-live); }
+  .cs__dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent-live);
+    box-shadow: 0 0 8px var(--accent-live);
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+
+  .cs__palette { display: flex; gap: 0.4rem; }
+  .cs__palette span {
+    width: 26px; height: 26px;
+    border-radius: var(--radius-sm);
+    background: var(--c);
+    border: 1px solid var(--hairline);
+  }
+
+  .cs__shot {
+    position: relative;
+    display: block;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    margin-bottom: clamp(3rem, 2rem + 3vw, 5rem);
+    transition: box-shadow var(--dur-slow) var(--ease-out-expo);
+  }
+  .cs__shot img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.8s var(--ease-out-expo);
+  }
+  .cs__shot:hover { box-shadow: var(--shadow-lg), var(--shadow-blue); }
+  .cs__shot:hover img { transform: scale(1.03); }
+
+  .cs__shot-cta {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    background: rgba(5, 5, 7, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--hairline);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-bright);
+  }
+
+  .cs__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 1rem + 3vw, 4rem);
+    margin-bottom: clamp(3rem, 2rem + 3vw, 5rem);
+  }
+
+  .cs__block-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--text-bright);
+    margin-bottom: 1.1rem;
+  }
+  .cs__block-title span { color: var(--accent-blue); font-family: var(--font-mono); font-weight: 500; font-size: 0.8em; }
+
+  .cs__body {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    max-width: 58ch;
+  }
+  .cs__body--lead { max-width: 68ch; }
+
+  .cs__scope { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+  .cs__chip {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: 0.32rem 0.7rem;
+    border-radius: var(--radius-full);
+    background: var(--accent-blue-dim);
+    color: var(--accent-blue);
+    letter-spacing: 0.04em;
+  }
+
+  .cs__tech { margin-bottom: clamp(3rem, 2rem + 3vw, 5rem); }
+
+  .cs__tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .cs__tech-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.2rem 1.3rem;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color var(--dur), transform var(--dur) var(--ease-out-expo);
+  }
+  .cs__tech-item:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
+  .cs__tech-item strong {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .cs__tech-item span {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .cs__results { margin-bottom: clamp(3rem, 2rem + 3vw, 5rem); }
+
+  .cs__results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding: clamp(1.75rem, 1.25rem + 1.5vw, 2.75rem);
+    background:
+      radial-gradient(70% 120% at 15% 0%, var(--accent-blue-dim), transparent 65%),
+      var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+  }
+
+  .cs__result dd {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-bright);
+  }
+  .cs__result dt {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-secondary);
+    margin-top: 0.55rem;
+  }
+
+  .cs__note {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    margin-top: 0.9rem;
+  }
+
+  .cs__services { margin-bottom: clamp(3.5rem, 2.5rem + 3vw, 6rem); }
+
+  .cs__services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .cs__services-grid li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent);
+  }
+  .cs__services-num {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--accent-gold);
+  }
+
+  .cs__cta {
+    text-align: center;
+    padding: clamp(2.5rem, 2rem + 3vw, 4rem) 2rem;
+    background:
+      radial-gradient(80% 120% at 50% 0%, var(--accent-blue-dim), transparent 70%),
+      var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+  }
+  .cs__cta-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    color: var(--text-bright);
+    margin-bottom: 0.8rem;
+  }
+  .cs__cta-body {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.6rem;
+  }
+  .cs__cta-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.9rem 2rem; border-radius: var(--radius-sm);
+    font-weight: 600; font-size: var(--text-sm); text-decoration: none; cursor: pointer;
+    transition: background var(--dur), border-color var(--dur), color var(--dur), box-shadow var(--dur), transform var(--dur) var(--ease-out-expo);
+  }
+  .btn--large { padding: 1.05rem 2.6rem; font-size: var(--text-base); }
+  .btn--blue { background: var(--accent-blue); color: var(--bg-primary); }
+  .btn--blue:hover { background: var(--accent-blue-bright); box-shadow: var(--shadow-blue); transform: translateY(-2px); }
+  .btn--ghost { background: transparent; border: 1px solid var(--border-bright); color: var(--text-primary); }
+  .btn--ghost:hover { border-color: var(--accent-blue); color: var(--accent-blue); transform: translateY(-2px); }
+
+  @media (max-width: 900px) {
+    .cs__cols { grid-template-columns: 1fr; }
+    .cs__tech-grid, .cs__results-grid { grid-template-columns: repeat(2, 1fr); }
+    .cs__services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 520px) {
+    .cs__services-grid { grid-template-columns: 1fr; }
+  }
+</style>

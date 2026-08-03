@@ -9,7 +9,7 @@ interface Props {
 const { project, class: className } = Astro.props;
 ---
 
-<article class:list={['fcard', className]}>
+<article class:list={['fcard', className]} data-tilt>
   <div class:list={['fcard__visual', project.visualClass]}>
     {project.visualClass === 'fcard__visual--knowledge' && (
       <>

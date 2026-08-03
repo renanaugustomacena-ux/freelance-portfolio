@@ -1,0 +1,87 @@
+---
+import { templates } from '../../data/templates';
+import { clients } from '../../data/clients';
+
+const businesses = templates.length;
+const proposals = templates.reduce((sum, t) => sum + t.variants.length, 0);
+const liveClients = clients.filter((c) => c.status === 'live').length;
+
+const stats = [
+  { value: String(liveClients), label: 'Cliente reale online', accent: 'live' },
+  { value: String(businesses), label: 'Attività locali con demo', accent: 'blue' },
+  { value: String(proposals), label: 'Proposte di design a mano', accent: 'violet' },
+  { value: '3', label: 'Lingue madrelingua', accent: 'gold' },
+];
+---
+
+<section class="stats" aria-label="Numeri del portfolio">
+  <div class="container">
+    <dl class="stats__grid">
+      {stats.map((s, i) => (
+        <div class:list={['stats__item', `stats__item--${s.accent}`, 'reveal', i > 0 && `reveal-delay-${i}`]}>
+          <dd class="stats__value">{s.value}</dd>
+          <dt class="stats__label">{s.label}</dt>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<style>
+  .stats {
+    padding: clamp(2.5rem, 2rem + 2vw, 4rem) 0;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stats__item {
+    position: relative;
+    padding-left: 1.2rem;
+  }
+
+  .stats__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    bottom: 0.3rem;
+    width: 2px;
+    border-radius: 1px;
+    background: var(--stat-accent, var(--accent-blue));
+  }
+
+  .stats__item--live { --stat-accent: var(--accent-live); }
+  .stats__item--blue { --stat-accent: var(--accent-blue); }
+  .stats__item--violet { --stat-accent: var(--accent-violet); }
+  .stats__item--gold { --stat-accent: var(--accent-gold); }
+
+  .stats__value {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-bright);
+  }
+
+  .stats__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 767px) {
+    .stats__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem 1rem;
+    }
+  }
+</style>

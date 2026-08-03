@@ -1,5 +1,5 @@
-/* ---- Google Fonts ---- */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Fonts are self-hosted via @fontsource-variable (imported in BaseLayout).
+   No external CDN: privacy-friendly (GDPR) and faster first render. */
 
 /* ---- Type defaults bound to the fluid scale ---- */
 body {

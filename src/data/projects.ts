@@ -32,7 +32,7 @@ export const featuredProjects: FeaturedProject[] = [
     badge: { label: 'Progetto di Gruppo', variant: 'collab' },
     visualClass: 'fcard__visual--cozy',
     links: [
-      { label: 'GitHub', href: 'https://github.com/renanaugustomacena-ux/project-work-311', variant: 'ghost' },
+      { label: 'GitHub', href: 'https://github.com/renanaugustomacena-ux/Projectwork-IFTS-Private', variant: 'ghost' },
     ],
   },
 ];

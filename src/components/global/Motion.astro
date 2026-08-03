@@ -97,5 +97,22 @@
       });
       el.addEventListener('mouseleave', () => { el.style.transform = ''; });
     });
+
+    // 3D tilt cards — subtle perspective follow, fine pointers only
+    const tilts = document.querySelectorAll<HTMLElement>('[data-tilt]');
+    tilts.forEach((el) => {
+      const max = 3.5; // degrees
+      el.addEventListener('mousemove', (e) => {
+        const r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transition = 'transform 0.12s ease-out';
+        el.style.transform = `perspective(900px) rotateX(${(-py * max).toFixed(2)}deg) rotateY(${(px * max).toFixed(2)}deg) translateY(-4px)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transition = '';
+        el.style.transform = '';
+      });
+    });
   }
 </script>

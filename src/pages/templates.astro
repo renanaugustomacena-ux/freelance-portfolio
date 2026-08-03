@@ -11,12 +11,12 @@ import { site } from '../data/site';
   description="Demo di siti web per attivita locali di Mozzecane, Verona. 13 aziende, fino a tre proposte di design ciascuna — costruite a mano."
   navLinks={pageNav}
 >
-  <main class="section templates-page" style="padding-top: calc(var(--nav-height) + 3rem);">
+  <main id="main" class="section templates-page" style="padding-top: calc(var(--nav-height) + 3rem);">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-header__label">Templates</span>
         <h1 class="section-header__title">Demo per Clienti Locali</h1>
-        <p class="section-header__subtitle">13 attività di Mozzecane senza sito web. Fino a tre proposte di design per ognuna, disegnate su misura — una per una.</p>
+        <p class="section-header__subtitle">{templates.length} attività di Mozzecane senza sito web. Fino a tre proposte di design per ognuna, disegnate su misura — una per una.</p>
       </div>
 
       {templates.map((template) => (
